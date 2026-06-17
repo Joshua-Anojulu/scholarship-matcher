@@ -83,6 +83,149 @@ body {
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Account controls in the header */
+.account-nav {
+  display: flex;
+  align-items: center;
+}
+
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.account-email {
+  color: var(--mint-soft);
+  font-size: 0.85rem;
+  max-width: 16ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-ghost {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-ghost-solid {
+  background: var(--mint);
+  border-color: var(--mint);
+}
+
+.btn-ghost-solid:hover {
+  background: #157a6e;
+  border-color: #157a6e;
+}
+
+.saved-count {
+  display: inline-block;
+  min-width: 1.25rem;
+  padding: 0 0.35rem;
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  text-align: center;
+  background: var(--mint);
+  color: #fff;
+  border-radius: 999px;
+}
+
+/* Auth modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 29, 46, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 200;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.modal-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--slate);
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.modal-intro {
+  margin: 0 0 1.25rem;
+  color: var(--slate);
+  font-size: 0.9rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form .btn-primary {
+  margin-top: 0.25rem;
+}
+
+.auth-switch {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: var(--slate);
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--mint);
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .brand {
@@ -484,6 +627,47 @@ input[type="checkbox"]:focus {
 }
 
 .btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-save {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-save::before {
+  content: "\2606";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.btn-save:hover {
+  border-color: var(--mint);
+}
+
+.btn-save.is-saved {
+  background: var(--mint-faint);
+  color: var(--mint);
+  border-color: var(--mint-soft);
+}
+
+.btn-save.is-saved::before {
+  content: "\2605";
+}
+
+.btn-save:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }

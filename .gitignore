@@ -1,6 +1,11 @@
 # Secrets (never commit)
 .env
 
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
 # Python
 __pycache__/
 *.py[cod]

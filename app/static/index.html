@@ -21,8 +21,56 @@
           <p class="brand-tag">Find scholarships that fit your profile</p>
         </div>
       </div>
+
+      <nav class="account-nav" aria-label="Account">
+        <div id="auth-logged-out" class="auth-actions" hidden>
+          <button type="button" class="btn-ghost" id="open-login">Log in</button>
+          <button type="button" class="btn-ghost btn-ghost-solid" id="open-signup">Sign up</button>
+        </div>
+        <div id="auth-logged-in" class="auth-actions" hidden>
+          <button type="button" class="btn-ghost" id="show-saved-btn">
+            Saved <span id="saved-count" class="saved-count" hidden>0</span>
+          </button>
+          <span id="account-email" class="account-email"></span>
+          <button type="button" class="btn-ghost" id="logout-btn">Log out</button>
+        </div>
+      </nav>
     </div>
   </header>
+
+  <div id="auth-modal" class="modal-overlay" hidden>
+    <div class="modal-card panel" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+      <div class="modal-head">
+        <h2 id="auth-modal-title">Log in</h2>
+        <button type="button" class="modal-close" id="auth-modal-close" aria-label="Close">&times;</button>
+      </div>
+
+      <p class="modal-intro" id="auth-modal-intro">
+        Log in to save your profile and bookmark scholarships.
+      </p>
+
+      <form id="auth-form" class="auth-form" novalidate>
+        <div class="field">
+          <label for="auth-email">Email</label>
+          <input type="email" id="auth-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="auth-password">Password</label>
+          <input type="password" id="auth-password" name="password" autocomplete="current-password" required>
+          <span class="field-hint" id="auth-password-hint">At least 8 characters.</span>
+        </div>
+
+        <div id="auth-error" class="form-error" role="alert" hidden></div>
+
+        <button type="submit" class="btn-primary" id="auth-submit">Log in</button>
+      </form>
+
+      <p class="auth-switch">
+        <span id="auth-switch-text">New here?</span>
+        <button type="button" class="link-button" id="auth-switch-btn">Create an account</button>
+      </p>
+    </div>
+  </div>
 
   <main id="main" class="main">
     <section class="intro panel">
@@ -123,6 +171,20 @@
       </div>
 
       <div id="results-container"></div>
+    </section>
+
+    <section id="saved-section" class="results-section" hidden>
+      <div class="results-header">
+        <h2>Saved scholarships</h2>
+        <p id="saved-summary" class="results-summary"></p>
+      </div>
+
+      <div id="saved-empty" class="results-empty panel" hidden>
+        <h3>You have not saved any scholarships yet</h3>
+        <p>Run a match, then use the Save button on any card to bookmark it here.</p>
+      </div>
+
+      <div id="saved-container"></div>
     </section>
   </main>
 
