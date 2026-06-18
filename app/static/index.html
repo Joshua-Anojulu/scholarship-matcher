@@ -160,6 +160,48 @@
         <p id="results-summary" class="results-summary"></p>
       </div>
 
+      <div id="results-filters" class="results-filters" hidden>
+        <div class="filter-group">
+          <label for="filter-quality">Match quality</label>
+          <select id="filter-quality">
+            <option value="all">All matches</option>
+            <option value="strong">Strong only</option>
+            <option value="possible">Possible only</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-sort">Sort by</label>
+          <select id="filter-sort">
+            <option value="fit">Best fit</option>
+            <option value="name">Name (A&ndash;Z)</option>
+            <option value="award">Award (high&rarr;low)</option>
+          </select>
+        </div>
+
+        <div class="filter-group filter-group-range">
+          <label for="filter-min-score">Min fit score: <span id="filter-min-score-value">0</span></label>
+          <input id="filter-min-score" type="range" min="0" max="65" step="5" value="0" />
+        </div>
+
+        <div class="filter-checks">
+          <label class="filter-check">
+            <input id="filter-no-essay" type="checkbox" />
+            <span>No essay required</span>
+          </label>
+          <label class="filter-check">
+            <input id="filter-field-match" type="checkbox" />
+            <span>Matches my field</span>
+          </label>
+          <label class="filter-check">
+            <input id="filter-demographic-match" type="checkbox" />
+            <span>Matches my background</span>
+          </label>
+        </div>
+
+        <button id="filter-clear" type="button" class="btn-ghost filter-clear">Clear filters</button>
+      </div>
+
       <div id="loading" class="loading" hidden>
         <div class="loading-spinner" aria-hidden="true"></div>
         <p>Finding scholarships that fit your profile...</p>

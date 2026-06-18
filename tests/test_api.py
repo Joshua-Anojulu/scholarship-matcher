@@ -8,7 +8,7 @@ VALID_STUDENT = {
     "gpa": 3.8,
     "grade_level": "high_school_senior",
     "intended_majors": ["engineering"],
-    "demographic_tags": ["first_generation"],
+    "demographic_tags": ["african_american"],
     "state": "CA",
     "citizenship": "us_citizen",
     "financial_need_level": "high",
@@ -32,6 +32,7 @@ MATCH_RESULT_FIELDS = {
     "match_reasons",
     "score_breakdown",
     "verified",
+    "essay_required",
     "closing_soon",
     "match_tier",
 }
@@ -113,12 +114,30 @@ class TestMatchEndpoint:
         assert response.status_code == 200
         results = response.json()
         assert len(results) > 0
-        scores = [result["score"] for result in results]
+
+        by_id = {r["scholarship_id"]: r for r in results}
+        scores = [r["score"] for r in results]
+
+        # Results are sorted by score descending and span more than one score.
+        assert scores == sorted(scores, reverse=True)
         assert len(set(scores)) > 1
-        assert results[0]["scholarship_id"] == "regeneron-sts"
-        assert results[1]["scholarship_id"] == "ron-brown-scholar"
-        assert results[0]["score"] > results[1]["score"]
+
+        # A specific field match (science) earns a strong-tier score. With a large
+        # pool other entries may outrank it, so we don't assert it is the global max.
+        assert "regeneron-sts" in by_id
+        assert by_id["regeneron-sts"]["score"] == 40.0
+        assert by_id["regeneron-sts"]["match_tier"] == "strong"
+
+        # Open-to-all field plus a demographic (african_american) overlap.
+        assert "ron-brown-scholar" in by_id
+        assert by_id["ron-brown-scholar"]["score"] == 35.0
+        assert by_id["ron-brown-scholar"]["match_tier"] == "strong"
+
+        # The top-ranked result is in the strong tier at the maximum score.
         assert results[0]["match_tier"] == "strong"
+        assert results[0]["score"] == max(scores)
+
+        # Among results tied at the open-to-all score (10), names sort alphabetically.
         tied_at_ten = [r for r in results if r["score"] == 10.0]
         if len(tied_at_ten) > 1:
             names = [r["scholarship_name"] for r in tied_at_ten]

@@ -50,6 +50,16 @@ const savedSummary = document.getElementById("saved-summary");
 const savedEmpty = document.getElementById("saved-empty");
 const savedContainer = document.getElementById("saved-container");
 
+const resultsFilters = document.getElementById("results-filters");
+const filterQuality = document.getElementById("filter-quality");
+const filterSort = document.getElementById("filter-sort");
+const filterMinScore = document.getElementById("filter-min-score");
+const filterMinScoreValue = document.getElementById("filter-min-score-value");
+const filterNoEssay = document.getElementById("filter-no-essay");
+const filterFieldMatch = document.getElementById("filter-field-match");
+const filterDemographicMatch = document.getElementById("filter-demographic-match");
+const filterClear = document.getElementById("filter-clear");
+
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
@@ -70,7 +80,101 @@ async function init() {
 
   form.addEventListener("submit", handleSubmit);
   wireAuthControls();
+  wireFilterControls();
   await loadSession();
+}
+
+/* ---------- Results filtering ---------- */
+
+function wireFilterControls() {
+  filterQuality.addEventListener("change", rerenderResults);
+  filterSort.addEventListener("change", rerenderResults);
+  filterMinScore.addEventListener("input", () => {
+    filterMinScoreValue.textContent = filterMinScore.value;
+    rerenderResults();
+  });
+  filterNoEssay.addEventListener("change", rerenderResults);
+  filterFieldMatch.addEventListener("change", rerenderResults);
+  filterDemographicMatch.addEventListener("change", rerenderResults);
+  filterClear.addEventListener("click", resetFilters);
+}
+
+function resetFilters() {
+  filterQuality.value = "all";
+  filterSort.value = "fit";
+  filterMinScore.value = "0";
+  filterMinScoreValue.textContent = "0";
+  filterNoEssay.checked = false;
+  filterFieldMatch.checked = false;
+  filterDemographicMatch.checked = false;
+  rerenderResults();
+}
+
+function rerenderResults() {
+  if (lastResults) {
+    renderResults(lastResults);
+  }
+}
+
+// Field score of 40 means a specific field-of-study match (10 = open-to-all).
+const SPECIFIC_FIELD_SCORE = 40;
+
+function applyResultFilters(results) {
+  const minScore = Number(filterMinScore.value) || 0;
+  const quality = filterQuality.value;
+  return results.filter((r) => {
+    if (quality !== "all" && r.match_tier !== quality) {
+      return false;
+    }
+    if (r.score < minScore) {
+      return false;
+    }
+    if (filterNoEssay.checked && r.essay_required) {
+      return false;
+    }
+    if (
+      filterFieldMatch.checked &&
+      (r.score_breakdown?.field_of_study ?? 0) < SPECIFIC_FIELD_SCORE
+    ) {
+      return false;
+    }
+    if (filterDemographicMatch.checked && (r.score_breakdown?.demographics ?? 0) <= 0) {
+      return false;
+    }
+    return true;
+  });
+}
+
+function sortResults(results) {
+  const sorted = results.slice();
+  switch (filterSort.value) {
+    case "name":
+      sorted.sort((a, b) =>
+        a.scholarship_name.localeCompare(b.scholarship_name, undefined, {
+          sensitivity: "base",
+        })
+      );
+      break;
+    case "award":
+      sorted.sort((a, b) => awardSortValue(b.award_amount) - awardSortValue(a.award_amount));
+      break;
+    default:
+      // "fit": preserve the server's score/deadline/name ordering.
+      break;
+  }
+  return sorted;
+}
+
+// Best-effort numeric value for sorting only; descriptive/VERIFY amounts sort last.
+function awardSortValue(amount) {
+  if (typeof amount === "number") {
+    return amount;
+  }
+  const numbers = String(amount).match(/\d[\d,]*/g);
+  if (!numbers) {
+    return -1;
+  }
+  return Math.max(...numbers.map((n) => Number(n.replace(/,/g, ""))));
 }
 
 /* ---------- Auth wiring ---------- */
@@ -601,6 +705,7 @@ function setLoading(isLoading) {
   if (isLoading) {
     resultsContainer.innerHTML = "";
     resultsEmpty.hidden = true;
+    resultsFilters.hidden = true;
   }
 }
 
@@ -655,15 +760,34 @@ function renderResults(results) {
 
   if (results.length === 0) {
     resultsSummary.textContent = "";
+    resultsFilters.hidden = true;
     resultsEmpty.hidden = false;
     return;
   }
 
-  resultsEmpty.hidden = true;
-  const strong = results.filter((r) => r.match_tier === "strong");
-  const possible = results.filter((r) => r.match_tier === "possible");
+  resultsFilters.hidden = false;
 
-  resultsSummary.textContent = `${results.length} scholarship${results.length === 1 ? "" : "s"} matched your profile.`;
+  const filtered = sortResults(applyResultFilters(results));
+
+  if (filtered.length === 0) {
+    resultsEmpty.hidden = true;
+    resultsSummary.textContent = `0 of ${results.length} matches shown with the current filters.`;
+    const note = document.createElement("div");
+    note.className = "results-empty panel";
+    note.innerHTML =
+      "<h3>No matches with these filters</h3><p>Loosen a filter or use <strong>Clear filters</strong> to see all matches again.</p>";
+    resultsContainer.appendChild(note);
+    return;
+  }
+
+  resultsEmpty.hidden = true;
+  const strong = filtered.filter((r) => r.match_tier === "strong");
+  const possible = filtered.filter((r) => r.match_tier === "possible");
+
+  const shownAll = filtered.length === results.length;
+  resultsSummary.textContent = shownAll
+    ? `${results.length} scholarship${results.length === 1 ? "" : "s"} matched your profile.`
+    : `Showing ${filtered.length} of ${results.length} matched scholarships.`;
 
   if (strong.length > 0) {
     resultsContainer.appendChild(buildTierSection("Strong matches", strong, "strong"));

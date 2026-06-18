@@ -166,7 +166,7 @@ scholarship-matcher/
 
 ## Limitations
 
-- The scholarship dataset is a **small curated seed set** (18 entries), not a comprehensive directory.
+- The scholarship dataset is a **curated set** (117 real national programs), not a comprehensive directory.
 - Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
 - Accounts are intentionally basic (email and password). There is no email verification or password reset flow, so this is suited to a demo rather than production use.

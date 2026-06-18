@@ -11,7 +11,7 @@ VALID_STUDENT = {
     "gpa": 3.8,
     "grade_level": "high_school_senior",
     "intended_majors": ["engineering"],
-    "demographic_tags": ["first_generation"],
+    "demographic_tags": ["african_american"],
     "state": "CA",
     "citizenship": "us_citizen",
     "financial_need_level": "high",

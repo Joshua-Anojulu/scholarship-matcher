@@ -15,7 +15,7 @@ def make_student(**overrides) -> StudentProfile:
         "gpa": 3.8,
         "grade_level": "high_school_senior",
         "intended_majors": ["engineering"],
-        "demographic_tags": ["first_generation"],
+        "demographic_tags": ["african_american"],
         "state": "CA",
         "citizenship": "us_citizen",
         "financial_need_level": "high",
@@ -30,7 +30,7 @@ def make_scholarship(**overrides) -> Scholarship:
         "min_gpa": 3.5,
         "fields_of_study": ["engineering"],
         "grade_levels": ["high_school_senior"],
-        "demographics": ["first_generation"],
+        "demographics": ["african_american"],
         "states": "any",
         "essay_required": True,
         "citizenship_requirement": "us_citizen",
@@ -73,7 +73,7 @@ class TestPerfectMatch:
         assert "Grade level matches (high_school_senior)" in result.match_reasons
         assert "Meets citizenship requirement" in result.match_reasons
         assert "Field of study overlap: engineering" in result.match_reasons
-        assert "Demographic match: first_generation" in result.match_reasons
+        assert "Demographic match: african_american" in result.match_reasons
         assert result.score_breakdown.total == result.score
         assert result.closing_soon is False
 
@@ -174,7 +174,7 @@ class TestMatchTier:
     def test_strong_tier_for_high_scores(self):
         student = make_student()
         scholarship = make_scholarship(
-            eligibility={"fields_of_study": ["engineering"], "demographics": ["first_generation"]},
+            eligibility={"fields_of_study": ["engineering"], "demographics": ["african_american"]},
         )
         result = match_one(student, scholarship)
 
@@ -250,7 +250,7 @@ class TestPartialMatch:
     def test_partial_overlap_returns_lower_score(self):
         student = make_student(
             intended_majors=["literature"],
-            demographic_tags=["first_generation"],
+            demographic_tags=["african_american"],
         )
         scholarship = make_scholarship()
         result = match_one(student, scholarship)
@@ -259,7 +259,7 @@ class TestPartialMatch:
         assert result.score_breakdown.field_of_study == 0.0
         assert result.score_breakdown.demographics == pytest.approx(25.0)
         assert "No field of study overlap" in result.match_reasons
-        assert "Demographic match: first_generation" in result.match_reasons
+        assert "Demographic match: african_american" in result.match_reasons
 
 
 class TestVerifyPlaceholders:

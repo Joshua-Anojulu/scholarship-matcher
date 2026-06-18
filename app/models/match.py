@@ -21,6 +21,10 @@ class MatchResult(BaseModel):
     deadline: str
     url: str
     verified: bool
+    essay_required: bool = Field(
+        default=False,
+        description="Whether the scholarship requires an essay (used by the no-essay filter).",
+    )
     closing_soon: bool = Field(
         default=False,
         description="True when a real parsed deadline falls within 30 days (badge only, not scored).",

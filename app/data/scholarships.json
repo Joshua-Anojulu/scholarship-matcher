@@ -11,7 +11,9 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -29,8 +31,10 @@
       "eligibility": {
         "min_gpa": 3.3,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["minority", "pell_eligible", "first_generation"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_national_or_permanent_resident"
@@ -47,8 +51,10 @@
       "eligibility": {
         "min_gpa": 3.5,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["financial_need"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
@@ -65,8 +71,10 @@
       "eligibility": {
         "min_gpa": 2.4,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["pell_eligible", "first_generation"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
@@ -83,8 +91,10 @@
       "eligibility": {
         "min_gpa": 2.0,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["financial_adversity"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
@@ -100,9 +110,20 @@
       "url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
       "eligibility": {
         "min_gpa": "VERIFY",
-        "fields_of_study": ["science", "technology", "engineering", "mathematics", "literature", "music", "philosophy", "outside_the_box"],
-        "grade_levels": ["high_school", "middle_school"],
-        "demographics": ["gifted"],
+        "fields_of_study": [
+          "science",
+          "technology",
+          "engineering",
+          "mathematics",
+          "literature",
+          "music",
+          "philosophy"
+        ],
+        "grade_levels": [
+          "high_school",
+          "middle_school"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
@@ -118,8 +139,15 @@
       "url": "https://www.societyforscience.org/regeneron-sts/",
       "eligibility": {
         "min_gpa": "VERIFY",
-        "fields_of_study": ["science", "engineering", "mathematics", "research"],
-        "grade_levels": ["high_school_senior"],
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -137,7 +165,9 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_junior"],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": false,
@@ -155,7 +185,9 @@
       "eligibility": {
         "min_gpa": 2.5,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": false,
@@ -173,7 +205,9 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -191,8 +225,12 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["african_american"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [
+          "african_american"
+        ],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
@@ -209,8 +247,14 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior", "college_undergraduate", "college_graduate"],
-        "demographics": ["hispanic_latino"],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "hispanic_latino"
+        ],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
@@ -227,8 +271,10 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["financial_need", "first_generation"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
@@ -245,8 +291,10 @@
       "eligibility": {
         "min_gpa": 3.0,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["student_athlete"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
@@ -263,7 +311,9 @@
       "eligibility": {
         "min_gpa": 3.7,
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -281,8 +331,13 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior", "college_undergraduate"],
-        "demographics": ["asian_pacific_islander"],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [
+          "asian_pacific_islander"
+        ],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_permanent_resident_or_national"
@@ -299,8 +354,10 @@
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [],
-        "grade_levels": ["high_school_senior"],
-        "demographics": ["leadership", "first_generation"],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
         "states": "VERIFY",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
@@ -316,14 +373,2400 @@
       "url": "https://goldwater.scholarsapply.org/",
       "eligibility": {
         "min_gpa": "VERIFY",
-        "fields_of_study": ["natural_sciences", "engineering", "mathematics"],
-        "grade_levels": ["college_sophomore", "college_junior"],
+        "fields_of_study": [
+          "natural_sciences",
+          "engineering",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "college_sophomore",
+          "college_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_permanent_resident_or_us_national"
       },
       "description": "Premier undergraduate award for students pursuing research careers in the natural sciences, engineering, and mathematics. Nominated by participating institutions."
+    },
+    {
+      "id": "ge-reagan-foundation-scholarship",
+      "name": "GE-Reagan Foundation Scholarship Program",
+      "sponsor": "Ronald Reagan Presidential Foundation & Institute",
+      "award_amount": "up to $40,000 ($10,000 per year, renewable)",
+      "deadline": "VERIFY",
+      "url": "https://www.reaganfoundation.org/education/ge-reagan-foundation-scholarship",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Merit-based scholarship for U.S. high school seniors who demonstrate leadership, drive, integrity, and citizenship and plan to enroll full-time at an accredited four-year U.S. college or university. Renewable for up to four years.",
+      "verified": false
+    },
+    {
+      "id": "equitable-excellence-scholarship",
+      "name": "Equitable Excellence Scholarship",
+      "sponsor": "Equitable Foundation (administered by Scholarship America)",
+      "award_amount": "up to $20,000 ($5,000 per year) or one-time $2,500",
+      "deadline": "VERIFY",
+      "url": "https://learnmore.scholarsapply.org/equitableexcellence/",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Need-based scholarship for high school seniors residing in the 50 U.S. states, D.C., or Puerto Rico who plan to enroll full-time at an accredited two- or four-year U.S. college and show drive to give back to their communities.",
+      "verified": false
+    },
+    {
+      "id": "hagan-scholarship",
+      "name": "Hagan Scholarship",
+      "sponsor": "Hagan Scholarship Foundation",
+      "award_amount": "$2,000 plus up to $7,500 per semester (up to 8 semesters)",
+      "deadline": "VERIFY",
+      "url": "https://haganscholarships.org/",
+      "eligibility": {
+        "min_gpa": 3.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Need-based merit scholarship designed to help students graduate college debt-free. Requires enrollment at an eligible four-year nonprofit college, a 3.5 GPA, household income below the program cap, and 240 hours of work before enrolling. Open to applicants regardless of citizenship.",
+      "verified": false
+    },
+    {
+      "id": "stamps-scholars",
+      "name": "Stamps Scholarship (Stamps Scholars Program)",
+      "sponsor": "Stamps Scholars Program / Stamps Family Charitable Foundation",
+      "award_amount": "varies by partner school (multi-year award)",
+      "deadline": "VERIFY",
+      "url": "https://www.stampsscholars.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit-based scholarship awarded through 38 partner colleges and universities for students with strong academic merit and leadership; provides multi-year awards plus enrichment funding. Financial need is not considered. Students apply directly to a partner school, and award terms and eligibility vary by institution.",
+      "verified": false
+    },
+    {
+      "id": "taco-bell-live-mas-scholarship",
+      "name": "Live Mas Scholarship",
+      "sponsor": "Taco Bell Foundation",
+      "award_amount": "$5,000, $10,000, or $25,000",
+      "deadline": "VERIFY",
+      "url": "https://www.tacobellfoundation.org/live-mas-scholarship/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarship for students ages 16-26 who are legal residents of the 50 U.S. states or D.C. (or dependents of active-duty U.S. military) pursuing post-secondary education. Selection is based on passion rather than grades or test scores; applicants submit a two-minute video.",
+      "verified": false
+    },
+    {
+      "id": "prudential-emerging-visionaries",
+      "name": "Prudential Emerging Visionaries",
+      "sponsor": "Prudential Financial (in partnership with Ashoka)",
+      "award_amount": "up to $15,000",
+      "deadline": "VERIFY",
+      "url": "https://www.changemakers.com/en/challenge/emergingvisionaries",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National recognition program for young people ages 14-18 who lead innovative projects addressing financial or societal challenges in their communities. Open to legal residents of the U.S. or Puerto Rico; winners receive up to $15,000.",
+      "verified": false
+    },
+    {
+      "id": "jackie-robinson-foundation-scholarship",
+      "name": "Jackie Robinson Foundation Scholarship Program",
+      "sponsor": "Jackie Robinson Foundation",
+      "award_amount": "VERIFY (four-year scholarship)",
+      "deadline": "VERIFY",
+      "url": "https://jackierobinson.org/apply/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [
+          "african_american",
+          "hispanic_latino",
+          "asian_pacific_islander",
+          "native_american",
+          "multiracial"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Four-year scholarship and comprehensive mentoring for minority high school seniors who are U.S. citizens, demonstrate financial need and academic excellence, and plan to attend an accredited four-year U.S. college or university.",
+      "verified": false
+    },
+    {
+      "id": "national-ffa-scholarship",
+      "name": "National FFA Scholarship Program",
+      "sponsor": "National FFA Organization (National FFA Foundation)",
+      "award_amount": "varies by scholarship",
+      "deadline": "VERIFY",
+      "url": "https://www.ffa.org/participate/grants-and-scholarships/scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "agriculture"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "A single application covers many scholarships funded through the National FFA Foundation supporting members pursuing education in agriculture and related fields. Applicants must be FFA members, under age 23, U.S. citizens or permanent residents, and enrolled full-time at a U.S. institution.",
+      "verified": false
+    },
+    {
+      "id": "society-of-women-engineers-scholarship",
+      "name": "SWE Scholarship Program",
+      "sponsor": "Society of Women Engineers",
+      "award_amount": "varies (over $1,000,000 awarded annually)",
+      "deadline": "VERIFY",
+      "url": "https://swe.org/scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering",
+          "technology",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships for students who identify as women pursuing ABET-accredited degrees in engineering, engineering technology, or computing. A single application is considered for all eligible awards. Open only to women.",
+      "verified": false
+    },
+    {
+      "id": "generation-google-scholarship",
+      "name": "Generation Google Scholarship",
+      "sponsor": "Google",
+      "award_amount": 10000,
+      "deadline": "VERIFY",
+      "url": "https://buildyourfuture.withgoogle.com/scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "computer_science",
+          "engineering",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For students pursuing computer science, computer engineering, or a closely related technical field at a U.S. or Canadian university who demonstrate leadership, academic strength, financial need, and commitment to improving representation of underrepresented groups in technology. The U.S. award is $10,000.",
+      "verified": false
+    },
+    {
+      "id": "tylenol-future-care-scholarship",
+      "name": "Tylenol Future Care Scholarship",
+      "sponsor": "Kenvue (makers of Tylenol)",
+      "award_amount": "up to $10,000",
+      "deadline": "VERIFY",
+      "url": "https://www.tylenol.com/tylenol-future-care-scholarship",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "health_medicine",
+          "nursing"
+        ],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit-based scholarship for college seniors entering graduate school and graduate students enrolled in medical, nursing, or pharmacy programs who will actively treat patients. Open to residents of the 50 U.S. states, Puerto Rico, or D.C.",
+      "verified": false
+    },
+    {
+      "id": "aicpa-foundation-legacy-scholarships",
+      "name": "AICPA Foundation Legacy Scholarships",
+      "sponsor": "AICPA Foundation",
+      "award_amount": "$3,000 to $10,000",
+      "deadline": "VERIFY",
+      "url": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "business"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Scholarships for accounting students pursuing CPA licensure, awarded through a single application. Requires a free AICPA student affiliate membership, full-time enrollment in an accredited accounting/business program, and a minimum 3.0 GPA.",
+      "verified": false
+    },
+    {
+      "id": "james-madison-memorial-fellowship",
+      "name": "James Madison Memorial Fellowship",
+      "sponsor": "James Madison Memorial Fellowship Foundation",
+      "award_amount": "up to $24,000",
+      "deadline": "VERIFY",
+      "url": "https://www.jamesmadison.gov/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "education",
+          "social_sciences",
+          "humanities"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Graduate fellowship for aspiring and current secondary-school teachers of American history, American government, or civics who pursue a master's degree focused on the U.S. Constitution. Requires U.S. citizenship (or U.S. national status) and a teaching service commitment.",
+      "verified": false
+    },
+    {
+      "id": "national-youngarts-foundation",
+      "name": "YoungArts National Arts Competition",
+      "sponsor": "National YoungArts Foundation",
+      "award_amount": "$250 to $10,000",
+      "deadline": "VERIFY",
+      "url": "https://youngarts.org/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "arts",
+          "music",
+          "literature"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National arts competition for emerging artists ages 15-18 (grades 10-12) across 10 disciplines including visual, literary, and performing arts. Award winners receive cash prizes from $250 to $10,000 and mentorship; selection is by portfolio or audition.",
+      "verified": false
+    },
+    {
+      "id": "smart-scholarship",
+      "name": "SMART Scholarship-for-Service Program",
+      "sponsor": "U.S. Department of Defense",
+      "award_amount": "full tuition plus annual stipend",
+      "deadline": "VERIFY",
+      "url": "https://www.smartscholarship.org/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "science",
+          "technology",
+          "engineering",
+          "mathematics",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Department of Defense scholarship-for-service covering full tuition, an annual stipend, and summer internships for students in STEM fields. Recipients commit to post-graduation civilian employment with the DoD. Requires U.S. citizenship (or select allied countries), a 3.0 GPA, and ability to obtain a security clearance.",
+      "verified": false
+    },
+    {
+      "id": "uncf-general-scholarship",
+      "name": "UNCF General Scholarship",
+      "sponsor": "United Negro College Fund (UNCF)",
+      "award_amount": "VERIFY (varies)",
+      "deadline": "VERIFY",
+      "url": "https://uncf.org/scholarships",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "african_american"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Need-based scholarship requiring full-time enrollment at one of UNCF's 37 member historically Black colleges and universities, a minimum 2.5 GPA, and a completed FAFSA. UNCF focuses on supporting African American students.",
+      "verified": false
+    },
+    {
+      "id": "american-indian-college-fund-full-circle",
+      "name": "American Indian College Fund Full Circle Scholarship",
+      "sponsor": "American Indian College Fund",
+      "award_amount": "varies (averages $2,000 to $3,000)",
+      "deadline": "VERIFY",
+      "url": "https://collegefund.org/students/scholarships/",
+      "eligibility": {
+        "min_gpa": 2.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "native_american"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Scholarship for enrolled members, or descendants of enrolled members, of state or federally recognized tribes or Alaska Native villages who attend an accredited nonprofit institution full-time with at least a 2.0 GPA. One application is considered for many awards.",
+      "verified": false
+    },
+    {
+      "id": "thurgood-marshall-college-fund-scholarship",
+      "name": "Thurgood Marshall College Fund Scholarship",
+      "sponsor": "Thurgood Marshall College Fund",
+      "award_amount": "VERIFY (varies by award)",
+      "deadline": "VERIFY",
+      "url": "https://tmcf.org/apply/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [
+          "african_american"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Scholarships for students attending Thurgood Marshall College Fund member historically Black colleges and universities (HBCUs), predominantly Black institutions (PBIs), and historically Black community colleges. Eligibility, GPA, and requirements vary by individual award.",
+      "verified": false
+    },
+    {
+      "id": "truman-scholarship",
+      "name": "Harry S. Truman Scholarship",
+      "sponsor": "Harry S. Truman Scholarship Foundation",
+      "award_amount": "up to $30,000",
+      "deadline": "VERIFY",
+      "url": "https://www.truman.gov/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Merit-based award for college juniors committed to careers in public service who are in the upper quarter of their class and nominated by their institution. Provides up to $30,000 for graduate study. Open to U.S. citizens and U.S. nationals from American Samoa; permanent residents are not eligible.",
+      "verified": false
+    },
+    {
+      "id": "udall-undergraduate-scholarship",
+      "name": "Udall Undergraduate Scholarship",
+      "sponsor": "Udall Foundation",
+      "award_amount": "up to $7,000",
+      "deadline": "VERIFY",
+      "url": "https://www.udall.gov/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "environmental_science"
+        ],
+        "grade_levels": [
+          "college_sophomore",
+          "college_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_national_or_permanent_resident"
+      },
+      "description": "Scholarship for college sophomores and juniors committed to careers related to the environment; Native American and Alaska Native students may also apply in the tribal public policy or Native health care categories. Requires nomination by the student's institution and at least a B average. Award up to $7,000.",
+      "verified": false
+    },
+    {
+      "id": "fulbright-us-student-program",
+      "name": "Fulbright U.S. Student Program",
+      "sponsor": "U.S. Department of State (Bureau of Educational and Cultural Affairs)",
+      "award_amount": "varies by host country (covers travel, stipend, and living costs)",
+      "deadline": "VERIFY",
+      "url": "https://us.fulbrightonline.org/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Federal program funding graduating college seniors, graduate students, young professionals, and artists to study, conduct research, or teach English abroad in partnership with more than 140 countries. Open to all disciplines; requires U.S. citizenship and a bachelor's degree by the grant start (permanent residents and doctorate holders are not eligible).",
+      "verified": false
+    },
+    {
+      "id": "nabj-scholarship",
+      "name": "NABJ Scholarship Program",
+      "sponsor": "National Association of Black Journalists",
+      "award_amount": "up to $10,000",
+      "deadline": "VERIFY",
+      "url": "https://nabjonline.org/student-services/scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "communications"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "african_american"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships from the National Association of Black Journalists for student members pursuing journalism or a communications-related field who have at least one year of school remaining. Requires a paid NABJ student membership; awards up to $10,000.",
+      "verified": false
+    },
+    {
+      "id": "profile-in-courage-essay-contest",
+      "name": "John F. Kennedy Profile in Courage Essay Contest",
+      "sponsor": "John F. Kennedy Library Foundation",
+      "award_amount": "$10,000 first place; $3,000 second; $1,000 finalists",
+      "deadline": "VERIFY",
+      "url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "social_sciences",
+          "humanities"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Annual essay contest for U.S. high school students in grades 9-12 to describe and analyze an act of political courage by a U.S. elected official who served during or after 1917. First place receives $10,000.",
+      "verified": false
+    },
+    {
+      "id": "shpe-scholarship",
+      "name": "ScholarSHPE Scholarship Program",
+      "sponsor": "Society of Hispanic Professional Engineers (SHPE)",
+      "award_amount": "VERIFY (multiple awards; over $1.8M distributed annually)",
+      "deadline": "VERIFY",
+      "url": "https://shpe.org/engage/programs/scholarshpe/",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [
+          "engineering",
+          "computer_science",
+          "mathematics",
+          "science",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "hispanic_latino"
+        ],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Renewable scholarships for active SHPE members pursuing STEM degrees, focused on advancing Hispanics in STEM. Requires SHPE membership and a minimum 2.5 GPA; citizenship is not required for SHPE-funded awards but some sponsor-funded awards do require it.",
+      "verified": false
+    },
+    {
+      "id": "nsbe-scholarships",
+      "name": "NSBE Scholarship Program",
+      "sponsor": "National Society of Black Engineers (NSBE)",
+      "award_amount": "VERIFY (awards range $500-$15,000)",
+      "deadline": "VERIFY",
+      "url": "https://apply.nsbe.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering",
+          "technology",
+          "science",
+          "computer_science",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "african_american"
+        ],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships ranging from $500 to $15,000 for NSBE members pursuing engineering and STEM degrees, focused on supporting Black engineers. Requires active NSBE membership and a verified GPA in the member profile.",
+      "verified": false
+    },
+    {
+      "id": "ieee-presidents-scholarship",
+      "name": "IEEE Presidents' Scholarship",
+      "sponsor": "IEEE Foundation",
+      "award_amount": 10000,
+      "deadline": "VERIFY",
+      "url": "https://www.ieee.org/education/preuniversity/scholarship.html",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "computer_science",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$10,000 (payable over four years of undergraduate study) awarded to one student finalist at the Regeneron International Science and Engineering Fair for an outstanding project in electrical/electronics engineering, computer science, or another IEEE field of interest. Must be an ISEF finalist.",
+      "verified": false
+    },
+    {
+      "id": "acm-sighpc-computational-data-science-fellowship",
+      "name": "ACM SIGHPC Computational and Data Science Fellowships",
+      "sponsor": "Association for Computing Machinery (ACM SIGHPC)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.sighpc.org/opportunities/fellowships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "computer_science",
+          "science",
+          "mathematics",
+          "research"
+        ],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Graduate fellowships for women and/or members of racial/ethnic groups underrepresented in computing who are pursuing a master's or doctoral degree in computational or data science. Nominated by the student's graduate research advisor and open to students at institutions worldwide.",
+      "verified": false
+    },
+    {
+      "id": "acs-catalyst-scholarship",
+      "name": "ACS Catalyst Scholarship",
+      "sponsor": "American Chemical Society (ACS)",
+      "award_amount": 10000,
+      "deadline": "VERIFY",
+      "url": "https://www.acs.org/education/acs-undergraduate-scholarship.html",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "science",
+          "natural_sciences",
+          "engineering"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Renewable $10,000 annual scholarship for undergraduates majoring in chemistry or chemistry-related fields (chemistry, biochemistry, chemical engineering, chemical technology) who demonstrate financial need. Not open to pre-med, pharmacy, or nursing students; replaces the former ACS Scholars Program for 2026-2027.",
+      "verified": false
+    },
+    {
+      "id": "astronaut-scholarship",
+      "name": "Astronaut Scholarship",
+      "sponsor": "Astronaut Scholarship Foundation",
+      "award_amount": 15000,
+      "deadline": "VERIFY",
+      "url": "https://astronautscholarship.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "computer_science",
+          "natural_sciences"
+        ],
+        "grade_levels": [
+          "college_sophomore",
+          "college_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Up to $15,000 for sophomore/junior STEM students intending to pursue research, nominated by faculty at one of roughly 46 ASF-affiliated universities. Students intending to enter clinical practice are ineligible, though MD/PhD research candidates qualify. U.S. citizenship required.",
+      "verified": false
+    },
+    {
+      "id": "nurse-corps-scholarship-program",
+      "name": "Nurse Corps Scholarship Program",
+      "sponsor": "U.S. Health Resources & Services Administration (HRSA)",
+      "award_amount": "Full tuition, required fees, and a monthly stipend",
+      "deadline": "VERIFY",
+      "url": "https://bhw.hrsa.gov/programs/nurse-corps/scholarship/apply",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "nursing",
+          "health_medicine"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen_national_or_permanent_resident"
+      },
+      "description": "Pays tuition, fees, and a monthly stipend for nursing students (RN and APRN degree programs) in exchange for a service commitment at a Critical Shortage Facility after graduation. Funding preference goes to those with the greatest financial need.",
+      "verified": false
+    },
+    {
+      "id": "nhsc-scholarship-program",
+      "name": "National Health Service Corps (NHSC) Scholarship Program",
+      "sponsor": "U.S. Health Resources & Services Administration (HRSA)",
+      "award_amount": "Full tuition, fees, and a monthly stipend",
+      "deadline": "VERIFY",
+      "url": "https://nhsc.hrsa.gov/scholarships/overview",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "health_medicine",
+          "nursing"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Pays tuition, fees, and a monthly stipend for students training in primary care health professions (physicians, dentists, nurse practitioners, nurse midwives, physician assistants) in exchange for a minimum two-year service commitment in a Health Professional Shortage Area. Open to U.S. citizens and U.S. nationals only (permanent residents are not eligible).",
+      "verified": false
+    },
+    {
+      "id": "hertz-fellowship",
+      "name": "Hertz Fellowship",
+      "sponsor": "Fannie and John Hertz Foundation",
+      "award_amount": "Up to $250,000 over five years of PhD study",
+      "deadline": "VERIFY",
+      "url": "https://www.hertzfoundation.org/hertz-fellowship/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "natural_sciences",
+          "engineering",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Up to five years of PhD funding (valued up to $250,000) for doctoral students in the applied physical and biological sciences, mathematics, or engineering at a U.S. institution. Open to U.S. citizens and permanent residents who are college seniors, first-year graduate students, or in a gap year before graduate school.",
+      "verified": false
+    },
+    {
+      "id": "stem-stars-actuarial-scholars-program",
+      "name": "STEM Stars Actuarial Scholars Program",
+      "sponsor": "The Actuarial Foundation",
+      "award_amount": 20000,
+      "deadline": "VERIFY",
+      "url": "https://actuarialfoundation.org/scholarships/stem-stars/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$20,000 ($5,000 annually for up to four years) plus mentorship, internships, and networking for high school seniors who are skilled in math and interested in the actuarial profession. Replaces the former Actuarial Diversity Scholarship beginning in 2024.",
+      "verified": false
+    },
+    {
+      "id": "cas-trust-scholarship",
+      "name": "CAS Trust Scholarship",
+      "sponsor": "Casualty Actuarial Society (CAS)",
+      "award_amount": "$2,500 or $5,000",
+      "deadline": "VERIFY",
+      "url": "https://www.casact.org/trustscholarship",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "mathematics"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit-based $2,500 and $5,000 scholarships for full-time college students pursuing a career in property/casualty actuarial science. Requires CAS Student Central membership and having sat for at least one actuarial exam.",
+      "verified": false
+    },
+    {
+      "id": "nsf-graduate-research-fellowship",
+      "name": "NSF Graduate Research Fellowship Program (GRFP)",
+      "sponsor": "U.S. National Science Foundation (NSF)",
+      "award_amount": "$37,000 annual stipend plus $16,000 cost-of-education allowance (3 years)",
+      "deadline": "VERIFY",
+      "url": "https://www.nsfgrfp.org/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "technology",
+          "engineering",
+          "mathematics",
+          "computer_science",
+          "natural_sciences",
+          "research"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_national_or_permanent_resident"
+      },
+      "description": "Three years of support (a $37,000 annual stipend plus a $16,000 cost-of-education allowance) for students pursuing research-based master's and doctoral STEM degrees. Open to U.S. citizens, nationals, and permanent residents who are senior undergraduates, bachelor's holders, or first-year graduate students.",
+      "verified": false
+    },
+    {
+      "id": "aiaa-foundation-undergraduate-scholarship",
+      "name": "AIAA Foundation Undergraduate Scholarships",
+      "sponsor": "American Institute of Aeronautics and Astronautics (AIAA)",
+      "award_amount": "VERIFY (awards range $500-$10,000)",
+      "deadline": "VERIFY",
+      "url": "https://aiaa.org/get-involved/university-students/undergraduate-scholarships-graduate-awards/eligibility-requirements/",
+      "eligibility": {
+        "min_gpa": 3.3,
+        "fields_of_study": [
+          "engineering",
+          "science"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships ($500-$10,000) for AIAA student members pursuing science or engineering degrees leading to a career in the aerospace field. Requires AIAA membership, at least one completed semester, and generally a minimum 3.3 GPA; open to students of any nationality.",
+      "verified": false
+    },
+    {
+      "id": "ans-scholarships",
+      "name": "American Nuclear Society Scholarships",
+      "sponsor": "American Nuclear Society (ANS)",
+      "award_amount": "VERIFY (awards range roughly $1,000-$3,000)",
+      "deadline": "VERIFY",
+      "url": "https://www.ans.org/scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering",
+          "science",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships (roughly $1,000-$3,000) for ANS student members pursuing nuclear science, nuclear engineering, or a nuclear-related field, plus an incoming-freshman award for graduating high school seniors. Requires ANS membership and enrollment at an accredited U.S. institution.",
+      "verified": false
+    },
+    {
+      "id": "tau-beta-pi-scholarship",
+      "name": "Tau Beta Pi Scholarship Program",
+      "sponsor": "Tau Beta Pi Association (The Engineering Honor Society)",
+      "award_amount": "$2,000 (full year) or $1,000 (one semester)",
+      "deadline": "VERIFY",
+      "url": "https://www.tbp.org/scholarships.cfm",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering"
+        ],
+        "grade_levels": [
+          "college_junior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Awards of $2,000 (full year) or $1,000 (one semester) supporting the senior year of full-time undergraduate engineering study. Restricted to initiated members of the Tau Beta Pi engineering honor society.",
+      "verified": false
+    },
+    {
+      "id": "gmis-scholars-program",
+      "name": "GMiS STEM Scholars Program",
+      "sponsor": "Great Minds in STEM (GMiS)",
+      "award_amount": "VERIFY (awards range $500-$5,000)",
+      "deadline": "VERIFY",
+      "url": "https://greatmindsinstem.org/gmis-scholarship-application/gmis-scholarships/gmis-scholarship-guidelines/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "science",
+          "technology",
+          "engineering",
+          "mathematics",
+          "computer_science",
+          "natural_sciences",
+          "health_medicine"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "hispanic_latino"
+        ],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit- and service-based scholarships ($500-$5,000) for students pursuing STEM or health/medical degrees who are of Hispanic descent or who demonstrate significant service to the Hispanic/underserved community. Minimum 3.0 GPA for merit awards (2.5 for some donor awards).",
+      "verified": false
+    },
+    {
+      "id": "aises-at-anderson-memorial-scholarship",
+      "name": "AISES A.T. Anderson Memorial Scholarship",
+      "sponsor": "American Indian Science and Engineering Society (AISES)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://aises.org/scholarships/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "engineering",
+          "mathematics",
+          "science",
+          "technology",
+          "natural_sciences",
+          "health_medicine",
+          "nursing"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "native_american",
+          "asian_pacific_islander"
+        ],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit-based scholarship for AISES members pursuing STEM-related degrees who are enrolled citizens or descendants of a recognized American Indian Tribe/Alaska Native Village, Native Hawaiian, Pacific Islander, or Indigenous Canadian. Requires AISES membership and a minimum 3.0 GPA.",
+      "verified": false
+    },
+    {
+      "id": "fnsna-undergraduate-scholarship",
+      "name": "FNSNA Undergraduate Scholarship",
+      "sponsor": "Foundation of the National Student Nurses' Association (FNSNA)",
+      "award_amount": "Up to $10,000",
+      "deadline": "VERIFY",
+      "url": "https://www.forevernursing.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "nursing",
+          "health_medicine"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Need- and merit-based scholarships (up to $10,000) for students enrolled in state-approved nursing programs (ADN, BSN, diploma, direct-entry master's, RN-to-BSN/MSN, or LPN/LVN-to-RN). High school students are not eligible; open to U.S. citizens and permanent residents.",
+      "verified": false
+    },
+    {
+      "id": "aacn2-pathway-critical-care-nursing-scholarship",
+      "name": "AACN2: Pathway to Critical Care Nursing Scholarship",
+      "sponsor": "American Association of Critical-Care Nurses & American Association of Colleges of Nursing",
+      "award_amount": 2500,
+      "deadline": "VERIFY",
+      "url": "https://www.aacnnursing.org/foundation/scholarships/aacn-2-pathway-to-critical-care-nursing-scholarship",
+      "eligibility": {
+        "min_gpa": 3.2,
+        "fields_of_study": [
+          "nursing",
+          "health_medicine"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$2,500 scholarships for prelicensure students in entry-level baccalaureate (BSN) nursing programs at AACN member schools who are committed to critical care nursing, have a minimum 3.2 GPA, and will graduate within 6-12 months.",
+      "verified": false
+    },
+    {
+      "id": "bmi-composer-awards",
+      "name": "BMI Composer Awards (formerly BMI Student Composer Awards)",
+      "sponsor": "BMI Foundation",
+      "award_amount": "awards totaling $20,000 annually, shared among multiple winners",
+      "deadline": "VERIFY",
+      "url": "https://bmifoundation.org/by-application/bmicomposerawards",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "music"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Annual competition recognizing young composers of classical/concert music who are under age 28. Applicants must reside in the U.S. or its territories, or be citizens of any country in the Western Hemisphere; works are judged anonymously.",
+      "verified": false
+    },
+    {
+      "id": "ascap-morton-gould-young-composer-awards",
+      "name": "The ASCAP Foundation Morton Gould Young Composer Awards",
+      "sponsor": "The ASCAP Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.ascapfoundation.org/programs/awards/young-composer-awards",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "music"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Honors emerging composers of original concert music who are at least 13 and under age 30. Open to U.S. citizens, permanent residents, or students with a valid U.S. student visa; submissions are scored on a single original work.",
+      "verified": false
+    },
+    {
+      "id": "aiga-worldstudio-dxd-scholarships",
+      "name": "AIGA Worldstudio D×D Scholarships",
+      "sponsor": "AIGA (the professional association for design)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.aiga.org/professional-development/aiga-worldstudio-dd-scholarships",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "arts"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Need-based scholarships for students of communication design, illustration, or photography at U.S. colleges who show commitment to social change and diversity. Requires demonstrated financial need; DACA status alone does not qualify.",
+      "verified": false
+    },
+    {
+      "id": "scholastic-art-writing-awards",
+      "name": "Scholastic Art & Writing Awards",
+      "sponsor": "Alliance for Young Artists & Writers",
+      "award_amount": "up to $12,500",
+      "deadline": "VERIFY",
+      "url": "https://www.artandwriting.org/awards/scholarships/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "arts",
+          "literature"
+        ],
+        "grade_levels": [
+          "middle_school",
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Longest-running recognition program for creative teens in grades 7-12 (age 13+), offering scholarships to national medalists across visual art and writing categories. Open to students residing in the U.S., U.S. territories or military bases, or Canada.",
+      "verified": false
+    },
+    {
+      "id": "princess-grace-awards",
+      "name": "Princess Grace Awards",
+      "sponsor": "Princess Grace Foundation-USA",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://pgfusa.org/apply/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "arts"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Grants supporting extraordinary emerging artists in theater, dance, and film (film accepts directors only). Applicants must live and work in the U.S. (non-citizens need USCIS work authorization) and must be nominated by a nonprofit university, organization, or prior winner; self-nominations are not allowed.",
+      "verified": false
+    },
+    {
+      "id": "aba-legal-opportunity-scholarship",
+      "name": "ABA Legal Opportunity Scholarship",
+      "sponsor": "American Bar Association",
+      "award_amount": "$15,000 over three years ($5,000 per year)",
+      "deadline": "VERIFY",
+      "url": "https://www.americanbar.org/groups/diversity/diversity_pipeline/projects_initiatives/legal_opportunity_scholarship/",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [
+          "law"
+        ],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [
+          "native_american",
+          "asian_pacific_islander",
+          "african_american",
+          "hispanic_latino"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Supports incoming first-year law students from underrepresented racial and ethnic groups who will attend an ABA-accredited law school. Requires a minimum 2.5 undergraduate GPA and a personal statement.",
+      "verified": false
+    },
+    {
+      "id": "sigma-tau-delta-scholarships",
+      "name": "Sigma Tau Delta Scholarships and Awards",
+      "sponsor": "Sigma Tau Delta International English Honor Society",
+      "award_amount": "up to $6,000",
+      "deadline": "VERIFY",
+      "url": "https://english.org/opportunities/scholarships/scholarship-descriptions/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "literature",
+          "humanities"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Annual scholarships for undergraduate and graduate English students who are active members of a Sigma Tau Delta chapter. Requires active society membership plus an application essay and recommendations.",
+      "verified": false
+    },
+    {
+      "id": "national-press-club-journalism-diversity-scholarship",
+      "name": "Scholarship for Journalism Diversity Honoring Julie Schoo",
+      "sponsor": "National Press Club Journalism Institute",
+      "award_amount": "$5,000 per year, renewable up to three years (up to $20,000)",
+      "deadline": "VERIFY",
+      "url": "https://www.pressclubinstitute.org/national-press-club-scholarship-opportunities/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "communications"
+        ],
+        "demographics": [
+          "native_american",
+          "asian_pacific_islander",
+          "african_american",
+          "hispanic_latino"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarship for graduating high school seniors who plan to pursue a journalism career and will bring diversity to U.S. journalism. Requires a 3.0+ GPA and work samples; U.S. citizenship is not required to apply.",
+      "verified": false
+    },
+    {
+      "id": "rtdna-foundation-scholarships",
+      "name": "RTDNA Foundation Scholarships",
+      "sponsor": "Radio Television Digital News Association (RTDNA) Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.rtdna.org/rtdna-foundation",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "communications"
+        ],
+        "grade_levels": [
+          "college_sophomore",
+          "college_junior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "A suite of national scholarships for college students pursuing careers in radio, television, or digital journalism; recipients must be full-time sophomores, juniors, or seniors. U.S. citizenship is not required, but non-citizens must have a U.S. Taxpayer Identification Number.",
+      "verified": false
+    },
+    {
+      "id": "quill-and-scroll-journalism-scholarships",
+      "name": "Quill and Scroll Foundation Student Scholarships in Journalism",
+      "sponsor": "Quill and Scroll Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://quillandscroll.org/scholarships-2/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "communications"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships for high school seniors who intend to major in journalism or a related communications field. Several awards require being a national winner in a Quill and Scroll contest or an inducted senior member.",
+      "verified": false
+    },
+    {
+      "id": "prssa-prsa-foundation-scholarships",
+      "name": "PRSSA / PRSA Foundation Scholarships",
+      "sponsor": "Public Relations Student Society of America (PRSSA) / PRSA Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.prsa.org/prssa/scholarships-awards",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "communications"
+        ],
+        "grade_levels": [
+          "college_junior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National scholarships (such as the Betsy Plank/PRSSA Scholarship) for college students pursuing public relations and communications careers. Most awards require active PRSSA membership.",
+      "verified": false
+    },
+    {
+      "id": "deca-scholarships",
+      "name": "DECA Scholarship Program",
+      "sponsor": "DECA Inc.",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.deca.org/scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "business"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit-based scholarships for current DECA members who intend to study marketing, finance, hospitality, management, or entrepreneurship. Requires active, dues-paying DECA membership.",
+      "verified": false
+    },
+    {
+      "id": "fbla-scholarships",
+      "name": "FBLA Scholarships",
+      "sponsor": "Future Business Leaders of America (FBLA)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.fbla.org/high-school/hs-scholarships-aid/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "business"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships (including the Pearson Futures and Distinguished Business Leader awards) for FBLA members pursuing business-related postsecondary study. Requires active FBLA membership and legal U.S. residency.",
+      "verified": false
+    },
+    {
+      "id": "nfmc-competitions-and-awards",
+      "name": "National Federation of Music Clubs Competitions and Awards",
+      "sponsor": "National Federation of Music Clubs (NFMC)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.nfmc-music.org/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "music"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "A large slate of national music competitions and scholarships across performance, composition, music education, and music therapy for junior and student/collegiate musicians. Most individual awards require applicants to be native-born or naturalized U.S. citizens (a few endowed awards have exceptions) and, for some categories, NFMC membership.",
+      "verified": false
+    },
+    {
+      "id": "phi-alpha-theta-scholarships",
+      "name": "Phi Alpha Theta Scholarships and Awards",
+      "sponsor": "Phi Alpha Theta History Honor Society",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://phialphatheta.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "humanities"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships, paper prizes, and awards for undergraduate and graduate history students (e.g., the Graydon A. Tunstall Undergraduate Scholarship). Requires membership in the Phi Alpha Theta honor society.",
+      "verified": false
+    },
+    {
+      "id": "pdk-educational-foundation-scholarship",
+      "name": "PDK Educational Foundation Scholarship Program",
+      "sponsor": "Phi Delta Kappa International / Educators Rising",
+      "award_amount": "VERIFY ($500–$5,000 depending on award)",
+      "deadline": "VERIFY",
+      "url": "https://pdkintl.org/pdk-scholarship/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "education"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "About 100 scholarships annually for students pursuing careers in K-12 public education. Requires membership in Educators Rising, Educators Rising Collegiate, Pi Lambda Theta, or the PDK Association.",
+      "verified": false
+    },
+    {
+      "id": "princeton-prize-race-relations",
+      "name": "Princeton Prize in Race Relations",
+      "sponsor": "Princeton University (Princeton Prize in Race Relations)",
+      "award_amount": 2500,
+      "deadline": "VERIFY",
+      "url": "https://pprize.princeton.edu/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Cash award recognizing high school students (grades 9-12) who, through volunteer work, have demonstrated leadership in advancing racial equity or understanding in their school or community. Open to all students regardless of identity; not restricted by field of study.",
+      "verified": false
+    },
+    {
+      "id": "psi-chi-undergraduate-scholarship",
+      "name": "Psi Chi Undergraduate Scholarship",
+      "sponsor": "Psi Chi, The International Honor Society in Psychology",
+      "award_amount": 3000,
+      "deadline": "VERIFY",
+      "url": "https://www.psichi.org/page/1_undergrad_main",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "social_sciences"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarship for undergraduate psychology students who are members of Psi Chi. Requires active Psi Chi membership; the society also offers numerous research and travel grants.",
+      "verified": false
+    },
+    {
+      "id": "hispanic-heritage-youth-awards",
+      "name": "Hispanic Heritage Youth Awards",
+      "sponsor": "Hispanic Heritage Foundation",
+      "award_amount": "VERIFY (one-time educational grants vary by category)",
+      "deadline": "VERIFY",
+      "url": "https://hispanicheritage.org/programs/leadership/youth-awards/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [
+          "hispanic_latino"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Awards for graduating high school seniors of Hispanic heritage (including ancestry from Spain, Brazil, the Philippines, or Latin America) who excel in the classroom and community across categories such as engineering, technology, and community service.",
+      "verified": false
+    },
+    {
+      "id": "lulac-national-scholarship-fund",
+      "name": "LULAC National Scholarship Fund",
+      "sponsor": "LULAC National Educational Service Centers (LNESC)",
+      "award_amount": "$250 to $2,000",
+      "deadline": "VERIFY",
+      "url": "https://www.lnesc.org/scholarships/lulac/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
+      },
+      "description": "Administered by the League of United Latin American Citizens to support the Latino community; applicants must reside in an area served by a participating local LULAC Council and apply through that council.",
+      "verified": false
+    },
+    {
+      "id": "maldef-law-school-scholarship",
+      "name": "MALDEF Law School Scholarship Program",
+      "sponsor": "Mexican American Legal Defense and Educational Fund (MALDEF)",
+      "award_amount": "$2,000 to $10,000",
+      "deadline": "VERIFY",
+      "url": "https://www.maldef.org/resources/scholarship-resources/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "law"
+        ],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For full-time students enrolled at an accredited U.S. law school (open regardless of immigration status, including DACA recipients) who demonstrate a commitment to advancing the civil rights of the Latino community.",
+      "verified": false
+    },
+    {
+      "id": "cobell-scholarship",
+      "name": "Cobell Scholarship",
+      "sponsor": "Indigenous Education, Inc.",
+      "award_amount": "VERIFY (merit-based, disbursed per unmet need)",
+      "deadline": "VERIFY",
+      "url": "https://cobellscholar.org/our-scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "native_american"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For enrolled members of U.S. federally recognized Tribes or Alaska Native corporations pursuing vocational, undergraduate, graduate, or professional degrees at accredited nonprofit institutions.",
+      "verified": false
+    },
+    {
+      "id": "native-forward-scholars-fund",
+      "name": "Native Forward Scholars Fund",
+      "sponsor": "Native Forward Scholars Fund (formerly American Indian Graduate Center)",
+      "award_amount": "VERIFY (varies by opportunity)",
+      "deadline": "VERIFY",
+      "url": "https://www.nativeforward.org/scholarship-finder/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [
+          "native_american"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For enrolled members or descendants of U.S. federally or state-recognized American Indian Tribes or Alaska Native groups pursuing undergraduate, graduate, or professional degrees; requires a Tribal Eligibility Certificate and FAFSA.",
+      "verified": false
+    },
+    {
+      "id": "paul-daisy-soros-new-americans",
+      "name": "Paul & Daisy Soros Fellowships for New Americans",
+      "sponsor": "Paul & Daisy Soros Fellowships for New Americans",
+      "award_amount": "up to $90,000 (over up to two years)",
+      "deadline": "VERIFY",
+      "url": "https://pdsoros.org/application-process/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
+      },
+      "description": "Merit-based fellowship for New Americans (immigrants or the children of immigrants, including naturalized citizens, green-card holders, refugees/asylees, and DACA recipients), age 30 or younger, pursuing a full-time U.S. graduate or professional degree.",
+      "verified": false
+    },
+    {
+      "id": "thedream-us-national-scholarship",
+      "name": "TheDream.US National Scholarship",
+      "sponsor": "TheDream.US",
+      "award_amount": "up to $16,500 (associate) or up to $33,000 (bachelor's)",
+      "deadline": "VERIFY",
+      "url": "https://www.thedream.us/scholarships/national-scholarship/",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For first-generation immigrant students who are undocumented (with or without DACA or TPS), came to the U.S. before age 16 and before Nov. 1, 2020, and attend a partner college; funds tuition and fees at one of TheDream.US Partner Colleges.",
+      "verified": false
+    },
+    {
+      "id": "pat-tillman-foundation-scholarship",
+      "name": "Tillman Scholars Program",
+      "sponsor": "Pat Tillman Foundation",
+      "award_amount": "VERIFY (award amounts vary)",
+      "deadline": "VERIFY",
+      "url": "https://pattillmanfoundation.org/apply/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For U.S. military veterans, active-duty service members (including National Guard/Reserve), and current or surviving military spouses enrolled full-time in an undergraduate, graduate, or professional degree; child dependents are not eligible.",
+      "verified": false
+    },
+    {
+      "id": "amvets-national-scholarships",
+      "name": "AMVETS National Scholarship Program",
+      "sponsor": "AMVETS (American Veterans)",
+      "award_amount": "$4,000 to $12,000",
+      "deadline": "VERIFY",
+      "url": "https://www.amvets.org/scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "For U.S. citizen veterans and active-duty/Guard/Reserve service members, as well as the spouses, children, and grandchildren of veterans or active-duty members, pursuing an undergraduate degree; demonstrated financial need required.",
+      "verified": false
+    },
+    {
+      "id": "scholarships-for-military-children",
+      "name": "Scholarships for Military Children",
+      "sponsor": "Fisher House Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.fisherhouse.org/programs/scholarship-programs/scholarships-for-military-children/",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For unmarried military dependent children under age 23 with a valid Uniformed Services ID card whose sponsor is active duty, reserve/guard, retired, or deceased; for full-time undergraduate study (high school applicants 3.0 GPA, college applicants 2.5 GPA).",
+      "verified": false
+    },
+    {
+      "id": "folds-of-honor-higher-education",
+      "name": "Folds of Honor Higher Education Scholarship",
+      "sponsor": "Folds of Honor Foundation",
+      "award_amount": "up to $5,000 per academic year",
+      "deadline": "VERIFY",
+      "url": "https://foldsofhonor.org/scholarships/",
+      "eligibility": {
+        "min_gpa": 2.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For the spouses and dependent children of U.S. service members who have fallen or have a service-connected disability (VA rating of at least 10%); awarded based on unmet financial need for postsecondary study.",
+      "verified": false
+    },
+    {
+      "id": "dav-jesse-brown-memorial-youth",
+      "name": "Jesse Brown Memorial Youth Scholarship",
+      "sponsor": "Disabled American Veterans (DAV)",
+      "award_amount": "$2,500 to $30,000 (multiple awards)",
+      "deadline": "VERIFY",
+      "url": "https://www.dav.org/get-involved/volunteer/dav-scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For youth volunteers age 21 or younger who have completed at least 100 lifetime volunteer hours serving veterans through DAV or the DAV Auxiliary; usable at any accredited institution of higher learning.",
+      "verified": false
+    },
+    {
+      "id": "point-foundation-flagship",
+      "name": "Point Foundation Flagship Scholarship",
+      "sponsor": "Point Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://pointfoundation.org/scholarships/flagship",
+      "eligibility": {
+        "min_gpa": 3.3,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For LGBTQ+ and ally students (at least a high school senior) enrolled full-time in a bachelor's, graduate, or professional degree at an accredited, not-for-profit U.S. college or university; requires a connection and commitment to the LGBTQ+ community.",
+      "verified": false
+    },
+    {
+      "id": "jacl-national-scholarship",
+      "name": "JACL National Scholarship Program",
+      "sponsor": "Japanese American Citizens League (JACL)",
+      "award_amount": "VERIFY (one-time awards)",
+      "deadline": "VERIFY",
+      "url": "https://jacl.org/scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Administered by the Japanese American Citizens League for students entering or attending college at the undergraduate, graduate, law, or creative/performing arts level; every applicant must hold an individual or student/youth JACL membership (open to all ethnic backgrounds).",
+      "verified": false
+    },
+    {
+      "id": "oca-ups-gold-mountain",
+      "name": "OCA-UPS Gold Mountain Scholarship",
+      "sponsor": "OCA - Asian Pacific American Advocates",
+      "award_amount": 2000,
+      "deadline": "VERIFY",
+      "url": "https://www.ocanational.org/scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Administered by OCA - Asian Pacific American Advocates for first-generation college students (whose parents did not complete a college degree); applicants need not be U.S. citizens, but DACA/undocumented students must have an SSN or ITIN.",
+      "verified": false
+    },
+    {
+      "id": "lime-connect-pathways-scholarship",
+      "name": "Lime Connect Pathways Scholarship for High School Seniors",
+      "sponsor": "Lime Connect",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.limeconnect.com/pathwaysscholarship",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For current high school seniors with a visible or invisible disability who are pursuing a degree at a four-year university or college in the U.S. or Canada; requires joining the (free) Lime Network.",
+      "verified": false
+    },
+    {
+      "id": "microsoft-disability-scholarship",
+      "name": "Microsoft Disability Scholarship",
+      "sponsor": "Microsoft (Disability at Microsoft Inclusion Network)",
+      "award_amount": "$5,000 per year (renewable up to $20,000)",
+      "deadline": "VERIFY",
+      "url": "https://www.microsoft.com/en-us/diversity/programs/microsoftdisabilityscholarship",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [
+          "engineering",
+          "computer_science",
+          "technology",
+          "business",
+          "law"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For current high school seniors living with a disability who plan to pursue an undergraduate degree in technology-related fields (engineering, computer science, business, law, or related); financial need required.",
+      "verified": false
+    },
+    {
+      "id": "anne-ford-scholarship",
+      "name": "Anne Ford Scholarship",
+      "sponsor": "National Center for Learning Disabilities (NCLD)",
+      "award_amount": "$10,000 ($2,500 per year over four years)",
+      "deadline": "VERIFY",
+      "url": "https://ncld.org/scholarships-awards/anne-ford-scholarship/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "For graduating high school seniors with a documented learning disability (LD) who will enroll full-time in a four-year bachelor's degree program; demonstrated financial need required.",
+      "verified": false
+    },
+    {
+      "id": "knights-of-columbus-pro-deo-pro-patria",
+      "name": "Pro Deo and Pro Patria Scholarships",
+      "sponsor": "Knights of Columbus",
+      "award_amount": "up to $1,500 per year (renewable up to four years)",
+      "deadline": "VERIFY",
+      "url": "https://www.kofc.org/resources/scholarships/us-undergraduate-scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "For a Knights of Columbus member in good standing (or the son/daughter of such a member or deceased member, or a Columbian Squire) entering freshman year full-time in a bachelor's program at a Catholic college or university in the United States.",
+      "verified": false
+    },
+    {
+      "id": "coolidge-scholarship",
+      "name": "Coolidge Scholarship",
+      "sponsor": "Calvin Coolidge Presidential Foundation",
+      "award_amount": "full ride (tuition, room, board, and expenses for four years of undergraduate study)",
+      "deadline": "VERIFY",
+      "url": "https://coolidgescholars.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Full-ride, need-blind merit scholarship for U.S. high school juniors to attend any accredited U.S. college or university; emphasizes academic excellence and interest in public policy. Application includes multiple essays, and current high school seniors are not eligible to apply.",
+      "verified": false
+    },
+    {
+      "id": "cooke-young-scholars",
+      "name": "Jack Kent Cooke Foundation Young Scholars Program",
+      "sponsor": "Jack Kent Cooke Foundation",
+      "award_amount": "comprehensive five-year pre-college scholarship with advising and enrichment funding",
+      "deadline": "VERIFY",
+      "url": "https://www.jkcf.org/our-scholarships/young-scholars-program/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "middle_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Selective five-year pre-college scholarship for high-achieving 7th-grade students with financial need (family adjusted gross income up to $95,000); provides educational advising and funding for enrichment through high school. Requires mostly A's since 6th grade.",
+      "verified": false
+    },
+    {
+      "id": "carson-scholars",
+      "name": "Carson Scholars Fund Scholarship",
+      "sponsor": "Carson Scholars Fund",
+      "award_amount": 1000,
+      "deadline": "VERIFY",
+      "url": "https://carsonscholars.org/",
+      "eligibility": {
+        "min_gpa": 3.75,
+        "fields_of_study": [],
+        "grade_levels": [
+          "middle_school",
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$1,000 college scholarship for students in grades 4-11 at accredited U.S. schools who maintain at least a 3.75 GPA and demonstrate strong community service. Students must be nominated by a school official and cannot self-apply.",
+      "verified": false
+    },
+    {
+      "id": "amazon-future-engineer",
+      "name": "Amazon Future Engineer Scholarship",
+      "sponsor": "Amazon",
+      "award_amount": "up to $40,000 (up to $10,000 per year) plus a paid Amazon internship offer",
+      "deadline": "VERIFY",
+      "url": "https://www.amazonfutureengineer.com/scholarships",
+      "eligibility": {
+        "min_gpa": 2.3,
+        "fields_of_study": [
+          "computer_science",
+          "engineering"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarship for U.S. high school seniors with financial need pursuing computer science or engineering degrees; covers unmet need up to $10,000 per year and includes a paid Amazon internship offer. Requires a completed CS course or passing an Amazon assessment.",
+      "verified": false
+    },
+    {
+      "id": "chick-fil-a-remarkable-futures",
+      "name": "Chick-fil-A Remarkable Futures Scholarship",
+      "sponsor": "Chick-fil-A, Inc.",
+      "award_amount": "$1,000, $2,500, or $25,000 depending on scholarship tier",
+      "deadline": "VERIFY",
+      "url": "https://www.chick-fil-a.com/remarkable-futures-scholarships",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarship for current Chick-fil-A restaurant Team Members pursuing postsecondary education (minimum 2.5 GPA; the $25,000 True Inspiration tier requires a 3.0 GPA and financial need). Requires current employment at an eligible Chick-fil-A and a leadership recommendation.",
+      "verified": false
+    },
+    {
+      "id": "american-legion-oratorical",
+      "name": "American Legion National High School Oratorical Contest",
+      "sponsor": "The American Legion",
+      "award_amount": "up to $25,000 (national first place); $2,000 or more for advancing competitors",
+      "deadline": "VERIFY",
+      "url": "https://www.legion.org/get-involved/youth-programs/oratorical-contest",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Public-speaking scholarship contest for U.S. students under age 20 enrolled in grades 9-12, who deliver a prepared oration and an impromptu discourse on the U.S. Constitution. National finalists receive up to $25,000.",
+      "verified": false
+    },
+    {
+      "id": "vfw-voice-of-democracy",
+      "name": "VFW Voice of Democracy Scholarship",
+      "sponsor": "Veterans of Foreign Wars (VFW)",
+      "award_amount": "up to $35,000 (national first place)",
+      "deadline": "VERIFY",
+      "url": "https://vfw.org/community/youth-and-education/youth-scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Audio-essay scholarship competition for students in grades 9-12 who write and record a speech on an annual patriotic theme; entries are submitted through a local VFW Post. National first place is a $35,000 scholarship.",
+      "verified": false
+    },
+    {
+      "id": "vfw-patriots-pen",
+      "name": "VFW Patriot's Pen Essay Contest",
+      "sponsor": "Veterans of Foreign Wars (VFW)",
+      "award_amount": "up to $5,000 (national first place)",
+      "deadline": "VERIFY",
+      "url": "https://vfw.org/community/youth-and-education/youth-scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "middle_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Patriotic-themed written essay contest (300-400 words) for students in grades 6-8; entries are submitted through a local VFW Post. National first place wins $5,000.",
+      "verified": false
+    },
+    {
+      "id": "rotary-global-grant-scholarship",
+      "name": "Rotary Foundation Global Grant Scholarship",
+      "sponsor": "The Rotary Foundation (Rotary International)",
+      "award_amount": "$30,000 or more (varies by sponsoring district)",
+      "deadline": "VERIFY",
+      "url": "https://www.rotary.org/en/our-programs/scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Funds graduate-level study abroad (typically a year or more) aligned with one of Rotary's seven areas of focus. Applicants must be endorsed and sponsored by a local Rotary club, and application processes and deadlines are managed at the district level.",
+      "verified": false
+    },
+    {
+      "id": "dar-scholarships",
+      "name": "DAR Scholarship Program",
+      "sponsor": "National Society Daughters of the American Revolution",
+      "award_amount": "VERIFY (varies by individual scholarship)",
+      "deadline": "VERIFY",
+      "url": "https://www.dar.org/national-society/scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "A suite of merit- and need-based scholarships for U.S. citizens attending or planning to attend accredited U.S. colleges; DAR chapter sponsorship is not required. Individual awards target specific fields (e.g., history, nursing, law, education) and have their own eligibility criteria.",
+      "verified": false
+    },
+    {
+      "id": "elks-legacy-awards",
+      "name": "Elks National Foundation Legacy Awards",
+      "sponsor": "Elks National Foundation",
+      "award_amount": 4000,
+      "deadline": "VERIFY",
+      "url": "https://www.elks.org/scholars/Scholarships/default.cfm",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$4,000 scholarships for high school seniors who are the child, grandchild, step-(grand)child, or legal ward of a living, dues-paying Elks member; recipients complete service with an Elks Lodge during college. Membership-linked and distinct from the Elks Most Valuable Student contest.",
+      "verified": false
+    },
+    {
+      "id": "ayn-rand-essay-contests",
+      "name": "Ayn Rand Institute Essay Contests",
+      "sponsor": "Ayn Rand Institute",
+      "award_amount": "up to $25,000 (varies by contest)",
+      "deadline": "VERIFY",
+      "url": "https://www.aynrand.org/students/essay-contests",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Annual essay contests on Ayn Rand's novels (Anthem and The Fountainhead for grades 8-12; Atlas Shrugged for high school seniors, college, and graduate students). Open to students worldwide, with top prizes reaching $25,000.",
+      "verified": false
+    },
+    {
+      "id": "bri-myimpact-challenge",
+      "name": "Bill of Rights Institute MyImpact Challenge",
+      "sponsor": "Bill of Rights Institute",
+      "award_amount": "up to $10,000 (grand prize)",
+      "deadline": "VERIFY",
+      "url": "https://billofrightsinstitute.org/myimpact-challenge-student-page/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "middle_school",
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Civic-engagement competition for U.S. students ages 13-19 (grades 7-12) who design and carry out a community project, then submit an essay, project report, and media. Grand prize is $10,000. (Replaces the discontinued We the Students essay contest.)",
+      "verified": false
+    },
+    {
+      "id": "dosomething-scholarships",
+      "name": "DoSomething.org Scholarships",
+      "sponsor": "DoSomething.org",
+      "award_amount": "varies (commonly $1,500-$2,500 per campaign)",
+      "deadline": "VERIFY",
+      "url": "https://dosomething.org/pays-to-do-good",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "middle_school",
+          "high_school",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarship opportunities for young people ages 13-25 who complete volunteer or community-service campaigns; no GPA, essay, or recommendations required, and winners are selected by random drawing. Open to U.S. residents and U.S. citizens living abroad.",
+      "verified": false
+    },
+    {
+      "id": "rhodes-scholarship",
+      "name": "Rhodes Scholarship",
+      "sponsor": "The Rhodes Trust",
+      "award_amount": "full funding for graduate study at the University of Oxford",
+      "deadline": "VERIFY",
+      "url": "https://www.rhodeshouse.ox.ac.uk/scholarships/applications/united-states/",
+      "eligibility": {
+        "min_gpa": 3.7,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
+      },
+      "description": "Fully funded postgraduate scholarship for study at the University of Oxford. The U.S. constituency is open to U.S. citizens, permanent residents, and DACA recipients aged roughly 18-23 (or under 27 with a late first degree) and requires institutional endorsement.",
+      "verified": false
+    },
+    {
+      "id": "marshall-scholarship",
+      "name": "Marshall Scholarship",
+      "sponsor": "Marshall Aid Commemoration Commission",
+      "award_amount": "full funding for graduate study in the United Kingdom",
+      "deadline": "VERIFY",
+      "url": "https://www.marshallscholarship.org/",
+      "eligibility": {
+        "min_gpa": 3.7,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Funds up to 50 U.S. citizens per year for graduate study in any field at any UK university. Requires a first undergraduate degree (minimum 3.7 GPA) earned within roughly two years of applying; applicants who already hold a UK degree are ineligible.",
+      "verified": false
+    },
+    {
+      "id": "gates-cambridge-scholarship",
+      "name": "Gates Cambridge Scholarship",
+      "sponsor": "Gates Cambridge Trust, University of Cambridge",
+      "award_amount": "full-cost scholarship for postgraduate study at the University of Cambridge",
+      "deadline": "VERIFY",
+      "url": "https://www.gatescambridge.org/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Full-cost postgraduate scholarship at the University of Cambridge for students from outside the UK (about 25 awards in the dedicated U.S. round each year), available in any subject. Selection emphasizes academic excellence, leadership, and commitment to improving others' lives.",
+      "verified": false
+    },
+    {
+      "id": "schwarzman-scholars",
+      "name": "Schwarzman Scholars",
+      "sponsor": "Schwarzman Scholars (Tsinghua University)",
+      "award_amount": "full scholarship for a one-year master's at Tsinghua University",
+      "deadline": "VERIFY",
+      "url": "https://www.schwarzmanscholars.org/admissions/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Fully funded one-year Master's in Global Affairs at Tsinghua University in Beijing, open to applicants of all majors from any country (about 45% of scholars are from the U.S.). Applicants must be 18-28 with a completed undergraduate degree and strong English proficiency.",
+      "verified": false
+    },
+    {
+      "id": "churchill-scholarship",
+      "name": "Churchill Scholarship",
+      "sponsor": "Winston Churchill Foundation of the United States",
+      "award_amount": "full funding for one year of graduate study at the University of Cambridge",
+      "deadline": "VERIFY",
+      "url": "https://www.churchillscholarship.org/the-scholarship",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering",
+          "mathematics",
+          "science",
+          "natural_sciences",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Funds one year of master's study in STEM fields (science, mathematics, engineering, computer science) at Churchill College, University of Cambridge, for U.S. citizens. Applicants must be nominated by one of the participating U.S. institutions.",
+      "verified": false
+    },
+    {
+      "id": "knight-hennessy-scholars",
+      "name": "Knight-Hennessy Scholars",
+      "sponsor": "Stanford University",
+      "award_amount": "full funding for a Stanford graduate degree",
+      "deadline": "VERIFY",
+      "url": "https://knight-hennessy.stanford.edu/admission/before-you-apply/eligibility",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Fully funded scholarship supporting any full-time Stanford graduate degree (e.g., MA, MS, MBA, JD, MD, PhD); open to applicants of all fields from any country. Requires a bachelor's degree earned in 2020 or later and separate admission to a Stanford graduate program.",
+      "verified": false
     }
   ]
 }

@@ -217,6 +217,7 @@ def _evaluate_scholarship(
         deadline=scholarship.deadline,
         url=str(scholarship.url),
         verified=scholarship.verified,
+        essay_required=scholarship.eligibility.essay_required,
         closing_soon=closing_soon,
         score=breakdown.total,
         match_tier=_match_tier(breakdown.total),

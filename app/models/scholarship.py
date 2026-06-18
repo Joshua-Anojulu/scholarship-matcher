@@ -20,7 +20,7 @@ class Eligibility(BaseModel):
     )
     demographics: list[str] = Field(
         default_factory=list,
-        description='Tags like "first_generation", "stem", "women_in_tech".',
+        description='Race and ethnicity tags like "african_american", "hispanic_latino", "asian_pacific_islander".',
     )
     states: Union[list[str], Literal["any", "VERIFY"]] = "any"
     essay_required: bool = False

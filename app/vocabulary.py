@@ -32,32 +32,46 @@ CITIZENSHIP_OPTIONS: dict[str, str] = {
     "International student": "international",
 }
 
-# Demographic tags appearing in eligibility.demographics across the dataset.
+# Demographic tags are race and ethnicity categories only. Non-racial criteria
+# (financial need, first-generation status, athletics, etc.) are intentionally
+# excluded. Values for African American, Asian/Pacific Islander, and
+# Hispanic/Latino match strings used in eligibility.demographics in the dataset.
 DEMOGRAPHIC_TAG_OPTIONS: dict[str, str] = {
-    "African American": "african_american",
-    "Asian/Pacific Islander": "asian_pacific_islander",
-    "Demonstrated financial need": "financial_need",
-    "Faced financial adversity": "financial_adversity",
-    "First-generation student": "first_generation",
-    "Gifted student": "gifted",
-    "Hispanic/Latino": "hispanic_latino",
-    "Leadership": "leadership",
-    "Minority": "minority",
-    "Pell-eligible": "pell_eligible",
-    "Student athlete": "student_athlete",
+    "American Indian or Alaska Native": "native_american",
+    "Asian or Pacific Islander": "asian_pacific_islander",
+    "Black or African American": "african_american",
+    "Hispanic or Latino": "hispanic_latino",
+    "Middle Eastern or North African": "middle_eastern_north_african",
+    "Multiracial": "multiracial",
+    "White": "white",
 }
 
-# Broad field-of-study categories appearing in eligibility.fields_of_study.
+# Academic field-of-study categories appearing in eligibility.fields_of_study.
+# Recognized academic subject areas only (no catch-all categories). Some areas
+# overlap (for example "science" and "natural sciences"); the matcher scores by
+# string overlap, so broader and narrower tags can coexist.
 FIELD_OF_STUDY_OPTIONS: dict[str, str] = {
+    "Agriculture": "agriculture",
+    "Architecture": "architecture",
+    "Arts (visual and performing)": "arts",
+    "Business": "business",
+    "Communications and journalism": "communications",
+    "Computer science": "computer_science",
+    "Education": "education",
     "Engineering": "engineering",
+    "Environmental science": "environmental_science",
+    "Health and medicine": "health_medicine",
+    "Humanities": "humanities",
+    "Law": "law",
     "Literature": "literature",
     "Mathematics": "mathematics",
     "Music": "music",
     "Natural sciences": "natural_sciences",
-    "Outside the box": "outside_the_box",
+    "Nursing": "nursing",
     "Philosophy": "philosophy",
     "Research": "research",
     "Science": "science",
+    "Social sciences": "social_sciences",
     "Technology": "technology",
 }
 
