@@ -8,6 +8,8 @@ class ScoreBreakdown(BaseModel):
 
     field_of_study: float = 0.0
     demographics: float = 0.0
+    activities: float = 0.0
+    financial_need: float = 0.0
     total: float = 0.0
 
 

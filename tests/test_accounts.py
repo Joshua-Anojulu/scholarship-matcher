@@ -196,3 +196,138 @@ class TestSavedScholarships:
 
         signup(client, email="b@example.com")
         assert client.get("/account/saved").json()["saved"] == []
+
+
+class TestApplicationTracker:
+    def _first_id(self, client):
+        return client.get("/scholarships").json()[0]["id"]
+
+    def test_saved_item_defaults_to_interested(self, client):
+        signup(client)
+        scholarship_id = self._first_id(client)
+        created = client.post(f"/account/saved/{scholarship_id}")
+        assert created.status_code == 201
+        assert created.json()["status"] == "interested"
+        assert created.json()["notes"] == ""
+
+    def test_update_status_and_notes(self, client):
+        signup(client)
+        scholarship_id = self._first_id(client)
+        client.post(f"/account/saved/{scholarship_id}")
+
+        updated = client.patch(
+            f"/account/saved/{scholarship_id}",
+            json={"status": "submitted", "notes": "Sent June 1"},
+        )
+        assert updated.status_code == 200
+        body = updated.json()
+        assert body["status"] == "submitted"
+        assert body["notes"] == "Sent June 1"
+
+        item = client.get("/account/saved").json()["saved"][0]
+        assert item["status"] == "submitted"
+        assert item["notes"] == "Sent June 1"
+
+    def test_update_only_notes_keeps_status(self, client):
+        signup(client)
+        scholarship_id = self._first_id(client)
+        client.post(f"/account/saved/{scholarship_id}")
+        client.patch(f"/account/saved/{scholarship_id}", json={"status": "drafting"})
+        client.patch(f"/account/saved/{scholarship_id}", json={"notes": "almost done"})
+        item = client.get("/account/saved").json()["saved"][0]
+        assert item["status"] == "drafting"
+        assert item["notes"] == "almost done"
+
+    def test_invalid_status_returns_422(self, client):
+        signup(client)
+        scholarship_id = self._first_id(client)
+        client.post(f"/account/saved/{scholarship_id}")
+        bad = client.patch(f"/account/saved/{scholarship_id}", json={"status": "banana"})
+        assert bad.status_code == 422
+
+    def test_update_unknown_saved_returns_404(self, client):
+        signup(client)
+        response = client.patch(
+            "/account/saved/does-not-exist", json={"status": "submitted"}
+        )
+        assert response.status_code == 404
+        assert "error" in response.json()["detail"]
+
+    def test_update_requires_login(self, client):
+        response = client.patch("/account/saved/whatever", json={"status": "submitted"})
+        assert response.status_code == 401
+
+
+class TestAccountManagement:
+    def test_change_password_then_login_with_new(self, client):
+        signup(client)
+        changed = client.post(
+            "/auth/change-password",
+            json={"current_password": "password123", "new_password": "newpassword456"},
+        )
+        assert changed.status_code == 200
+        client.post("/auth/logout")
+
+        old = client.post(
+            "/auth/login",
+            json={"email": "student@example.com", "password": "password123"},
+        )
+        assert old.status_code == 401
+        new = client.post(
+            "/auth/login",
+            json={"email": "student@example.com", "password": "newpassword456"},
+        )
+        assert new.status_code == 200
+
+    def test_change_password_wrong_current_returns_401(self, client):
+        signup(client)
+        response = client.post(
+            "/auth/change-password",
+            json={"current_password": "wrong-password", "new_password": "newpassword456"},
+        )
+        assert response.status_code == 401
+
+    def test_change_password_short_new_returns_422(self, client):
+        signup(client)
+        response = client.post(
+            "/auth/change-password",
+            json={"current_password": "password123", "new_password": "short"},
+        )
+        assert response.status_code == 422
+
+    def test_change_password_requires_login(self, client):
+        response = client.post(
+            "/auth/change-password",
+            json={"current_password": "x", "new_password": "password123"},
+        )
+        assert response.status_code == 401
+
+    def test_delete_account_removes_user_and_session(self, client):
+        signup(client)
+        deleted = client.post("/auth/delete-account", json={"password": "password123"})
+        assert deleted.status_code == 200
+        assert client.get("/auth/me").status_code == 401
+        relogin = client.post(
+            "/auth/login",
+            json={"email": "student@example.com", "password": "password123"},
+        )
+        assert relogin.status_code == 401
+
+    def test_delete_account_wrong_password_returns_401(self, client):
+        signup(client)
+        response = client.post("/auth/delete-account", json={"password": "wrong-password"})
+        assert response.status_code == 401
+        assert client.get("/auth/me").status_code == 200
+
+    def test_delete_account_cascades_saved(self, client):
+        signup(client)
+        scholarship_id = client.get("/scholarships").json()[0]["id"]
+        client.post(f"/account/saved/{scholarship_id}")
+        client.post("/auth/delete-account", json={"password": "password123"})
+
+        signup(client)  # same email, fresh account
+        assert client.get("/account/saved").json()["saved"] == []
+
+    def test_delete_account_requires_login(self, client):
+        response = client.post("/auth/delete-account", json={"password": "password123"})
+        assert response.status_code == 401

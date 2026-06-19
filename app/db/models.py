@@ -9,6 +9,7 @@ from sqlalchemy import (
     ForeignKey,
     Integer,
     String,
+    Text,
     UniqueConstraint,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -59,7 +60,11 @@ class UserProfile(Base):
 
 
 class SavedScholarship(Base):
-    """A scholarship a user has bookmarked, referenced by its dataset id."""
+    """A scholarship a user is tracking, referenced by its dataset id.
+
+    Saving a scholarship places it in the application tracker, so each row also
+    carries a pipeline ``status`` and free-text ``notes``.
+    """
 
     __tablename__ = "saved_scholarships"
     __table_args__ = (UniqueConstraint("user_id", "scholarship_id", name="uq_user_scholarship"),)
@@ -69,6 +74,10 @@ class SavedScholarship(Base):
         ForeignKey("users.id", ondelete="CASCADE"), index=True, nullable=False
     )
     scholarship_id: Mapped[str] = mapped_column(String(128), nullable=False)
+    status: Mapped[str] = mapped_column(
+        String(20), nullable=False, default="interested", server_default="interested"
+    )
+    notes: Mapped[str] = mapped_column(Text, nullable=False, default="", server_default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
 
     user: Mapped[User] = relationship(back_populates="saved_scholarships")

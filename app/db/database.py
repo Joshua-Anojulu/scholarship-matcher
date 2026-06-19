@@ -11,7 +11,7 @@ import os
 from collections.abc import Iterator
 from pathlib import Path
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect, text
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 DEFAULT_SQLITE_PATH = Path(__file__).resolve().parent.parent.parent / "scholarships4u.db"
@@ -54,15 +54,41 @@ class Base(DeclarativeBase):
 
 
 def init_db() -> None:
-    """Create tables that do not exist yet.
+    """Create tables that do not exist yet and apply small in-place migrations.
 
-    This is enough for a small project. A schema migration tool (for example
-    Alembic) would be the next step if the models change over time.
+    create_all does not alter existing tables, so columns added to a model after
+    a database already exists are backfilled here. A migration tool (for example
+    Alembic) would be the next step if the schema keeps growing.
     """
 
     from app.db import models  # noqa: F401  (ensure models are registered)
 
     Base.metadata.create_all(bind=engine)
+    _ensure_saved_columns(engine)
+
+
+def _ensure_saved_columns(bind) -> None:
+    """Add the tracker columns (status, notes) to an older saved_scholarships table."""
+
+    inspector = inspect(bind)
+    if "saved_scholarships" not in inspector.get_table_names():
+        return
+    existing = {column["name"] for column in inspector.get_columns("saved_scholarships")}
+    statements: list[str] = []
+    if "status" not in existing:
+        statements.append(
+            "ALTER TABLE saved_scholarships "
+            "ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'interested'"
+        )
+    if "notes" not in existing:
+        statements.append(
+            "ALTER TABLE saved_scholarships ADD COLUMN notes TEXT NOT NULL DEFAULT ''"
+        )
+    if not statements:
+        return
+    with bind.begin() as conn:
+        for statement in statements:
+            conn.execute(text(statement))
 
 
 def get_db() -> Iterator[Session]:

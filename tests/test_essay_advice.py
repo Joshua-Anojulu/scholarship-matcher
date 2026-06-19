@@ -139,3 +139,89 @@ class TestEssayAdviceOpenApi:
         schema = client.get("/openapi.json").json()
         assert "/essay-advice" in schema["paths"]
         assert "post" in schema["paths"]["/essay-advice"]
+
+
+class TestEssayReviewValidation:
+    def test_missing_draft_returns_422(self, client):
+        response = client.post(
+            "/essay-review",
+            json={"student": VALID_STUDENT, "scholarship_id": "coca-cola-scholars"},
+        )
+        assert response.status_code == 422
+
+    def test_empty_draft_returns_422(self, client):
+        response = client.post(
+            "/essay-review",
+            json={
+                "student": VALID_STUDENT,
+                "scholarship_id": "coca-cola-scholars",
+                "draft": "",
+            },
+        )
+        assert response.status_code == 422
+
+    def test_unknown_scholarship_id_returns_404(self, client):
+        response = client.post(
+            "/essay-review",
+            json={
+                "student": VALID_STUDENT,
+                "scholarship_id": "does-not-exist",
+                "draft": "My essay draft about robotics.",
+            },
+        )
+        assert response.status_code == 404
+        assert "error" in response.json()["detail"]
+
+
+class TestEssayReviewErrors:
+    def test_missing_api_key_returns_clean_error(self, client, monkeypatch):
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+
+        response = client.post(
+            "/essay-review",
+            json={
+                "student": VALID_STUDENT,
+                "scholarship_id": "coca-cola-scholars",
+                "draft": "My essay draft about robotics club.",
+            },
+        )
+
+        assert response.status_code == 503
+        assert "error" in response.json()["detail"]
+        assert "sk-ant" not in response.text
+
+
+class TestEssayReviewSuccess:
+    @patch.dict("os.environ", {"ANTHROPIC_API_KEY": FAKE_API_KEY})
+    @patch("app.essay.advice.Anthropic")
+    def test_success_returns_feedback_json(self, mock_anthropic, client):
+        mock_client = MagicMock()
+        mock_anthropic.return_value = mock_client
+        mock_block = MagicMock()
+        mock_block.text = "1. Strengths\nYour robotics example is concrete."
+        mock_response = MagicMock()
+        mock_response.content = [mock_block]
+        mock_client.messages.create.return_value = mock_response
+
+        response = client.post(
+            "/essay-review",
+            json={
+                "student": VALID_STUDENT,
+                "scholarship_id": "coca-cola-scholars",
+                "draft": "My essay about my robotics club leadership.",
+            },
+        )
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["scholarship_id"] == "coca-cola-scholars"
+        assert "feedback" in data
+        assert "robotics" in data["feedback"]
+        assert FAKE_API_KEY not in response.text
+
+
+class TestEssayReviewOpenApi:
+    def test_endpoint_listed_in_openapi(self, client):
+        schema = client.get("/openapi.json").json()
+        assert "/essay-review" in schema["paths"]
+        assert "post" in schema["paths"]["/essay-review"]

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from datetime import date
 
 from app.models.match import MatchResult, ScoreBreakdown
@@ -11,8 +12,38 @@ from app.models.student import StudentProfile
 WEIGHT_FIELD_OF_STUDY = 40.0
 WEIGHT_FIELD_OF_STUDY_OPEN = 10.0
 WEIGHT_DEMOGRAPHICS = 25.0
+WEIGHT_ACTIVITY_MATCH = 5.0
+WEIGHT_ACTIVITIES_CAP = 10.0
+WEIGHT_FINANCIAL_NEED_HIGH = 10.0
+WEIGHT_FINANCIAL_NEED_MEDIUM = 5.0
 STRONG_MATCH_THRESHOLD = 35.0
 CLOSING_SOON_DAYS = 30
+
+# Activity keywords are matched against the scholarship description as a small,
+# capped bonus. Structural words carry no signal, so we drop them before matching.
+_WORD_RE = re.compile(r"[a-z]+")
+_ACTIVITY_STOPWORDS = frozenset(
+    {
+        "the", "and", "for", "with", "club", "team", "society", "group", "member",
+        "captain", "president", "vice", "varsity", "school", "high", "college",
+        "university", "junior", "senior", "national", "honor", "student", "students",
+    }
+)
+
+# Substrings that mark a scholarship as need-based in its description. Matched on
+# the raw lowercased text so multi-word phrases like "financial need" are caught.
+_NEED_KEYWORDS = (
+    "financial need",
+    "need-based",
+    "need based",
+    "low-income",
+    "low income",
+    "underserved",
+    "economically disadvantaged",
+    "economic hardship",
+    "demonstrated need",
+    "pell",
+)
 
 _CITIZENSHIP_ALLOWED: dict[str, set[str]] = {
     "us_citizen": {"us_citizen"},
@@ -87,6 +118,31 @@ def _matching_demographics(student_tags: list[str], required_tags: list[str]) ->
     return [tag for tag in required_tags if _normalize_tag(tag) in student_set]
 
 
+def _activity_keywords(activities: list[str]) -> set[str]:
+    """Pull meaningful, deduplicated keywords out of free-text activity strings."""
+    keywords: set[str] = set()
+    for activity in activities:
+        for token in _WORD_RE.findall(activity.lower()):
+            if len(token) >= 3 and token not in _ACTIVITY_STOPWORDS:
+                keywords.add(token)
+    return keywords
+
+
+def _matching_activities(activities: list[str], description: str) -> list[str]:
+    """Return activity keywords that also appear as whole words in the description."""
+    if not activities:
+        return []
+    description_words = set(_WORD_RE.findall(description.lower()))
+    return sorted(
+        keyword for keyword in _activity_keywords(activities) if keyword in description_words
+    )
+
+
+def _is_need_based(description: str) -> bool:
+    text = description.lower()
+    return any(keyword in text for keyword in _NEED_KEYWORDS)
+
+
 def _state_matches(student_state: str, states: list[str] | str) -> bool:
     if states == "any" or states == "VERIFY":
         return True
@@ -125,8 +181,8 @@ def _evaluate_scholarship(
     closing_soon = False
 
     # GPA, grade level, and state are gate-only criteria: they can exclude a
-    # scholarship but never add ranking points. Fit scoring uses field overlap
-    # and demographic overlap only.
+    # scholarship but never add ranking points. Fit scoring uses field overlap,
+    # demographic overlap, activity keyword overlap, and a need-based signal.
     min_gpa = scholarship.eligibility.min_gpa
     if isinstance(min_gpa, (int, float)):
         if student.gpa < float(min_gpa):
@@ -204,8 +260,29 @@ def _evaluate_scholarship(
     else:
         reasons.append("No demographic tag overlap")
 
+    matched_activities = _matching_activities(student.activities, scholarship.description)
+    if matched_activities:
+        breakdown.activities = min(
+            WEIGHT_ACTIVITY_MATCH * len(matched_activities),
+            WEIGHT_ACTIVITIES_CAP,
+        )
+        reasons.append(
+            "Activities align with this scholarship: " + ", ".join(matched_activities)
+        )
+
+    if _is_need_based(scholarship.description):
+        if student.financial_need_level == "high":
+            breakdown.financial_need = WEIGHT_FINANCIAL_NEED_HIGH
+            reasons.append("Need-based award matches your high financial need")
+        elif student.financial_need_level == "medium":
+            breakdown.financial_need = WEIGHT_FINANCIAL_NEED_MEDIUM
+            reasons.append("Need-based award matches your medium financial need")
+
     breakdown.total = round(
-        breakdown.field_of_study + breakdown.demographics,
+        breakdown.field_of_study
+        + breakdown.demographics
+        + breakdown.activities
+        + breakdown.financial_need,
         2,
     )
 

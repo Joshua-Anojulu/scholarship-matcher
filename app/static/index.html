@@ -32,6 +32,7 @@
             Saved <span id="saved-count" class="saved-count" hidden>0</span>
           </button>
           <span id="account-email" class="account-email"></span>
+          <button type="button" class="btn-ghost" id="open-settings">Settings</button>
           <button type="button" class="btn-ghost" id="logout-btn">Log out</button>
         </div>
       </nav>
@@ -72,6 +73,39 @@
     </div>
   </div>
 
+  <div id="settings-modal" class="modal-overlay" hidden>
+    <div class="modal-card panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="modal-head">
+        <h2 id="settings-title">Account settings</h2>
+        <button type="button" class="modal-close" id="settings-close" aria-label="Close">&times;</button>
+      </div>
+
+      <form id="change-password-form" class="auth-form" novalidate>
+        <div class="field">
+          <label for="current-password">Current password</label>
+          <input type="password" id="current-password" autocomplete="current-password" required>
+        </div>
+        <div class="field">
+          <label for="new-password">New password</label>
+          <input type="password" id="new-password" autocomplete="new-password" required>
+          <span class="field-hint">At least 8 characters.</span>
+        </div>
+        <div id="settings-error" class="form-error" role="alert" hidden></div>
+        <div id="settings-success" class="form-success" role="status" hidden></div>
+        <button type="submit" class="btn-primary" id="change-password-submit">Change password</button>
+      </form>
+
+      <div class="danger-zone">
+        <h3>Delete account</h3>
+        <p class="field-hint">
+          This permanently removes your account, saved profile, and tracked scholarships, and cannot be undone.
+          Enter your current password above, then confirm.
+        </p>
+        <button type="button" class="btn-danger" id="delete-account-btn">Delete my account</button>
+      </div>
+    </div>
+  </div>
+
   <main id="main" class="main">
     <section class="intro panel">
       <h1>Build your profile</h1>
@@ -79,6 +113,29 @@
         Tell us where you are in school, what you plan to study, and a few details about your background.
         We rank scholarships by fit and show you exactly why each one matched.
       </p>
+    </section>
+
+    <section class="resume-import panel">
+      <h2 class="resume-import-title">Start from your resume <span class="optional">(optional)</span></h2>
+      <p class="field-hint">
+        Upload a PDF resume or paste its text, and we'll pre-fill the form below for you to review.
+        Nothing is submitted automatically, and your file is not stored.
+      </p>
+      <div class="resume-import-controls">
+        <input type="file" id="resume-file" accept=".pdf,.txt" aria-label="Resume file">
+        <button type="button" class="btn-secondary" id="resume-import-btn">Auto-fill from resume</button>
+      </div>
+      <details class="resume-paste">
+        <summary>Or paste resume text</summary>
+        <textarea id="resume-text" class="essay-review-input" rows="6"
+                  placeholder="Paste your resume text here..."></textarea>
+      </details>
+      <div id="resume-loading" class="essay-advice-loading" hidden>
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <p>Reading your resume...</p>
+      </div>
+      <div id="resume-error" class="essay-advice-error" role="alert" hidden></div>
+      <div id="resume-note" class="resume-note" hidden></div>
     </section>
 
     <form id="profile-form" class="profile-form panel" novalidate>
@@ -176,12 +233,13 @@
             <option value="fit">Best fit</option>
             <option value="name">Name (A&ndash;Z)</option>
             <option value="award">Award (high&rarr;low)</option>
+            <option value="deadline">Deadline (soonest)</option>
           </select>
         </div>
 
         <div class="filter-group filter-group-range">
           <label for="filter-min-score">Min fit score: <span id="filter-min-score-value">0</span></label>
-          <input id="filter-min-score" type="range" min="0" max="65" step="5" value="0" />
+          <input id="filter-min-score" type="range" min="0" max="85" step="5" value="0" />
         </div>
 
         <div class="filter-checks">
@@ -196,6 +254,10 @@
           <label class="filter-check">
             <input id="filter-demographic-match" type="checkbox" />
             <span>Matches my background</span>
+          </label>
+          <label class="filter-check">
+            <input id="filter-closing-soon" type="checkbox" />
+            <span>Closing soon</span>
           </label>
         </div>
 
@@ -219,6 +281,9 @@
       <div class="results-header">
         <h2>Saved scholarships</h2>
         <p id="saved-summary" class="results-summary"></p>
+        <a id="export-ics" class="btn-ghost export-ics" href="/account/saved/calendar.ics" download>
+          Export deadlines (.ics)
+        </a>
       </div>
 
       <div id="saved-empty" class="results-empty panel" hidden>

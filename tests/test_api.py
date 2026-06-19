@@ -137,10 +137,18 @@ class TestMatchEndpoint:
         assert results[0]["match_tier"] == "strong"
         assert results[0]["score"] == max(scores)
 
-        # Among results tied at the open-to-all score (10), names sort alphabetically.
+        # Among results tied at the open-to-all score (10), the matcher orders
+        # confirmed upcoming deadlines first, then alphabetically by name. Restrict
+        # the alphabetical check to entries without a confirmed deadline so it stays
+        # stable as more deadlines are verified in the dataset.
         tied_at_ten = [r for r in results if r["score"] == 10.0]
-        if len(tied_at_ten) > 1:
-            names = [r["scholarship_name"] for r in tied_at_ten]
+        undated_ties = [
+            r
+            for r in tied_at_ten
+            if r["deadline"] == "rolling" or str(r["deadline"]).startswith("VERIFY")
+        ]
+        if len(undated_ties) > 1:
+            names = [r["scholarship_name"] for r in undated_ties]
             assert names == sorted(names, key=str.lower)
 
     def test_match_results_sorted_by_score_descending(self, client):

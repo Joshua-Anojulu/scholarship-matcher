@@ -4,11 +4,13 @@ Scholarships4U is a personal portfolio project that helps U.S. students explore 
 
 ## How it works
 
-**Matching.** The app scores each scholarship with a transparent additive algorithm over field-of-study overlap and demographic tag overlap. GPA, grade level, state, citizenship, and passed deadlines act as hard filters only when the dataset holds a real value (not a `VERIFY` placeholder). Open-to-all scholarships receive a lower field score than specific field matches. Results are grouped into **Strong** and **Possible** tiers, with tie-breaking by confirmed upcoming deadlines and then scholarship name. Every match includes human-readable reasons and a numeric score breakdown.
+**Matching.** The app scores each scholarship with a transparent additive algorithm over field-of-study overlap, demographic tag overlap, activity keywords found in the scholarship description, and a need-based signal for students who indicated financial need. GPA, grade level, state, citizenship, and passed deadlines act as hard filters only when the dataset holds a real value (not a `VERIFY` placeholder). Open-to-all scholarships receive a lower field score than specific field matches. Results are grouped into **Strong** and **Possible** tiers, with tie-breaking by confirmed upcoming deadlines and then scholarship name. Every match includes human-readable reasons and a numeric score breakdown.
 
-**Essay advice.** When a student clicks **Get essay advice** on a result card, the backend sends the student's actual profile inputs and the scholarship description to the Anthropic API. The response suggests essay angles tied to the student's stated activities and background, notes what the sponsor likely values, and flags one common mistake. The API key never leaves the server.
+**Essay advice.** When a student clicks **Get essay advice** on a result card, the backend sends the student's actual profile inputs and the scholarship description to the Anthropic API. The response suggests essay angles tied to the student's stated activities and background, notes what the sponsor likely values, and flags one common mistake. A separate **Review my draft** action sends a draft the student pastes in and returns targeted feedback (strengths, the highest-impact improvements, alignment with the sponsor, and mechanics) without rewriting the essay for them. The API key never leaves the server.
 
-**Accounts.** Accounts are optional. Without one, the app works exactly as before and keeps no data between visits. With an account (email and password), the student's profile is saved and prefilled on their next visit, and they can bookmark scholarships to a personal saved list. Passwords are stored as bcrypt hashes, never in plain text. The login is kept in a signed, httponly session cookie, so the session identifier is not readable by client JavaScript.
+**Resume auto-fill.** A student can upload a PDF resume or paste its text instead of filling the form by hand. The server sends it to the Anthropic API with a tool schema constrained to the app's vocabulary, and the model returns a structured profile that pre-fills the form. Every value is filtered against the allowed vocabulary on the server, so only known tags reach the form, and the student reviews and completes the profile before matching. Demographics are set only when the resume states them explicitly, and the uploaded file is not stored.
+
+**Accounts.** Accounts are optional. Without one, the app works exactly as before and keeps no data between visits. With an account (email and password), the student's profile is saved and prefilled on their next visit, and they can bookmark scholarships to a personal saved list. Saved scholarships double as an application tracker: each one carries a status (interested, drafting, submitted, awarded, or rejected) and free-text notes, so the student can see where every application stands. Matches can be sorted by deadline or filtered to those closing soon, and saved deadlines export to an `.ics` calendar file. Passwords are stored as bcrypt hashes, never in plain text. The login is kept in a signed, httponly session cookie, so the session identifier is not readable by client JavaScript.
 
 ## Tech stack
 
@@ -122,15 +124,21 @@ uvicorn app.main:app --host 0.0.0.0 --port $PORT
 | `GET` | `/scholarships` | Full dataset |
 | `POST` | `/match` | Rank scholarships for a profile |
 | `POST` | `/essay-advice` | Generate essay guidance |
+| `POST` | `/essay-review` | Feedback on a student's essay draft |
+| `POST` | `/resume/extract` | Extract a profile from a resume (PDF or text) |
 | `POST` | `/auth/signup` | Create an account and start a session |
 | `POST` | `/auth/login` | Log in and start a session |
 | `POST` | `/auth/logout` | End the session |
 | `GET` | `/auth/me` | Current logged-in user |
+| `POST` | `/auth/change-password` | Change password (requires login) |
+| `POST` | `/auth/delete-account` | Delete account and all saved data |
 | `GET` | `/account/profile` | Get the saved profile |
 | `PUT` | `/account/profile` | Save or update the profile |
 | `GET` | `/account/saved` | List saved scholarships |
 | `POST` | `/account/saved/{id}` | Save a scholarship |
+| `PATCH` | `/account/saved/{id}` | Update tracker status or notes |
 | `DELETE` | `/account/saved/{id}` | Remove a saved scholarship |
+| `GET` | `/account/saved/calendar.ics` | Download saved deadlines as a calendar |
 
 ## Tests
 
@@ -140,6 +148,44 @@ python -m pytest tests/ -v
 ```
 
 Tests mock Anthropic calls. No paid API usage during the test run.
+
+### Dataset validation
+
+Audit the scholarship dataset for structural and vocabulary issues, and see how many fields still need verification:
+
+```bash
+python scripts/validate_dataset.py
+```
+
+It exits non-zero on structural errors (duplicate ids, unparseable deadlines), so it is suitable for a pre-commit or CI check.
+
+## Scholarship data and verification
+
+The dataset in [`app/data/scholarships.json`](app/data/scholarships.json) is a **curated seed set** of real national programs that is verified incrementally over time. Each entry carries a boolean `verified` flag:
+
+- **`verified: true`** — the entry's key facts (award, eligibility, and, where the current cycle is published, the deadline) have been checked against the sponsor's official page. These entries show no "Unverified data" badge in the app.
+- **`verified: false`** (the default) — not yet confirmed. These entries may hold `VERIFY` placeholders for fields that are not yet known (`deadline`, `min_gpa`, `citizenship_requirement`, or `states`). The matcher treats `VERIFY` permissively (it never excludes on an unknown value), and the UI shows an "Unverified data" badge.
+
+### How entries get verified
+
+Verification is an ongoing pass, done in small batches so each fact is checked rather than guessed:
+
+1. Look the program up on its **official sponsor page** (not an aggregator).
+2. Fill the fields that can be confirmed: award amount, GPA floor, grade level, citizenship requirement, and demographic focus.
+3. Set a real ISO `deadline` **only when the sponsor has published the current cycle's date.** Deadlines change yearly, so an unconfirmed date is left as `VERIFY` on purpose — a wrong deadline in a student-facing tool is worse than an honest placeholder.
+4. Flip `verified` to `true` once the material facts are confirmed.
+
+Because some programs have not yet announced their upcoming cycle, full verification is a moving target: a portion of the dataset stays honestly marked `VERIFY` until those dates are posted.
+
+### Checking current status
+
+Run the validator at any time to see how many entries are verified and how many `VERIFY` placeholders remain per field:
+
+```bash
+python scripts/validate_dataset.py
+```
+
+As of the latest update, a first batch of well-known programs (for example Coca-Cola Scholars, The Gates Scholarship, and the Jack Kent Cooke College Scholarship) has been verified, with the remainder in progress.
 
 ## Project structure
 
@@ -167,15 +213,15 @@ scholarship-matcher/
 ## Limitations
 
 - The scholarship dataset is a **curated set** (117 real national programs), not a comprehensive directory.
-- Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them.
+- Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship data and verification](#scholarship-data-and-verification) for how entries are confirmed over time.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
-- Accounts are intentionally basic (email and password). There is no email verification or password reset flow, so this is suited to a demo rather than production use.
+- Accounts support change password and account deletion, but there is no email verification or password reset flow (which would need an email provider), so this is suited to a demo rather than production use.
+- Sensitive endpoints (login, signup, password change, and the AI features) are rate limited per client IP. The limiter is in-memory, which suits a single-instance deploy; multi-instance hosting would need a shared store such as Redis.
 - On the free Postgres tier, saved data should be treated as non-critical because the database can expire after inactivity.
 - This is a **personal portfolio project**, not an official scholarship search or application service.
 
 ## Future work
 
-- Resume parsing as a profile intake method
 - Expand and fully verify the scholarship dataset
 - School-specific scholarship matching
 - Live data integration with sponsor feeds or APIs

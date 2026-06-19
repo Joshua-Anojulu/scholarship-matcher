@@ -6,30 +6,10 @@
       "name": "Coca-Cola Scholars Program",
       "sponsor": "Coca-Cola Scholars Foundation",
       "award_amount": 20000,
-      "deadline": "VERIFY",
+      "deadline": "2026-09-30",
       "url": "https://www.coca-colascholarsfoundation.org/apply/",
       "eligibility": {
-        "min_gpa": "VERIFY",
-        "fields_of_study": [],
-        "grade_levels": [
-          "high_school_senior"
-        ],
-        "demographics": [],
-        "states": "any",
-        "essay_required": true,
-        "citizenship_requirement": "us_citizen_or_permanent_resident"
-      },
-      "description": "Merit-based scholarship for high school seniors planning to pursue postsecondary education. Recognizes leadership, service, and academic achievement."
-    },
-    {
-      "id": "gates-scholarship",
-      "name": "The Gates Scholarship",
-      "sponsor": "Bill & Melinda Gates Foundation",
-      "award_amount": "full cost of attendance (last-dollar scholarship)",
-      "deadline": "VERIFY",
-      "url": "https://www.thegatesscholarship.org/",
-      "eligibility": {
-        "min_gpa": 3.3,
+        "min_gpa": 3.0,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -39,14 +19,41 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_national_or_permanent_resident"
       },
-      "description": "Highly selective last-dollar scholarship for outstanding minority high school seniors from low-income households. Covers full cost of attendance not already met by financial aid."
+      "description": "Merit-based scholarship for high school seniors planning to pursue postsecondary education. Recognizes leadership, service, and academic achievement.",
+      "verified": true
+    },
+    {
+      "id": "gates-scholarship",
+      "name": "The Gates Scholarship",
+      "sponsor": "Bill & Melinda Gates Foundation",
+      "award_amount": "full cost of attendance (last-dollar scholarship)",
+      "deadline": "2026-09-15",
+      "url": "https://www.thegatesscholarship.org/",
+      "eligibility": {
+        "min_gpa": 3.3,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [
+          "african_american",
+          "hispanic_latino",
+          "native_american",
+          "asian_pacific_islander"
+        ],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Highly selective last-dollar scholarship for outstanding minority high school seniors from low-income households. Covers full cost of attendance not already met by financial aid. Applicants must be Pell-eligible.",
+      "verified": true
     },
     {
       "id": "jack-kent-cooke-college",
       "name": "Jack Kent Cooke Foundation College Scholarship Program",
       "sponsor": "Jack Kent Cooke Foundation",
       "award_amount": "up to $55,000 per year",
-      "deadline": "VERIFY",
+      "deadline": "2026-11-11",
       "url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/",
       "eligibility": {
         "min_gpa": 3.5,
@@ -59,7 +66,8 @@
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Supports high-achieving high school seniors with financial need who seek to attend the nation's best four-year colleges and universities."
+      "description": "Supports high-achieving high school seniors with financial need who seek to attend the nation's best four-year colleges and universities. Citizenship requirement: confirm on the sponsor site.",
+      "verified": true
     },
     {
       "id": "dell-scholars",

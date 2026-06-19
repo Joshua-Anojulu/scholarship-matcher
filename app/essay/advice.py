@@ -2,19 +2,13 @@
 
 from __future__ import annotations
 
-import os
 from typing import Any
 
-from anthropic import (
-    Anthropic,
-    APIConnectionError,
-    APITimeoutError,
-    AuthenticationError,
-    NotFoundError,
-    PermissionDeniedError,
-    RateLimitError,
-)
+from anthropic import Anthropic, NotFoundError
 
+from app.llm import AIFeatureError as EssayAdviceError
+from app.llm import get_api_key as _get_api_key
+from app.llm import map_api_error as _map_api_error
 from app.models.scholarship import Scholarship
 from app.models.student import StudentProfile
 
@@ -24,15 +18,7 @@ ESSAY_FALLBACK_MODELS = (
     "claude-3-5-sonnet-20241022",
 )
 ESSAY_MAX_TOKENS = 1024
-
-
-class EssayAdviceError(Exception):
-    """Raised when essay advice cannot be produced; carries a safe user message."""
-
-    def __init__(self, user_message: str, status_code: int = 503) -> None:
-        self.user_message = user_message
-        self.status_code = status_code
-        super().__init__(user_message)
+ESSAY_REVIEW_MAX_TOKENS = 1500
 
 
 SYSTEM_PROMPT = """You are a practical scholarship essay coach for U.S. students.
@@ -102,80 +88,64 @@ Using ONLY the student's real inputs above, write tailored essay guidance with t
 Keep the total response concise and practical. Use plain section headings."""
 
 
-def _get_api_key() -> str | None:
-    raw = os.environ.get("ANTHROPIC_API_KEY")
-    if not raw:
-        return None
-    cleaned = raw.strip().strip('"').strip("'")
-    return cleaned or None
+def build_essay_review_prompt(
+    student: StudentProfile, scholarship: Scholarship, draft: str
+) -> str:
+    return f"""{_format_student_context(student)}
+
+{_format_scholarship_context(scholarship)}
+
+The student has written a draft essay for this scholarship. Review it.
+
+Draft essay:
+\"\"\"
+{draft}
+\"\"\"
+
+Give specific, constructive feedback in these sections:
+
+1. Strengths: What works in this draft and should stay. Point to actual sentences or ideas the student wrote.
+
+2. Specific improvements: The two or three highest-impact changes. Quote or paraphrase the part of the draft you mean, and say concretely what to do instead. Tie advice to the student's real profile and what this sponsor values.
+
+3. Alignment with this scholarship: Whether the draft speaks to what this sponsor appears to value, and what to add or cut to align it better.
+
+4. Mechanics and clarity: One or two notes on structure, wording, or flow.
+
+Be honest and direct. Refer to what the student actually wrote, not hypotheticals. Do not rewrite the essay for them; guide them to revise it themselves."""
 
 
-def _map_api_error(exc: Exception) -> EssayAdviceError:
-    if isinstance(exc, AuthenticationError):
-        return EssayAdviceError(
-            "Essay advice could not connect to the AI service. "
-            "Check that ANTHROPIC_API_KEY in .env is valid and active.",
-            status_code=503,
-        )
-    if isinstance(exc, PermissionDeniedError):
-        return EssayAdviceError(
-            "Essay advice is not available for this API key. "
-            "Confirm your Anthropic account has API access enabled.",
-            status_code=503,
-        )
-    if isinstance(exc, NotFoundError):
-        return EssayAdviceError(
-            "Essay advice could not reach the configured AI model. "
-            "The server may need a model update. Try again later.",
-            status_code=503,
-        )
-    if isinstance(exc, RateLimitError):
-        return EssayAdviceError(
-            "Too many essay advice requests. Wait a minute and try again.",
-            status_code=429,
-        )
-    if isinstance(exc, (APIConnectionError, APITimeoutError)):
-        return EssayAdviceError(
-            "Could not reach the AI service. Check your network and try again.",
-            status_code=503,
-        )
-    return EssayAdviceError(
-        "Essay advice could not be generated right now. Try again in a few minutes.",
-        status_code=503,
-    )
-
-
-def _call_model(client: Anthropic, user_prompt: str, model: str) -> Any:
+def _call_model(client: Anthropic, user_prompt: str, model: str, max_tokens: int) -> Any:
     return client.messages.create(
         model=model,
-        max_tokens=ESSAY_MAX_TOKENS,
+        max_tokens=max_tokens,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": user_prompt}],
     )
 
 
-def generate_essay_advice(
-    student: StudentProfile,
-    scholarship: Scholarship,
+def _complete(
+    user_prompt: str,
     *,
     client: Anthropic | None = None,
+    max_tokens: int = ESSAY_MAX_TOKENS,
 ) -> str:
+    """Run one Anthropic completion with model fallback and safe error mapping."""
     api_key = _get_api_key()
     if not api_key:
         raise EssayAdviceError(
-            "Essay advice is not available right now. The server needs an API key configured.",
+            "This feature is not available right now. The server needs an API key configured.",
             status_code=503,
         )
 
     anthropic_client = client or Anthropic(api_key=api_key)
-    user_prompt = build_essay_prompt(student, scholarship)
     models_to_try = (ESSAY_MODEL, *ESSAY_FALLBACK_MODELS)
 
     response: Any | None = None
     last_error: Exception | None = None
     for model in models_to_try:
         try:
-            response = _call_model(anthropic_client, user_prompt, model)
+            response = _call_model(anthropic_client, user_prompt, model, max_tokens)
             break
         except NotFoundError as exc:
             last_error = exc
@@ -193,8 +163,33 @@ def generate_essay_advice(
     ]
     if not text_blocks:
         raise EssayAdviceError(
-            "Essay advice came back empty. Try again in a few minutes.",
+            "The response came back empty. Try again in a few minutes.",
             status_code=502,
         )
 
     return "\n".join(text_blocks).strip()
+
+
+def generate_essay_advice(
+    student: StudentProfile,
+    scholarship: Scholarship,
+    *,
+    client: Anthropic | None = None,
+) -> str:
+    """Pre-writing guidance: essay angles tailored to the student and scholarship."""
+    return _complete(build_essay_prompt(student, scholarship), client=client)
+
+
+def generate_essay_review(
+    student: StudentProfile,
+    scholarship: Scholarship,
+    draft: str,
+    *,
+    client: Anthropic | None = None,
+) -> str:
+    """Post-writing feedback on the student's actual draft for this scholarship."""
+    return _complete(
+        build_essay_review_prompt(student, scholarship, draft),
+        client=client,
+        max_tokens=ESSAY_REVIEW_MAX_TOKENS,
+    )

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from typing import Literal, Optional
 
 from pydantic import BaseModel, EmailStr, Field
 
@@ -24,6 +25,15 @@ class LoginRequest(BaseModel):
     password: str = Field(min_length=1, max_length=PASSWORD_MAX_LENGTH)
 
 
+class ChangePasswordRequest(BaseModel):
+    current_password: str = Field(min_length=1, max_length=PASSWORD_MAX_LENGTH)
+    new_password: str = Field(min_length=PASSWORD_MIN_LENGTH, max_length=PASSWORD_MAX_LENGTH)
+
+
+class DeleteAccountRequest(BaseModel):
+    password: str = Field(min_length=1, max_length=PASSWORD_MAX_LENGTH)
+
+
 class UserResponse(BaseModel):
     id: int
     email: str
@@ -37,13 +47,25 @@ class ProfileResponse(BaseModel):
     updated_at: datetime | None = None
 
 
+SavedStatus = Literal["interested", "drafting", "submitted", "awarded", "rejected"]
+
+
 class SavedScholarshipItem(BaseModel):
     scholarship_id: str
     saved_at: datetime
+    status: SavedStatus = "interested"
+    notes: str = ""
     scholarship: Scholarship | None = Field(
         default=None,
         description="Full scholarship record, or null if it left the dataset.",
     )
+
+
+class SavedUpdateRequest(BaseModel):
+    """Patch the tracker fields on a saved scholarship. Omitted fields are unchanged."""
+
+    status: Optional[SavedStatus] = None
+    notes: Optional[str] = Field(default=None, max_length=2000)
 
 
 class SavedListResponse(BaseModel):

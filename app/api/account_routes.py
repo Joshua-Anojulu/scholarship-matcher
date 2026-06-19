@@ -3,15 +3,18 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi.responses import Response
 from sqlalchemy.orm import Session
 
 from app.auth.dependencies import get_current_user
 from app.db.database import get_db
 from app.db.models import SavedScholarship, User, UserProfile
+from app.ics import build_calendar
 from app.models.auth import (
     ProfileResponse,
     SavedListResponse,
     SavedScholarshipItem,
+    SavedUpdateRequest,
 )
 from app.models.scholarship import Scholarship
 from app.models.student import StudentProfile
@@ -76,11 +79,36 @@ def list_saved(
         SavedScholarshipItem(
             scholarship_id=row.scholarship_id,
             saved_at=row.created_at,
+            status=row.status,
+            notes=row.notes,
             scholarship=index.get(row.scholarship_id),
         )
         for row in rows
     ]
     return SavedListResponse(saved=items)
+
+
+@router.get("/saved/calendar.ics")
+def saved_calendar(
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> Response:
+    index = _scholarship_index(request)
+    rows = (
+        db.query(SavedScholarship)
+        .filter(SavedScholarship.user_id == user.id)
+        .order_by(SavedScholarship.created_at.desc())
+        .all()
+    )
+    scholarships = [index[row.scholarship_id] for row in rows if row.scholarship_id in index]
+    return Response(
+        content=build_calendar(scholarships),
+        media_type="text/calendar",
+        headers={
+            "Content-Disposition": 'attachment; filename="scholarship-deadlines.ics"'
+        },
+    )
 
 
 @router.post(
@@ -114,6 +142,8 @@ def save_scholarship(
         return SavedScholarshipItem(
             scholarship_id=existing.scholarship_id,
             saved_at=existing.created_at,
+            status=existing.status,
+            notes=existing.notes,
             scholarship=scholarship,
         )
 
@@ -124,7 +154,48 @@ def save_scholarship(
     return SavedScholarshipItem(
         scholarship_id=row.scholarship_id,
         saved_at=row.created_at,
+        status=row.status,
+        notes=row.notes,
         scholarship=scholarship,
+    )
+
+
+@router.patch("/saved/{scholarship_id}", response_model=SavedScholarshipItem)
+def update_saved_scholarship(
+    scholarship_id: str,
+    body: SavedUpdateRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> SavedScholarshipItem:
+    row = (
+        db.query(SavedScholarship)
+        .filter(
+            SavedScholarship.user_id == user.id,
+            SavedScholarship.scholarship_id == scholarship_id,
+        )
+        .first()
+    )
+    if row is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "That scholarship is not in your saved list."},
+        )
+
+    if body.status is not None:
+        row.status = body.status
+    if body.notes is not None:
+        row.notes = body.notes
+    db.commit()
+    db.refresh(row)
+
+    index = _scholarship_index(request)
+    return SavedScholarshipItem(
+        scholarship_id=row.scholarship_id,
+        saved_at=row.created_at,
+        status=row.status,
+        notes=row.notes,
+        scholarship=index.get(row.scholarship_id),
     )
 
 

@@ -791,6 +791,189 @@ input[type="checkbox"]:focus {
   white-space: pre-wrap;
 }
 
+.essay-review-form {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.essay-review-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.essay-review-input:focus {
+  outline: none;
+  border-color: var(--mint);
+}
+
+.essay-review-form .btn-primary {
+  align-self: flex-start;
+}
+
+.resume-import-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+}
+
+.resume-import-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.resume-paste {
+  margin-top: 0.5rem;
+}
+
+.resume-paste summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--mint);
+  font-weight: 600;
+}
+
+.resume-paste textarea {
+  margin-top: 0.5rem;
+}
+
+.resume-note {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--mint-faint);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--slate);
+}
+
+.resume-note-detail {
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.tracker-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.tracker-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tracker-field-notes {
+  flex: 1 1 240px;
+}
+
+.tracker-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--slate);
+}
+
+.tracker-status {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tracker-notes {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tracker-status:focus,
+.tracker-notes:focus {
+  outline: none;
+  border-color: var(--mint);
+}
+
+.match-card.status-awarded {
+  border-color: var(--mint-soft);
+}
+
+.match-card.status-rejected {
+  opacity: 0.72;
+}
+
+.export-ics {
+  text-decoration: none;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.btn-danger {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  background: var(--surface);
+  color: var(--error);
+  border: 1px solid var(--error);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background: var(--error-bg);
+}
+
+.form-success {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--mint-faint);
+  color: var(--ink);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.danger-zone {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.danger-zone h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  color: var(--error);
+}
+
 /* Loading */
 .loading {
   display: flex;

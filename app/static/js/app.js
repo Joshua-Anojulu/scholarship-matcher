@@ -58,6 +58,7 @@ const filterMinScoreValue = document.getElementById("filter-min-score-value");
 const filterNoEssay = document.getElementById("filter-no-essay");
 const filterFieldMatch = document.getElementById("filter-field-match");
 const filterDemographicMatch = document.getElementById("filter-demographic-match");
+const filterClosingSoon = document.getElementById("filter-closing-soon");
 const filterClear = document.getElementById("filter-clear");
 
 document.addEventListener("DOMContentLoaded", init);
@@ -81,6 +82,8 @@ async function init() {
   form.addEventListener("submit", handleSubmit);
   wireAuthControls();
   wireFilterControls();
+  wireResumeImport();
+  wireSettings();
   await loadSession();
 }
 
@@ -96,6 +99,7 @@ function wireFilterControls() {
   filterNoEssay.addEventListener("change", rerenderResults);
   filterFieldMatch.addEventListener("change", rerenderResults);
   filterDemographicMatch.addEventListener("change", rerenderResults);
+  filterClosingSoon.addEventListener("change", rerenderResults);
   filterClear.addEventListener("click", resetFilters);
 }
 
@@ -107,6 +111,7 @@ function resetFilters() {
   filterNoEssay.checked = false;
   filterFieldMatch.checked = false;
   filterDemographicMatch.checked = false;
+  filterClosingSoon.checked = false;
   rerenderResults();
 }
 
@@ -141,6 +146,9 @@ function applyResultFilters(results) {
     if (filterDemographicMatch.checked && (r.score_breakdown?.demographics ?? 0) <= 0) {
       return false;
     }
+    if (filterClosingSoon.checked && !r.closing_soon) {
+      return false;
+    }
     return true;
   });
 }
@@ -158,11 +166,23 @@ function sortResults(results) {
     case "award":
       sorted.sort((a, b) => awardSortValue(b.award_amount) - awardSortValue(a.award_amount));
       break;
+    case "deadline":
+      sorted.sort((a, b) => deadlineSortValue(a.deadline) - deadlineSortValue(b.deadline));
+      break;
     default:
       // "fit": preserve the server's score/deadline/name ordering.
       break;
   }
   return sorted;
+}
+
+// Soonest real deadline first; rolling and unverified deadlines sort to the end.
+function deadlineSortValue(deadline) {
+  if (!deadline || deadline === "rolling" || String(deadline).startsWith("VERIFY")) {
+    return Infinity;
+  }
+  const time = new Date(deadline).getTime();
+  return Number.isNaN(time) ? Infinity : time;
 }
 
 // Best-effort numeric value for sorting only; descriptive/VERIFY amounts sort last.
@@ -175,6 +195,235 @@ function awardSortValue(amount) {
     return -1;
   }
   return Math.max(...numbers.map((n) => Number(n.replace(/,/g, ""))));
+}
+
+/* ---------- Resume auto-fill ---------- */
+
+function wireResumeImport() {
+  const importBtn = document.getElementById("resume-import-btn");
+  if (importBtn) {
+    importBtn.addEventListener("click", handleResumeImport);
+  }
+}
+
+async function handleResumeImport() {
+  const fileInput = document.getElementById("resume-file");
+  const textInput = document.getElementById("resume-text");
+  const loading = document.getElementById("resume-loading");
+  const errorEl = document.getElementById("resume-error");
+  const noteEl = document.getElementById("resume-note");
+  const importBtn = document.getElementById("resume-import-btn");
+
+  const file = fileInput.files && fileInput.files[0];
+  const text = (textInput.value || "").trim();
+  if (!file && !text) {
+    errorEl.textContent = "Choose a PDF or paste your resume text first.";
+    errorEl.hidden = false;
+    return;
+  }
+
+  errorEl.hidden = true;
+  noteEl.hidden = true;
+  loading.hidden = false;
+  importBtn.disabled = true;
+
+  try {
+    const formData = new FormData();
+    if (file) {
+      formData.append("file", file);
+    }
+    if (text) {
+      formData.append("text", text);
+    }
+
+    const response = await fetch("/resume/extract", { method: "POST", body: formData });
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      errorEl.textContent = extractError(
+        data,
+        "We could not read that resume. Try pasting the text instead."
+      );
+      errorEl.hidden = false;
+      return;
+    }
+
+    const profile = data.profile || {};
+    prefillForm(profile);
+
+    noteEl.innerHTML = "";
+    const summary = summarizeExtraction(profile);
+    const intro = document.createElement("p");
+    intro.textContent = summary
+      ? `Pre-filled ${summary}. Review everything below, then add anything missing.`
+      : "We could not pull much from that resume. Fill in the form below.";
+    noteEl.appendChild(intro);
+    if (data.notes) {
+      const detail = document.createElement("p");
+      detail.className = "resume-note-detail";
+      detail.textContent = data.notes;
+      noteEl.appendChild(detail);
+    }
+    noteEl.hidden = false;
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (err) {
+    errorEl.textContent = "Could not reach the server. Check your connection and try again.";
+    errorEl.hidden = false;
+    console.error(err);
+  } finally {
+    loading.hidden = true;
+    importBtn.disabled = false;
+  }
+}
+
+function summarizeExtraction(profile) {
+  const parts = [];
+  if (profile.gpa !== undefined && profile.gpa !== null) parts.push("GPA");
+  if (profile.grade_level) parts.push("grade level");
+  if (profile.state) parts.push("state");
+  if (profile.citizenship) parts.push("citizenship");
+  if (profile.intended_majors && profile.intended_majors.length) parts.push("fields of study");
+  if (profile.demographic_tags && profile.demographic_tags.length) parts.push("background");
+  if (profile.activities && profile.activities.length) parts.push("activities");
+  if (profile.target_schools && profile.target_schools.length) parts.push("target schools");
+  if (parts.length === 0) return "";
+  if (parts.length === 1) return parts[0];
+  return parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1];
+}
+
+/* ---------- Account settings ---------- */
+
+const settingsModal = document.getElementById("settings-modal");
+
+function wireSettings() {
+  const openBtn = document.getElementById("open-settings");
+  if (!openBtn || !settingsModal) {
+    return;
+  }
+  openBtn.addEventListener("click", openSettingsModal);
+  document.getElementById("settings-close").addEventListener("click", closeSettingsModal);
+  settingsModal.addEventListener("click", (event) => {
+    if (event.target === settingsModal) {
+      closeSettingsModal();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !settingsModal.hidden) {
+      closeSettingsModal();
+    }
+  });
+  document
+    .getElementById("change-password-form")
+    .addEventListener("submit", handleChangePassword);
+  document
+    .getElementById("delete-account-btn")
+    .addEventListener("click", handleDeleteAccount);
+}
+
+function openSettingsModal() {
+  hideSettingsMessages();
+  document.getElementById("change-password-form").reset();
+  settingsModal.hidden = false;
+  document.getElementById("current-password").focus();
+}
+
+function closeSettingsModal() {
+  settingsModal.hidden = true;
+  hideSettingsMessages();
+}
+
+function hideSettingsMessages() {
+  const error = document.getElementById("settings-error");
+  const success = document.getElementById("settings-success");
+  error.hidden = true;
+  error.textContent = "";
+  success.hidden = true;
+  success.textContent = "";
+}
+
+function showSettingsError(message) {
+  const error = document.getElementById("settings-error");
+  document.getElementById("settings-success").hidden = true;
+  error.textContent = message;
+  error.hidden = false;
+}
+
+async function handleChangePassword(event) {
+  event.preventDefault();
+  hideSettingsMessages();
+  const current = document.getElementById("current-password").value;
+  const next = document.getElementById("new-password").value;
+  if (!current) {
+    showSettingsError("Enter your current password.");
+    return;
+  }
+  if (next.length < 8) {
+    showSettingsError("Choose a new password with at least 8 characters.");
+    return;
+  }
+  const submit = document.getElementById("change-password-submit");
+  submit.disabled = true;
+  try {
+    const response = await fetch("/auth/change-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ current_password: current, new_password: next }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      showSettingsError(extractError(data, "Could not change your password. Try again."));
+      return;
+    }
+    const success = document.getElementById("settings-success");
+    success.textContent = "Password changed.";
+    success.hidden = false;
+    document.getElementById("change-password-form").reset();
+  } catch (err) {
+    showSettingsError("Could not reach the server. Check your connection and try again.");
+    console.error(err);
+  } finally {
+    submit.disabled = false;
+  }
+}
+
+async function handleDeleteAccount() {
+  hideSettingsMessages();
+  const password = document.getElementById("current-password").value;
+  if (!password) {
+    showSettingsError("Enter your current password above to confirm deletion.");
+    return;
+  }
+  if (
+    !window.confirm(
+      "Delete your account permanently? This removes your profile and saved scholarships."
+    )
+  ) {
+    return;
+  }
+  try {
+    const response = await fetch("/auth/delete-account", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      showSettingsError(extractError(data, "Could not delete your account. Try again."));
+      return;
+    }
+    currentUser = null;
+    savedIds.clear();
+    savedSection.hidden = true;
+    closeSettingsModal();
+    renderAuthState();
+    updateSavedCount();
+    if (lastResults) {
+      renderResults(lastResults);
+    }
+  } catch (err) {
+    showSettingsError("Could not reach the server. Check your connection and try again.");
+    console.error(err);
+  }
 }
 
 /* ---------- Auth wiring ---------- */
@@ -467,6 +716,36 @@ async function showSavedView() {
   savedSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+const SAVED_STATUSES = [
+  { value: "interested", label: "Interested" },
+  { value: "drafting", label: "Drafting" },
+  { value: "submitted", label: "Submitted" },
+  { value: "awarded", label: "Awarded" },
+  { value: "rejected", label: "Rejected" },
+];
+
+function trackerSummary(items) {
+  const counts = {};
+  for (const item of items) {
+    const status = item.status || "interested";
+    counts[status] = (counts[status] || 0) + 1;
+  }
+  const parts = SAVED_STATUSES.filter((s) => counts[s.value]).map(
+    (s) => `${counts[s.value]} ${s.label.toLowerCase()}`
+  );
+  const total = items.length;
+  const head = `${total} saved scholarship${total === 1 ? "" : "s"}`;
+  return parts.length ? `${head} — ${parts.join(", ")}.` : `${head}.`;
+}
+
+function refreshTrackerSummary() {
+  const selects = savedContainer.querySelectorAll(".tracker-status");
+  const items = Array.from(selects).map((select) => ({ status: select.value }));
+  if (items.length > 0) {
+    savedSummary.textContent = trackerSummary(items);
+  }
+}
+
 function renderSaved(items) {
   savedContainer.innerHTML = "";
   if (!items || items.length === 0) {
@@ -475,14 +754,86 @@ function renderSaved(items) {
     return;
   }
   savedEmpty.hidden = true;
-  savedSummary.textContent = `${items.length} saved scholarship${items.length === 1 ? "" : "s"}.`;
+  savedSummary.textContent = trackerSummary(items);
 
   for (const item of items) {
     if (!item.scholarship) {
       continue;
     }
     const card = buildCard(scholarshipToCard(item.scholarship), "strong");
+    card.classList.add(`status-${item.status || "interested"}`);
+    card.appendChild(buildTrackerControls(item, card));
     savedContainer.appendChild(card);
+  }
+}
+
+function buildTrackerControls(item, card) {
+  const wrap = document.createElement("div");
+  wrap.className = "tracker-controls";
+
+  const statusField = document.createElement("div");
+  statusField.className = "tracker-field";
+  const statusLabelEl = document.createElement("span");
+  statusLabelEl.className = "tracker-label";
+  statusLabelEl.textContent = "Status";
+  const select = document.createElement("select");
+  select.className = "tracker-status";
+  for (const opt of SAVED_STATUSES) {
+    const option = document.createElement("option");
+    option.value = opt.value;
+    option.textContent = opt.label;
+    if ((item.status || "interested") === opt.value) {
+      option.selected = true;
+    }
+    select.appendChild(option);
+  }
+  select.addEventListener("change", async () => {
+    const ok = await patchSaved(item.scholarship_id, { status: select.value });
+    if (ok) {
+      card.className = card.className.replace(/\bstatus-\w+\b/, `status-${select.value}`);
+      refreshTrackerSummary();
+    }
+  });
+  statusField.appendChild(statusLabelEl);
+  statusField.appendChild(select);
+
+  const notesField = document.createElement("div");
+  notesField.className = "tracker-field tracker-field-notes";
+  const notesLabelEl = document.createElement("span");
+  notesLabelEl.className = "tracker-label";
+  notesLabelEl.textContent = "Notes";
+  const notes = document.createElement("textarea");
+  notes.className = "tracker-notes";
+  notes.rows = 2;
+  notes.maxLength = 2000;
+  notes.value = item.notes || "";
+  notes.placeholder = "Deadlines, requirements, where you left off...";
+  let lastSaved = item.notes || "";
+  notes.addEventListener("blur", () => {
+    if (notes.value !== lastSaved) {
+      lastSaved = notes.value;
+      patchSaved(item.scholarship_id, { notes: notes.value });
+    }
+  });
+  notesField.appendChild(notesLabelEl);
+  notesField.appendChild(notes);
+
+  wrap.appendChild(statusField);
+  wrap.appendChild(notesField);
+  return wrap;
+}
+
+async function patchSaved(scholarshipId, payload) {
+  try {
+    const response = await fetch(`/account/saved/${encodeURIComponent(scholarshipId)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return response.ok;
+  } catch (err) {
+    console.error(err);
+    return false;
   }
 }
 
@@ -968,10 +1319,71 @@ function buildCard(card, tierClass) {
   );
   actions.appendChild(adviceBtn);
 
+  const reviewBtn = document.createElement("button");
+  reviewBtn.type = "button";
+  reviewBtn.className = "btn-secondary";
+  reviewBtn.textContent = "Review my draft";
+
+  const reviewForm = document.createElement("div");
+  reviewForm.className = "essay-review-form";
+  reviewForm.hidden = true;
+
+  const reviewInput = document.createElement("textarea");
+  reviewInput.className = "essay-review-input";
+  reviewInput.rows = 8;
+  reviewInput.maxLength = 8000;
+  reviewInput.placeholder =
+    "Paste your draft essay here, then click Get feedback. Your profile answers are included automatically.";
+
+  const reviewSubmit = document.createElement("button");
+  reviewSubmit.type = "button";
+  reviewSubmit.className = "btn-primary";
+  reviewSubmit.textContent = "Get feedback";
+
+  reviewForm.appendChild(reviewInput);
+  reviewForm.appendChild(reviewSubmit);
+
+  const reviewLoading = document.createElement("div");
+  reviewLoading.className = "essay-advice-loading";
+  reviewLoading.hidden = true;
+  reviewLoading.innerHTML =
+    '<div class="loading-spinner" aria-hidden="true"></div><p>Reviewing your draft for this scholarship...</p>';
+
+  const reviewError = document.createElement("div");
+  reviewError.className = "essay-advice-error";
+  reviewError.hidden = true;
+  reviewError.setAttribute("role", "alert");
+
+  const reviewPanel = document.createElement("div");
+  reviewPanel.className = "essay-advice-panel";
+  reviewPanel.hidden = true;
+
+  reviewBtn.addEventListener("click", () => {
+    reviewForm.hidden = !reviewForm.hidden;
+    if (!reviewForm.hidden) {
+      reviewInput.focus();
+    }
+  });
+  reviewSubmit.addEventListener("click", () =>
+    handleEssayReview(
+      card.scholarship_id,
+      reviewInput,
+      reviewSubmit,
+      reviewPanel,
+      reviewLoading,
+      reviewError
+    )
+  );
+  actions.appendChild(reviewBtn);
+
   body.appendChild(actions);
   body.appendChild(adviceLoading);
   body.appendChild(adviceError);
   body.appendChild(advicePanel);
+  body.appendChild(reviewForm);
+  body.appendChild(reviewLoading);
+  body.appendChild(reviewError);
+  body.appendChild(reviewPanel);
 
   article.appendChild(pathBar);
   article.appendChild(body);
@@ -1057,6 +1469,72 @@ async function handleEssayAdvice(scholarshipId, button, panel, loading, errorEl)
   } catch (err) {
     errorEl.textContent =
       "Essay advice could not be loaded. Check your connection and try again.";
+    errorEl.hidden = false;
+    console.error(err);
+  } finally {
+    loading.hidden = true;
+    button.disabled = false;
+  }
+}
+
+async function handleEssayReview(scholarshipId, input, button, panel, loading, errorEl) {
+  if (!lastSubmittedProfile) {
+    errorEl.textContent =
+      "Submit your profile first so feedback can use your current answers.";
+    errorEl.hidden = false;
+    panel.hidden = true;
+    return;
+  }
+
+  const draft = input.value.trim();
+  if (!draft) {
+    errorEl.textContent = "Paste your draft essay before asking for feedback.";
+    errorEl.hidden = false;
+    panel.hidden = true;
+    return;
+  }
+
+  errorEl.hidden = true;
+  panel.hidden = true;
+  loading.hidden = false;
+  button.disabled = true;
+
+  try {
+    const response = await fetch("/essay-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        student: lastSubmittedProfile,
+        scholarship_id: scholarshipId,
+        draft,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      const message =
+        data.detail?.error ||
+        (typeof data.detail === "string" ? data.detail : null) ||
+        "Feedback could not be loaded. Try again in a few minutes.";
+      errorEl.textContent = message;
+      errorEl.hidden = false;
+      return;
+    }
+
+    panel.innerHTML = "";
+    const heading = document.createElement("h5");
+    heading.className = "essay-advice-heading";
+    heading.textContent = "Draft feedback";
+    const content = document.createElement("div");
+    content.className = "essay-advice-content";
+    content.textContent = data.feedback;
+    panel.appendChild(heading);
+    panel.appendChild(content);
+    panel.hidden = false;
+  } catch (err) {
+    errorEl.textContent =
+      "Feedback could not be loaded. Check your connection and try again.";
     errorEl.hidden = false;
     console.error(err);
   } finally {

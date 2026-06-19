@@ -14,6 +14,9 @@ os.close(_db_fd)
 # SQLAlchemy SQLite URLs use forward slashes even on Windows.
 os.environ["DATABASE_URL"] = "sqlite:///" + _db_path.replace("\\", "/")
 os.environ.setdefault("SESSION_SECRET", "test-session-secret")
+# Disable rate limiting by default so the suite is not throttled. The dedicated
+# rate-limit test re-enables it for itself.
+os.environ["RATE_LIMIT_ENABLED"] = "false"
 
 
 @atexit.register

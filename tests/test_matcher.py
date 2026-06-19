@@ -262,6 +262,101 @@ class TestPartialMatch:
         assert "Demographic match: african_american" in result.match_reasons
 
 
+class TestActivitiesScoring:
+    def test_activity_keyword_in_description_adds_points(self):
+        student = make_student(activities=["robotics club"])
+        scholarship = make_scholarship(
+            description="Award for students passionate about robotics and engineering.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.activities == pytest.approx(5.0)
+        assert any("robotics" in reason for reason in result.match_reasons)
+
+    def test_activities_bonus_is_capped(self):
+        student = make_student(activities=["robotics", "debate", "chess"])
+        scholarship = make_scholarship(
+            description="We reward excellence in robotics, debate, and chess.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.activities == pytest.approx(10.0)
+
+    def test_no_activity_overlap_scores_zero(self):
+        student = make_student(activities=["swimming"])
+        scholarship = make_scholarship(
+            description="A test scholarship for unit tests.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.activities == pytest.approx(0.0)
+
+    def test_structural_words_do_not_match(self):
+        # "club" and "team" are stopwords and must not score on their own.
+        student = make_student(activities=["chess club", "track team"])
+        scholarship = make_scholarship(
+            description="Our club and team value dedication.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.activities == pytest.approx(0.0)
+
+
+class TestFinancialNeedScoring:
+    def test_need_based_description_rewards_high_need(self):
+        student = make_student(financial_need_level="high")
+        scholarship = make_scholarship(
+            description="A need-based scholarship for students with financial need.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.financial_need == pytest.approx(10.0)
+        assert "Need-based award matches your high financial need" in result.match_reasons
+
+    def test_need_based_medium_need_gets_partial(self):
+        student = make_student(financial_need_level="medium")
+        scholarship = make_scholarship(
+            description="A need based award for low-income students.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.financial_need == pytest.approx(5.0)
+
+    def test_low_need_student_gets_no_need_points(self):
+        student = make_student(financial_need_level="low")
+        scholarship = make_scholarship(
+            description="A need-based scholarship for students with financial need.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.financial_need == pytest.approx(0.0)
+
+    def test_non_need_based_scholarship_scores_zero(self):
+        student = make_student(financial_need_level="high")
+        scholarship = make_scholarship(
+            description="A merit scholarship recognizing academic achievement.",
+            eligibility={"fields_of_study": [], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.financial_need == pytest.approx(0.0)
+
+
 class TestVerifyPlaceholders:
     def test_verify_min_gpa_does_not_exclude(self):
         student = make_student(gpa=2.0)
