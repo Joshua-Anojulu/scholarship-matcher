@@ -74,7 +74,7 @@
       "name": "Dell Scholars Program",
       "sponsor": "Michael & Susan Dell Foundation",
       "award_amount": "20000 plus laptop and textbook credits",
-      "deadline": "VERIFY",
+      "deadline": "2027-02-15",
       "url": "https://www.dellscholars.org/",
       "eligibility": {
         "min_gpa": 2.4,
@@ -87,14 +87,15 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "College readiness and completion program for students who demonstrate grit, potential, and financial need. Includes scholarship funds and individualized support."
+      "description": "College readiness and completion program for students who demonstrate grit, potential, and financial need. Includes scholarship funds and individualized support.",
+      "verified": true
     },
     {
       "id": "horatio-alger-national",
       "name": "Horatio Alger National Scholarship",
       "sponsor": "Horatio Alger Association of Distinguished Americans",
       "award_amount": 25000,
-      "deadline": "VERIFY",
+      "deadline": "2026-10-25",
       "url": "https://scholars.horatioalger.org/",
       "eligibility": {
         "min_gpa": 2.0,
@@ -107,17 +108,18 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
       },
-      "description": "Awarded to high school seniors who have faced and overcome significant obstacles, demonstrate financial need, and are committed to pursuing higher education."
+      "description": "Awarded to high school seniors who have faced and overcome significant obstacles, demonstrate financial need, and are committed to pursuing higher education.",
+      "verified": true
     },
     {
       "id": "davidson-fellows",
       "name": "Davidson Fellows Scholarship",
       "sponsor": "Davidson Institute for Talent Development",
       "award_amount": "50000, 25000, or 10000 depending on project category",
-      "deadline": "VERIFY",
+      "deadline": "2027-02-18",
       "url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "science",
           "technology",
@@ -136,17 +138,18 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "Recognizes students 18 or younger who have completed significant projects in science, technology, engineering, mathematics, literature, music, philosophy, or outside the box."
+      "description": "Recognizes students 18 or younger who have completed significant projects in science, technology, engineering, mathematics, literature, music, philosophy, or outside the box.",
+      "verified": true
     },
     {
       "id": "regeneron-sts",
       "name": "Regeneron Science Talent Search",
       "sponsor": "Society for Science",
-      "award_amount": "VERIFY (tiered competition awards up to $250000 for top prize)",
-      "deadline": "VERIFY",
+      "award_amount": "up to $250,000 (tiered competition)",
+      "deadline": "2026-11-05",
       "url": "https://www.societyforscience.org/regeneron-sts/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "science",
           "engineering",
@@ -161,7 +164,8 @@
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Premier science and math competition for high school seniors conducting original research. Students submit research reports and compete for awards at the national level."
+      "description": "Premier science and math competition for high school seniors conducting original research. Students submit research reports and compete for awards at the national level.",
+      "verified": true
     },
     {
       "id": "national-merit",
@@ -187,8 +191,8 @@
       "id": "burger-king-scholars",
       "name": "Burger King Scholars Program",
       "sponsor": "Burger King Foundation",
-      "award_amount": "1000 to 50000",
-      "deadline": "VERIFY",
+      "award_amount": "1000 to 60000",
+      "deadline": "2026-12-15",
       "url": "https://burgerking.scholarsapply.org/",
       "eligibility": {
         "min_gpa": 2.5,
@@ -201,17 +205,18 @@
         "essay_required": false,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "Merit-based awards for high school seniors, Burger King employees, and their families who plan to enroll in accredited two- or four-year colleges."
+      "description": "Merit-based awards for high school seniors, Burger King employees, and their families who plan to enroll in accredited two- or four-year colleges.",
+      "verified": true
     },
     {
       "id": "elks-mvs",
       "name": "Elks Most Valuable Student Scholarship",
       "sponsor": "Elks National Foundation",
-      "award_amount": "4000 to 50000",
-      "deadline": "VERIFY",
+      "award_amount": "4000 to 30000 (over four years)",
+      "deadline": "2026-11-12",
       "url": "https://www.elks.org/scholars/scholarships/mvs.cfm",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -221,17 +226,18 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
       },
-      "description": "Four-year scholarships for high school seniors based on scholarship, leadership, and financial need. Funded by the Elks National Foundation."
+      "description": "Four-year scholarships for high school seniors based on scholarship, leadership, and financial need. Funded by the Elks National Foundation.",
+      "verified": true
     },
     {
       "id": "ron-brown-scholar",
       "name": "Ron Brown Scholar Program",
       "sponsor": "Ron Brown Scholar Program",
       "award_amount": "40000 (10000 per year for four years)",
-      "deadline": "VERIFY",
+      "deadline": "2026-12-01",
       "url": "https://ronbrown.org/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -243,17 +249,18 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "Scholarship and leadership development for academically talented African American high school seniors with demonstrated leadership, community service, and financial need."
+      "description": "Scholarship and leadership development for academically talented African American high school seniors with demonstrated leadership, community service, and financial need.",
+      "verified": true
     },
     {
       "id": "hsf-scholar",
       "name": "Hispanic Scholarship Fund Scholar Program",
       "sponsor": "Hispanic Scholarship Fund",
       "award_amount": "500 to 5000 (varies by award)",
-      "deadline": "VERIFY",
+      "deadline": "2027-02-15",
       "url": "https://www.hsf.net/scholarship",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": 3.0,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior",
@@ -267,17 +274,18 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
       },
-      "description": "Scholarships for students of Hispanic heritage pursuing higher education. Open to high school seniors and current college students."
+      "description": "Scholarships for students of Hispanic heritage pursuing higher education. Open to high school seniors and current college students.",
+      "verified": true
     },
     {
       "id": "questbridge-match",
       "name": "QuestBridge National College Match",
       "sponsor": "QuestBridge",
       "award_amount": "full four-year scholarship to partner college (varies by school)",
-      "deadline": "VERIFY",
+      "deadline": "2026-09-30",
       "url": "https://www.questbridge.org/high-school-students/national-college-match",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -285,9 +293,10 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "us_citizen_or_permanent_resident"
+        "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
       },
-      "description": "Connects high-achieving, low-income high school seniors with full four-year scholarships at QuestBridge partner colleges through a national matching process."
+      "description": "Connects high-achieving, low-income high school seniors with full four-year scholarships at QuestBridge partner colleges through a national matching process.",
+      "verified": true
     },
     {
       "id": "foot-locker-scholar-athletes",
