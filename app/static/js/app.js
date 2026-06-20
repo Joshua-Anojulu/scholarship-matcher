@@ -167,7 +167,7 @@ function sortResults(results) {
       sorted.sort((a, b) => awardSortValue(b.award_amount) - awardSortValue(a.award_amount));
       break;
     case "deadline":
-      sorted.sort((a, b) => deadlineSortValue(a.deadline) - deadlineSortValue(b.deadline));
+      sorted.sort((a, b) => deadlineSortValue(a) - deadlineSortValue(b));
       break;
     default:
       // "fit": preserve the server's score/deadline/name ordering.
@@ -176,12 +176,17 @@ function sortResults(results) {
   return sorted;
 }
 
-// Soonest real deadline first; rolling and unverified deadlines sort to the end.
-function deadlineSortValue(deadline) {
-  if (!deadline || deadline === "rolling" || String(deadline).startsWith("VERIFY")) {
+// Soonest real deadline first; an estimated date is used as a fallback when there
+// is no confirmed deadline; rolling and unknown deadlines sort to the end.
+function deadlineSortValue(result) {
+  let value = result.deadline;
+  if (!value || value === "rolling" || String(value).startsWith("VERIFY")) {
+    value = result.estimated_deadline;
+  }
+  if (!value || value === "rolling" || String(value).startsWith("VERIFY")) {
     return Infinity;
   }
-  const time = new Date(deadline).getTime();
+  const time = new Date(value).getTime();
   return Number.isNaN(time) ? Infinity : time;
 }
 
@@ -1173,6 +1178,7 @@ function matchToCard(match) {
     sponsor: match.sponsor,
     award_amount: match.award_amount,
     deadline: match.deadline,
+    estimated_deadline: match.estimated_deadline,
     url: match.url,
     verified: match.verified,
     closing_soon: match.closing_soon,
@@ -1188,6 +1194,7 @@ function scholarshipToCard(scholarship) {
     sponsor: scholarship.sponsor,
     award_amount: scholarship.award_amount,
     deadline: scholarship.deadline,
+    estimated_deadline: scholarship.estimated_deadline,
     url: scholarship.url,
     verified: scholarship.verified,
     closing_soon: computeClosingSoon(scholarship.deadline),
@@ -1239,7 +1246,7 @@ function buildCard(card, tierClass) {
   meta.innerHTML = `
     <div><dt>Sponsor</dt><dd>${escapeHtml(card.sponsor)}</dd></div>
     <div><dt>Award</dt><dd>${escapeHtml(formatAward(card.award_amount))}</dd></div>
-    <div><dt>Deadline</dt><dd>${escapeHtml(formatDeadline(card.deadline))}</dd></div>
+    <div><dt>Deadline</dt><dd>${escapeHtml(formatDeadline(card.deadline, card.estimated_deadline))}</dd></div>
   `;
 
   const badges = document.createElement("div");
@@ -1404,12 +1411,14 @@ function formatAward(amount) {
   return String(amount);
 }
 
-function formatDeadline(deadline) {
+function formatDeadline(deadline, estimated) {
   if (deadline === "rolling") {
     return "Rolling";
   }
-  if (deadline === "VERIFY" || String(deadline).startsWith("VERIFY")) {
-    return "Confirm on sponsor site";
+  if (!deadline || deadline === "VERIFY" || String(deadline).startsWith("VERIFY")) {
+    return estimated
+      ? `~${estimated} (estimated — confirm official date)`
+      : "Confirm on sponsor site";
   }
   return deadline;
 }

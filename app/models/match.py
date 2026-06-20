@@ -21,6 +21,7 @@ class MatchResult(BaseModel):
     sponsor: str
     award_amount: str | float
     deadline: str
+    estimated_deadline: str | None = None
     url: str
     verified: bool
     essay_required: bool = Field(

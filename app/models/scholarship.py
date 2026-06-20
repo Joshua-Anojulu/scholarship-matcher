@@ -42,6 +42,14 @@ class Scholarship(BaseModel):
     deadline: Union[str, Literal["rolling"]] = Field(
         description='ISO date (YYYY-MM-DD) or "rolling".',
     )
+    estimated_deadline: str | None = Field(
+        default=None,
+        description=(
+            "Approximate deadline (ISO date) inferred from the most recent cycle when the "
+            "upcoming date is not yet published. Informational only: it is shown as an "
+            "estimate and never used to exclude a scholarship or trigger a closing-soon badge."
+        ),
+    )
     url: HttpUrl
     eligibility: Eligibility
     description: str

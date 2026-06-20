@@ -48,6 +48,8 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
     for s in scholarships:
         if not _deadline_ok(s.deadline):
             errors.append(f"{s.id}: unparseable deadline {s.deadline!r}")
+        if s.estimated_deadline is not None and _parse_iso_deadline(s.estimated_deadline) is None:
+            errors.append(f"{s.id}: invalid estimated_deadline {s.estimated_deadline!r} (must be an ISO date)")
 
         elig = s.eligibility
         if isinstance(elig.min_gpa, (int, float)) and not 0.0 <= float(elig.min_gpa) <= 4.0:
@@ -77,10 +79,12 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
             verify_counts["states"] += 1
 
     verified = sum(1 for s in scholarships if s.verified)
+    estimated = sum(1 for s in scholarships if s.estimated_deadline)
     stats = {
         "total": len(scholarships),
         "verified": verified,
         "unverified": len(scholarships) - verified,
+        "estimated_deadlines": estimated,
         "verify_placeholders": dict(verify_counts),
     }
     return {"errors": errors, "warnings": warnings, "stats": stats}
@@ -94,6 +98,7 @@ def main() -> int:
     print(f"Scholarships: {stats['total']}")
     print(f"  verified:   {stats['verified']}")
     print(f"  unverified: {stats['unverified']}")
+    print(f"  estimated deadlines: {stats['estimated_deadlines']}")
     print("VERIFY placeholders:")
     for field, count in sorted(stats["verify_placeholders"].items()):
         print(f"  {field:12} {count}")

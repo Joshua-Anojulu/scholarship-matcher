@@ -292,6 +292,7 @@ def _evaluate_scholarship(
         sponsor=scholarship.sponsor,
         award_amount=scholarship.award_amount,
         deadline=scholarship.deadline,
+        estimated_deadline=scholarship.estimated_deadline,
         url=str(scholarship.url),
         verified=scholarship.verified,
         essay_required=scholarship.eligibility.essay_required,

@@ -419,6 +419,35 @@ class TestUnverifiedScholarshipsStillMatch:
         assert result.verified is True
 
 
+class TestEstimatedDeadline:
+    def test_estimate_flows_through_and_never_excludes(self):
+        student = make_student()
+        # Deadline unknown, but an estimate that is already in the past: the
+        # scholarship must NOT be excluded, and the estimate is carried through.
+        scholarship = make_scholarship(deadline="VERIFY", estimated_deadline="2000-01-01")
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.estimated_deadline == "2000-01-01"
+
+    def test_confirmed_past_deadline_still_excludes_despite_estimate(self):
+        student = make_student()
+        scholarship = make_scholarship(deadline="2020-01-01", estimated_deadline="2027-01-01")
+        results = match_scholarships(student, [scholarship], today=FIXED_TODAY)
+
+        assert results == []
+
+    def test_estimate_does_not_set_closing_soon(self):
+        student = make_student()
+        # An estimate within 30 days must not raise a closing-soon badge.
+        soon = (FIXED_TODAY).isoformat()
+        scholarship = make_scholarship(deadline="VERIFY", estimated_deadline=soon)
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.closing_soon is False
+
+
 class TestDataLoader:
     def test_loader_parses_scholarships_array(self):
         from app.data.loader import load_scholarships
