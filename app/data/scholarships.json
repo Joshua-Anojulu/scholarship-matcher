@@ -522,7 +522,7 @@
       "name": "Prudential Emerging Visionaries",
       "sponsor": "Prudential Financial (in partnership with Ashoka)",
       "award_amount": "up to $15,000",
-      "deadline": "VERIFY",
+      "deadline": "2026-11-02",
       "url": "https://www.changemakers.com/en/challenge/emergingvisionaries",
       "eligibility": {
         "min_gpa": null,
@@ -536,17 +536,17 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "National recognition program for young people ages 14-18 who lead innovative projects addressing financial or societal challenges in their communities. Open to legal residents of the U.S. or Puerto Rico; winners receive up to $15,000.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "jackie-robinson-foundation-scholarship",
       "name": "Jackie Robinson Foundation Scholarship Program",
       "sponsor": "Jackie Robinson Foundation",
-      "award_amount": "VERIFY (four-year scholarship)",
+      "award_amount": "up to $35,000 (over four years)",
       "deadline": "VERIFY",
       "url": "https://jackierobinson.org/apply/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -563,13 +563,13 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Four-year scholarship and comprehensive mentoring for minority high school seniors who are U.S. citizens, demonstrate financial need and academic excellence, and plan to attend an accredited four-year U.S. college or university.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "national-ffa-scholarship",
       "name": "National FFA Scholarship Program",
       "sponsor": "National FFA Organization (National FFA Foundation)",
-      "award_amount": "varies by scholarship",
+      "award_amount": "up to $10,000 (varies by scholarship)",
       "deadline": "VERIFY",
       "url": "https://www.ffa.org/participate/grants-and-scholarships/scholarships/",
       "eligibility": {
@@ -587,14 +587,14 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "A single application covers many scholarships funded through the National FFA Foundation supporting members pursuing education in agriculture and related fields. Applicants must be FFA members, under age 23, U.S. citizens or permanent residents, and enrolled full-time at a U.S. institution.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "society-of-women-engineers-scholarship",
       "name": "SWE Scholarship Program",
       "sponsor": "Society of Women Engineers",
-      "award_amount": "varies (over $1,000,000 awarded annually)",
-      "deadline": "VERIFY",
+      "award_amount": "up to $20,000 (average about $4,500)",
+      "deadline": "2027-03-31",
       "url": "https://swe.org/scholarships/",
       "eligibility": {
         "min_gpa": "VERIFY",
@@ -614,7 +614,7 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarships for students who identify as women pursuing ABET-accredited degrees in engineering, engineering technology, or computing. A single application is considered for all eligible awards. Open only to women.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "generation-google-scholarship",
@@ -640,14 +640,14 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "For students pursuing computer science, computer engineering, or a closely related technical field at a U.S. or Canadian university who demonstrate leadership, academic strength, financial need, and commitment to improving representation of underrepresented groups in technology. The U.S. award is $10,000.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "tylenol-future-care-scholarship",
       "name": "Tylenol Future Care Scholarship",
       "sponsor": "Kenvue (makers of Tylenol)",
       "award_amount": "up to $10,000",
-      "deadline": "VERIFY",
+      "deadline": "2026-07-13",
       "url": "https://www.tylenol.com/tylenol-future-care-scholarship",
       "eligibility": {
         "min_gpa": "VERIFY",
@@ -664,13 +664,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Merit-based scholarship for college seniors entering graduate school and graduate students enrolled in medical, nursing, or pharmacy programs who will actively treat patients. Open to residents of the 50 U.S. states, Puerto Rico, or D.C.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "aicpa-foundation-legacy-scholarships",
       "name": "AICPA Foundation Legacy Scholarships",
       "sponsor": "AICPA Foundation",
-      "award_amount": "$3,000 to $10,000",
+      "award_amount": "$5,000 to $10,000",
       "deadline": "VERIFY",
       "url": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/",
       "eligibility": {
@@ -688,7 +688,7 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Scholarships for accounting students pursuing CPA licensure, awarded through a single application. Requires a free AICPA student affiliate membership, full-time enrollment in an accredited accounting/business program, and a minimum 3.0 GPA.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "james-madison-memorial-fellowship",
@@ -714,7 +714,7 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Graduate fellowship for aspiring and current secondary-school teachers of American history, American government, or civics who pursue a master's degree focused on the U.S. Constitution. Requires U.S. citizenship (or U.S. national status) and a teaching service commitment.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "national-youngarts-foundation",
@@ -739,7 +739,7 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "National arts competition for emerging artists ages 15-18 (grades 10-12) across 10 disciplines including visual, literary, and performing arts. Award winners receive cash prizes from $250 to $10,000 and mentorship; selection is by portfolio or audition.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "smart-scholarship",
@@ -765,10 +765,10 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "us_citizen"
+        "citizenship_requirement": "VERIFY"
       },
       "description": "Department of Defense scholarship-for-service covering full tuition, an annual stipend, and summer internships for students in STEM fields. Recipients commit to post-graduation civilian employment with the DoD. Requires U.S. citizenship (or select allied countries), a 3.0 GPA, and ability to obtain a security clearance.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "uncf-general-scholarship",
