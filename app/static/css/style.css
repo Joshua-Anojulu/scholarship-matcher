@@ -626,6 +626,22 @@ input[type="checkbox"]:focus {
   margin: 0;
 }
 
+.score-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.score-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--mint-faint);
+  color: var(--mint);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
 .badge-row {
   display: flex;
   flex-wrap: wrap;

@@ -227,6 +227,10 @@ async function handleResumeImport() {
     return;
   }
 
+  if (!ensureAiConsent()) {
+    return;
+  }
+
   errorEl.hidden = true;
   noteEl.hidden = true;
   loading.hidden = false;
@@ -1183,6 +1187,7 @@ function matchToCard(match) {
     verified: match.verified,
     closing_soon: match.closing_soon,
     score: match.score,
+    score_breakdown: match.score_breakdown,
     match_reasons: match.match_reasons || [],
   };
 }
@@ -1260,6 +1265,10 @@ function buildCard(card, tierClass) {
 
   body.appendChild(top);
   body.appendChild(meta);
+  const breakdown = card.score_breakdown ? buildScoreBreakdown(card.score_breakdown) : null;
+  if (breakdown) {
+    body.appendChild(breakdown);
+  }
   if (badges.childElementCount > 0) {
     body.appendChild(badges);
   }
@@ -1397,6 +1406,29 @@ function buildCard(card, tierClass) {
   return article;
 }
 
+// Breaks the single fit score into its contributing parts so the "transparent
+// scoring" promise is visible, not just claimed. Only non-zero parts are shown.
+function buildScoreBreakdown(breakdown) {
+  const parts = [
+    ["Field of study", breakdown.field_of_study],
+    ["Background", breakdown.demographics],
+    ["Activities", breakdown.activities],
+    ["Financial need", breakdown.financial_need],
+  ].filter(([, value]) => value > 0);
+  if (parts.length === 0) {
+    return null;
+  }
+  const wrap = document.createElement("div");
+  wrap.className = "score-breakdown";
+  for (const [label, value] of parts) {
+    const chip = document.createElement("span");
+    chip.className = "score-chip";
+    chip.textContent = `${label} +${value}`;
+    wrap.appendChild(chip);
+  }
+  return wrap;
+}
+
 function makeBadge(text, className) {
   const span = document.createElement("span");
   span.className = `badge ${className}`;
@@ -1429,12 +1461,33 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+// Explicit, one-time consent before any inputs (profile, résumé, essay text,
+// which include sensitive fields) are sent to Anthropic's third-party API.
+function ensureAiConsent() {
+  if (localStorage.getItem("ai_consent") === "yes") {
+    return true;
+  }
+  const ok = window.confirm(
+    "This feature sends your inputs — including your profile details and any résumé or " +
+      "essay text you provide — to Anthropic's API to generate AI guidance. Your data is " +
+      "processed there to produce the result and is not stored by this app. Continue?"
+  );
+  if (ok) {
+    localStorage.setItem("ai_consent", "yes");
+  }
+  return ok;
+}
+
 async function handleEssayAdvice(scholarshipId, button, panel, loading, errorEl) {
   if (!lastSubmittedProfile) {
     errorEl.textContent =
       "Submit your profile first so essay advice can use your current answers.";
     errorEl.hidden = false;
     panel.hidden = true;
+    return;
+  }
+
+  if (!ensureAiConsent()) {
     return;
   }
 
@@ -1500,6 +1553,10 @@ async function handleEssayReview(scholarshipId, input, button, panel, loading, e
     errorEl.textContent = "Paste your draft essay before asking for feedback.";
     errorEl.hidden = false;
     panel.hidden = true;
+    return;
+  }
+
+  if (!ensureAiConsent()) {
     return;
   }
 
