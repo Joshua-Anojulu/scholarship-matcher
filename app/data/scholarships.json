@@ -316,7 +316,8 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "Honors student-athletes who demonstrate exceptional academic ability, strong leadership skills, and passionate community involvement."
+      "description": "Honors student-athletes who demonstrate exceptional academic ability, strong leadership skills, and passionate community involvement.",
+      "verified": true
     },
     {
       "id": "cameron-impact",
@@ -336,13 +337,14 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
       },
-      "description": "Merit-based scholarship for high school seniors who demonstrate excellence in academics, extracurricular activities, leadership, and community service."
+      "description": "Merit-based scholarship for high school seniors who demonstrate excellence in academics, extracurricular activities, leadership, and community service.",
+      "verified": true
     },
     {
       "id": "apia-scholars",
       "name": "APIA Scholars Program",
       "sponsor": "Asian & Pacific Islander American Scholarship Fund",
-      "award_amount": "one-time awards (amount varies)",
+      "award_amount": "$2,500 to $20,000 (one-year or multi-year)",
       "deadline": "VERIFY",
       "url": "https://apiascholars.org/scholarship/",
       "eligibility": {
@@ -359,7 +361,8 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_permanent_resident_or_national"
       },
-      "description": "Scholarships for Asian American and Pacific Islander students with financial need who are enrolling or continuing at accredited U.S. postsecondary institutions."
+      "description": "Scholarships for Asian American and Pacific Islander students with financial need who are enrolling or continuing at accredited U.S. postsecondary institutions.",
+      "verified": true
     },
     {
       "id": "posse-foundation",
@@ -379,7 +382,8 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "Leadership development program that selects diverse cohorts of public high school students and sends them to partner colleges with full-tuition scholarships."
+      "description": "Leadership development program that selects diverse cohorts of public high school students and sends them to partner colleges with full-tuition scholarships.",
+      "verified": true
     },
     {
       "id": "goldwater-scholarship",
@@ -389,7 +393,7 @@
       "deadline": "VERIFY",
       "url": "https://goldwater.scholarsapply.org/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": 3.0,
         "fields_of_study": [
           "natural_sciences",
           "engineering",
@@ -404,7 +408,8 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_permanent_resident_or_us_national"
       },
-      "description": "Premier undergraduate award for students pursuing research careers in the natural sciences, engineering, and mathematics. Nominated by participating institutions."
+      "description": "Premier undergraduate award for students pursuing research careers in the natural sciences, engineering, and mathematics. Nominated by participating institutions.",
+      "verified": true
     },
     {
       "id": "ge-reagan-foundation-scholarship",
@@ -425,13 +430,13 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Merit-based scholarship for U.S. high school seniors who demonstrate leadership, drive, integrity, and citizenship and plan to enroll full-time at an accredited four-year U.S. college or university. Renewable for up to four years.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "equitable-excellence-scholarship",
       "name": "Equitable Excellence Scholarship",
       "sponsor": "Equitable Foundation (administered by Scholarship America)",
-      "award_amount": "up to $20,000 ($5,000 per year) or one-time $2,500",
+      "award_amount": "up to $20,000 ($5,000 per year, renewable)",
       "deadline": "VERIFY",
       "url": "https://learnmore.scholarsapply.org/equitableexcellence/",
       "eligibility": {
@@ -446,14 +451,14 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Need-based scholarship for high school seniors residing in the 50 U.S. states, D.C., or Puerto Rico who plan to enroll full-time at an accredited two- or four-year U.S. college and show drive to give back to their communities.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "hagan-scholarship",
       "name": "Hagan Scholarship",
       "sponsor": "Hagan Scholarship Foundation",
       "award_amount": "$2,000 plus up to $7,500 per semester (up to 8 semesters)",
-      "deadline": "VERIFY",
+      "deadline": "2026-12-01",
       "url": "https://haganscholarships.org/",
       "eligibility": {
         "min_gpa": 3.5,
@@ -467,7 +472,7 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Need-based merit scholarship designed to help students graduate college debt-free. Requires enrollment at an eligible four-year nonprofit college, a 3.5 GPA, household income below the program cap, and 240 hours of work before enrolling. Open to applicants regardless of citizenship.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "stamps-scholars",
@@ -488,7 +493,7 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Merit-based scholarship awarded through 38 partner colleges and universities for students with strong academic merit and leadership; provides multi-year awards plus enrichment funding. Financial need is not considered. Students apply directly to a partner school, and award terms and eligibility vary by institution.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "taco-bell-live-mas-scholarship",
@@ -510,7 +515,7 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarship for students ages 16-26 who are legal residents of the 50 U.S. states or D.C. (or dependents of active-duty U.S. military) pursuing post-secondary education. Selection is based on passion rather than grades or test scores; applicants submit a two-minute video.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "prudential-emerging-visionaries",
