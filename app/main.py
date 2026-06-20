@@ -36,6 +36,8 @@ from app.vocabulary import VocabularyOption, get_vocabulary
 
 # Cap upload size so a huge file cannot be read fully into memory or sent upstream.
 MAX_RESUME_BYTES = 5 * 1024 * 1024
+# Cap pasted/decoded resume text so an oversized paste cannot inflate token cost.
+MAX_RESUME_TEXT = 50_000
 
 # AI endpoints call a paid API, so they are rate limited per client IP.
 _essay_limit = rate_limiter(15, 60, "essay")
@@ -201,6 +203,25 @@ def essay_review(request: Request, body: EssayReviewRequest) -> EssayReviewRespo
     )
 
 
+async def _read_upload_capped(upload: UploadFile, max_bytes: int) -> bytes | None:
+    """Read an upload in chunks, returning None if it exceeds max_bytes.
+
+    Reading in chunks (rather than upload.read() all at once) means a huge file
+    is rejected after ~max_bytes instead of being loaded fully into memory.
+    """
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await upload.read(64 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > max_bytes:
+            return None
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
 @app.post(
     "/resume/extract",
     response_model=ResumeExtractionResponse,
@@ -210,12 +231,12 @@ async def resume_extract(
     file: UploadFile | None = File(default=None),
     text: str | None = Form(default=None),
 ) -> ResumeExtractionResponse:
-    resume_text = (text or "").strip() or None
+    resume_text = (text or "").strip()[:MAX_RESUME_TEXT] or None
     pdf_bytes: bytes | None = None
 
     if file is not None:
-        raw = await file.read()
-        if len(raw) > MAX_RESUME_BYTES:
+        raw = await _read_upload_capped(file, MAX_RESUME_BYTES)
+        if raw is None:
             raise HTTPException(
                 status_code=413,
                 detail={"error": "That file is too large. Use a resume under 5 MB."},
@@ -226,6 +247,9 @@ async def resume_extract(
         else:
             decoded = raw.decode("utf-8", errors="ignore").strip()
             resume_text = "\n".join(part for part in (resume_text, decoded) if part) or None
+
+    if resume_text:
+        resume_text = resume_text[:MAX_RESUME_TEXT]
 
     if pdf_bytes is None and not resume_text:
         raise HTTPException(

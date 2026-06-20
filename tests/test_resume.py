@@ -121,6 +121,31 @@ class TestResumeSuccess:
         assert any(block.get("type") == "document" for block in content)
 
 
+class TestResumeLimits:
+    def test_oversize_file_is_rejected(self, client):
+        big = b"x" * (5 * 1024 * 1024 + 4096)  # just over the 5 MB cap
+        response = client.post(
+            "/resume/extract", files={"file": ("big.txt", big, "text/plain")}
+        )
+        assert response.status_code == 413
+
+    @patch.dict("os.environ", {"ANTHROPIC_API_KEY": FAKE_API_KEY})
+    @patch("app.resume.extractor.Anthropic")
+    def test_pasted_text_is_capped(self, mock_anthropic, client):
+        mock_client = MagicMock()
+        mock_anthropic.return_value = mock_client
+        mock_client.messages.create.return_value = _tool_response({})
+
+        response = client.post("/resume/extract", data={"text": "A" * 60000})
+
+        assert response.status_code == 200
+        _, kwargs = mock_client.messages.create.call_args
+        content = kwargs["messages"][0]["content"]
+        text_sent = " ".join(b.get("text", "") for b in content if b.get("type") == "text")
+        # 60k chars of pasted input must be capped before reaching Claude.
+        assert len(text_sent) < 55000
+
+
 class TestResumeOpenApi:
     def test_endpoint_listed_in_openapi(self, client):
         schema = client.get("/openapi.json").json()
