@@ -46,7 +46,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Highly selective last-dollar scholarship for outstanding minority high school seniors from low-income households. Covers full cost of attendance not already met by financial aid. Applicants must be Pell-eligible.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-09-15"
     },
     {
       "id": "jack-kent-cooke-college",
@@ -88,7 +89,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "College readiness and completion program for students who demonstrate grit, potential, and financial need. Includes scholarship funds and individualized support.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-02-15"
     },
     {
       "id": "horatio-alger-national",
@@ -109,7 +111,8 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Awarded to high school seniors who have faced and overcome significant obstacles, demonstrate financial need, and are committed to pursuing higher education.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-10-25"
     },
     {
       "id": "davidson-fellows",
@@ -139,7 +142,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Recognizes students 18 or younger who have completed significant projects in science, technology, engineering, mathematics, literature, music, philosophy, or outside the box.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-02-18"
     },
     {
       "id": "regeneron-sts",
@@ -206,7 +210,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Merit-based awards for high school seniors, Burger King employees, and their families who plan to enroll in accredited two- or four-year colleges.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-12-15"
     },
     {
       "id": "elks-mvs",
@@ -227,7 +232,8 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Four-year scholarships for high school seniors based on scholarship, leadership, and financial need. Funded by the Elks National Foundation.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-11-12"
     },
     {
       "id": "ron-brown-scholar",
@@ -250,7 +256,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Scholarship and leadership development for academically talented African American high school seniors with demonstrated leadership, community service, and financial need.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-12-01"
     },
     {
       "id": "hsf-scholar",
@@ -317,7 +324,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Honors student-athletes who demonstrate exceptional academic ability, strong leadership skills, and passionate community involvement.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-12-18"
     },
     {
       "id": "cameron-impact",
@@ -338,7 +346,8 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Merit-based scholarship for high school seniors who demonstrate excellence in academics, extracurricular activities, leadership, and community service.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-05-01"
     },
     {
       "id": "apia-scholars",
@@ -362,7 +371,8 @@
         "citizenship_requirement": "us_citizen_permanent_resident_or_national"
       },
       "description": "Scholarships for Asian American and Pacific Islander students with financial need who are enrolling or continuing at accredited U.S. postsecondary institutions.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-01-15"
     },
     {
       "id": "posse-foundation",
@@ -430,7 +440,8 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Merit-based scholarship for U.S. high school seniors who demonstrate leadership, drive, integrity, and citizenship and plan to enroll full-time at an accredited four-year U.S. college or university. Renewable for up to four years.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-01-05"
     },
     {
       "id": "equitable-excellence-scholarship",
@@ -515,7 +526,8 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarship for students ages 16-26 who are legal residents of the 50 U.S. states or D.C. (or dependents of active-duty U.S. military) pursuing post-secondary education. Selection is based on passion rather than grades or test scores; applicants submit a two-minute video.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-01-06"
     },
     {
       "id": "prudential-emerging-visionaries",
@@ -563,7 +575,8 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Four-year scholarship and comprehensive mentoring for minority high school seniors who are U.S. citizens, demonstrate financial need and academic excellence, and plan to attend an accredited four-year U.S. college or university.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-01-07"
     },
     {
       "id": "national-ffa-scholarship",
@@ -587,7 +600,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "A single application covers many scholarships funded through the National FFA Foundation supporting members pursuing education in agriculture and related fields. Applicants must be FFA members, under age 23, U.S. citizens or permanent residents, and enrolled full-time at a U.S. institution.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-01-15"
     },
     {
       "id": "society-of-women-engineers-scholarship",
@@ -688,7 +702,8 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Scholarships for accounting students pursuing CPA licensure, awarded through a single application. Requires a free AICPA student affiliate membership, full-time enrollment in an accredited accounting/business program, and a minimum 3.0 GPA.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-03-15"
     },
     {
       "id": "james-madison-memorial-fellowship",
@@ -714,7 +729,8 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Graduate fellowship for aspiring and current secondary-school teachers of American history, American government, or civics who pursue a master's degree focused on the U.S. Constitution. Requires U.S. citizenship (or U.S. national status) and a teaching service commitment.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2027-03-02"
     },
     {
       "id": "national-youngarts-foundation",
@@ -739,7 +755,8 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "National arts competition for emerging artists ages 15-18 (grades 10-12) across 10 disciplines including visual, literary, and performing arts. Award winners receive cash prizes from $250 to $10,000 and mentorship; selection is by portfolio or audition.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-10-08"
     },
     {
       "id": "smart-scholarship",
@@ -768,7 +785,8 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Department of Defense scholarship-for-service covering full tuition, an annual stipend, and summer internships for students in STEM fields. Recipients commit to post-graduation civilian employment with the DoD. Requires U.S. citizenship (or select allied countries), a 3.0 GPA, and ability to obtain a security clearance.",
-      "verified": true
+      "verified": true,
+      "estimated_deadline": "2026-12-04"
     },
     {
       "id": "uncf-general-scholarship",
