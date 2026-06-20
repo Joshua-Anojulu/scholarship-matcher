@@ -98,7 +98,13 @@ def serve_index() -> FileResponse:
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "ok"}
+    info = {"status": "ok"}
+    commit = os.getenv("RENDER_GIT_COMMIT")
+    if commit:
+        # Render injects the deployed commit SHA; exposing it confirms which
+        # build is live (handy for verifying a redeploy actually rolled out).
+        info["commit"] = commit[:7]
+    return info
 
 
 @app.get("/vocabulary")
