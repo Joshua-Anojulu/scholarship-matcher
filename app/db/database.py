@@ -11,10 +11,14 @@ import os
 from collections.abc import Iterator
 from pathlib import Path
 
+from alembic import command
+from alembic.config import Config
 from sqlalchemy import create_engine, inspect, text
+from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 DEFAULT_SQLITE_PATH = Path(__file__).resolve().parent.parent.parent / "scholarships4u.db"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 def _resolve_database_url() -> str:
@@ -54,20 +58,14 @@ class Base(DeclarativeBase):
 
 
 def init_db() -> None:
-    """Create tables that do not exist yet and apply small in-place migrations.
+    """Bring the configured database to the latest Alembic revision."""
 
-    create_all does not alter existing tables, so columns added to a model after
-    a database already exists are backfilled here. A migration tool (for example
-    Alembic) would be the next step if the schema keeps growing.
-    """
-
-    from app.db import models  # noqa: F401  (ensure models are registered)
-
-    Base.metadata.create_all(bind=engine)
-    _ensure_saved_columns(engine)
+    config = Config(str(PROJECT_ROOT / "alembic.ini"))
+    config.set_main_option("sqlalchemy.url", DATABASE_URL)
+    command.upgrade(config, "head")
 
 
-def _ensure_saved_columns(bind) -> None:
+def _ensure_saved_columns(bind: Engine | Connection) -> None:
     """Add the tracker columns (status, notes) to an older saved_scholarships table."""
 
     inspector = inspect(bind)
@@ -85,6 +83,13 @@ def _ensure_saved_columns(bind) -> None:
             "ALTER TABLE saved_scholarships ADD COLUMN notes TEXT NOT NULL DEFAULT ''"
         )
     if not statements:
+        return
+    # Alembic passes an already-transactional Connection; opening another
+    # transaction there raises an error. The standalone migration test passes
+    # an Engine, which owns the transaction for this small backfill.
+    if isinstance(bind, Connection):
+        for statement in statements:
+            bind.execute(text(statement))
         return
     with bind.begin() as conn:
         for statement in statements:

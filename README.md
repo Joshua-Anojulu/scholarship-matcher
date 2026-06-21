@@ -4,7 +4,7 @@ Scholarships4U is a personal portfolio project that helps U.S. students explore 
 
 ## How it works
 
-**Matching.** The app scores each scholarship with a transparent additive algorithm over field-of-study overlap, demographic tag overlap, activity keywords found in the scholarship description, and a need-based signal for students who indicated financial need. GPA, grade level, state, citizenship, and passed deadlines act as hard filters only when the dataset holds a real value (not a `VERIFY` placeholder). Open-to-all scholarships receive a lower field score than specific field matches. A scholarship with a specific field but no field overlap stays visible as a **Possible** match with an eligibility caveat, never a **Strong** one. Every result shows human-readable reasons plus score-component chips. The results view can sort by fit, deadline, award, or name and filter by tier, minimum score, essay requirement, field/background overlap, closing-soon status, and verified data. These display filters run in the browser over the current match response, which is appropriate for the small curated dataset.
+**Matching.** The app scores each scholarship with a transparent additive algorithm over field-of-study overlap, demographic tag overlap, an optional target-school match, activity keywords found in the scholarship description, and a need-based signal for students who indicated financial need. GPA, grade level, state, citizenship, and passed deadlines act as hard filters only when the dataset holds a real value (not a `VERIFY` placeholder). Open-to-all scholarships receive a lower field score than specific field matches. A scholarship with a specific field or school but no corresponding student overlap stays visible as a **Possible** match with an eligibility caveat, never a **Strong** one. Every result shows human-readable reasons plus score-component chips. The results view can sort by fit, deadline, award, or name and filter by tier, minimum score, essay requirement, field/school/background overlap, closing-soon status, and verified data. These display filters run in the browser over the current match response, which is appropriate for the small curated dataset.
 
 **Essay advice.** When a student clicks **Get essay advice** on a result card, the backend sends the student's actual profile inputs and the scholarship description to the Anthropic API. The response suggests essay angles tied to the student's stated activities and background, notes what the sponsor likely values, and flags one common mistake. A separate **Review my draft** action sends a draft the student pastes in and returns targeted feedback (strengths, the highest-impact improvements, alignment with the sponsor, and mechanics) without rewriting the essay for them. Before any AI feature sends profile, resume, or essay content to Anthropic, the browser shows a clear consent prompt. The API key never leaves the server.
 
@@ -18,6 +18,7 @@ Scholarships4U is a personal portfolio project that helps U.S. students explore 
 - **Frontend:** Vanilla HTML, CSS, and JavaScript (served by FastAPI)
 - **Scholarship data:** Pydantic models, local JSON file loaded at startup
 - **Accounts and saved data:** SQLAlchemy ORM, SQLite locally and Postgres in production, bcrypt password hashing, signed session cookies
+- **Schema migrations:** Alembic, run automatically at startup and before the Render web service starts
 - **LLM:** Anthropic API (Claude Sonnet) for essay advice, server-side only
 
 ## Run locally
@@ -50,6 +51,12 @@ For development and tests:
 
 ```bash
 pip install -r requirements-dev.txt
+```
+
+Apply the current database schema (the app also does this automatically at startup):
+
+```bash
+alembic upgrade head
 ```
 
 ### 3. Set the API key
@@ -168,6 +175,12 @@ The dataset in [`app/data/scholarships.json`](app/data/scholarships.json) is a *
 - **`verified: true`** — the entry's key facts (award, eligibility, and, where the current cycle is published, the deadline) have been checked against the sponsor's official page. These entries show no "Unverified data" badge in the app.
 - **`verified: false`** (the default) — not yet confirmed. These entries may hold `VERIFY` placeholders for fields that are not yet known (`deadline`, `min_gpa`, `citizenship_requirement`, or `states`). The matcher treats `VERIFY` permissively (it never excludes on an unknown value), and the UI shows an "Unverified data" badge.
 
+### Verification provenance
+
+Newly audited entries can also store the official `source_url`, the `last_verified_at` date, and a concise audit note. When that metadata is present, result cards link directly to the checked source. The dataset validator reports both the number of records with provenance and the older verified records that still need it.
+
+School-specific records list the eligible institutions and common aliases (for example, `UT Austin`). A matching target school adds a visible fit signal; a known mismatch is shown as **Possible** with an eligibility caveat instead of being silently hidden.
+
 ### How entries get verified
 
 Verification is an ongoing pass, done in small batches so each fact is checked rather than guessed:
@@ -214,7 +227,7 @@ scholarship-matcher/
 
 ## Limitations
 
-- The scholarship dataset is a **curated set** (117 real national programs), not a comprehensive directory.
+- The scholarship dataset is a **curated set** (122 programs, including a small school-specific pilot), not a comprehensive directory.
 - Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship data and verification](#scholarship-data-and-verification) for how entries are confirmed over time.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
 - Accounts support change password and account deletion, but there is no email verification or password reset flow (which would need an email provider), so this is suited to a demo rather than production use.
@@ -225,9 +238,9 @@ scholarship-matcher/
 ## Future work
 
 - Expand and fully verify the scholarship dataset
-- School-specific scholarship matching
+- Expand the school-specific scholarship pilot with verified institution records
 - Live data integration with sponsor feeds or APIs
-- Account improvements: email verification, password reset, and schema migrations (for example Alembic)
+- Account improvements: email verification and password reset
 
 ---
 

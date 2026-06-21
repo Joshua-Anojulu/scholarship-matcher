@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import sys
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 # Allow running as a plain script: python scripts/validate_dataset.py
@@ -68,6 +69,19 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
             for state in elig.states:
                 if state.upper() not in STATE_CODE_VALUES:
                     warnings.append(f"{s.id}: state not a valid code: {state!r}")
+        for school in elig.eligible_schools:
+            aliases = [alias.strip().lower() for alias in school.aliases]
+            if len(aliases) != len(set(aliases)):
+                warnings.append(f"{s.id}: duplicate aliases for school {school.name!r}")
+
+        if s.verification is not None:
+            if s.verification.last_verified_at > date.today():
+                errors.append(
+                    f"{s.id}: last_verified_at is in the future "
+                    f"({s.verification.last_verified_at})"
+                )
+            if not s.verified:
+                warnings.append(f"{s.id}: has verification metadata but verified is false")
 
         if elig.min_gpa == "VERIFY":
             verify_counts["min_gpa"] += 1
@@ -80,11 +94,14 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
 
     verified = sum(1 for s in scholarships if s.verified)
     estimated = sum(1 for s in scholarships if s.estimated_deadline)
+    with_provenance = sum(1 for s in scholarships if s.verification is not None)
     stats = {
         "total": len(scholarships),
         "verified": verified,
         "unverified": len(scholarships) - verified,
         "estimated_deadlines": estimated,
+        "with_provenance": with_provenance,
+        "verified_without_provenance": verified - with_provenance,
         "verify_placeholders": dict(verify_counts),
     }
     return {"errors": errors, "warnings": warnings, "stats": stats}
@@ -99,6 +116,8 @@ def main() -> int:
     print(f"  verified:   {stats['verified']}")
     print(f"  unverified: {stats['unverified']}")
     print(f"  estimated deadlines: {stats['estimated_deadlines']}")
+    print(f"  records with provenance: {stats['with_provenance']}")
+    print(f"  verified records awaiting provenance: {stats['verified_without_provenance']}")
     print("VERIFY placeholders:")
     for field, count in sorted(stats["verify_placeholders"].items()):
         print(f"  {field:12} {count}")

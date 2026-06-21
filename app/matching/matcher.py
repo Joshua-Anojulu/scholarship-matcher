@@ -6,12 +6,13 @@ import re
 from datetime import date
 
 from app.models.match import MatchResult, ScoreBreakdown
-from app.models.scholarship import Scholarship
+from app.models.scholarship import EligibleSchool, Scholarship
 from app.models.student import StudentProfile
 
 WEIGHT_FIELD_OF_STUDY = 40.0
 WEIGHT_FIELD_OF_STUDY_OPEN = 10.0
 WEIGHT_DEMOGRAPHICS = 25.0
+WEIGHT_TARGET_SCHOOL = 15.0
 WEIGHT_ACTIVITY_MATCH = 5.0
 WEIGHT_ACTIVITIES_CAP = 10.0
 WEIGHT_FINANCIAL_NEED_HIGH = 10.0
@@ -116,6 +117,27 @@ def _matching_demographics(student_tags: list[str], required_tags: list[str]) ->
         return []
     student_set = {_normalize_tag(tag) for tag in student_tags}
     return [tag for tag in required_tags if _normalize_tag(tag) in student_set]
+
+
+def _normalize_school(value: str) -> str:
+    """Normalize a school name or declared alias for exact comparison."""
+    return "".join(char for char in value.lower() if char.isalnum())
+
+
+def _matching_schools(
+    target_schools: list[str] | None,
+    eligible_schools: list[EligibleSchool],
+) -> list[str]:
+    """Return canonical school names that match a student's declared targets."""
+    if not target_schools or not eligible_schools:
+        return []
+    targets = {_normalize_school(school) for school in target_schools if school.strip()}
+    matches: list[str] = []
+    for school in eligible_schools:
+        names = (school.name, *school.aliases)
+        if any(_normalize_school(name) in targets for name in names):
+            matches.append(school.name)
+    return matches
 
 
 def _activity_keywords(activities: list[str]) -> set[str]:
@@ -247,6 +269,17 @@ def _evaluate_scholarship(
         reasons.append("No field of study overlap")
         reasons.append("May not match this scholarship's field of study, check eligibility")
 
+    eligible_schools = scholarship.eligibility.eligible_schools
+    matched_schools = _matching_schools(student.target_schools, eligible_schools)
+    school_mismatch = (
+        bool(student.target_schools) and bool(eligible_schools) and not matched_schools
+    )
+    if matched_schools:
+        breakdown.target_school = WEIGHT_TARGET_SCHOOL
+        reasons.append("Target school match: " + ", ".join(matched_schools))
+    elif school_mismatch:
+        reasons.append("May only be available at another school, check eligibility")
+
     required_demographics = scholarship.eligibility.demographics
     matched_demographics = _matching_demographics(
         student.demographic_tags,
@@ -283,6 +316,7 @@ def _evaluate_scholarship(
     breakdown.total = round(
         breakdown.field_of_study
         + breakdown.demographics
+        + breakdown.target_school
         + breakdown.activities
         + breakdown.financial_need,
         2,
@@ -292,6 +326,8 @@ def _evaluate_scholarship(
     # sponsor preference. Keep those opportunities visible, but never present
     # a field-mismatched result as a strong match.
     if field_mismatch and match_tier == "strong":
+        match_tier = "possible"
+    if school_mismatch and match_tier == "strong":
         match_tier = "possible"
 
     return MatchResult(
@@ -303,6 +339,16 @@ def _evaluate_scholarship(
         estimated_deadline=scholarship.estimated_deadline,
         url=str(scholarship.url),
         verified=scholarship.verified,
+        verification_source_url=(
+            str(scholarship.verification.source_url)
+            if scholarship.verification is not None
+            else None
+        ),
+        last_verified_at=(
+            scholarship.verification.last_verified_at
+            if scholarship.verification is not None
+            else None
+        ),
         essay_required=scholarship.eligibility.essay_required,
         closing_soon=closing_soon,
         score=breakdown.total,

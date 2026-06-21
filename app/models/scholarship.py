@@ -1,6 +1,26 @@
+from datetime import date
 from typing import Literal, Union
 
 from pydantic import BaseModel, Field, HttpUrl
+
+
+class EligibleSchool(BaseModel):
+    """A college or university where a scholarship is available.
+
+    ``aliases`` lets a student-entered name such as "UT Austin" match the
+    canonical institution name without relying on fuzzy matching.
+    """
+
+    name: str = Field(min_length=1)
+    aliases: list[str] = Field(default_factory=list)
+
+
+class VerificationMetadata(BaseModel):
+    """Official evidence and audit date for a verified scholarship record."""
+
+    source_url: HttpUrl
+    last_verified_at: date
+    notes: str | None = Field(default=None, max_length=500)
 
 
 class Eligibility(BaseModel):
@@ -27,6 +47,13 @@ class Eligibility(BaseModel):
     citizenship_requirement: str = Field(
         default="VERIFY",
         description='Citizenship rule, e.g. "us_citizen", "us_citizen_or_permanent_resident".',
+    )
+    eligible_schools: list[EligibleSchool] = Field(
+        default_factory=list,
+        description=(
+            "Institutions where this award is available. Empty means the award is not "
+            "school-specific."
+        ),
     )
 
 
@@ -56,4 +83,8 @@ class Scholarship(BaseModel):
     verified: bool = Field(
         default=False,
         description="True once this entry is confirmed against official sources.",
+    )
+    verification: VerificationMetadata | None = Field(
+        default=None,
+        description="Official source and date for a verification pass, when recorded.",
     )

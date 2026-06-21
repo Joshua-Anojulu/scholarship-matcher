@@ -211,6 +211,71 @@ class TestMatchTier:
         )
 
 
+class TestTargetSchoolMatching:
+    def test_target_school_alias_adds_points_and_reason(self):
+        student = make_student(target_schools=["UT Austin"])
+        scholarship = make_scholarship(
+            eligibility={
+                "eligible_schools": [
+                    {
+                        "name": "The University of Texas at Austin",
+                        "aliases": ["UT Austin"],
+                    }
+                ]
+            }
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.target_school == pytest.approx(15.0)
+        assert "Target school match: The University of Texas at Austin" in result.match_reasons
+
+    def test_school_mismatch_caps_an_otherwise_strong_match_at_possible(self):
+        student = make_student(target_schools=["Rice University"])
+        scholarship = make_scholarship(
+            eligibility={
+                "eligible_schools": [
+                    {"name": "The University of Texas at Austin", "aliases": ["UT Austin"]}
+                ]
+            }
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score == pytest.approx(65.0)
+        assert result.match_tier == "possible"
+        assert "May only be available at another school, check eligibility" in result.match_reasons
+
+    def test_empty_target_schools_do_not_trigger_school_mismatch(self):
+        student = make_student()
+        scholarship = make_scholarship(
+            eligibility={
+                "eligible_schools": [
+                    {"name": "The University of Texas at Austin", "aliases": ["UT Austin"]}
+                ]
+            }
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.target_school == pytest.approx(0.0)
+        assert result.match_tier == "strong"
+        assert not any("another school" in reason for reason in result.match_reasons)
+
+    def test_verification_metadata_flows_to_match_result(self):
+        scholarship = make_scholarship(
+            verification={
+                "source_url": "https://example.org/official-source",
+                "last_verified_at": "2026-06-21",
+            }
+        )
+        result = match_one(make_student(), scholarship)
+
+        assert result is not None
+        assert result.verification_source_url == "https://example.org/official-source"
+        assert result.last_verified_at == date(2026, 6, 21)
+
+
 class TestClosingSoon:
     def test_deadline_within_30_days_sets_closing_soon(self):
         student = make_student()

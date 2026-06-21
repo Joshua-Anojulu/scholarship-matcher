@@ -1,5 +1,5 @@
 {
-  "_dataset_notice": "CURATED SEED DATASET: All scholarship entries in this file are real, nationally available US programs from identifiable sponsoring organizations. Every field must be independently verified before production use. Fields marked VERIFY are intentionally incomplete placeholders. Do not show VERIFY values to end users without review.",
+  "_dataset_notice": "CURATED SEED DATASET: Entries are real US programs from identifiable sponsors, including national awards and a small school-specific pilot tied to official university pages. Every field must be independently verified before production use. Fields marked VERIFY are intentionally incomplete placeholders. Do not show VERIFY values to end users without review.",
   "scholarships": [
     {
       "id": "coca-cola-scholars",
@@ -2815,6 +2815,182 @@
       },
       "description": "Fully funded scholarship supporting any full-time Stanford graduate degree (e.g., MA, MS, MBA, JD, MD, PhD); open to applicants of all fields from any country. Requires a bachelor's degree earned in 2020 or later and separate admission to a Stanford graduate program.",
       "verified": false
+    },
+    {
+      "id": "forty-acres-scholars-program",
+      "name": "Forty Acres Scholars Program",
+      "sponsor": "Texas Exes (The University of Texas at Austin)",
+      "award_amount": "full cost of attendance (tuition, living stipend, books, and enrichment)",
+      "deadline": "2026-12-01",
+      "url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident",
+        "eligible_schools": [
+          {
+            "name": "The University of Texas at Austin",
+            "aliases": [
+              "UT Austin",
+              "UT-Austin",
+              "University of Texas Austin"
+            ]
+          }
+        ]
+      },
+      "description": "Premier full-ride merit scholarship for incoming UT Austin freshmen, administered by the Texas Exes. Apply for UT Austin admission via the Common App or ApplyTexas by December 1 to be considered automatically; there is no separate Forty Acres application. Transfer and international students are not eligible for this program.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply",
+        "last_verified_at": "2026-06-21",
+        "notes": "Texas Exes apply page: Dec 1 final deadline, U.S. citizen or permanent resident, automatic consideration via UT admission."
+      }
+    },
+    {
+      "id": "tamu-opportunity-award",
+      "name": "Opportunity Award",
+      "sponsor": "Texas A&M University Scholarships & Financial Aid",
+      "award_amount": "$100 to $15,000 per year",
+      "deadline": "2026-12-01",
+      "url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY",
+        "eligible_schools": [
+          {
+            "name": "Texas A&M University",
+            "aliases": [
+              "Texas A&M",
+              "TAMU"
+            ]
+          }
+        ]
+      },
+      "description": "Freshman scholarship for entering Texas A&M students with outstanding high school records, leadership, and activities; some awards also consider financial need. Apply via Common App or ApplyTexas for admission and complete the Self-Reported Academic Record (STAR) by December 1. Texas A&M does not stack Opportunity Awards.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html",
+        "last_verified_at": "2026-06-21",
+        "notes": "Aggie One Stop Opportunity Award page: Dec 1 deadline, STAR required, $100-$15,000 range; catalog cross-checked."
+      }
+    },
+    {
+      "id": "georgia-tech-gold-scholars",
+      "name": "Gold Scholars Program",
+      "sponsor": "Georgia Institute of Technology Office of Scholar Programs",
+      "award_amount": "Georgia residents: tuition, fees, and books (~$12,500/year); out-of-state: non-resident tuition waiver (~$21,000/year)",
+      "deadline": "2026-11-02",
+      "url": "https://goldscholars.em.gatech.edu/about/benefits",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY",
+        "eligible_schools": [
+          {
+            "name": "Georgia Institute of Technology",
+            "aliases": [
+              "Georgia Tech",
+              "GaTech"
+            ]
+          }
+        ]
+      },
+      "description": "Four-year merit scholarship and scholar community for top incoming Georgia Tech freshmen (~10-20 per year), selected on scholarship, leadership, progress, and service. No separate application; apply for first-year admission by Early Action (Georgia residents: October 15; non-Georgia students: November 2 for fall 2027 entry).",
+      "verified": true,
+      "verification": {
+        "source_url": "https://admission.gatech.edu/first-year/deadlines/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Gold Scholars benefits page plus GT admission deadlines: scholarship consideration requires Early Action admission application."
+      }
+    },
+    {
+      "id": "ut-dallas-aes",
+      "name": "Academic Excellence Scholarship (AES)",
+      "sponsor": "The University of Texas at Dallas",
+      "award_amount": "varies by cohort (recipients qualify for in-state tuition and fees)",
+      "deadline": "2026-12-01",
+      "url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY",
+        "eligible_schools": [
+          {
+            "name": "The University of Texas at Dallas",
+            "aliases": [
+              "UT Dallas",
+              "UTD",
+              "University of Texas at Dallas"
+            ]
+          }
+        ]
+      },
+      "description": "Merit scholarship for first-time-in-college freshmen admitted to UT Dallas for the fall term immediately after high school graduation. The admission application serves as the AES application; holistic review may consider optional essay, resume, and recommendations. AES recipients qualify for in-state tuition regardless of residency.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/",
+        "last_verified_at": "2026-06-21",
+        "notes": "UT Dallas AES prospective page: Dec 1 deadline, fall freshman only, no separate AES application."
+      }
+    },
+    {
+      "id": "cmu-pathway-program",
+      "name": "CMU Pathway Program",
+      "sponsor": "Carnegie Mellon University",
+      "award_amount": "tuition-free for families under $75k/year; meets 100% demonstrated need for eligible domestic undergraduates",
+      "deadline": "VERIFY",
+      "url": "https://www.cmu.edu/admission/costs-aid/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY",
+        "eligible_schools": [
+          {
+            "name": "Carnegie Mellon University",
+            "aliases": [
+              "Carnegie Mellon"
+            ]
+          }
+        ]
+      },
+      "description": "Need-based institutional aid for admitted Carnegie Mellon undergraduates. CMU does not offer general merit scholarships; admitted domestic students may receive grants through the Pathway Program (including tuition-free attendance for families earning under $75,000) after submitting the FAFSA and CSS Profile. Aid deadlines follow CMU financial aid timelines, not a single merit-scholarship date.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.cmu.edu/sfs/faq/index.html",
+        "last_verified_at": "2026-06-21",
+        "notes": "CMU SFS FAQ confirms no general merit scholarships; costs-aid page confirms Pathway thresholds and full-need commitment."
+      }
     }
   ]
 }

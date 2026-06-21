@@ -57,6 +57,7 @@ const filterMinScore = document.getElementById("filter-min-score");
 const filterMinScoreValue = document.getElementById("filter-min-score-value");
 const filterNoEssay = document.getElementById("filter-no-essay");
 const filterFieldMatch = document.getElementById("filter-field-match");
+const filterSchoolMatch = document.getElementById("filter-school-match");
 const filterDemographicMatch = document.getElementById("filter-demographic-match");
 const filterClosingSoon = document.getElementById("filter-closing-soon");
 const filterVerifiedOnly = document.getElementById("filter-verified-only");
@@ -99,6 +100,7 @@ function wireFilterControls() {
   });
   filterNoEssay.addEventListener("change", rerenderResults);
   filterFieldMatch.addEventListener("change", rerenderResults);
+  filterSchoolMatch.addEventListener("change", rerenderResults);
   filterDemographicMatch.addEventListener("change", rerenderResults);
   filterClosingSoon.addEventListener("change", rerenderResults);
   filterVerifiedOnly.addEventListener("change", rerenderResults);
@@ -112,6 +114,7 @@ function resetFilters() {
   filterMinScoreValue.textContent = "0";
   filterNoEssay.checked = false;
   filterFieldMatch.checked = false;
+  filterSchoolMatch.checked = false;
   filterDemographicMatch.checked = false;
   filterClosingSoon.checked = false;
   filterVerifiedOnly.checked = false;
@@ -144,6 +147,9 @@ function applyResultFilters(results) {
       filterFieldMatch.checked &&
       (r.score_breakdown?.field_of_study ?? 0) < SPECIFIC_FIELD_SCORE
     ) {
+      return false;
+    }
+    if (filterSchoolMatch.checked && (r.score_breakdown?.target_school ?? 0) <= 0) {
       return false;
     }
     if (filterDemographicMatch.checked && (r.score_breakdown?.demographics ?? 0) <= 0) {
@@ -1194,6 +1200,8 @@ function matchToCard(match) {
     estimated_deadline: match.estimated_deadline,
     url: match.url,
     verified: match.verified,
+    verification_source_url: match.verification_source_url,
+    last_verified_at: match.last_verified_at,
     closing_soon: match.closing_soon,
     score: match.score,
     score_breakdown: match.score_breakdown,
@@ -1211,6 +1219,8 @@ function scholarshipToCard(scholarship) {
     estimated_deadline: scholarship.estimated_deadline,
     url: scholarship.url,
     verified: scholarship.verified,
+    verification_source_url: scholarship.verification?.source_url || null,
+    last_verified_at: scholarship.verification?.last_verified_at || null,
     closing_soon: computeClosingSoon(scholarship.deadline),
     score: null,
     match_reasons: [],
@@ -1274,6 +1284,10 @@ function buildCard(card, tierClass) {
 
   body.appendChild(top);
   body.appendChild(meta);
+  const provenance = buildVerificationSource(card);
+  if (provenance) {
+    body.appendChild(provenance);
+  }
   const breakdown = card.score_breakdown ? buildScoreBreakdown(card.score_breakdown) : null;
   if (breakdown) {
     body.appendChild(breakdown);
@@ -1421,6 +1435,7 @@ function buildScoreBreakdown(breakdown) {
   const parts = [
     ["Field of study", breakdown.field_of_study],
     ["Background", breakdown.demographics],
+    ["Target school", breakdown.target_school],
     ["Activities", breakdown.activities],
     ["Financial need", breakdown.financial_need],
   ].filter(([, value]) => value > 0);
@@ -1434,6 +1449,28 @@ function buildScoreBreakdown(breakdown) {
     chip.className = "score-chip";
     chip.textContent = `${label} +${value}`;
     wrap.appendChild(chip);
+  }
+  return wrap;
+}
+
+function buildVerificationSource(card) {
+  if (!card.verification_source_url && !card.last_verified_at) {
+    return null;
+  }
+  const wrap = document.createElement("div");
+  wrap.className = "verification-source";
+  if (card.last_verified_at) {
+    const date = document.createElement("span");
+    date.textContent = `Verified ${card.last_verified_at}`;
+    wrap.appendChild(date);
+  }
+  if (card.verification_source_url) {
+    const link = document.createElement("a");
+    link.href = card.verification_source_url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "View verified source";
+    wrap.appendChild(link);
   }
   return wrap;
 }

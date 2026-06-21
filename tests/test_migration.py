@@ -48,3 +48,26 @@ def test_ensure_saved_columns_adds_missing_columns_and_backfills():
         engine.dispose()
     finally:
         os.remove(path)
+
+
+def test_ensure_saved_columns_uses_existing_connection_transaction():
+    """Alembic supplies a Connection that already has an open transaction."""
+    fd, path = tempfile.mkstemp(suffix=".db")
+    os.close(fd)
+    try:
+        engine = create_engine("sqlite:///" + path.replace("\\", "/"))
+        with engine.begin() as conn:
+            conn.execute(
+                text(
+                    "CREATE TABLE saved_scholarships ("
+                    "id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, "
+                    "scholarship_id VARCHAR(128) NOT NULL, created_at DATETIME)"
+                )
+            )
+            _ensure_saved_columns(conn)
+
+            columns = {col["name"] for col in inspect(conn).get_columns("saved_scholarships")}
+            assert {"status", "notes"}.issubset(columns)
+        engine.dispose()
+    finally:
+        os.remove(path)

@@ -21,6 +21,22 @@ def test_no_vocabulary_warnings():
     assert report["warnings"] == [], report["warnings"]
 
 
+def test_school_pilot_entries_have_provenance():
+    by_id = {s.id: s for s in load_scholarships()}
+    pilot_ids = (
+        "forty-acres-scholars-program",
+        "tamu-opportunity-award",
+        "georgia-tech-gold-scholars",
+        "ut-dallas-aes",
+        "cmu-pathway-program",
+    )
+    for scholarship_id in pilot_ids:
+        entry = by_id[scholarship_id]
+        assert entry.verified is True
+        assert entry.verification is not None
+        assert entry.eligibility.eligible_schools
+
+
 def test_ids_are_unique():
     ids = [s.id for s in load_scholarships()]
     assert len(ids) == len(set(ids))

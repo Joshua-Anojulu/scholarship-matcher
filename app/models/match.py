@@ -1,3 +1,4 @@
+from datetime import date
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -8,6 +9,7 @@ class ScoreBreakdown(BaseModel):
 
     field_of_study: float = 0.0
     demographics: float = 0.0
+    target_school: float = 0.0
     activities: float = 0.0
     financial_need: float = 0.0
     total: float = 0.0
@@ -24,6 +26,8 @@ class MatchResult(BaseModel):
     estimated_deadline: str | None = None
     url: str
     verified: bool
+    verification_source_url: str | None = None
+    last_verified_at: date | None = None
     essay_required: bool = Field(
         default=False,
         description="Whether the scholarship requires an essay (used by the no-essay filter).",

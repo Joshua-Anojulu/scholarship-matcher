@@ -732,6 +732,23 @@ textarea:focus {
 .badge-closing { color: #8c641c; background: var(--sun-soft); }
 .badge-unverified { color: var(--muted); background: #eef2ee; }
 
+.verification-source {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.verification-source a {
+  color: var(--forest);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.verification-source a:hover { text-decoration: underline; }
+
 .reasons { margin: 0; padding: 0.25rem 0 0; color: var(--muted); font-size: 0.81rem; }
 .reasons summary { color: var(--ink-soft); cursor: pointer; font-size: 0.8rem; font-weight: 700; }
 .reasons ul { margin: 0.55rem 0 0; padding-left: 1.1rem; }
