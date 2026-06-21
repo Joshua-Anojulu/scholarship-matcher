@@ -75,10 +75,21 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
                 warnings.append(f"{s.id}: duplicate aliases for school {school.name!r}")
 
         if s.verification is not None:
-            if s.verification.last_verified_at > date.today():
+            if (
+                s.verification.last_verified_at is not None
+                and s.verification.last_verified_at > date.today()
+            ):
                 errors.append(
                     f"{s.id}: last_verified_at is in the future "
                     f"({s.verification.last_verified_at})"
+                )
+            if (
+                s.verification.provenance_recorded_at is not None
+                and s.verification.provenance_recorded_at > date.today()
+            ):
+                errors.append(
+                    f"{s.id}: provenance_recorded_at is in the future "
+                    f"({s.verification.provenance_recorded_at})"
                 )
             if not s.verified:
                 warnings.append(f"{s.id}: has verification metadata but verified is false")
@@ -95,12 +106,26 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
     verified = sum(1 for s in scholarships if s.verified)
     estimated = sum(1 for s in scholarships if s.estimated_deadline)
     with_provenance = sum(1 for s in scholarships if s.verification is not None)
+    verified_with_audit_date = sum(
+        1
+        for s in scholarships
+        if s.verified and s.verification is not None and s.verification.last_verified_at is not None
+    )
+    source_recorded_without_audit = sum(
+        1
+        for s in scholarships
+        if s.verified
+        and s.verification is not None
+        and s.verification.last_verified_at is None
+    )
     stats = {
         "total": len(scholarships),
         "verified": verified,
         "unverified": len(scholarships) - verified,
         "estimated_deadlines": estimated,
         "with_provenance": with_provenance,
+        "verified_with_audit_date": verified_with_audit_date,
+        "source_recorded_without_audit": source_recorded_without_audit,
         "verified_without_provenance": verified - with_provenance,
         "verify_placeholders": dict(verify_counts),
     }
@@ -116,8 +141,10 @@ def main() -> int:
     print(f"  verified:   {stats['verified']}")
     print(f"  unverified: {stats['unverified']}")
     print(f"  estimated deadlines: {stats['estimated_deadlines']}")
-    print(f"  records with provenance: {stats['with_provenance']}")
-    print(f"  verified records awaiting provenance: {stats['verified_without_provenance']}")
+    print(f"  records with official source: {stats['with_provenance']}")
+    print(f"  verified records with audit date: {stats['verified_with_audit_date']}")
+    print(f"  source recorded without new audit: {stats['source_recorded_without_audit']}")
+    print(f"  verified records awaiting source: {stats['verified_without_provenance']}")
     print("VERIFY placeholders:")
     for field, count in sorted(stats["verify_placeholders"].items()):
         print(f"  {field:12} {count}")

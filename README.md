@@ -177,7 +177,7 @@ The dataset in [`app/data/scholarships.json`](app/data/scholarships.json) is a *
 
 ### Verification provenance
 
-Newly audited entries can also store the official `source_url`, the `last_verified_at` date, and a concise audit note. When that metadata is present, result cards link directly to the checked source. The dataset validator reports both the number of records with provenance and the older verified records that still need it.
+Verification distinguishes a recorded official `source_url` from a fresh fact audit. `last_verified_at` appears only when the entry was independently checked on that date; older entries can carry a source link with `provenance_recorded_at` and no audit date. Result cards label those cases differently, and the dataset validator reports both counts.
 
 School-specific records list the eligible institutions and common aliases (for example, `UT Austin`). A matching target school adds a visible fit signal; a known mismatch is shown as **Possible** with an eligibility caveat instead of being silently hidden.
 
@@ -231,6 +231,7 @@ scholarship-matcher/
 - Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship data and verification](#scholarship-data-and-verification) for how entries are confirmed over time.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
 - Accounts support change password and account deletion, but there is no email verification or password reset flow (which would need an email provider), so this is suited to a demo rather than production use.
+- The age and terms notice is a browser-stored acknowledgment, not age verification or parental consent. This is not a production-ready service for children under 13.
 - Sensitive endpoints (login, signup, password change, and the AI features) are rate limited per client IP. The limiter is in-memory, which suits a single-instance deploy; multi-instance hosting would need a shared store such as Redis.
 - On the free Postgres tier, saved data should be treated as non-critical because the database can expire after inactivity.
 - This is a **personal portfolio project**, not an official scholarship search or application service.

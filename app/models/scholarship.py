@@ -16,10 +16,17 @@ class EligibleSchool(BaseModel):
 
 
 class VerificationMetadata(BaseModel):
-    """Official evidence and audit date for a verified scholarship record."""
+    """Official source plus either an audit date or source-recording date."""
 
     source_url: HttpUrl
-    last_verified_at: date
+    last_verified_at: date | None = Field(
+        default=None,
+        description="Date the entry's facts were last independently checked against the source.",
+    )
+    provenance_recorded_at: date | None = Field(
+        default=None,
+        description="Date an official source was attached without performing a new fact audit.",
+    )
     notes: str | None = Field(default=None, max_length=500)
 
 

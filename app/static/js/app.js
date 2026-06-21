@@ -1497,13 +1497,17 @@ function buildVerificationSource(card) {
     const date = document.createElement("span");
     date.textContent = `Verified ${card.last_verified_at}`;
     wrap.appendChild(date);
+  } else if (card.verification_source_url) {
+    const source = document.createElement("span");
+    source.textContent = "Official source on file";
+    wrap.appendChild(source);
   }
   if (card.verification_source_url) {
     const link = document.createElement("a");
     link.href = card.verification_source_url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "View verified source";
+    link.textContent = card.last_verified_at ? "View verified source" : "View sponsor page";
     wrap.appendChild(link);
   }
   return wrap;

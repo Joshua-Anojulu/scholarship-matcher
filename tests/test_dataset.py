@@ -34,6 +34,7 @@ def test_school_pilot_entries_have_provenance():
         entry = by_id[scholarship_id]
         assert entry.verified is True
         assert entry.verification is not None
+        assert entry.verification.last_verified_at is not None
         assert entry.eligibility.eligible_schools
 
 
