@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scholarships4U</title>
+  <title>Scholarships4U | Scholarship planning, made clearer</title>
+  <meta name="description" content="Build a scholarship plan with clear matching reasons, deadline tracking, and practical essay guidance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <div>
           <p class="brand-name">Scholarships4U</p>
-          <p class="brand-tag">Find scholarships that fit your profile</p>
+          <p class="brand-tag">Scholarship planning, made clearer</p>
         </div>
       </div>
 
@@ -107,16 +108,43 @@
   </div>
 
   <main id="main" class="main">
-    <section class="intro panel">
-      <h1>Build your profile</h1>
-      <p class="intro-copy">
-        Tell us where you are in school, what you plan to study, and a few details about your background.
-        We rank scholarships by fit and show you exactly why each one matched.
-      </p>
+    <section class="intro hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A clearer path to funding</p>
+        <h1>Make your scholarship search feel less overwhelming.</h1>
+        <p class="intro-copy">
+          Build a profile once, see where you fit, and understand the thinking behind every recommendation.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary hero-cta" href="#profile-form">Build my profile <span aria-hidden="true">↓</span></a>
+          <p class="hero-note">Free to explore. Clear reasoning at every step.</p>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-top">Your search, with context</div>
+        <p class="hero-visual-title">Less noise.<br>More direction.</p>
+        <div class="hero-visual-row">
+          <span>Fit logic</span>
+          <strong>Explained</strong>
+        </div>
+        <div class="hero-visual-row">
+          <span>Application plan</span>
+          <strong>Organized</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="How Scholarships4U works">
+      <div class="trust-item"><span class="trust-number">01</span><span>See why a scholarship fits</span></div>
+      <div class="trust-item"><span class="trust-number">02</span><span>Keep your best options organized</span></div>
+      <div class="trust-item"><span class="trust-number">03</span><span>Always verify on the sponsor site</span></div>
     </section>
 
     <section class="resume-import panel">
-      <h2 class="resume-import-title">Start from your resume <span class="optional">(optional)</span></h2>
+      <div class="resume-intro">
+        <p class="eyebrow">Optional shortcut</p>
+        <h2 class="resume-import-title">Start with what you already have.</h2>
+      </div>
       <p class="field-hint">
         Upload a PDF resume or paste its text, and we'll pre-fill the form below for you to review.
         The text is sent to Anthropic's API to extract your details; nothing is submitted automatically and your file is not stored.
@@ -139,6 +167,13 @@
     </section>
 
     <form id="profile-form" class="profile-form panel" novalidate>
+      <div class="form-heading">
+        <div>
+          <p class="eyebrow">01 / Your profile</p>
+          <h2>Tell us where you’re headed.</h2>
+        </div>
+        <p>Start with the essentials. You can refine the rest as you go.</p>
+      </div>
       <div class="form-grid">
         <div class="field">
           <label for="gpa">GPA</label>
@@ -205,7 +240,8 @@
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="btn-primary" id="submit-btn">Find scholarships</button>
+        <button type="submit" class="btn-primary" id="submit-btn">Find my scholarships <span aria-hidden="true">→</span></button>
+        <span class="form-action-note">We’ll explain every match.</span>
       </div>
 
       <div id="form-error" class="form-error" role="alert" hidden></div>
@@ -213,6 +249,7 @@
 
     <section id="results-section" class="results-section" hidden>
       <div class="results-header">
+        <p class="eyebrow">Your shortlist</p>
         <h2>Your matches</h2>
         <p id="results-summary" class="results-summary"></p>
       </div>
@@ -283,6 +320,7 @@
 
     <section id="saved-section" class="results-section" hidden>
       <div class="results-header">
+        <p class="eyebrow">Your application plan</p>
         <h2>Saved scholarships</h2>
         <p id="saved-summary" class="results-summary"></p>
         <a id="export-ics" class="btn-ghost export-ics" href="/account/saved/calendar.ics" download>
@@ -300,7 +338,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Scholarship data is a curated seed set. Confirm every deadline and requirement on the official sponsor page before you apply.</p>
+    <p>Scholarships4U helps you narrow the search. Confirm every deadline and requirement on the official sponsor page before you apply.</p>
   </footer>
 
   <script src="/static/js/app.js"></script>
