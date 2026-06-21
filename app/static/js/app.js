@@ -316,10 +316,11 @@ function summarizeExtraction(profile) {
 /* ---------- Account settings ---------- */
 
 const settingsModal = document.getElementById("settings-modal");
+const SITE_CONSENT_KEY = "site_consent_v1";
 
 function wireAgeGate() {
   const gate = document.getElementById("age-gate");
-  if (!gate || localStorage.getItem("site_consent") === "yes") {
+  if (!gate || localStorage.getItem(SITE_CONSENT_KEY) === "yes") {
     return;
   }
   const agree = document.getElementById("age-gate-agree");
@@ -331,7 +332,7 @@ function wireAgeGate() {
     if (!agree.checked) {
       return;
     }
-    localStorage.setItem("site_consent", "yes");
+    localStorage.setItem(SITE_CONSENT_KEY, "yes");
     gate.hidden = true;
   });
   gate.hidden = false;

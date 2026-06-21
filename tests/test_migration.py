@@ -6,7 +6,7 @@ import tempfile
 
 from sqlalchemy import create_engine, inspect, text
 
-from app.db.database import _ensure_saved_columns
+from app.db.database import _ensure_saved_columns, init_db
 
 
 def test_ensure_saved_columns_adds_missing_columns_and_backfills():
@@ -71,3 +71,9 @@ def test_ensure_saved_columns_uses_existing_connection_transaction():
         engine.dispose()
     finally:
         os.remove(path)
+
+
+def test_init_db_runs_outside_the_project_directory(monkeypatch, tmp_path):
+    """Startup must find Alembic scripts even when the process cwd is elsewhere."""
+    monkeypatch.chdir(tmp_path)
+    init_db()

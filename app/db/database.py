@@ -65,6 +65,7 @@ def init_db() -> None:
     # the process's current working directory (alembic.ini's script_location is
     # relative, which only works when launched from the project root).
     config.set_main_option("script_location", str(PROJECT_ROOT / "alembic"))
+    config.set_main_option("prepend_sys_path", str(PROJECT_ROOT))
     config.set_main_option("sqlalchemy.url", DATABASE_URL)
     command.upgrade(config, "head")
 
