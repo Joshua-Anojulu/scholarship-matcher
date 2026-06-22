@@ -1611,16 +1611,56 @@ function buildScoreBreakdown(breakdown) {
   return wrap;
 }
 
+// A fact audit older than this is flagged for re-verification. Sponsor pages
+// change over a cycle, so a stale audit date should prompt a fresh check.
+const STALE_VERIFICATION_DAYS = 90;
+
+// Parse a "YYYY-MM-DD" date as UTC to avoid local-timezone off-by-one errors.
+function parseIsoDateUTC(isoDate) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(isoDate || ""));
+  if (!match) {
+    return null;
+  }
+  return Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+}
+
+function verificationAgeDays(isoDate) {
+  const then = parseIsoDateUTC(isoDate);
+  if (then === null) {
+    return null;
+  }
+  return Math.floor((Date.now() - then) / 86400000);
+}
+
+function formatVerifiedDate(isoDate) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(isoDate || ""));
+  if (!match) {
+    return isoDate;
+  }
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return `${months[Number(match[2]) - 1]} ${Number(match[3])}, ${match[1]}`;
+}
+
 function buildVerificationSource(card) {
   if (!card.verification_source_url && !card.last_verified_at) {
     return null;
   }
   const wrap = document.createElement("div");
   wrap.className = "verification-source";
+  let stale = false;
   if (card.last_verified_at) {
+    const ageDays = verificationAgeDays(card.last_verified_at);
+    stale = ageDays !== null && ageDays > STALE_VERIFICATION_DAYS;
     const date = document.createElement("span");
-    date.textContent = `Verified ${card.last_verified_at}`;
+    date.textContent = `Verified ${formatVerifiedDate(card.last_verified_at)}`;
     wrap.appendChild(date);
+    if (stale) {
+      wrap.classList.add("verification-stale");
+      const flag = document.createElement("span");
+      flag.className = "verification-stale-flag";
+      flag.textContent = "Re-verify on source";
+      wrap.appendChild(flag);
+    }
   } else if (card.verification_source_url) {
     const source = document.createElement("span");
     source.textContent = "Official source on file";
@@ -1631,7 +1671,11 @@ function buildVerificationSource(card) {
     link.href = card.verification_source_url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = card.last_verified_at ? "View verified source" : "View sponsor page";
+    link.textContent = stale
+      ? "Re-check on sponsor page"
+      : card.last_verified_at
+      ? "View verified source"
+      : "View sponsor page";
     wrap.appendChild(link);
   }
   return wrap;

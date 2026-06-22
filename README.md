@@ -177,7 +177,7 @@ The dataset in [`app/data/scholarships.json`](app/data/scholarships.json) is a *
 
 ### Verification provenance
 
-Verification distinguishes a recorded official `source_url` from a fresh fact audit. `last_verified_at` appears only when the entry was independently checked on that date; older entries can carry a source link with `provenance_recorded_at` and no audit date. Result cards label those cases differently, and the dataset validator reports both counts.
+Verification distinguishes a recorded official `source_url` from a fresh fact audit. `last_verified_at` appears only when the entry was independently checked on that date; older entries can carry a source link with `provenance_recorded_at` and no audit date. Result cards label those cases differently, and the dataset validator reports both counts. An audit older than 90 days is visibly flagged for re-checking; the validator's re-verification queue includes both those stale audits and source-only records that have not received a fresh audit.
 
 School-specific records list the eligible institutions and common aliases (for example, `UT Austin`). A matching target school adds a visible fit signal; a known mismatch is shown as **Possible** with an eligibility caveat instead of being silently hidden.
 
@@ -194,7 +194,7 @@ Because some programs have not yet announced their upcoming cycle, full verifica
 
 ### Checking current status
 
-Run the validator at any time to see how many entries are verified and how many `VERIFY` placeholders remain per field:
+Run the validator at any time to see how many entries are verified, which ones need re-verification, and how many `VERIFY` placeholders remain per field:
 
 ```bash
 python scripts/validate_dataset.py

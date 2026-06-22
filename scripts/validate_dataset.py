@@ -35,8 +35,16 @@ def _deadline_ok(deadline: str) -> bool:
     return _parse_iso_deadline(deadline) is not None
 
 
-def audit_dataset(scholarships: list[Scholarship]) -> dict:
-    """Return {errors, warnings, stats}. Errors are structural; warnings advisory."""
+STALE_AFTER_DAYS = 90
+
+
+def audit_dataset(scholarships: list[Scholarship], today: date | None = None) -> dict:
+    """Return {errors, warnings, stats}. Errors are structural; warnings advisory.
+
+    ``today`` defaults to the current date and is injectable so the staleness
+    (needs-re-verification) checks can be tested deterministically.
+    """
+    today = today or date.today()
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -77,7 +85,7 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
         if s.verification is not None:
             if (
                 s.verification.last_verified_at is not None
-                and s.verification.last_verified_at > date.today()
+                and s.verification.last_verified_at > today
             ):
                 errors.append(
                     f"{s.id}: last_verified_at is in the future "
@@ -85,7 +93,7 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
                 )
             if (
                 s.verification.provenance_recorded_at is not None
-                and s.verification.provenance_recorded_at > date.today()
+                and s.verification.provenance_recorded_at > today
             ):
                 errors.append(
                     f"{s.id}: provenance_recorded_at is in the future "
@@ -118,6 +126,26 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
         and s.verification is not None
         and s.verification.last_verified_at is None
     )
+    stale_audit_ids = [
+        s.id
+        for s in scholarships
+        if s.verified
+        and s.verification is not None
+        and s.verification.last_verified_at is not None
+        and (today - s.verification.last_verified_at).days > STALE_AFTER_DAYS
+    ]
+    # Actionable re-verification queue: verified entries never independently
+    # audited, plus those whose audit has aged past the staleness window.
+    needs_reverification_ids = [
+        s.id
+        for s in scholarships
+        if s.verified
+        and s.verification is not None
+        and (
+            s.verification.last_verified_at is None
+            or (today - s.verification.last_verified_at).days > STALE_AFTER_DAYS
+        )
+    ]
     stats = {
         "total": len(scholarships),
         "verified": verified,
@@ -126,10 +154,18 @@ def audit_dataset(scholarships: list[Scholarship]) -> dict:
         "with_provenance": with_provenance,
         "verified_with_audit_date": verified_with_audit_date,
         "source_recorded_without_audit": source_recorded_without_audit,
+        "stale_audit": len(stale_audit_ids),
+        "needs_reverification": len(needs_reverification_ids),
         "verified_without_provenance": verified - with_provenance,
         "verify_placeholders": dict(verify_counts),
     }
-    return {"errors": errors, "warnings": warnings, "stats": stats}
+    return {
+        "errors": errors,
+        "warnings": warnings,
+        "stats": stats,
+        "stale_audit_ids": stale_audit_ids,
+        "needs_reverification_ids": needs_reverification_ids,
+    }
 
 
 def main() -> int:
@@ -145,9 +181,21 @@ def main() -> int:
     print(f"  verified records with audit date: {stats['verified_with_audit_date']}")
     print(f"  source recorded without new audit: {stats['source_recorded_without_audit']}")
     print(f"  verified records awaiting source: {stats['verified_without_provenance']}")
+    print(
+        f"  needs re-verification (>{STALE_AFTER_DAYS}d old or never audited): "
+        f"{stats['needs_reverification']} (audit gone stale: {stats['stale_audit']})"
+    )
     print("VERIFY placeholders:")
     for field, count in sorted(stats["verify_placeholders"].items()):
         print(f"  {field:12} {count}")
+
+    queue = report["needs_reverification_ids"]
+    if queue:
+        print(f"\nRe-verification queue ({len(queue)}):")
+        for sid in queue[:50]:
+            print(f"  - {sid}")
+        if len(queue) > 50:
+            print(f"  ... and {len(queue) - 50} more")
 
     if report["warnings"]:
         print(f"\nWarnings ({len(report['warnings'])}):")
