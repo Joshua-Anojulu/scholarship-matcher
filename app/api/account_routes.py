@@ -81,6 +81,7 @@ def list_saved(
             saved_at=row.created_at,
             status=row.status,
             notes=row.notes,
+            completed_requirement_ids=row.completed_requirement_ids,
             scholarship=index.get(row.scholarship_id),
         )
         for row in rows
@@ -144,6 +145,7 @@ def save_scholarship(
             saved_at=existing.created_at,
             status=existing.status,
             notes=existing.notes,
+            completed_requirement_ids=existing.completed_requirement_ids,
             scholarship=scholarship,
         )
 
@@ -156,6 +158,7 @@ def save_scholarship(
         saved_at=row.created_at,
         status=row.status,
         notes=row.notes,
+        completed_requirement_ids=row.completed_requirement_ids,
         scholarship=scholarship,
     )
 
@@ -186,15 +189,29 @@ def update_saved_scholarship(
         row.status = body.status
     if body.notes is not None:
         row.notes = body.notes
+
+    index = _scholarship_index(request)
+    if body.completed_requirement_ids is not None:
+        scholarship = index.get(row.scholarship_id)
+        requirement_ids = {
+            requirement.id for requirement in (scholarship.application_requirements if scholarship else [])
+        }
+        invalid_ids = set(body.completed_requirement_ids) - requirement_ids
+        if invalid_ids:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail={"error": "Checklist steps must belong to this scholarship."},
+            )
+        row.completed_requirement_ids = body.completed_requirement_ids
     db.commit()
     db.refresh(row)
 
-    index = _scholarship_index(request)
     return SavedScholarshipItem(
         scholarship_id=row.scholarship_id,
         saved_at=row.created_at,
         status=row.status,
         notes=row.notes,
+        completed_requirement_ids=row.completed_requirement_ids,
         scholarship=index.get(row.scholarship_id),
     )
 

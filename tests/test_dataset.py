@@ -36,6 +36,7 @@ def test_school_pilot_entries_have_provenance():
         assert entry.verification is not None
         assert entry.verification.last_verified_at is not None
         assert entry.eligibility.eligible_schools
+        assert entry.application_requirements
 
 
 def test_ids_are_unique():

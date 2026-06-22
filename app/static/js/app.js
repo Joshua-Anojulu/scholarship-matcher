@@ -766,6 +766,7 @@ const SAVED_STATUSES = [
   { value: "awarded", label: "Awarded" },
   { value: "rejected", label: "Rejected" },
 ];
+let trackerItems = [];
 
 function trackerSummary(items) {
   const counts = {};
@@ -778,18 +779,29 @@ function trackerSummary(items) {
   );
   const total = items.length;
   const head = `${total} saved scholarship${total === 1 ? "" : "s"}`;
+  const totalSteps = items.reduce(
+    (sum, item) => sum + (item.scholarship?.application_requirements?.length || 0),
+    0
+  );
+  const completedSteps = items.reduce(
+    (sum, item) => sum + (item.completed_requirement_ids?.length || 0),
+    0
+  );
+  if (totalSteps) {
+    const statusSummary = parts.length ? `${head} — ${parts.join(", ")}.` : `${head}.`;
+    return `${statusSummary} ${completedSteps}/${totalSteps} application steps complete.`;
+  }
   return parts.length ? `${head} — ${parts.join(", ")}.` : `${head}.`;
 }
 
 function refreshTrackerSummary() {
-  const selects = savedContainer.querySelectorAll(".tracker-status");
-  const items = Array.from(selects).map((select) => ({ status: select.value }));
-  if (items.length > 0) {
-    savedSummary.textContent = trackerSummary(items);
+  if (trackerItems.length > 0) {
+    savedSummary.textContent = trackerSummary(trackerItems);
   }
 }
 
 function renderSaved(items) {
+  trackerItems = items || [];
   savedContainer.innerHTML = "";
   if (!items || items.length === 0) {
     savedSummary.textContent = "";
@@ -808,7 +820,10 @@ function renderSaved(items) {
     // it is a strong match.
     const card = buildCard(scholarshipToCard(item.scholarship), "saved");
     card.classList.add(`status-${item.status || "interested"}`);
-    card.appendChild(buildTrackerControls(item, card));
+    // Append inside the card-body (the wide grid column), not the card grid
+    // itself, or the controls land in the narrow path-bar column.
+    const cardBody = card.querySelector(".card-body");
+    (cardBody || card).appendChild(buildTrackerControls(item, card));
     savedContainer.appendChild(card);
   }
 }
@@ -816,6 +831,11 @@ function renderSaved(items) {
 function buildTrackerControls(item, card) {
   const wrap = document.createElement("div");
   wrap.className = "tracker-controls";
+
+  const checklist = buildApplicationChecklist(item);
+  if (checklist) {
+    wrap.appendChild(checklist);
+  }
 
   const statusField = document.createElement("div");
   statusField.className = "tracker-field";
@@ -836,6 +856,7 @@ function buildTrackerControls(item, card) {
   select.addEventListener("change", async () => {
     const ok = await patchSaved(item.scholarship_id, { status: select.value });
     if (ok) {
+      item.status = select.value;
       card.className = card.className.replace(/\bstatus-\w+\b/, `status-${select.value}`);
       refreshTrackerSummary();
     }
@@ -867,6 +888,94 @@ function buildTrackerControls(item, card) {
   wrap.appendChild(statusField);
   wrap.appendChild(notesField);
   return wrap;
+}
+
+function buildApplicationChecklist(item) {
+  const requirements = item.scholarship?.application_requirements || [];
+  if (!requirements.length) {
+    return null;
+  }
+
+  const field = document.createElement("div");
+  field.className = "tracker-field tracker-checklist";
+  const header = document.createElement("div");
+  header.className = "tracker-checklist-header";
+  const label = document.createElement("span");
+  label.className = "tracker-label";
+  label.textContent = "Application checklist";
+  const progress = document.createElement("span");
+  progress.className = "tracker-checklist-progress";
+  header.appendChild(label);
+  header.appendChild(progress);
+  field.appendChild(header);
+  const nextAction = document.createElement("span");
+  nextAction.className = "tracker-checklist-next";
+  field.appendChild(nextAction);
+
+  const requirementIds = new Set(requirements.map((requirement) => requirement.id));
+  let completed = new Set(
+    (item.completed_requirement_ids || []).filter((requirementId) => requirementIds.has(requirementId))
+  );
+  const updateProgress = () => {
+    progress.textContent = `${completed.size}/${requirements.length} complete`;
+    const next = requirements.find((requirement) => !completed.has(requirement.id));
+    nextAction.textContent = next ? `Next: ${next.label}` : "All verified steps complete";
+  };
+  updateProgress();
+
+  for (const requirement of requirements) {
+    const task = document.createElement("label");
+    task.className = "tracker-task";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = completed.has(requirement.id);
+    const copy = document.createElement("span");
+    copy.className = "tracker-task-copy";
+    const title = document.createElement("strong");
+    title.textContent = requirement.label;
+    copy.appendChild(title);
+    if (requirement.details) {
+      const details = document.createElement("span");
+      details.className = "tracker-task-details";
+      details.textContent = requirement.details;
+      copy.appendChild(details);
+    }
+    if (requirement.source_url) {
+      const source = document.createElement("a");
+      source.href = requirement.source_url;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = "Source";
+      source.addEventListener("click", (event) => event.stopPropagation());
+      copy.appendChild(source);
+    }
+    task.appendChild(checkbox);
+    task.appendChild(copy);
+    checkbox.addEventListener("change", async () => {
+      const before = new Set(completed);
+      if (checkbox.checked) {
+        completed.add(requirement.id);
+      } else {
+        completed.delete(requirement.id);
+      }
+      checkbox.disabled = true;
+      updateProgress();
+      const ok = await patchSaved(item.scholarship_id, {
+        completed_requirement_ids: Array.from(completed),
+      });
+      checkbox.disabled = false;
+      if (!ok) {
+        completed = before;
+        checkbox.checked = completed.has(requirement.id);
+        updateProgress();
+        return;
+      }
+      item.completed_requirement_ids = Array.from(completed);
+      refreshTrackerSummary();
+    });
+    field.appendChild(task);
+  }
+  return field;
 }
 
 async function patchSaved(scholarshipId, payload) {

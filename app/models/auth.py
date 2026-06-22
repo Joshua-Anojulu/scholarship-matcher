@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Literal, Optional
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, field_validator
 
 from app.models.scholarship import Scholarship
 from app.models.student import StudentProfile
@@ -55,6 +55,7 @@ class SavedScholarshipItem(BaseModel):
     saved_at: datetime
     status: SavedStatus = "interested"
     notes: str = ""
+    completed_requirement_ids: list[str] = Field(default_factory=list)
     scholarship: Scholarship | None = Field(
         default=None,
         description="Full scholarship record, or null if it left the dataset.",
@@ -66,6 +67,25 @@ class SavedUpdateRequest(BaseModel):
 
     status: Optional[SavedStatus] = None
     notes: Optional[str] = Field(default=None, max_length=2000)
+    completed_requirement_ids: list[str] | None = Field(default=None, max_length=50)
+
+    @field_validator("completed_requirement_ids")
+    @classmethod
+    def validate_requirement_ids(cls, values: list[str] | None) -> list[str] | None:
+        if values is None:
+            return None
+        normalized: list[str] = []
+        for value in values:
+            requirement_id = value.strip()
+            if (
+                not requirement_id
+                or len(requirement_id) > 80
+                or any(char not in "abcdefghijklmnopqrstuvwxyz0123456789_-" for char in requirement_id)
+            ):
+                raise ValueError("completed_requirement_ids must contain stable requirement ids")
+            if requirement_id not in normalized:
+                normalized.append(requirement_id)
+        return normalized
 
 
 class SavedListResponse(BaseModel):

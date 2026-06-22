@@ -209,6 +209,7 @@ class TestApplicationTracker:
         assert created.status_code == 201
         assert created.json()["status"] == "interested"
         assert created.json()["notes"] == ""
+        assert created.json()["completed_requirement_ids"] == []
 
     def test_update_status_and_notes(self, client):
         signup(client)
@@ -237,6 +238,38 @@ class TestApplicationTracker:
         item = client.get("/account/saved").json()["saved"][0]
         assert item["status"] == "drafting"
         assert item["notes"] == "almost done"
+
+    def test_update_application_checklist_progress(self, client):
+        signup(client)
+        scholarship_id = "forty-acres-scholars-program"
+        created = client.post(f"/account/saved/{scholarship_id}")
+        assert created.status_code == 201
+        assert created.json()["scholarship"]["application_requirements"][0]["id"] == (
+            "ut-austin-first-year-application"
+        )
+
+        updated = client.patch(
+            f"/account/saved/{scholarship_id}",
+            json={"completed_requirement_ids": ["ut-austin-first-year-application"]},
+        )
+        assert updated.status_code == 200
+        assert updated.json()["completed_requirement_ids"] == [
+            "ut-austin-first-year-application"
+        ]
+
+        item = client.get("/account/saved").json()["saved"][0]
+        assert item["completed_requirement_ids"] == ["ut-austin-first-year-application"]
+
+    def test_rejects_checklist_steps_from_another_scholarship(self, client):
+        signup(client)
+        scholarship_id = "forty-acres-scholars-program"
+        client.post(f"/account/saved/{scholarship_id}")
+
+        response = client.patch(
+            f"/account/saved/{scholarship_id}",
+            json={"completed_requirement_ids": ["cmu-fafsa"]},
+        )
+        assert response.status_code == 422
 
     def test_invalid_status_returns_422(self, client):
         signup(client)

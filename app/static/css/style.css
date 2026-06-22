@@ -850,6 +850,16 @@ textarea:focus {
 .tracker-controls { display: flex; margin-top: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 0.75rem 1rem; }
 .tracker-field { display: flex; flex-direction: column; gap: 0.28rem; }
 .tracker-field-notes { flex: 1 1 260px; }
+.tracker-checklist { flex: 1 1 100%; padding: 0.85rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--paper-soft); }
+.tracker-checklist-header { display: flex; align-items: center; justify-content: space-between; gap: 0.7rem; }
+.tracker-checklist-progress { color: var(--forest); font-size: 0.74rem; font-weight: 700; }
+.tracker-checklist-next { margin-top: 0.15rem; color: var(--ink-soft); font-size: 0.79rem; font-weight: 700; }
+.tracker-task { display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 0.65rem; color: var(--ink-soft); cursor: pointer; font-size: 0.82rem; }
+.tracker-task input { width: 1rem; height: 1rem; margin-top: 0.14rem; accent-color: var(--forest); flex: 0 0 auto; }
+.tracker-task-copy { display: flex; flex-direction: column; gap: 0.12rem; }
+.tracker-task-copy strong { color: var(--ink); font-size: 0.83rem; }
+.tracker-task-details { color: var(--muted); line-height: 1.45; }
+.tracker-task a { width: fit-content; color: var(--forest); font-size: 0.75rem; font-weight: 700; }
 .tracker-label { color: var(--muted); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .tracker-status { min-height: 2.35rem; padding: 0.45rem 0.55rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); color: var(--ink); background: var(--paper); }
 .tracker-notes { min-height: 2.35rem; padding: 0.5rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); color: var(--ink); background: var(--paper); }

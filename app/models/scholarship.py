@@ -30,6 +30,21 @@ class VerificationMetadata(BaseModel):
     notes: str | None = Field(default=None, max_length=500)
 
 
+class ApplicationRequirement(BaseModel):
+    """A source-backed task a student can complete for a scholarship application."""
+
+    id: str = Field(
+        min_length=1,
+        max_length=80,
+        pattern=r"^[a-z0-9][a-z0-9_-]*$",
+        description="Stable identifier used to save a student's checklist progress.",
+    )
+    label: str = Field(min_length=1, max_length=160)
+    details: str | None = Field(default=None, max_length=500)
+    required: bool = True
+    source_url: HttpUrl | None = None
+
+
 class Eligibility(BaseModel):
     """Rules used by the matching algorithm to score student fit."""
 
@@ -90,6 +105,10 @@ class Scholarship(BaseModel):
     verified: bool = Field(
         default=False,
         description="True once this entry is confirmed against official sources.",
+    )
+    application_requirements: list[ApplicationRequirement] = Field(
+        default_factory=list,
+        description="Structured, source-backed application steps when they have been verified.",
     )
     verification: VerificationMetadata | None = Field(
         default=None,

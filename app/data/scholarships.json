@@ -3091,6 +3091,14 @@
         ]
       },
       "description": "Premier full-ride merit scholarship for incoming UT Austin freshmen, administered by the Texas Exes. Apply for UT Austin admission via the Common App or ApplyTexas by December 1 to be considered automatically; there is no separate Forty Acres application. Transfer and international students are not eligible for this program.",
+      "application_requirements": [
+        {
+          "id": "ut-austin-first-year-application",
+          "label": "Submit a UT Austin first-year application",
+          "details": "Apply through the Common App or ApplyTexas by December 1. There is no separate Forty Acres application.",
+          "source_url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply"
+        }
+      ],
       "verified": true,
       "verification": {
         "source_url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply",
@@ -3126,6 +3134,20 @@
         ]
       },
       "description": "Freshman scholarship for entering Texas A&M students with outstanding high school records, leadership, and activities; some awards also consider financial need. Apply via Common App or ApplyTexas for admission and complete the Self-Reported Academic Record (STAR) by December 1. Texas A&M does not stack Opportunity Awards.",
+      "application_requirements": [
+        {
+          "id": "tamu-first-year-application",
+          "label": "Submit a Texas A&M first-year application",
+          "details": "Apply through the Common App or ApplyTexas by December 1 for Opportunity Award consideration.",
+          "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html"
+        },
+        {
+          "id": "tamu-star",
+          "label": "Complete the Self-Reported Academic Record (STAR)",
+          "details": "Complete STAR by December 1 as part of the scholarship consideration process.",
+          "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html"
+        }
+      ],
       "verified": true,
       "verification": {
         "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html",
@@ -3161,6 +3183,14 @@
         ]
       },
       "description": "Four-year merit scholarship and scholar community for top incoming Georgia Tech freshmen (~10-20 per year), selected on scholarship, leadership, progress, and service. No separate application; apply for first-year admission by Early Action (Georgia residents: October 15; non-Georgia students: November 2 for fall 2027 entry).",
+      "application_requirements": [
+        {
+          "id": "georgia-tech-early-action-application",
+          "label": "Submit a Georgia Tech Early Action application",
+          "details": "Apply by October 15 if you are a Georgia resident or November 2 if you are not. There is no separate Gold Scholars application.",
+          "source_url": "https://admission.gatech.edu/first-year/deadlines/"
+        }
+      ],
       "verified": true,
       "verification": {
         "source_url": "https://admission.gatech.edu/first-year/deadlines/",
@@ -3197,6 +3227,14 @@
         ]
       },
       "description": "Merit scholarship for first-time-in-college freshmen admitted to UT Dallas for the fall term immediately after high school graduation. The admission application serves as the AES application; holistic review may consider optional essay, resume, and recommendations. AES recipients qualify for in-state tuition regardless of residency.",
+      "application_requirements": [
+        {
+          "id": "utd-first-year-application",
+          "label": "Submit a UT Dallas first-year application",
+          "details": "Apply by December 1 for AES consideration. The admission application is the AES application.",
+          "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/"
+        }
+      ],
       "verified": true,
       "verification": {
         "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/",
@@ -3231,6 +3269,20 @@
         ]
       },
       "description": "Need-based institutional aid for admitted Carnegie Mellon undergraduates. CMU does not offer general merit scholarships; admitted domestic students may receive grants through the Pathway Program (including tuition-free attendance for families earning under $75,000) after submitting the FAFSA and CSS Profile. Aid deadlines follow CMU financial aid timelines, not a single merit-scholarship date.",
+      "application_requirements": [
+        {
+          "id": "cmu-fafsa",
+          "label": "Submit the FAFSA for CMU financial aid",
+          "details": "Use CMU's current financial-aid timeline; this opportunity does not use one fixed merit-scholarship deadline.",
+          "source_url": "https://www.cmu.edu/admission/costs-aid/"
+        },
+        {
+          "id": "cmu-css-profile",
+          "label": "Submit the CSS Profile for CMU financial aid",
+          "details": "Use CMU's current financial-aid timeline; this opportunity does not use one fixed merit-scholarship deadline.",
+          "source_url": "https://www.cmu.edu/admission/costs-aid/"
+        }
+      ],
       "verified": true,
       "verification": {
         "source_url": "https://www.cmu.edu/sfs/faq/index.html",

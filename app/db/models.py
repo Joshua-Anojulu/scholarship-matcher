@@ -78,6 +78,9 @@ class SavedScholarship(Base):
         String(20), nullable=False, default="interested", server_default="interested"
     )
     notes: Mapped[str] = mapped_column(Text, nullable=False, default="", server_default="")
+    completed_requirement_ids: Mapped[list[str]] = mapped_column(
+        JSON, nullable=False, default=list, server_default="[]"
+    )
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
 
     user: Mapped[User] = relationship(back_populates="saved_scholarships")
