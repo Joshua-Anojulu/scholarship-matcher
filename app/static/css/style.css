@@ -860,6 +860,7 @@ textarea:focus {
 .tracker-task-copy strong { color: var(--ink); font-size: 0.83rem; }
 .tracker-task-details { color: var(--muted); line-height: 1.45; }
 .tracker-task a { width: fit-content; color: var(--forest); font-size: 0.75rem; font-weight: 700; }
+.tracker-task-optional { align-self: flex-start; margin-top: 0.1rem; padding: 0.04rem 0.4rem; border-radius: 999px; background: var(--leaf); color: var(--forest-dark); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .tracker-label { color: var(--muted); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .tracker-status { min-height: 2.35rem; padding: 0.45rem 0.55rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); color: var(--ink); background: var(--paper); }
 .tracker-notes { min-height: 2.35rem; padding: 0.5rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); color: var(--ink); background: var(--paper); }

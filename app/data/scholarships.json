@@ -3095,7 +3095,21 @@
         {
           "id": "ut-austin-first-year-application",
           "label": "Submit a UT Austin first-year application",
-          "details": "Apply through the Common App or ApplyTexas by December 1. There is no separate Forty Acres application.",
+          "details": "Apply through the Common App or ApplyTexas. Priority deadline October 15; final deadline December 1. There is no separate Forty Acres application; applying for UT Austin admission enters you as a candidate, and only selected students are contacted to continue.",
+          "source_url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply"
+        },
+        {
+          "id": "forty-acres-canfield-business",
+          "label": "Business applicants: also apply to the Canfield Business Honors Program",
+          "details": "If you are applying to McCombs (business), the program advises also applying to the Canfield Business Honors Program.",
+          "required": false,
+          "source_url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply"
+        },
+        {
+          "id": "forty-acres-interview-if-selected",
+          "label": "If selected, complete the Forty Acres interview and requested materials",
+          "details": "Only students selected to move forward are contacted directly by the program to continue the selection process, which includes interviews.",
+          "required": false,
           "source_url": "https://www.texasexes.org/scholarships/forty-acres-scholars-program/apply"
         }
       ],
@@ -3112,7 +3126,7 @@
       "sponsor": "Texas A&M University Scholarships & Financial Aid",
       "award_amount": "$100 to $15,000 per year",
       "deadline": "2026-12-01",
-      "url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html",
+      "url": "https://aggie.tamu.edu/financial-aid/types-of-aid/scholarships/undergraduate-scholarships/opportunity-award",
       "eligibility": {
         "min_gpa": null,
         "fields_of_study": [],
@@ -3138,21 +3152,28 @@
         {
           "id": "tamu-first-year-application",
           "label": "Submit a Texas A&M first-year application",
-          "details": "Apply through the Common App or ApplyTexas by December 1 for Opportunity Award consideration.",
-          "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html"
+          "details": "Apply for admission through the Common App or ApplyTexas. The freshman scholarship application opens August 1 and closes December 1.",
+          "source_url": "https://aggie.tamu.edu/financial-aid/types-of-aid/scholarships/undergraduate-scholarships/opportunity-award"
         },
         {
           "id": "tamu-star",
           "label": "Complete the Self-Reported Academic Record (STAR)",
-          "details": "Complete STAR by December 1 as part of the scholarship consideration process.",
-          "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html"
+          "details": "Complete STAR by December 1; the admission application together with STAR is what places you in freshman scholarship consideration.",
+          "source_url": "https://aggie.tamu.edu/financial-aid/types-of-aid/scholarships/undergraduate-scholarships/opportunity-award"
+        },
+        {
+          "id": "tamu-financial-aid-application",
+          "label": "Submit a financial aid application (FAFSA or TASFA) for need-based awards",
+          "details": "Some Opportunity Awards consider financial need; submit a financial aid application to be considered for the need-based awards.",
+          "required": false,
+          "source_url": "https://aggie.tamu.edu/financial-aid/types-of-aid/scholarships/undergraduate-scholarships/opportunity-award"
         }
       ],
       "verified": true,
       "verification": {
-        "source_url": "https://aggie.tamu.edu/paying-for-college/apply-for-scholarships/opportunity-award.html",
+        "source_url": "https://aggie.tamu.edu/financial-aid/types-of-aid/scholarships/undergraduate-scholarships/opportunity-award",
         "last_verified_at": "2026-06-21",
-        "notes": "Aggie One Stop Opportunity Award page: Dec 1 deadline, STAR required, $100-$15,000 range; catalog cross-checked."
+        "notes": "Aggie One Stop Opportunity Award page: Aug 1-Dec 1 window, STAR required, financial aid application for need-based awards, $100-$15,000 range, no stacking."
       }
     },
     {
@@ -3187,8 +3208,15 @@
         {
           "id": "georgia-tech-early-action-application",
           "label": "Submit a Georgia Tech Early Action application",
-          "details": "Apply by October 15 if you are a Georgia resident or November 2 if you are not. There is no separate Gold Scholars application.",
+          "details": "Apply by October 15 if you are a Georgia resident or November 2 if you are not. There is no separate Gold Scholars application and no additional materials are accepted; selection is made from your admission application.",
           "source_url": "https://admission.gatech.edu/first-year/deadlines/"
+        },
+        {
+          "id": "georgia-tech-essay-and-activities",
+          "label": "Write a strong essay and fully document your activities in that application",
+          "details": "Because no extra materials are accepted, the personal essay and activities sections of your Georgia Tech admission application are the basis for Gold Scholars selection.",
+          "required": false,
+          "source_url": "https://goldscholars.em.gatech.edu/apply/application-review"
         }
       ],
       "verified": true,
@@ -3231,7 +3259,34 @@
         {
           "id": "utd-first-year-application",
           "label": "Submit a UT Dallas first-year application",
-          "details": "Apply by December 1 for AES consideration. The admission application is the AES application.",
+          "details": "Apply through the Common App or ApplyTexas by December 1. The admission application is the AES application; there is no separate AES form.",
+          "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/"
+        },
+        {
+          "id": "utd-transcripts",
+          "label": "Submit official high school transcripts",
+          "details": "Official high school transcripts are required as part of the application materials reviewed for AES.",
+          "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/"
+        },
+        {
+          "id": "utd-supplemental-materials",
+          "label": "Add the encouraged supplemental materials",
+          "details": "Encouraged but not required: a resume, one essay on any topic, and up to three letters of recommendation strengthen your holistic review.",
+          "required": false,
+          "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/"
+        },
+        {
+          "id": "utd-fafsa",
+          "label": "Complete the FAFSA (encouraged)",
+          "details": "UT Dallas encourages completing the FAFSA, though it is not required for AES consideration.",
+          "required": false,
+          "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/"
+        },
+        {
+          "id": "utd-accept-by-june-1",
+          "label": "If offered an AES award, accept it by June 1",
+          "details": "The deadline to accept an AES award offer is June 1.",
+          "required": false,
           "source_url": "https://enroll.utdallas.edu/affordability/freshman-scholarships/academic-excellence-scholarship/aes-for-prospective-freshmen/"
         }
       ],
@@ -3273,14 +3328,21 @@
         {
           "id": "cmu-fafsa",
           "label": "Submit the FAFSA for CMU financial aid",
-          "details": "Use CMU's current financial-aid timeline; this opportunity does not use one fixed merit-scholarship deadline.",
-          "source_url": "https://www.cmu.edu/admission/costs-aid/"
+          "details": "CMU requires both the FAFSA and CSS Profile for need-based aid. Forms open October 1; CMU's preferred deadlines are about November 15 (Early Decision) and February 15 (Regular Decision).",
+          "source_url": "https://www.cmu.edu/sfs/financial-aid/prospective-student/index.html"
         },
         {
           "id": "cmu-css-profile",
           "label": "Submit the CSS Profile for CMU financial aid",
-          "details": "Use CMU's current financial-aid timeline; this opportunity does not use one fixed merit-scholarship deadline.",
-          "source_url": "https://www.cmu.edu/admission/costs-aid/"
+          "details": "Required alongside the FAFSA. Same preferred deadlines: about November 15 (Early Decision) and February 15 (Regular Decision).",
+          "source_url": "https://www.cmu.edu/sfs/financial-aid/prospective-student/index.html"
+        },
+        {
+          "id": "cmu-tax-documents",
+          "label": "Provide signed tax documents if CMU requests them",
+          "details": "CMU may request signed parent and student tax returns, W-2s, or other supporting documents to verify your aid application.",
+          "required": false,
+          "source_url": "https://www.cmu.edu/sfs/financial-aid/prospective-student/index.html"
         }
       ],
       "verified": true,

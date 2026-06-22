@@ -918,8 +918,17 @@ function buildApplicationChecklist(item) {
   );
   const updateProgress = () => {
     progress.textContent = `${completed.size}/${requirements.length} complete`;
-    const next = requirements.find((requirement) => !completed.has(requirement.id));
-    nextAction.textContent = next ? `Next: ${next.label}` : "All verified steps complete";
+    const nextRequired = requirements.find(
+      (requirement) => requirement.required !== false && !completed.has(requirement.id)
+    );
+    const nextAny = requirements.find((requirement) => !completed.has(requirement.id));
+    if (nextRequired) {
+      nextAction.textContent = `Next: ${nextRequired.label}`;
+    } else if (nextAny) {
+      nextAction.textContent = `Optional next: ${nextAny.label}`;
+    } else {
+      nextAction.textContent = "All verified steps complete";
+    }
   };
   updateProgress();
 
@@ -934,6 +943,12 @@ function buildApplicationChecklist(item) {
     const title = document.createElement("strong");
     title.textContent = requirement.label;
     copy.appendChild(title);
+    if (requirement.required === false) {
+      const optional = document.createElement("span");
+      optional.className = "tracker-task-optional";
+      optional.textContent = "Optional";
+      copy.appendChild(optional);
+    }
     if (requirement.details) {
       const details = document.createElement("span");
       details.className = "tracker-task-details";
