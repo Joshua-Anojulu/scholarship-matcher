@@ -206,20 +206,26 @@
       "name": "National Merit Scholarship Program",
       "sponsor": "National Merit Scholarship Corporation",
       "award_amount": 2500,
-      "deadline": "VERIFY (PSAT/NMSQT qualifying year)",
+      "deadline": "VERIFY",
       "url": "https://www.nationalmerit.org/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_junior"
         ],
         "demographics": [],
         "states": "any",
-        "essay_required": false,
-        "citizenship_requirement": "us_citizen_or_permanent_resident"
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
       },
-      "description": "Academic competition entered by taking the PSAT/NMSQT in the designated year of high school. Semifinalists and finalists compete for National Merit and corporate-sponsored scholarships."
+      "description": "Academic competition entered by taking the PSAT/NMSQT in the designated year of high school. Semifinalists and finalists compete for National Merit and corporate-sponsored scholarships.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.nationalmerit.org/s/1758/images/gid2/editor_documents/guide_to_the_national_merit_scholarship_program.pdf",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official program guide: entry via PSAT/NMSQT in junior year; $2,500 National Merit awards; semifinalists submit personal essay; no GPA minimum; citizenship required only for students at schools outside the U.S."
+      }
     },
     {
       "id": "burger-king-scholars",
@@ -1207,9 +1213,9 @@
       "id": "nsbe-scholarships",
       "name": "NSBE Scholarship Program",
       "sponsor": "National Society of Black Engineers (NSBE)",
-      "award_amount": "VERIFY (awards range $500-$15,000)",
-      "deadline": "VERIFY",
-      "url": "https://apply.nsbe.org/",
+      "award_amount": "$500 to $10,000 per year",
+      "deadline": "2026-06-30",
+      "url": "https://nsbe.org/scholarships/",
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [
@@ -1224,15 +1230,18 @@
           "college_undergraduate",
           "college_graduate"
         ],
-        "demographics": [
-          "african_american"
-        ],
+        "demographics": [],
         "states": "any",
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Scholarships ranging from $500 to $15,000 for NSBE members pursuing engineering and STEM degrees, focused on supporting Black engineers. Requires active NSBE membership and a verified GPA in the member profile.",
-      "verified": false
+      "description": "Scholarships for NSBE members pursuing engineering and STEM degrees. Requires active NSBE membership and a verified GPA in the member profile; individual awards vary by sponsor.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://nsbe.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Spring 2026 cycle closes June 30; paid NSBE membership and eligibility survey required; award amounts and GPA/citizenship vary by sponsor — no explicit race restriction on scholarships."
+      }
     },
     {
       "id": "ieee-presidents-scholarship",
@@ -1240,7 +1249,7 @@
       "sponsor": "IEEE Foundation",
       "award_amount": 10000,
       "deadline": "VERIFY",
-      "url": "https://www.ieee.org/education/preuniversity/scholarship.html",
+      "url": "https://students.ieee.org/ieee-presidents-scholarship/",
       "eligibility": {
         "min_gpa": null,
         "fields_of_study": [
@@ -1256,14 +1265,19 @@
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "$10,000 (payable over four years of undergraduate study) awarded to one student finalist at the Regeneron International Science and Engineering Fair for an outstanding project in electrical/electronics engineering, computer science, or another IEEE field of interest. Must be an ISEF finalist.",
-      "verified": false
+      "description": "$10,000 (payable over four years of undergraduate study) awarded to one student finalist at the Regeneron International Science and Engineering Fair for an outstanding project in electrical/electronics engineering, computer science, or another IEEE field of interest. Must be an ISEF finalist; no separate application.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://students.ieee.org/ieee-presidents-scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "IEEE Students page: $10,000 over four years plus IEEE Student membership; selected by IEEE judges at Regeneron ISEF — no separate application or essay."
+      }
     },
     {
       "id": "acm-sighpc-computational-data-science-fellowship",
       "name": "ACM SIGHPC Computational and Data Science Fellowships",
       "sponsor": "Association for Computing Machinery (ACM SIGHPC)",
-      "award_amount": "VERIFY",
+      "award_amount": "$20,000 annually (adjusted by country)",
       "deadline": "VERIFY",
       "url": "https://www.sighpc.org/opportunities/fellowships",
       "eligibility": {
@@ -1279,11 +1293,17 @@
         ],
         "demographics": [],
         "states": "any",
-        "essay_required": false,
+        "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Graduate fellowships for women and/or members of racial/ethnic groups underrepresented in computing who are pursuing a master's or doctoral degree in computational or data science. Nominated by the student's graduate research advisor and open to students at institutions worldwide.",
-      "verified": false
+      "description": "Graduate fellowships for students pursuing a master's or doctoral degree in computational or data science, nominated by the student's graduate research advisor. Targets women and/or members of racial/ethnic groups underrepresented in computing; open to institutions worldwide.",
+      "verified": true,
+      "estimated_deadline": "2027-05-15",
+      "verification": {
+        "source_url": "https://www.sighpc.org/opportunities/fellowships",
+        "last_verified_at": "2026-06-21",
+        "notes": "2026 cycle nominations Mar 15–May 15 2026 (closed); $20k/yr stipend; advisor nomination plus student statement and endorser; PhD up to 4 years, MS up to 2 years."
+      }
     },
     {
       "id": "acs-catalyst-scholarship",
@@ -1309,7 +1329,13 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Renewable $10,000 annual scholarship for undergraduates majoring in chemistry or chemistry-related fields (chemistry, biochemistry, chemical engineering, chemical technology) who demonstrate financial need. Not open to pre-med, pharmacy, or nursing students; replaces the former ACS Scholars Program for 2026-2027.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-03-01",
+      "verification": {
+        "source_url": "https://www.acs.org/education/acs-undergraduate-scholarship.html",
+        "last_verified_at": "2026-06-21",
+        "notes": "ACS Catalyst page: renewable $10k, 3.0 GPA, U.S. citizen or PR; 2026-27 cycle closed Dec 1 2025–Mar 1 2026; essays and FAFSA required."
+      }
     },
     {
       "id": "astronaut-scholarship",
@@ -1317,7 +1343,7 @@
       "sponsor": "Astronaut Scholarship Foundation",
       "award_amount": 15000,
       "deadline": "VERIFY",
-      "url": "https://astronautscholarship.org/",
+      "url": "https://www.astronautscholarship.org/programs/astronaut-scholarship/",
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [
@@ -1336,8 +1362,14 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
       },
-      "description": "Up to $15,000 for sophomore/junior STEM students intending to pursue research, nominated by faculty at one of roughly 46 ASF-affiliated universities. Students intending to enter clinical practice are ineligible, though MD/PhD research candidates qualify. U.S. citizenship required.",
-      "verified": false
+      "description": "Up to $15,000 for sophomore/junior STEM students intending to pursue research, nominated by faculty at ASF partner universities. Students intending to enter clinical practice are ineligible, though MD/PhD research candidates qualify. U.S. citizenship required.",
+      "verified": true,
+      "estimated_deadline": "2027-03-30",
+      "verification": {
+        "source_url": "https://www.astronautscholarship.org/programs/astronaut-scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official program page: faculty nomination only at partner universities; U.S. citizen; personal statement and recommendations; 2026 liaison deadline Mar 30 2026 passed — next cycle not published."
+      }
     },
     {
       "id": "nurse-corps-scholarship-program",
@@ -1362,7 +1394,13 @@
         "citizenship_requirement": "us_citizen_national_or_permanent_resident"
       },
       "description": "Pays tuition, fees, and a monthly stipend for nursing students (RN and APRN degree programs) in exchange for a service commitment at a Critical Shortage Facility after graduation. Funding preference goes to those with the greatest financial need.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-04-09",
+      "verification": {
+        "source_url": "https://bhw.hrsa.gov/sites/default/files/bureau-health-workforce/funding/nursecorps-sp-guidance.pdf",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official 2026 HRSA guidance PDF: tuition/fees/stipend for accredited U.S. RN/APRN programs; citizen/national/PR; 2026 cycle closed Apr 9 2026; personal essays no longer required."
+      }
     },
     {
       "id": "nhsc-scholarship-program",
@@ -1383,11 +1421,17 @@
         ],
         "demographics": [],
         "states": "any",
-        "essay_required": false,
-        "citizenship_requirement": "VERIFY"
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_national"
       },
-      "description": "Pays tuition, fees, and a monthly stipend for students training in primary care health professions (physicians, dentists, nurse practitioners, nurse midwives, physician assistants) in exchange for a minimum two-year service commitment in a Health Professional Shortage Area. Open to U.S. citizens and U.S. nationals only (permanent residents are not eligible).",
-      "verified": false
+      "description": "Pays tuition, fees, and a monthly stipend for students training in primary care health professions (physicians, dentists, nurse practitioners, nurse midwives, physician assistants) in exchange for a minimum two-year service commitment in a Health Professional Shortage Area. Open to U.S. citizens and U.S. nationals only.",
+      "verified": true,
+      "estimated_deadline": "2027-04-16",
+      "verification": {
+        "source_url": "https://nhsc.hrsa.gov/sites/default/files/nhsc/scholarships/scholarship-application-guidance.pdf",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official 2026 NHSC APG PDF: U.S. citizen or national only (no PR); primary care fields; one essay; 2026 cycle closed Apr 16 2026."
+      }
     },
     {
       "id": "hertz-fellowship",
@@ -1395,7 +1439,7 @@
       "sponsor": "Fannie and John Hertz Foundation",
       "award_amount": "Up to $250,000 over five years of PhD study",
       "deadline": "VERIFY",
-      "url": "https://www.hertzfoundation.org/hertz-fellowship/",
+      "url": "https://www.hertzfoundation.org/the-fellowship/who-can-apply/",
       "eligibility": {
         "min_gpa": null,
         "fields_of_study": [
@@ -1414,7 +1458,13 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Up to five years of PhD funding (valued up to $250,000) for doctoral students in the applied physical and biological sciences, mathematics, or engineering at a U.S. institution. Open to U.S. citizens and permanent residents who are college seniors, first-year graduate students, or in a gap year before graduate school.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2026-10-31",
+      "verification": {
+        "source_url": "https://www.hertzfoundation.org/the-fellowship/who-can-apply/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Who-can-apply page: citizen or PR; college senior, first-year grad, or gap year; PhD in applied physical/biological sciences, math, or engineering at U.S. institution; 2026 cycle closed — 2027 opens late Aug 2026."
+      }
     },
     {
       "id": "stem-stars-actuarial-scholars-program",
@@ -1422,23 +1472,28 @@
       "sponsor": "The Actuarial Foundation",
       "award_amount": 20000,
       "deadline": "VERIFY",
-      "url": "https://actuarialfoundation.org/scholarships/stem-stars/",
+      "url": "https://actuarialfoundation.org/scholarships/",
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [
           "mathematics"
         ],
         "grade_levels": [
-          "high_school_senior",
-          "college_undergraduate"
+          "high_school_senior"
         ],
         "demographics": [],
         "states": "any",
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "$20,000 ($5,000 annually for up to four years) plus mentorship, internships, and networking for high school seniors who are skilled in math and interested in the actuarial profession. Replaces the former Actuarial Diversity Scholarship beginning in 2024.",
-      "verified": false
+      "description": "$20,000 ($5,000 annually for up to four years) plus mentorship, internships, and networking for high school seniors skilled in math who are interested in the actuarial profession.",
+      "verified": true,
+      "estimated_deadline": "2027-02-27",
+      "verification": {
+        "source_url": "https://actuarialfoundation.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Actuarial Foundation scholarships page: $20k ($5k/yr × 4) for high school seniors interested in actuarial careers; 2026 season closed Feb 27 2026 — reopens fall 2026; no published GPA or citizenship minimum."
+      }
     },
     {
       "id": "cas-trust-scholarship",
