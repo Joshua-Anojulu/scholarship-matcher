@@ -1,6 +1,16 @@
 # Scholarships4U
 
-Scholarships4U is a personal portfolio project that helps U.S. students explore a small curated set of real national scholarships. Students submit a profile, receive ranked matches with transparent scoring, and can request essay guidance generated server-side by an LLM. An optional free account lets a student save their profile (it prefills on return) and bookmark scholarships.
+**Live demo:** [scholarship-matcher-fqr2.onrender.com](https://scholarship-matcher-fqr2.onrender.com/)
+
+Scholarships4U is a **curated scholarship planner** for U.S. students — a portfolio-grade web app backed by a manually verified dataset of real national programs. Students build a profile once, see ranked matches with transparent scoring, track applications, and get practical essay guidance from a server-side LLM. Optional free accounts save the profile and bookmark scholarships between visits.
+
+> **What this is:** a focused demo with honest data provenance, not a comprehensive scholarship search engine. Always confirm eligibility and deadlines on each sponsor's official site.
+
+## Screenshots
+
+| Hero & profile flow | Match results | Result detail |
+| --- | --- | --- |
+| ![Homepage hero and profile form](docs/screenshots/hero.png) | ![Ranked scholarship matches](docs/screenshots/match-results.png) | ![Match card with scoring reasons](docs/screenshots/match-card.png) |
 
 ## How it works
 
@@ -106,7 +116,7 @@ This repo includes a [`render.yaml`](render.yaml) for [Render](https://render.co
    - `ANTHROPIC_API_KEY` = your Anthropic API key
    - `RESEND_API_KEY` = a Resend API key for transactional email
    - `EMAIL_FROM` = a sender address verified in Resend, such as `Scholarships4U <hello@yourdomain.com>`
-   - `PUBLIC_APP_URL` = the public HTTPS URL for the app, such as `https://scholarships4u.onrender.com`
+   - `PUBLIC_APP_URL` = the public HTTPS URL for the app, such as `https://scholarship-matcher-fqr2.onrender.com`
 
 Do not commit API keys. Set them only in the host's environment variable UI. The app reads `DATABASE_URL` and switches from SQLite to Postgres automatically, so saved accounts persist across deploys.
 
@@ -134,6 +144,8 @@ uvicorn app.main:app --host 0.0.0.0 --port $PORT
 |--------|------|-------------|
 | `GET` | `/` | Web app |
 | `GET` | `/health` | Health check |
+| `GET` | `/robots.txt` | Crawler rules |
+| `GET` | `/sitemap.xml` | Public page sitemap |
 | `GET` | `/vocabulary` | Form option lists |
 | `GET` | `/scholarships` | Full dataset |
 | `POST` | `/match` | Rank scholarships for a profile |
@@ -166,6 +178,14 @@ python -m pytest tests/ -v
 Tests mock Anthropic calls. No paid API usage during the test run.
 
 GitHub Actions runs the test suite and the dataset validator on every push and pull request.
+
+To refresh the README screenshots after UI changes:
+
+```bash
+pip install playwright
+python -m playwright install chromium
+python scripts/capture_readme_screenshots.py
+```
 
 ### Dataset validation
 
@@ -209,7 +229,7 @@ Run the validator at any time to see how many entries are verified, which ones n
 python scripts/validate_dataset.py
 ```
 
-As of the latest update, a first batch of well-known programs (for example Coca-Cola Scholars, The Gates Scholarship, and the Jack Kent Cooke College Scholarship) has been verified, with the remainder in progress.
+As of the latest update, **122 programs** are in the dataset (including a small school-specific pilot). Every entry is sponsor-verified at the record level; many individual fields still carry `VERIFY` placeholders where the upcoming cycle has not been published yet. Run the validator for the current re-verification queue and placeholder counts.
 
 ## Project structure
 
@@ -243,7 +263,11 @@ scholarship-matcher/
 - The age and terms notice is a browser-stored acknowledgment, not age verification or parental consent. This is not a production-ready service for children under 13.
 - Sensitive endpoints (login, signup, password change, and the AI features) are rate limited per client IP. The limiter is in-memory, which suits a single-instance deploy; multi-instance hosting would need a shared store such as Redis.
 - On the free Postgres tier, saved data should be treated as non-critical because the database can expire after inactivity.
-- This is a **personal portfolio project**, not an official scholarship search or application service.
+- Scholarships4U is **not** an official scholarship search or application service — it is a student-built planner demo with curated, incrementally verified data.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
 
 ## Future work
 
@@ -251,7 +275,4 @@ scholarship-matcher/
 - Expand the school-specific scholarship pilot with verified institution records
 - Live data integration with sponsor feeds or APIs
 - Account improvement: email verification
-
----
-
-*Scholarships4U is a personal project built for learning and demonstration.*
+- Custom domain and production email sender
