@@ -1516,7 +1516,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Merit-based $2,500 and $5,000 scholarships for full-time college students pursuing a career in property/casualty actuarial science. Requires CAS Student Central membership and having sat for at least one actuarial exam.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-01-31",
+      "verification": {
+        "source_url": "https://www.casact.org/trustscholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "CAS page: $2,500/$5,000; CAS Student Central member; ≥1 actuarial exam; essay and recommendations; 2026-27 deadline Jan 31 2026 closed — annual Jan 31 pattern."
+      }
     },
     {
       "id": "nsf-graduate-research-fellowship",
@@ -1546,13 +1552,18 @@
         "citizenship_requirement": "us_citizen_national_or_permanent_resident"
       },
       "description": "Three years of support (a $37,000 annual stipend plus a $16,000 cost-of-education allowance) for students pursuing research-based master's and doctoral STEM degrees. Open to U.S. citizens, nationals, and permanent residents who are senior undergraduates, bachelor's holders, or first-year graduate students.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.nsfgrfp.org/",
+        "last_verified_at": "2026-06-21",
+        "notes": "NSF GRFP: 3-year $37k stipend + $16k COA; citizen/national/PR; STEM research grad study; Nov 2025 field deadlines closed — FY27 cycle dates not yet published."
+      }
     },
     {
       "id": "aiaa-foundation-undergraduate-scholarship",
       "name": "AIAA Foundation Undergraduate Scholarships",
       "sponsor": "American Institute of Aeronautics and Astronautics (AIAA)",
-      "award_amount": "VERIFY (awards range $500-$10,000)",
+      "award_amount": "Varies by award ($500–$10,000)",
       "deadline": "VERIFY",
       "url": "https://aiaa.org/get-involved/university-students/undergraduate-scholarships-graduate-awards/eligibility-requirements/",
       "eligibility": {
@@ -1569,18 +1580,24 @@
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Scholarships ($500-$10,000) for AIAA student members pursuing science or engineering degrees leading to a career in the aerospace field. Requires AIAA membership, at least one completed semester, and generally a minimum 3.3 GPA; open to students of any nationality.",
-      "verified": false
+      "description": "Scholarships ($500–$10,000) for AIAA student members pursuing science or engineering degrees leading to a career in aerospace. Requires AIAA membership, at least one completed semester, and minimum 3.3 GPA; enrolled at accredited U.S. institution.",
+      "verified": true,
+      "estimated_deadline": "2027-01-31",
+      "verification": {
+        "source_url": "https://aiaa.org/get-involved/university-students/undergraduate-scholarships-graduate-awards/eligibility-requirements/",
+        "last_verified_at": "2026-06-21",
+        "notes": "AIAA eligibility page: Student member, ≥1 semester, 3.3 GPA, aerospace-related engineering/science; applications Oct 15–Jan 31 annually; no citizenship requirement stated."
+      }
     },
     {
       "id": "ans-scholarships",
       "name": "American Nuclear Society Scholarships",
       "sponsor": "American Nuclear Society (ANS)",
-      "award_amount": "VERIFY (awards range roughly $1,000-$3,000)",
+      "award_amount": "$1,000 (incoming freshmen); $2,000–$5,000 (undergraduate/graduate)",
       "deadline": "VERIFY",
       "url": "https://www.ans.org/scholarships/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "engineering",
           "science",
@@ -1596,8 +1613,14 @@
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Scholarships (roughly $1,000-$3,000) for ANS student members pursuing nuclear science, nuclear engineering, or a nuclear-related field, plus an incoming-freshman award for graduating high school seniors. Requires ANS membership and enrollment at an accredited U.S. institution.",
-      "verified": false
+      "description": "Scholarships for ANS student members pursuing nuclear science, nuclear engineering, or a nuclear-related field at accredited U.S. institutions, plus an incoming-freshman award for graduating high school seniors.",
+      "verified": true,
+      "estimated_deadline": "2027-02-01",
+      "verification": {
+        "source_url": "https://www.ans.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "ANS page: student member, nuclear-related field; opens Nov 1, general deadline Feb 1, incoming freshman deadline Apr 1; no min GPA or citizenship rule stated."
+      }
     },
     {
       "id": "tau-beta-pi-scholarship",
@@ -1607,12 +1630,11 @@
       "deadline": "VERIFY",
       "url": "https://www.tbp.org/scholarships.cfm",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "engineering"
         ],
         "grade_levels": [
-          "college_junior",
           "college_undergraduate"
         ],
         "demographics": [],
@@ -1620,14 +1642,20 @@
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Awards of $2,000 (full year) or $1,000 (one semester) supporting the senior year of full-time undergraduate engineering study. Restricted to initiated members of the Tau Beta Pi engineering honor society.",
-      "verified": false
+      "description": "Awards of $2,000 (full year) or $1,000 (one semester) supporting the senior year of full-time undergraduate engineering study. Restricted to initiated Tau Beta Pi members.",
+      "verified": true,
+      "estimated_deadline": "2027-04-01",
+      "verification": {
+        "source_url": "https://www.tbp.org/scholarships.cfm",
+        "last_verified_at": "2026-06-21",
+        "notes": "TBP page: initiated members who are full-time senior engineering undergraduates; application due Apr 1, rec letters Apr 8; GPA used in selection but no minimum stated."
+      }
     },
     {
       "id": "gmis-scholars-program",
       "name": "GMiS STEM Scholars Program",
       "sponsor": "Great Minds in STEM (GMiS)",
-      "award_amount": "VERIFY (awards range $500-$5,000)",
+      "award_amount": "$500–$5,000 (merit-based) or $500–$1,000 (donor awards)",
       "deadline": "VERIFY",
       "url": "https://greatmindsinstem.org/gmis-scholarship-application/gmis-scholarships/gmis-scholarship-guidelines/",
       "eligibility": {
@@ -1645,21 +1673,25 @@
           "college_undergraduate",
           "college_graduate"
         ],
-        "demographics": [
-          "hispanic_latino"
-        ],
+        "demographics": [],
         "states": "any",
-        "essay_required": false,
+        "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Merit- and service-based scholarships ($500-$5,000) for students pursuing STEM or health/medical degrees who are of Hispanic descent or who demonstrate significant service to the Hispanic/underserved community. Minimum 3.0 GPA for merit awards (2.5 for some donor awards).",
-      "verified": false
+      "description": "Merit- and service-based scholarships for students pursuing STEM or health-related degrees at accredited U.S. institutions. Minimum 3.0 GPA for merit awards (2.5 for some donor awards); leadership and service required.",
+      "verified": true,
+      "estimated_deadline": "2027-05-08",
+      "verification": {
+        "source_url": "https://greatmindsinstem.org/gmis-scholarship-application/gmis-scholarships/gmis-scholarship-guidelines/",
+        "last_verified_at": "2026-06-21",
+        "notes": "GMiS guidelines/FAQ: STEM or health degree, 3.0 GPA, personal statement; Hispanic descent not required; citizen/resident/F1/DACA eligible; May 8 2026 deadline closed."
+      }
     },
     {
       "id": "aises-at-anderson-memorial-scholarship",
       "name": "AISES A.T. Anderson Memorial Scholarship",
       "sponsor": "American Indian Science and Engineering Society (AISES)",
-      "award_amount": "VERIFY",
+      "award_amount": "$1,000 (undergraduate) or $2,000 (graduate)",
       "deadline": "VERIFY",
       "url": "https://aises.org/scholarships/",
       "eligibility": {
@@ -1674,7 +1706,6 @@
           "nursing"
         ],
         "grade_levels": [
-          "high_school_senior",
           "college_undergraduate",
           "college_graduate"
         ],
@@ -1686,8 +1717,14 @@
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Merit-based scholarship for AISES members pursuing STEM-related degrees who are enrolled citizens or descendants of a recognized American Indian Tribe/Alaska Native Village, Native Hawaiian, Pacific Islander, or Indigenous Canadian. Requires AISES membership and a minimum 3.0 GPA.",
-      "verified": false
+      "description": "Merit-based scholarship for AISES members pursuing STEM degrees who are enrolled citizens or descendants of a recognized American Indian Tribe/Alaska Native Village, Native Hawaiian, Pacific Islander, or Indigenous Canadian. Requires AISES membership and a minimum 3.0 GPA.",
+      "verified": true,
+      "estimated_deadline": "2027-04-30",
+      "verification": {
+        "source_url": "https://aises.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "AISES page: A.T. Anderson $1k undergrad/$2k grad; AISES member, 3.0 GPA, STEM; tribal/Indigenous eligibility required; opens Dec 15, closes Apr 30."
+      }
     },
     {
       "id": "fnsna-undergraduate-scholarship",
@@ -1718,7 +1755,7 @@
       "name": "AACN2: Pathway to Critical Care Nursing Scholarship",
       "sponsor": "American Association of Critical-Care Nurses & American Association of Colleges of Nursing",
       "award_amount": 2500,
-      "deadline": "VERIFY",
+      "deadline": "2026-09-01",
       "url": "https://www.aacnnursing.org/foundation/scholarships/aacn-2-pathway-to-critical-care-nursing-scholarship",
       "eligibility": {
         "min_gpa": 3.2,
@@ -1734,8 +1771,13 @@
         "essay_required": false,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "$2,500 scholarships for prelicensure students in entry-level baccalaureate (BSN) nursing programs at AACN member schools who are committed to critical care nursing, have a minimum 3.2 GPA, and will graduate within 6-12 months.",
-      "verified": false
+      "description": "$2,500 scholarships for prelicensure students in entry-level baccalaureate (BSN) nursing programs at AACN member schools who are committed to critical care nursing, have a minimum 3.2 GPA, and will graduate within 6–12 months.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.aacnnursing.org/foundation/scholarships/aacn-2-pathway-to-critical-care-nursing-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "AACN page: eight $2,500 awards; BSN students at AACN member schools, 3.2 GPA, graduating within 6–12 months; applications open Jul 1, close Sep 1 2026."
+      }
     },
     {
       "id": "bmi-composer-awards",
@@ -1760,7 +1802,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Annual competition recognizing young composers of classical/concert music who are under age 28. Applicants must reside in the U.S. or its territories, or be citizens of any country in the Western Hemisphere; works are judged anonymously.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-01-15",
+      "verification": {
+        "source_url": "https://bmifoundation.org/by-application/bmicomposerawards",
+        "last_verified_at": "2026-06-21",
+        "notes": "BMI page: classical/concert music, under age 28; U.S./territories resident or Western Hemisphere citizen; anonymous score submission; $20k total pool; Jan 15 2026 deadline closed."
+      }
     },
     {
       "id": "ascap-morton-gould-young-composer-awards",
