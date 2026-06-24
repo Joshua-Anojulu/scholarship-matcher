@@ -1833,13 +1833,19 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Honors emerging composers of original concert music who are at least 13 and under age 30. Open to U.S. citizens, permanent residents, or students with a valid U.S. student visa; submissions are scored on a single original work.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-02-06",
+      "verification": {
+        "source_url": "https://www.ascapfoundation.org/programs/awards/young-composer-awards",
+        "last_verified_at": "2026-06-21",
+        "notes": "2026 cycle Jan 6–Feb 6 ET; age 13–under 30; U.S. citizen, PR, or valid U.S. student visa; single original concert work; prize amount at Foundation discretion."
+      }
     },
     {
       "id": "aiga-worldstudio-dxd-scholarships",
       "name": "AIGA Worldstudio D×D Scholarships",
       "sponsor": "AIGA (the professional association for design)",
-      "award_amount": "VERIFY",
+      "award_amount": "up to $5,000 ($2,500–$3,000 typical)",
       "deadline": "VERIFY",
       "url": "https://www.aiga.org/professional-development/aiga-worldstudio-dd-scholarships",
       "eligibility": {
@@ -1858,7 +1864,13 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Need-based scholarships for students of communication design, illustration, or photography at U.S. colleges who show commitment to social change and diversity. Requires demonstrated financial need; DACA status alone does not qualify.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-05-06",
+      "verification": {
+        "source_url": "https://aiga-scholarships.secure-platform.com/a/page/eligibility",
+        "last_verified_at": "2026-06-21",
+        "notes": "Rules page: 3.0 GPA, financial need, U.S. citizen or Green Card; communication design, illustration, or photography; 2026/2027 deadline May 6 2026 closed; diversity considered but not required."
+      }
     },
     {
       "id": "scholastic-art-writing-awards",
@@ -1883,13 +1895,18 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Longest-running recognition program for creative teens in grades 7-12 (age 13+), offering scholarships to national medalists across visual art and writing categories. Open to students residing in the U.S., U.S. territories or military bases, or Canada.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://cms.artandwriting.org/faq/who-can-participate-in-the-scholastic-art-writing-awards/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Grades 7–12, age 13+; must reside in U.S., territories, military bases, or Canada; portfolio scholarships up to $12,500; regional fall deadlines."
+      }
     },
     {
       "id": "princess-grace-awards",
       "name": "Princess Grace Awards",
       "sponsor": "Princess Grace Foundation-USA",
-      "award_amount": "VERIFY",
+      "award_amount": "$15,000 unrestricted cash grant",
       "deadline": "VERIFY",
       "url": "https://pgfusa.org/apply/",
       "eligibility": {
@@ -1907,14 +1924,20 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Grants supporting extraordinary emerging artists in theater, dance, and film (film accepts directors only). Applicants must live and work in the U.S. (non-citizens need USCIS work authorization) and must be nominated by a nonprofit university, organization, or prior winner; self-nominations are not allowed.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-02-02",
+      "verification": {
+        "source_url": "https://pgfusa.org/apply/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Nomination required; theater, dance, film directors; U.S.-based artists; non-citizens need USCIS work authorization; 2026 Round 1 closed Feb 2."
+      }
     },
     {
       "id": "aba-legal-opportunity-scholarship",
       "name": "ABA Legal Opportunity Scholarship",
       "sponsor": "American Bar Association",
       "award_amount": "$15,000 over three years ($5,000 per year)",
-      "deadline": "VERIFY",
+      "deadline": "2027-04-15",
       "url": "https://www.americanbar.org/groups/diversity/diversity_pipeline/projects_initiatives/legal_opportunity_scholarship/",
       "eligibility": {
         "min_gpa": 2.5,
@@ -1924,18 +1947,18 @@
         "grade_levels": [
           "college_graduate"
         ],
-        "demographics": [
-          "native_american",
-          "asian_pacific_islander",
-          "african_american",
-          "hispanic_latino"
-        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
-      "description": "Supports incoming first-year law students from underrepresented racial and ethnic groups who will attend an ABA-accredited law school. Requires a minimum 2.5 undergraduate GPA and a personal statement.",
-      "verified": false
+      "description": "Supports incoming first-year law students who demonstrate a strong commitment to advancing diversity, equity, and inclusion and will attend an ABA-accredited law school. Requires a minimum 2.5 undergraduate GPA and a personal statement.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.americanbar.org/groups/diversity/diversity_pipeline/projects_initiatives/legal_opportunity_scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "$15,000 over three years to 20–25 first-year law students; 2027 cycle opens Feb 1, closes Apr 15 2027; 2.5 GPA; DEI commitment required, not explicit race restriction."
+      }
     },
     {
       "id": "sigma-tau-delta-scholarships",
@@ -1960,7 +1983,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Annual scholarships for undergraduate and graduate English students who are active members of a Sigma Tau Delta chapter. Requires active society membership plus an application essay and recommendations.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-04-13",
+      "verification": {
+        "source_url": "https://english.org/opportunities/overview/#scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Active Sigma Tau Delta membership; spring 2026 due Apr 13; awards up to $6,000 (William C. Johnson up to $6,000, 3.5+ GPA for that award only)."
+      }
     },
     {
       "id": "national-press-club-journalism-diversity-scholarship",
@@ -1974,12 +2003,7 @@
         "fields_of_study": [
           "communications"
         ],
-        "demographics": [
-          "native_american",
-          "asian_pacific_islander",
-          "african_american",
-          "hispanic_latino"
-        ],
+        "demographics": [],
         "grade_levels": [
           "high_school_senior"
         ],
@@ -1988,15 +2012,20 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarship for graduating high school seniors who plan to pursue a journalism career and will bring diversity to U.S. journalism. Requires a 3.0+ GPA and work samples; U.S. citizenship is not required to apply.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.pressclubinstitute.org/national-press-club-scholarship-opportunities/",
+        "last_verified_at": "2026-06-21",
+        "notes": "$5,000/yr renewable up to 3 years; high school senior, 3.0 GPA, journalism career; citizenship not required; check page fall 2026 for next cycle."
+      }
     },
     {
       "id": "rtdna-foundation-scholarships",
       "name": "RTDNA Foundation Scholarships",
       "sponsor": "Radio Television Digital News Association (RTDNA) Foundation",
-      "award_amount": "VERIFY",
-      "deadline": "VERIFY",
-      "url": "https://www.rtdna.org/rtdna-foundation",
+      "award_amount": "up to $10,000 (varies by scholarship; suite totals $35,000+ annually)",
+      "deadline": "2026-10-22",
+      "url": "https://www.rtdna.org/scholarships-and-fellowships",
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [
@@ -2013,13 +2042,18 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "A suite of national scholarships for college students pursuing careers in radio, television, or digital journalism; recipients must be full-time sophomores, juniors, or seniors. U.S. citizenship is not required, but non-citizens must have a U.S. Taxpayer Identification Number.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.rtdna.org/scholarships-and-fellowships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Full-time soph/jr/sr broadcast/digital journalism; apply one scholarship only; 2026 apps open Sep 9, due Oct 22; citizenship not required but non-citizens need U.S. TIN."
+      }
     },
     {
       "id": "quill-and-scroll-journalism-scholarships",
       "name": "Quill and Scroll Foundation Student Scholarships in Journalism",
       "sponsor": "Quill and Scroll Foundation",
-      "award_amount": "VERIFY",
+      "award_amount": "up to $1,500 (amounts vary; other awards typically $500)",
       "deadline": "VERIFY",
       "url": "https://quillandscroll.org/scholarships-2/",
       "eligibility": {
@@ -2036,13 +2070,19 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarships for high school seniors who intend to major in journalism or a related communications field. Several awards require being a national winner in a Quill and Scroll contest or an inducted senior member.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-05-08",
+      "verification": {
+        "source_url": "https://quillandscroll.org/resources-2/",
+        "last_verified_at": "2026-06-21",
+        "notes": "High school seniors; contest winners or Q&S members; journalism/communications major; 2026 application closed May 8."
+      }
     },
     {
       "id": "prssa-prsa-foundation-scholarships",
       "name": "PRSSA / PRSA Foundation Scholarships",
       "sponsor": "Public Relations Student Society of America (PRSSA) / PRSA Foundation",
-      "award_amount": "VERIFY",
+      "award_amount": "up to $5,000 (Betsy Plank/PRSSA: $5,000, $1,500, $1,000 honors)",
       "deadline": "VERIFY",
       "url": "https://www.prsa.org/prssa/scholarships-awards",
       "eligibility": {
@@ -2061,7 +2101,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "National scholarships (such as the Betsy Plank/PRSSA Scholarship) for college students pursuing public relations and communications careers. Most awards require active PRSSA membership.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-04-30",
+      "verification": {
+        "source_url": "https://www.prsafoundation.org/scholarships-awards/betsy-plank-prssa-scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Suite $100,000+ annually; Betsy Plank requires PRSSA junior/senior membership; 2025–2026 scholarship deadlines mostly Apr 30 2026."
+      }
     },
     {
       "id": "deca-scholarships",
