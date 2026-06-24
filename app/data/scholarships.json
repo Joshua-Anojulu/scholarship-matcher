@@ -2113,8 +2113,8 @@
       "id": "deca-scholarships",
       "name": "DECA Scholarship Program",
       "sponsor": "DECA Inc.",
-      "award_amount": "VERIFY",
-      "deadline": "VERIFY",
+      "award_amount": "over $200,000 annually (individual awards typically $1,000–$2,500)",
+      "deadline": "2027-01-11",
       "url": "https://www.deca.org/scholarships",
       "eligibility": {
         "min_gpa": "VERIFY",
@@ -2131,13 +2131,18 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Merit-based scholarships for current DECA members who intend to study marketing, finance, hospitality, management, or entrepreneurship. Requires active, dues-paying DECA membership.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.deca.org/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Merit-based; active DECA membership; applications open through Jan 11 2027; corporate and regional awards vary."
+      }
     },
     {
       "id": "fbla-scholarships",
       "name": "FBLA Scholarships",
       "sponsor": "Future Business Leaders of America (FBLA)",
-      "award_amount": "VERIFY",
+      "award_amount": "up to $2,000 (Pearson Futures; other awards vary, e.g. $500 Distinguished Business Leader)",
       "deadline": "VERIFY",
       "url": "https://www.fbla.org/high-school/hs-scholarships-aid/",
       "eligibility": {
@@ -2156,15 +2161,20 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarships (including the Pearson Futures and Distinguished Business Leader awards) for FBLA members pursuing business-related postsecondary study. Requires active FBLA membership and legal U.S. residency.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.fbla.org/scholarships/fbla-x-futures-scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Pearson Futures: 3×$2,000, active FBLA member, legal U.S. resident; partner deadlines vary (NTHS Apr 15, NLC Apr 15)."
+      }
     },
     {
       "id": "nfmc-competitions-and-awards",
       "name": "National Federation of Music Clubs Competitions and Awards",
       "sponsor": "National Federation of Music Clubs (NFMC)",
-      "award_amount": "VERIFY",
+      "award_amount": "VERIFY (more than $750,000 in prizes nationally; amounts vary by competition)",
       "deadline": "VERIFY",
-      "url": "https://www.nfmc-music.org/",
+      "url": "https://www.nfmc-music.org/competitions-awards/",
       "eligibility": {
         "min_gpa": null,
         "fields_of_study": [
@@ -2181,15 +2191,20 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "A large slate of national music competitions and scholarships across performance, composition, music education, and music therapy for junior and student/collegiate musicians. Most individual awards require applicants to be native-born or naturalized U.S. citizens (a few endowed awards have exceptions) and, for some categories, NFMC membership.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.nfmc-music.org/competitions-awards/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Most awards require native-born/naturalized U.S. citizen and NFMC membership; deadlines vary per competition on C&A chart."
+      }
     },
     {
       "id": "phi-alpha-theta-scholarships",
       "name": "Phi Alpha Theta Scholarships and Awards",
       "sponsor": "Phi Alpha Theta History Honor Society",
-      "award_amount": "VERIFY",
+      "award_amount": "VERIFY (multiple awards; e.g. Tunstall undergraduate $1,000)",
       "deadline": "VERIFY",
-      "url": "https://phialphatheta.org/",
+      "url": "https://phialphatheta.org/prizes-awards/",
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [
@@ -2205,13 +2220,19 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarships, paper prizes, and awards for undergraduate and graduate history students (e.g., the Graydon A. Tunstall Undergraduate Scholarship). Requires membership in the Phi Alpha Theta honor society.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-03-01",
+      "verification": {
+        "source_url": "https://phialphatheta.org/prizes-awards/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Phi Alpha Theta membership required; student scholarship entry deadline Mar 1 2027; multiple undergraduate/graduate awards."
+      }
     },
     {
       "id": "pdk-educational-foundation-scholarship",
       "name": "PDK Educational Foundation Scholarship Program",
       "sponsor": "Phi Delta Kappa International / Educators Rising",
-      "award_amount": "VERIFY ($500–$5,000 depending on award)",
+      "award_amount": "$500–$4,000 depending on award",
       "deadline": "VERIFY",
       "url": "https://pdkintl.org/pdk-scholarship/",
       "eligibility": {
@@ -2230,7 +2251,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "About 100 scholarships annually for students pursuing careers in K-12 public education. Requires membership in Educators Rising, Educators Rising Collegiate, Pi Lambda Theta, or the PDK Association.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2028-04-01",
+      "verification": {
+        "source_url": "https://pdkintl.org/pdk-scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "100+ scholarships; Educators Rising/PLT/PDK membership; Jan–Apr application window; 2026-27 cycle closed."
+      }
     },
     {
       "id": "princeton-prize-race-relations",
@@ -2251,15 +2278,21 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Cash award recognizing high school students (grades 9-12) who, through volunteer work, have demonstrated leadership in advancing racial equity or understanding in their school or community. Open to all students regardless of identity; not restricted by field of study.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-01-15",
+      "verification": {
+        "source_url": "https://pprize.princeton.edu/apply",
+        "last_verified_at": "2026-06-21",
+        "notes": "$2,500; grades 9-12 in U.S.; volunteer racial-equity leadership; open regardless of identity; 2026 cycle closed Jan 15."
+      }
     },
     {
       "id": "psi-chi-undergraduate-scholarship",
       "name": "Psi Chi Undergraduate Scholarship",
       "sponsor": "Psi Chi, The International Honor Society in Psychology",
       "award_amount": 3000,
-      "deadline": "VERIFY",
-      "url": "https://www.psichi.org/page/1_undergrad_main",
+      "deadline": "2026-06-29",
+      "url": "https://www.psichi.org/page/psichischolars",
       "eligibility": {
         "min_gpa": "VERIFY",
         "fields_of_study": [
@@ -2274,15 +2307,20 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarship for undergraduate psychology students who are members of Psi Chi. Requires active Psi Chi membership; the society also offers numerous research and travel grants.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.psichi.org/page/psichischolars",
+        "last_verified_at": "2026-06-21",
+        "notes": "Eight $3,000 scholarships; active Psi Chi undergraduate member; financial need and academic excellence; due June 29 annually."
+      }
     },
     {
       "id": "hispanic-heritage-youth-awards",
       "name": "Hispanic Heritage Youth Awards",
       "sponsor": "Hispanic Heritage Foundation",
-      "award_amount": "VERIFY (one-time educational grants vary by category)",
+      "award_amount": "up to $4,000 educational grant",
       "deadline": "VERIFY",
-      "url": "https://hispanicheritage.org/programs/leadership/youth-awards/",
+      "url": "https://hispanicheritage.org/youth-awards/",
       "eligibility": {
         "min_gpa": 3.0,
         "fields_of_study": [],
@@ -2296,8 +2334,13 @@
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Awards for graduating high school seniors of Hispanic heritage (including ancestry from Spain, Brazil, the Philippines, or Latin America) who excel in the classroom and community across categories such as engineering, technology, and community service.",
-      "verified": false
+      "description": "Awards for graduating high school seniors of Hispanic heritage (including ancestry from Latin America, Spain, Brazil, or the Philippines) who excel in the classroom and community across categories such as engineering, technology, and community service.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://hispanicheritage.org/youth-awards/",
+        "last_verified_at": "2026-06-21",
+        "notes": "3.0 GPA; high school senior; Hispanic heritage required per program FAQs; 2027 cycle deadline coming soon (2026 was Nov 2 2025)."
+      }
     },
     {
       "id": "lulac-national-scholarship-fund",
@@ -2320,7 +2363,12 @@
         "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
       },
       "description": "Administered by the League of United Latin American Citizens to support the Latino community; applicants must reside in an area served by a participating local LULAC Council and apply through that council.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.lnesc.org/scholarships/lulac/",
+        "last_verified_at": "2026-06-21",
+        "notes": "$250–$2,000 by tier (3.0 honors, 3.5 national scholastic); citizen/PR/DACA; participating LULAC Council required; application closed."
+      }
     },
     {
       "id": "maldef-law-school-scholarship",
@@ -2343,7 +2391,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "For full-time students enrolled at an accredited U.S. law school (open regardless of immigration status, including DACA recipients) who demonstrate a commitment to advancing the civil rights of the Latino community.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-05-15",
+      "verification": {
+        "source_url": "https://www.maldef.org/2026/04/maldef-announces-2025-2026-law-school-scholarship-recipients-and-releases-2026-2027-scholarship-application/",
+        "last_verified_at": "2026-06-21",
+        "notes": "$2,000–$10,000; full-time accredited U.S. law school; Latino civil-rights commitment; open regardless of immigration status; 2026-27 deadline May 15 2026 closed."
+      }
     },
     {
       "id": "cobell-scholarship",
