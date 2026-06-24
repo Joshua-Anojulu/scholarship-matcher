@@ -863,14 +863,13 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
       },
-      "description": "Graduate fellowship for aspiring and current secondary-school teachers of American history, American government, or civics who pursue a master's degree focused on the U.S. Constitution. Requires U.S. citizenship (or U.S. national status) and a teaching service commitment.",
+      "description": "Graduate fellowship for aspiring and current secondary-school teachers of American history, American government, or civics who pursue a master's degree focused on the U.S. Constitution. One fellowship per state may be awarded annually; applicants compete within their state of legal residence.",
       "verified": true,
       "estimated_deadline": "2027-03-02",
       "verification": {
         "source_url": "https://www.jamesmadison.gov/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "last_verified_at": "2026-06-21",
+        "notes": "Homepage: $24,000 graduate fellowships for secondary teachers of the American Constitution; 2027 application referenced — subpages (eligibility/deadline) returned 404 during audit."
       }
     },
     {
@@ -1031,10 +1030,10 @@
       "name": "Harry S. Truman Scholarship",
       "sponsor": "Harry S. Truman Scholarship Foundation",
       "award_amount": "up to $30,000",
-      "deadline": "VERIFY",
-      "url": "https://www.truman.gov/",
+      "deadline": "2027-02-02",
+      "url": "https://www.truman.gov/apply/applying/eligibility",
       "eligibility": {
-        "min_gpa": 3.5,
+        "min_gpa": "VERIFY",
         "fields_of_study": [],
         "grade_levels": [
           "college_junior"
@@ -1046,12 +1045,10 @@
       },
       "description": "Merit-based award for college juniors committed to careers in public service who are in the upper quarter of their class and nominated by their institution. Provides up to $30,000 for graduate study. Open to U.S. citizens and U.S. nationals from American Samoa; permanent residents are not eligible.",
       "verified": true,
-      "estimated_deadline": "2027-02-03",
       "verification": {
-        "source_url": "https://www.truman.gov/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "source_url": "https://www.truman.gov/apply/applying/eligibility",
+        "last_verified_at": "2026-06-21",
+        "notes": "Eligibility/dates pages: U.S. citizen or U.S. national (American Samoa), institution-nominated junior, upper quarter of class; application deadline Feb 2 2027 11:59pm local time."
       }
     },
     {
@@ -1060,9 +1057,9 @@
       "sponsor": "Udall Foundation",
       "award_amount": "up to $7,500",
       "deadline": "VERIFY",
-      "url": "https://www.udall.gov/",
+      "url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship",
       "eligibility": {
-        "min_gpa": 3.0,
+        "min_gpa": "VERIFY",
         "fields_of_study": [
           "environmental_science"
         ],
@@ -1075,14 +1072,13 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen_national_or_permanent_resident"
       },
-      "description": "Scholarship for college sophomores and juniors committed to careers related to the environment; Native American and Alaska Native students may also apply in the tribal public policy or Native health care categories. Requires nomination by the student's institution and at least a B average. Award up to $7,000.",
+      "description": "Scholarship for college sophomores and juniors committed to careers related to the environment; Native American and Alaska Native students may also apply in the tribal public policy or Native health care categories. Requires nomination by the student's institution. Award up to $7,500.",
       "verified": true,
       "estimated_deadline": "2027-03-04",
       "verification": {
-        "source_url": "https://www.udall.gov/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "source_url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "2026 eligibility PDF and dates page: citizen/national/PR sophomores/juniors; up to 65 awards of $7,500; 2026 cycle closed Mar 4 2026 — next estimated Mar 4 2027."
       }
     },
     {
@@ -1129,21 +1125,18 @@
           "college_undergraduate",
           "college_graduate"
         ],
-        "demographics": [
-          "african_american"
-        ],
+        "demographics": [],
         "states": "any",
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
-      "description": "Scholarships from the National Association of Black Journalists for student members pursuing journalism or a communications-related field who have at least one year of school remaining. Requires a paid NABJ student membership; awards up to $10,000.",
+      "description": "Scholarships from the National Association of Black Journalists for student members pursuing journalism or a communications-related field who have at least one year of school remaining. Awards up to $10,000; previous awardees are not eligible to re-apply.",
       "verified": true,
       "estimated_deadline": "2027-02-27",
       "verification": {
         "source_url": "https://nabjonline.org/student-services/scholarships/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "last_verified_at": "2026-06-21",
+        "notes": "NABJ scholarships page: up to $10,000 for journalism/communications students; previous awardees ineligible — individual program GPA/deadline/membership criteria vary by award."
       }
     },
     {
