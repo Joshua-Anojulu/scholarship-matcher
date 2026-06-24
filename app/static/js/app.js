@@ -17,6 +17,10 @@ let passwordResetToken = null;
 
 const form = document.getElementById("profile-form");
 const formError = document.getElementById("form-error");
+const profileProgress = document.getElementById("profile-progress");
+const profileProgressFill = document.getElementById("profile-progress-fill");
+const profileProgressLabel = document.getElementById("profile-progress-label");
+const profileProgressStatus = document.getElementById("profile-progress-status");
 const resultsSection = document.getElementById("results-section");
 const resultsContainer = document.getElementById("results-container");
 const resultsSummary = document.getElementById("results-summary");
@@ -100,6 +104,8 @@ async function init() {
   }
 
   form.addEventListener("submit", handleSubmit);
+  wireProfileProgress();
+  wirePageMotion();
   wireAuthControls();
   wirePasswordReset();
   wireFilterControls();
@@ -107,6 +113,71 @@ async function init() {
   wireSettings();
   wireAgeGate();
   await loadSession();
+}
+
+/* ---------- Page feedback and motion ---------- */
+
+function wireProfileProgress() {
+  form.addEventListener("input", updateProfileProgress);
+  form.addEventListener("change", updateProfileProgress);
+  updateProfileProgress();
+}
+
+function updateProfileProgress() {
+  if (!profileProgress) {
+    return;
+  }
+  const essentials = [
+    document.getElementById("gpa").value.trim() !== "",
+    Boolean(document.getElementById("grade-level").value),
+    Boolean(document.getElementById("citizenship").value),
+    Boolean(document.getElementById("state").value),
+    Boolean(document.getElementById("financial-need").value),
+    getCheckedValues("fields-of-study").length > 0,
+  ];
+  const complete = essentials.filter(Boolean).length;
+  const percent = Math.round((complete / essentials.length) * 100);
+
+  const progressText =
+    complete === essentials.length ? "Profile essentials complete" : `${complete} of 6 essentials`;
+  profileProgress.setAttribute("aria-valuenow", String(complete));
+  profileProgress.setAttribute("aria-valuetext", progressText);
+  profileProgressFill.style.width = `${percent}%`;
+  profileProgressLabel.textContent = progressText;
+  profileProgressStatus.textContent =
+    complete === essentials.length ? "Ready to see your matches" : "Add the essentials to continue";
+  form.classList.toggle("profile-ready", complete === essentials.length);
+}
+
+function wirePageMotion() {
+  const updateHeader = () => {
+    document.body.classList.toggle("has-scrolled", window.scrollY > 8);
+  };
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+  const targets = document.querySelectorAll(".reveal-on-scroll");
+  if (!("IntersectionObserver" in window) || targets.length === 0) {
+    return;
+  }
+  document.documentElement.classList.add("motion-ready");
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.12 }
+  );
+  for (const target of targets) {
+    observer.observe(target);
+  }
 }
 
 /* ---------- Results filtering ---------- */
@@ -828,6 +899,7 @@ function prefillForm(profile) {
   setCheckboxes("demographic-tags", profile.demographic_tags || []);
   setValue("target-schools", (profile.target_schools || []).join(", "));
   setValue("activities", (profile.activities || []).join(", "));
+  updateProfileProgress();
 }
 
 function setValue(elementId, value) {
@@ -1496,8 +1568,11 @@ function buildTierSection(title, matches, tierClass) {
   heading.textContent = title;
   section.appendChild(heading);
 
-  for (const match of matches) {
-    section.appendChild(buildCard(matchToCard(match), tierClass));
+  for (const [index, match] of matches.entries()) {
+    const card = buildCard(matchToCard(match), tierClass);
+    card.classList.add("match-card-enter");
+    card.style.setProperty("--card-delay", `${Math.min(index * 42, 252)}ms`);
+    section.appendChild(card);
   }
 
   return section;
