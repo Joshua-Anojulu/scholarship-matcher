@@ -24,3 +24,10 @@ Desktop.ini
 .vscode/
 *.swp
 *.swo
+
+# Dataset verification scratch (local scrape notes — never commit)
+*_temp.html
+/_*.html
+/_verify*.py
+/_fnsna*.py
+/_batch*.py
