@@ -138,7 +138,7 @@
       "id": "davidson-fellows",
       "name": "Davidson Fellows Scholarship",
       "sponsor": "Davidson Institute for Talent Development",
-      "award_amount": "50000, 25000, or 10000 depending on project category",
+      "award_amount": "$100000, $50000, or $25000 depending on project category",
       "deadline": "VERIFY",
       "url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
       "eligibility": {
@@ -165,10 +165,9 @@
       "verified": true,
       "estimated_deadline": "2027-02-18",
       "verification": {
-        "source_url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "source_url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/eligibility/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Eligibility page: $100k/$50k/$25k awards, age 18 or under (no grade minimum), U.S. citizen or PR; 2026 deadline was Feb 18 — 2027 application opens fall 2026."
       }
     },
     {
@@ -197,10 +196,9 @@
       "description": "Premier science and math competition for high school seniors conducting original research. Students submit research reports and compete for awards at the national level.",
       "verified": true,
       "verification": {
-        "source_url": "https://www.societyforscience.org/regeneron-sts/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "source_url": "https://www.societyforscience.org/regeneron-sts/frequently-asked-questions/",
+        "last_verified_at": "2026-06-21",
+        "notes": "STS FAQ: senior in last year of secondary school in U.S./territories (citizenship not required), up to $250k, application due Nov 5 2026 8pm ET; no minimum GPA."
       }
     },
     {
@@ -231,7 +229,7 @@
       "deadline": "VERIFY",
       "url": "https://burgerking.scholarsapply.org/",
       "eligibility": {
-        "min_gpa": 2.5,
+        "min_gpa": 2.0,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -239,16 +237,15 @@
         "demographics": [],
         "states": "any",
         "essay_required": false,
-        "citizenship_requirement": "us_citizen_or_permanent_resident"
+        "citizenship_requirement": "VERIFY"
       },
       "description": "Merit-based awards for high school seniors, Burger King employees, and their families who plan to enroll in accredited two- or four-year colleges.",
       "verified": true,
       "estimated_deadline": "2026-12-15",
       "verification": {
-        "source_url": "https://burgerking.scholarsapply.org/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "source_url": "https://burgerking.scholarsapply.org/information.php",
+        "last_verified_at": "2026-06-21",
+        "notes": "Award guidelines: General Track $1k–$60k, 2.0 GPA minimum for seniors, U.S./PR/Guam/Canada residency; prior cycle Oct 15–Dec 15 — next dates not yet published; citizenship not stated for General Track."
       }
     },
     {
@@ -271,12 +268,11 @@
       },
       "description": "Four-year scholarships for high school seniors based on scholarship, leadership, and financial need. Funded by the Elks National Foundation.",
       "verified": true,
-      "estimated_deadline": "2026-11-12",
+      "estimated_deadline": "2027-11-12",
       "verification": {
         "source_url": "https://www.elks.org/scholars/scholarships/mvs.cfm",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "last_verified_at": "2026-06-21",
+        "notes": "MVS page: $4k–$30k four-year awards, U.S. citizen only (no permanent residents), senior; 2027 application opens Aug 1 2026 — deadline not yet published (2026 cycle was Nov 12)."
       }
     },
     {
@@ -284,8 +280,8 @@
       "name": "Ron Brown Scholar Program",
       "sponsor": "Ron Brown Scholar Program",
       "award_amount": "40000 (10000 per year for four years)",
-      "deadline": "VERIFY",
-      "url": "https://ronbrown.org/",
+      "deadline": "2026-12-01",
+      "url": "https://ronbrown.org/apply/",
       "eligibility": {
         "min_gpa": null,
         "fields_of_study": [],
@@ -301,12 +297,10 @@
       },
       "description": "Scholarship and leadership development for academically talented African American high school seniors with demonstrated leadership, community service, and financial need.",
       "verified": true,
-      "estimated_deadline": "2026-12-01",
       "verification": {
-        "source_url": "https://ronbrown.org/",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "source_url": "https://ronbrown.org/apply/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Apply page: 20×$40,000 ($10k/yr), Black/African American senior, U.S. citizen or permanent resident, two essays; opens after Sept 3, deadline Dec 1."
       }
     },
     {
