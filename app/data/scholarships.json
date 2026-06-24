@@ -2770,7 +2770,7 @@
       "sponsor": "Microsoft (Disability at Microsoft Inclusion Network)",
       "award_amount": "$5,000 per year (renewable up to $20,000)",
       "deadline": "VERIFY",
-      "url": "https://www.microsoft.com/en-us/diversity/programs/microsoftdisabilityscholarship",
+      "url": "https://www.microsoft.com/en-us/diversity/programs/microsoftdisabilityscholarship.aspx",
       "eligibility": {
         "min_gpa": 2.5,
         "fields_of_study": [
@@ -2789,7 +2789,12 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "For current high school seniors living with a disability who plan to pursue an undergraduate degree in technology-related fields (engineering, computer science, business, law, or related); financial need required.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.microsoft.com/en-us/diversity/programs/microsoftdisabilityscholarship.aspx",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official page redirects to Scholarship America hub; $5k/yr renewable (up to $20k), 2.5 GPA, HS seniors with disability in tech-related fields — cycle dates not on accessible Microsoft URL."
+      }
     },
     {
       "id": "anne-ford-scholarship",
@@ -2977,7 +2982,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarship for current Chick-fil-A restaurant Team Members pursuing postsecondary education (minimum 2.5 GPA; the $25,000 True Inspiration tier requires a 3.0 GPA and financial need). Requires current employment at an eligible Chick-fil-A and a leadership recommendation.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-10-21",
+      "verification": {
+        "source_url": "https://www.chick-fil-a.com/remarkable-futures-scholarships/types-of-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "$1k/$2.5k (2.5 GPA) or $25k True Inspiration (3.0 GPA + need); Team Member at apply/award; 2026 cycle closed Oct 21 2025 — 2027 apps open fall 2026."
+      }
     },
     {
       "id": "american-legion-oratorical",
@@ -2998,14 +3009,19 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Public-speaking scholarship contest for U.S. students under age 20 enrolled in grades 9-12, who deliver a prepared oration and an impromptu discourse on the U.S. Constitution. National finalists receive up to $25,000.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.legion.org/get-involved/youth-programs/oratorical-contest",
+        "last_verified_at": "2026-06-21",
+        "notes": "Grades 9-12, under age 20; citizen or eligible to receive scholarship; post→state→national; local deadlines vary by department."
+      }
     },
     {
       "id": "vfw-voice-of-democracy",
       "name": "VFW Voice of Democracy Scholarship",
       "sponsor": "Veterans of Foreign Wars (VFW)",
       "award_amount": "up to $35,000 (national first place)",
-      "deadline": "VERIFY",
+      "deadline": "2026-10-31",
       "url": "https://vfw.org/community/youth-and-education/youth-scholarships",
       "eligibility": {
         "min_gpa": null,
@@ -3019,14 +3035,19 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Audio-essay scholarship competition for students in grades 9-12 who write and record a speech on an annual patriotic theme; entries are submitted through a local VFW Post. National first place is a $35,000 scholarship.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Grades 9-12 audio-essay; $35k national first place; submit to local VFW Post by Oct 31 midnight for 2026-27 theme."
+      }
     },
     {
       "id": "vfw-patriots-pen",
       "name": "VFW Patriot's Pen Essay Contest",
       "sponsor": "Veterans of Foreign Wars (VFW)",
       "award_amount": "up to $5,000 (national first place)",
-      "deadline": "VERIFY",
+      "deadline": "2026-10-31",
       "url": "https://vfw.org/community/youth-and-education/youth-scholarships",
       "eligibility": {
         "min_gpa": null,
@@ -3040,13 +3061,18 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Patriotic-themed written essay contest (300-400 words) for students in grades 6-8; entries are submitted through a local VFW Post. National first place wins $5,000.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Grades 6-8 essay (300-400 words); $5k national first place; submit to local VFW Post by Oct 31 midnight for 2026-27 theme."
+      }
     },
     {
       "id": "rotary-global-grant-scholarship",
       "name": "Rotary Foundation Global Grant Scholarship",
       "sponsor": "The Rotary Foundation (Rotary International)",
-      "award_amount": "$30,000 or more (varies by sponsoring district)",
+      "award_amount": "VERIFY (typically $30,000+; varies by district)",
       "deadline": "VERIFY",
       "url": "https://www.rotary.org/en/our-programs/scholarships",
       "eligibility": {
@@ -3061,7 +3087,12 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Funds graduate-level study abroad (typically a year or more) aligned with one of Rotary's seven areas of focus. Applicants must be endorsed and sponsored by a local Rotary club, and application processes and deadlines are managed at the district level.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.rotary.org/en/our-programs/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Global grants for graduate study abroad in Rotary areas of focus; 1-4 years; club/district sponsorship required — deadlines set locally."
+      }
     },
     {
       "id": "dar-scholarships",
@@ -3084,7 +3115,13 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "A suite of merit- and need-based scholarships for U.S. citizens attending or planning to attend accredited U.S. colleges; DAR chapter sponsorship is not required. Individual awards target specific fields (e.g., history, nursing, law, education) and have their own eligibility criteria.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-01-31",
+      "verification": {
+        "source_url": "https://www.dar.org/national-society/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Multiple merit/need awards for U.S. citizens; online portal Nov 1–Jan 31 HST annually — 2026-27 reopens Nov 1 2026."
+      }
     },
     {
       "id": "elks-legacy-awards",
@@ -3105,7 +3142,13 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "$4,000 scholarships for high school seniors who are the child, grandchild, step-(grand)child, or legal ward of a living, dues-paying Elks member; recipients complete service with an Elks Lodge during college. Membership-linked and distinct from the Elks Most Valuable Student contest.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-02-02",
+      "verification": {
+        "source_url": "https://www.elks.org/scholars/scholarweb/legacy/rules.cfm",
+        "last_verified_at": "2026-06-21",
+        "notes": "$4,000; child/grandchild of Elks member; HS senior; opens Sep 1 — 2026 deadline Feb 2 2026 noon PT closed."
+      }
     },
     {
       "id": "ayn-rand-essay-contests",
@@ -3128,7 +3171,12 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Annual essay contests on Ayn Rand's novels (Anthem and The Fountainhead for grades 8-12; Atlas Shrugged for high school seniors, college, and graduate students). Open to students worldwide, with top prizes reaching $25,000.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.aynrand.org/students/essay-contests",
+        "last_verified_at": "2026-06-21",
+        "notes": "Anthem/Fountainhead (grades 8-12) and Atlas Shrugged (HS/college/grad); open worldwide; top prize $25k — next deadline TBD."
+      }
     },
     {
       "id": "bri-myimpact-challenge",
@@ -3150,7 +3198,13 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Civic-engagement competition for U.S. students ages 13-19 (grades 7-12) who design and carry out a community project, then submit an essay, project report, and media. Grand prize is $10,000. (Replaces the discontinued We the Students essay contest.)",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-05-03",
+      "verification": {
+        "source_url": "https://billofrightsinstitute.org/myimpact-challenge-student-page/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Ages 13-19 civic project + essay; citizen or U.S.-based; $10k grand prize — 2026 deadline May 3 2026 11:59pm PT closed."
+      }
     },
     {
       "id": "dosomething-scholarships",
@@ -3173,14 +3227,19 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Scholarship opportunities for young people ages 13-25 who complete volunteer or community-service campaigns; no GPA, essay, or recommendations required, and winners are selected by random drawing. Open to U.S. residents and U.S. citizens living abroad.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://dosomething.org/pays-to-do-good",
+        "last_verified_at": "2026-06-21",
+        "notes": "Ages 13-25 U.S. residents or citizens abroad; campaign-based random drawings up to $1,500; no GPA/essay — deadlines vary by campaign."
+      }
     },
     {
       "id": "rhodes-scholarship",
       "name": "Rhodes Scholarship",
       "sponsor": "The Rhodes Trust",
       "award_amount": "full funding for graduate study at the University of Oxford",
-      "deadline": "VERIFY",
+      "deadline": "2026-10-07",
       "url": "https://www.rhodeshouse.ox.ac.uk/scholarships/applications/united-states/",
       "eligibility": {
         "min_gpa": 3.7,
@@ -3195,7 +3254,12 @@
         "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
       },
       "description": "Fully funded postgraduate scholarship for study at the University of Oxford. The U.S. constituency is open to U.S. citizens, permanent residents, and DACA recipients aged roughly 18-23 (or under 27 with a late first degree) and requires institutional endorsement.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/applications/united-states/",
+        "last_verified_at": "2026-06-21",
+        "notes": "2027 Rhodes open; U.S. districts; opens Jul 1 2026, closes Oct 7 2026 11:59pm ET; citizen/PR/DACA eligible."
+      }
     },
     {
       "id": "marshall-scholarship",
@@ -3217,7 +3281,13 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Funds up to 50 U.S. citizens per year for graduate study in any field at any UK university. Requires a first undergraduate degree (minimum 3.7 GPA) earned within roughly two years of applying; applicants who already hold a UK degree are ineligible.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-09-16",
+      "verification": {
+        "source_url": "https://www.marshallscholarship.org/apply/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Up to 50 U.S. citizens/yr for UK graduate study; 3.7 GPA; institutional endorsement; 2026 cycle closed Sep 16 2025 — 2027 opens late spring 2026."
+      }
     },
     {
       "id": "gates-cambridge-scholarship",
@@ -3239,14 +3309,20 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Full-cost postgraduate scholarship at the University of Cambridge for students from outside the UK (about 25 awards in the dedicated U.S. round each year), available in any subject. Selection emphasizes academic excellence, leadership, and commitment to improving others' lives.",
-      "verified": false
+      "verified": true,
+      "estimated_deadline": "2027-10-16",
+      "verification": {
+        "source_url": "https://www.gatescambridge.org/apply/timeline/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Full-cost Cambridge postgraduate; opens Sep 2026 for 2027 entry; U.S.-resident citizens due mid-Oct — other deadlines vary by course."
+      }
     },
     {
       "id": "schwarzman-scholars",
       "name": "Schwarzman Scholars",
       "sponsor": "Schwarzman Scholars (Tsinghua University)",
       "award_amount": "full scholarship for a one-year master's at Tsinghua University",
-      "deadline": "VERIFY",
+      "deadline": "2026-09-09",
       "url": "https://www.schwarzmanscholars.org/admissions/",
       "eligibility": {
         "min_gpa": null,
@@ -3261,14 +3337,19 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Fully funded one-year Master's in Global Affairs at Tsinghua University in Beijing, open to applicants of all majors from any country (about 45% of scholars are from the U.S.). Applicants must be 18-28 with a completed undergraduate degree and strong English proficiency.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.schwarzmanscholars.org/admissions/",
+        "last_verified_at": "2026-06-21",
+        "notes": "One-year Master's in Global Affairs at Tsinghua; ages 18-28; U.S./global app open Apr 8–Sep 9 2026 3pm EDT for 2027-28 class."
+      }
     },
     {
       "id": "churchill-scholarship",
       "name": "Churchill Scholarship",
       "sponsor": "Winston Churchill Foundation of the United States",
       "award_amount": "full funding for one year of graduate study at the University of Cambridge",
-      "deadline": "VERIFY",
+      "deadline": "2026-11-02",
       "url": "https://www.churchillscholarship.org/the-scholarship",
       "eligibility": {
         "min_gpa": "VERIFY",
@@ -3289,15 +3370,20 @@
         "citizenship_requirement": "us_citizen"
       },
       "description": "Funds one year of master's study in STEM fields (science, mathematics, engineering, computer science) at Churchill College, University of Cambridge, for U.S. citizens. Applicants must be nominated by one of the participating U.S. institutions.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.churchillscholarship.org/",
+        "last_verified_at": "2026-06-21",
+        "notes": "U.S. citizens; STEM master's at Cambridge; institutional nomination; 2026 app open — nomination due Nov 2 2026 5pm ET."
+      }
     },
     {
       "id": "knight-hennessy-scholars",
       "name": "Knight-Hennessy Scholars",
       "sponsor": "Stanford University",
       "award_amount": "full funding for a Stanford graduate degree",
-      "deadline": "VERIFY",
-      "url": "https://knight-hennessy.stanford.edu/admission/before-you-apply/eligibility",
+      "deadline": "2026-10-06",
+      "url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/application-deadlines",
       "eligibility": {
         "min_gpa": null,
         "fields_of_study": [],
@@ -3311,7 +3397,12 @@
         "citizenship_requirement": "VERIFY"
       },
       "description": "Fully funded scholarship supporting any full-time Stanford graduate degree (e.g., MA, MS, MBA, JD, MD, PhD); open to applicants of all fields from any country. Requires a bachelor's degree earned in 2020 or later and separate admission to a Stanford graduate program.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/application-deadlines",
+        "last_verified_at": "2026-06-21",
+        "notes": "2027 cohort open; any-country applicants; separate Stanford grad app due by Dec 1 2026; KHS deadline Oct 6 2026 1pm PT."
+      }
     },
     {
       "id": "forty-acres-scholars-program",
