@@ -1169,9 +1169,8 @@
       "estimated_deadline": "2027-01-12",
       "verification": {
         "source_url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest",
-        "last_verified_at": null,
-        "provenance_recorded_at": "2026-06-21",
-        "notes": "Official sponsor URL recorded on June 21, 2026; this was not a new fact-by-fact audit."
+        "last_verified_at": "2026-06-21",
+        "notes": "Main contest page: grades 9-12 U.S. high school students including GED under 20 and U.S. citizens abroad; $10k/$3k/3×$1k + 15 honorable mentions; 2026 cycle closed Jan 12 2026 — next deadline not yet published; estimated Jan 12 2027."
       }
     },
     {
@@ -1731,10 +1730,10 @@
       "name": "FNSNA Undergraduate Scholarship",
       "sponsor": "Foundation of the National Student Nurses' Association (FNSNA)",
       "award_amount": "Up to $10,000",
-      "deadline": "VERIFY",
-      "url": "https://www.forevernursing.org/",
+      "deadline": "2027-01-11",
+      "url": "https://fnsna.org/2027-undergraduate-scholarship-application",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "nursing",
           "health_medicine"
@@ -1748,7 +1747,12 @@
         "citizenship_requirement": "us_citizen_or_permanent_resident"
       },
       "description": "Need- and merit-based scholarships (up to $10,000) for students enrolled in state-approved nursing programs (ADN, BSN, diploma, direct-entry master's, RN-to-BSN/MSN, or LPN/LVN-to-RN). High school students are not eligible; open to U.S. citizens and permanent residents.",
-      "verified": false
+      "verified": true,
+      "verification": {
+        "source_url": "https://fnsna.org/2027-undergraduate-scholarship-application",
+        "last_verified_at": "2026-06-21",
+        "notes": "FNSNA application page: up to $10,000; U.S. citizen or permanent resident; state-approved nursing programs (ADN/BSN/diploma/direct-entry MSN/LPN-RN/accelerated BSN); min 6 credits per semester; high school students ineligible; opens Sep 8 2026, closes Jan 11 2027; no minimum GPA stated."
+      }
     },
     {
       "id": "aacn2-pathway-critical-care-nursing-scholarship",
