@@ -48,8 +48,9 @@ DEMOGRAPHIC_TAG_OPTIONS: dict[str, str] = {
 
 # Academic field-of-study categories appearing in eligibility.fields_of_study.
 # Recognized academic subject areas only (no catch-all categories). Some areas
-# overlap (for example "science" and "natural sciences"); the matcher scores by
-# string overlap, so broader and narrower tags can coexist.
+# overlap (for example "science" and "natural sciences"). The matcher uses an
+# explicit one-way hierarchy, not raw substring matching, so broad student tags
+# do not accidentally satisfy narrow scholarship requirements.
 FIELD_OF_STUDY_OPTIONS: dict[str, str] = {
     "Agriculture": "agriculture",
     "Architecture": "architecture",

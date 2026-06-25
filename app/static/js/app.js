@@ -85,6 +85,27 @@ const filterClosingSoon = document.getElementById("filter-closing-soon");
 const filterVerifiedOnly = document.getElementById("filter-verified-only");
 const filterClear = document.getElementById("filter-clear");
 
+const CRITERIA_HELP = {
+  gpa:
+    "Used as an eligibility gate when a scholarship publishes a minimum GPA. It does not boost ranking by itself.",
+  "grade-level":
+    "Used as an eligibility gate. Awards for other school levels are hidden when the requirement is known.",
+  citizenship:
+    "Used as an eligibility gate when the sponsor publishes a citizenship rule. Unverified rules stay visible with a warning.",
+  state:
+    "Used as an eligibility gate for state-restricted awards. National awards remain available from every state.",
+  "financial-need":
+    "Adds fit points only for need-based scholarships. It does not hide merit awards or non-need-based awards.",
+  "fields-of-study-group":
+    "The strongest fit signal. Field-specific scholarships need an exact or approved broad-field match; otherwise they are capped to Possible with a caveat.",
+  "demographic-tags-group":
+    "Positive-only. These can explain scholarships that mention an identity group, but they never exclude you from results.",
+  "target-schools":
+    "Adds points for school-specific scholarships at schools you list. If a school-specific award points elsewhere, it is capped from Strong to Possible.",
+  activities:
+    "Adds a small capped bonus when meaningful activity keywords appear in the scholarship description. It never replaces eligibility.",
+};
+
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
@@ -1297,6 +1318,7 @@ function populateForm(vocab) {
   fillSelect("financial-need", vocab.financial_need_level);
   fillCheckboxes("fields-of-study", vocab.fields_of_study, "fields");
   fillCheckboxes("demographic-tags", vocab.demographic_tags, "demographics");
+  applyProfileHelp();
 }
 
 function fillSelect(elementId, options) {
@@ -1313,6 +1335,10 @@ function fillSelect(elementId, options) {
     const option = document.createElement("option");
     option.value = opt.value;
     option.textContent = opt.label;
+    const helpText = selectOptionHelp(elementId, opt);
+    if (helpText) {
+      option.title = helpText;
+    }
     select.appendChild(option);
   }
 }
@@ -1329,10 +1355,69 @@ function fillCheckboxes(containerId, options, namePrefix) {
     input.name = namePrefix;
     input.value = opt.value;
 
+    const helpText = checkboxOptionHelp(namePrefix, opt);
+    if (helpText) {
+      label.classList.add("has-tooltip", "option-tooltip");
+      label.dataset.tooltip = helpText;
+    }
+
     label.appendChild(input);
     label.appendChild(document.createTextNode(opt.label));
     container.appendChild(label);
   }
+}
+
+function applyProfileHelp() {
+  for (const [id, helpText] of Object.entries(CRITERIA_HELP)) {
+    const element = document.getElementById(id);
+    const target = element?.closest(".field") || element;
+    addTooltip(target, helpText);
+  }
+}
+
+function addTooltip(target, helpText) {
+  if (!target || !helpText) {
+    return;
+  }
+  const label = target.querySelector("label, legend");
+  const tooltipTarget = label || target;
+  tooltipTarget.classList.add("has-tooltip");
+  tooltipTarget.dataset.tooltip = helpText;
+
+  if (label && !label.querySelector(".help-dot")) {
+    const dot = document.createElement("span");
+    dot.className = "help-dot";
+    dot.textContent = "?";
+    dot.title = helpText;
+    dot.setAttribute("aria-hidden", "true");
+    label.appendChild(dot);
+  }
+}
+
+function checkboxOptionHelp(namePrefix, option) {
+  if (namePrefix === "fields") {
+    return `${option.label} creates field-fit points only when a scholarship lists this area or a broader approved parent area. Narrow requirements like computer science need that exact field selected.`;
+  }
+  if (namePrefix === "demographics") {
+    return `${option.label} is used only as a positive signal for scholarships that mention this group. It never hides scholarships from you.`;
+  }
+  return "";
+}
+
+function selectOptionHelp(elementId, option) {
+  if (elementId === "financial-need") {
+    return `${option.label} financial need affects ranking only for scholarships that publish a need-based preference or requirement.`;
+  }
+  if (elementId === "grade-level") {
+    return `${option.label} is used to screen out awards limited to other school levels.`;
+  }
+  if (elementId === "citizenship") {
+    return `${option.label} is compared with published citizenship rules when those rules are verified.`;
+  }
+  if (elementId === "state") {
+    return `${option.label} is compared with state-specific eligibility when a scholarship is not national.`;
+  }
+  return "";
 }
 
 function parseCommaList(value) {

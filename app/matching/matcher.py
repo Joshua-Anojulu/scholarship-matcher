@@ -72,6 +72,25 @@ _CITIZENSHIP_ALLOWED: dict[str, set[str]] = {
     },
 }
 
+# Field matching is intentionally asymmetric. A scholarship that says it is open
+# to a broad area like "science" may reasonably fit a student who chose a more
+# specific science-related field. The reverse is not true: a student choosing a
+# broad field like "science" should not be told they overlap with a scholarship
+# that specifically requires "computer_science".
+_FIELD_REQUIREMENT_CHILDREN: dict[str, set[str]] = {
+    "arts": {"music"},
+    "health_medicine": {"nursing"},
+    "natural_sciences": {"environmental_science"},
+    "science": {
+        "computer_science",
+        "environmental_science",
+        "mathematics",
+        "natural_sciences",
+        "research",
+    },
+    "technology": {"computer_science", "engineering"},
+}
+
 
 def _normalize_tag(value: str) -> str:
     return value.strip().lower().replace(" ", "_").replace("-", "_")
@@ -101,14 +120,13 @@ def _citizenship_satisfies(student_citizenship: str, requirement: str) -> bool |
 def _matching_fields(student_majors: list[str], required_fields: list[str]) -> list[str]:
     if not required_fields:
         return []
-    norm_majors = [_normalize_tag(major) for major in student_majors]
+    norm_majors = {_normalize_tag(major) for major in student_majors}
     matches: list[str] = []
     for field in required_fields:
         norm_field = _normalize_tag(field)
-        for major in norm_majors:
-            if norm_field == major or norm_field in major or major in norm_field:
-                matches.append(field)
-                break
+        accepted_student_fields = {norm_field, *_FIELD_REQUIREMENT_CHILDREN.get(norm_field, set())}
+        if norm_majors.intersection(accepted_student_fields):
+            matches.append(field)
     return matches
 
 

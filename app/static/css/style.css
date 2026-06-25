@@ -378,6 +378,11 @@ a { -webkit-tap-highlight-color: transparent; }
   line-height: 0.95;
 }
 
+.hero-visual-title span {
+  color: #cfe8d0;
+  font-size: 0.78em;
+}
+
 .hero-status-dot {
   width: 0.44rem;
   height: 0.44rem;
@@ -579,14 +584,42 @@ input[type="file"]::file-selector-button {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.15rem 1rem;
+  gap: 0.95rem;
 }
 
 .field-full { grid-column: 1 / -1; }
 
+.profile-form .field {
+  position: relative;
+  min-width: 0;
+}
+
+.profile-form .field:not(.field-full) {
+  padding: 0.85rem;
+  border: 1px solid rgba(220, 229, 220, 0.72);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fff, #fbfdfb);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.profile-form .field-full {
+  padding: 0.95rem;
+  border: 1px solid rgba(220, 229, 220, 0.72);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fff, #fbfdfb);
+}
+
+.profile-form .field:focus-within {
+  border-color: rgba(33, 92, 69, 0.34);
+  box-shadow: 0 10px 24px rgba(24, 51, 42, 0.06);
+}
+
 .field > label,
 fieldset legend {
-  display: block;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.35rem;
   margin-bottom: 0.4rem;
   color: var(--ink-soft);
   font-size: 0.82rem;
@@ -628,29 +661,118 @@ textarea:focus {
 
 .checkbox-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
   margin-top: 0.7rem;
-  gap: 1.25rem;
+  gap: 0.72rem;
 }
 
 .checkbox-item {
+  position: relative;
   display: flex;
-  min-height: 2.72rem;
-  padding: 0.75rem 0.85rem;
+  min-height: 2.65rem;
+  padding: 0.68rem 0.75rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 14px;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.68rem;
   color: var(--ink-soft);
   background: var(--paper-soft);
   cursor: pointer;
   font-size: 0.82rem;
-  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease, transform 150ms ease;
 }
 
 .checkbox-item:hover { border-color: var(--leaf-strong); background: #f2f9f2; }
 .checkbox-item:has(input:checked) { border-color: var(--leaf-strong); color: var(--forest-dark); background: var(--leaf); box-shadow: 0 5px 12px rgba(33, 92, 69, 0.07); transform: translateY(-1px); }
-.checkbox-item input { width: 1rem; height: 1rem; margin: 0; accent-color: var(--forest); }
+.checkbox-item input {
+  display: grid;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 0.32rem;
+  appearance: none;
+  background: #fff;
+  transition: background 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+.checkbox-item input::after {
+  width: 0.32rem;
+  height: 0.58rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  transform: rotate(45deg) scale(0);
+  transform-origin: center;
+  transition: transform 120ms ease;
+}
+.checkbox-item input:checked {
+  border-color: var(--forest);
+  background: var(--forest);
+  box-shadow: 0 0 0 3px rgba(33, 92, 69, 0.12);
+}
+.checkbox-item input:checked::after { transform: rotate(45deg) scale(1); }
+
+.help-dot {
+  display: inline-grid;
+  width: 1rem;
+  height: 1rem;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--forest);
+  background: var(--paper-soft);
+  font-size: 0.63rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.profile-form .has-tooltip { position: relative; }
+.profile-form .has-tooltip::before,
+.profile-form .has-tooltip::after {
+  position: absolute;
+  z-index: 30;
+  left: 0.85rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+.profile-form .has-tooltip::after {
+  bottom: calc(100% + 0.58rem);
+  width: max-content;
+  max-width: min(23rem, calc(100vw - 3rem));
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(22, 69, 50, 0.16);
+  border-radius: 13px;
+  color: #fff;
+  background: rgba(22, 69, 50, 0.96);
+  box-shadow: 0 14px 34px rgba(24, 51, 42, 0.18);
+  content: attr(data-tooltip);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.profile-form .has-tooltip::before {
+  bottom: calc(100% + 0.2rem);
+  width: 0.7rem;
+  height: 0.7rem;
+  background: rgba(22, 69, 50, 0.96);
+  content: "";
+  transform: translateY(4px) rotate(45deg);
+}
+.profile-form .has-tooltip:hover::before,
+.profile-form .has-tooltip:hover::after,
+.profile-form .has-tooltip:focus-within::before,
+.profile-form .has-tooltip:focus-within::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.profile-form .has-tooltip:hover::before,
+.profile-form .has-tooltip:focus-within::before { transform: translateY(0) rotate(45deg); }
+.profile-form .option-tooltip::before,
+.profile-form .option-tooltip::after { left: 0.65rem; }
 
 .form-actions {
   display: flex;
@@ -804,7 +926,7 @@ textarea:focus {
 .fit-ring-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
 .match-card.strong .fit-ring-label { color: var(--forest); }
 .match-card.possible .fit-ring-label { color: #a9761a; }
- html.motion-ready .fit-ring-value { stroke-dashoffset: var(--circ); animation: ring-draw 900ms 140ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+html.motion-ready .fit-ring-value { stroke-dashoffset: var(--circ); animation: ring-draw 900ms 140ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
 @keyframes ring-draw { to { stroke-dashoffset: calc(var(--circ) - var(--dash)); } }
 
 /* Award + deadline stat row */
@@ -1054,7 +1176,7 @@ html.motion-ready .match-card-enter { animation: card-arrive 440ms both cubic-be
   .btn-ghost { padding: 0.55rem 0.62rem; font-size: 0.77rem; }
   .hero-actions { align-items: start; flex-direction: column; }
   .checkbox-grid { grid-template-columns: 1fr; }
-  .card-top { flex-direction: column; }
+  .card-header { flex-direction: column; }
   .card-body { padding: 1.1rem; }
   .results-header h2 { font-size: 2.25rem; }
 }

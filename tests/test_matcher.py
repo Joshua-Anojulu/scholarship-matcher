@@ -122,6 +122,31 @@ class TestFieldScoring:
         assert results[0].scholarship_id == "science-scholarship"
         assert results[0].score > results[1].score
 
+    def test_broad_science_does_not_match_specific_computer_science_requirement(self):
+        student = make_student(intended_majors=["science"])
+        scholarship = make_scholarship(
+            id="cs-specific",
+            eligibility={"fields_of_study": ["computer_science"], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.field_of_study == pytest.approx(0.0)
+        assert "Field of study overlap: computer_science" not in result.match_reasons
+        assert "No field of study overlap" in result.match_reasons
+
+    def test_broad_scholarship_field_can_match_specific_student_field(self):
+        student = make_student(intended_majors=["computer_science"])
+        scholarship = make_scholarship(
+            id="science-broad",
+            eligibility={"fields_of_study": ["science"], "demographics": []},
+        )
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert result.score_breakdown.field_of_study == pytest.approx(40.0)
+        assert "Field of study overlap: science" in result.match_reasons
+
 
 class TestTieBreaking:
     def test_equal_scores_prefer_confirmed_deadline(self):
