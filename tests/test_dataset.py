@@ -41,6 +41,16 @@ def test_school_pilot_entries_have_provenance():
         assert entry.application_requirements
 
 
+def test_checklist_programs_meet_expansion_goal():
+    with_checklists = [
+        scholarship
+        for scholarship in load_scholarships()
+        if scholarship.application_requirements
+    ]
+    assert len(with_checklists) >= 20
+    assert all(req.source_url for scholarship in with_checklists for req in scholarship.application_requirements)
+
+
 def test_ids_are_unique():
     ids = [s.id for s in load_scholarships()]
     assert len(ids) == len(set(ids))

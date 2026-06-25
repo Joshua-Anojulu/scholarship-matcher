@@ -23,9 +23,39 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.coca-colascholarsfoundation.org/apply/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Apply page: $20,000 award, 3.0 GPA minimum, Phase 1 open Aug 3–Sept 30 (2027 cohort opens Aug 3, 2026), U.S. citizen/national/PR or eligible federal-aid statuses; Phase 1 requires no essays."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Apply page: $20,000 award, 3.0 GPA minimum, Phase 1 open Aug 3–Sept 30 (2027 cohort opens Aug 3, 2026), U.S. citizen/national/PR or eligible federal-aid statuses; Phase 1 requires no essays. Application checklist verified 2026-06-24 from official apply page (Phase 1 Aug 3–Sep 30)."
+      },
+      "application_requirements": [
+        {
+          "id": "phase-1-online-application",
+          "label": "Complete Phase 1 online application",
+          "details": "Phase 1 opens Aug 3 and closes Sep 30 each year for students graduating the following academic year. No essays, transcript, or recommendations in Phase 1.",
+          "required": true,
+          "source_url": "https://www.coca-colascholarsfoundation.org/apply/"
+        },
+        {
+          "id": "meet-eligibility-criteria",
+          "label": "Confirm eligibility before applying",
+          "details": "U.S. high school senior; U.S. citizen/national/permanent resident or eligible federal-aid statuses; minimum 3.0 GPA; planning accredited U.S. post-secondary study.",
+          "required": true,
+          "source_url": "https://www.coca-colascholarsfoundation.org/apply/"
+        },
+        {
+          "id": "phase-2-semifinalist-materials",
+          "label": "Submit Phase 2 materials if named Semifinalist",
+          "details": "About 1% of applicants are named Semifinalists by end of October and invited to complete Phase 2 in November, including essays, transcript, and one recommendation.",
+          "required": false,
+          "source_url": "https://www.coca-colascholarsfoundation.org/apply/"
+        },
+        {
+          "id": "regional-finalist-interview",
+          "label": "Complete regional finalist interview if invited",
+          "details": "From Semifinalists, 250 advance as Regional Finalists and participate in a final interview with alumni/staff in late January or early February.",
+          "required": false,
+          "source_url": "https://www.coca-colascholarsfoundation.org/apply/"
+        }
+      ]
     },
     {
       "id": "gates-scholarship",
@@ -50,9 +80,32 @@
       "estimated_deadline": "2026-09-15",
       "verification": {
         "source_url": "https://www.thegatesscholarship.org/scholarship",
-        "last_verified_at": "2026-06-21",
-        "notes": "Scholarship page: last-dollar full COA award, 3.3 weighted GPA minimum, U.S. citizen or permanent resident, Pell-eligible senior; 2025 cycle closed Sept 15 — next deadline not yet published."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Scholarship page: last-dollar full COA award, 3.3 weighted GPA minimum, U.S. citizen or permanent resident, Pell-eligible senior; 2025 cycle closed Sept 15 — next deadline not yet published. Checklist verified 2026-06-24 from official pages; next-cycle application component list not published outside myTGS."
+      },
+      "application_requirements": [
+        {
+          "id": "create-mytgs-profile",
+          "label": "Create a myTGS account and apply",
+          "details": "Apply through the myTGS portal on the official site. Detailed upload requirements are inside the application system.",
+          "required": true,
+          "source_url": "https://www.thegatesscholarship.org/scholarship"
+        },
+        {
+          "id": "meet-basic-eligibility",
+          "label": "Meet basic eligibility",
+          "details": "High school senior; Pell-eligible; U.S. citizen or permanent resident; minimum 3.3 cumulative weighted GPA; plan full-time enrollment at accredited not-for-profit U.S. four-year college.",
+          "required": true,
+          "source_url": "https://www.thegatesscholarship.org/scholarship"
+        },
+        {
+          "id": "submit-fafsa",
+          "label": "Submit the FAFSA",
+          "details": "Official site requires FAFSA submission. The award is last-dollar based on cost of attendance not covered by other aid and your Student Aid Index.",
+          "required": true,
+          "source_url": "https://www.thegatesscholarship.org/federal-financial-aid/"
+        }
+      ]
     },
     {
       "id": "jack-kent-cooke-college",
@@ -76,9 +129,46 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.jkcf.org/faq/am-i-eligible-to-apply-to-the-cooke-college-scholarship-program/",
-        "last_verified_at": "2026-06-21",
-        "notes": "JKCF eligibility FAQ: up to $55,000/year, 3.75 unweighted GPA minimum, 2027 cohort application Aug 19–Nov 11, 2026; must attend U.S. high school four years — citizenship not explicitly stated."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "JKCF eligibility FAQ: up to $55,000/year, 3.75 unweighted GPA minimum, 2027 cohort application Aug 19–Nov 11, 2026; must attend U.S. high school four years — citizenship not explicitly stated. Application checklist verified 2026-06-24 from JKCF how-to-apply page."
+      },
+      "application_requirements": [
+        {
+          "id": "common-app-jkcf-section",
+          "label": "Apply via Common App and add JKCF",
+          "details": "Submit through Common App, add Jack Kent Cooke Foundation as a school to access program questions. Opens Aug 19, 2026; deadline Nov 11, 2026.",
+          "required": true,
+          "source_url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/"
+        },
+        {
+          "id": "two-academic-recommendations",
+          "label": "Two academic recommendations",
+          "details": "One from an 11th-grade core subject teacher and one from another core teacher/professor since 9th grade, both submitted through Common App.",
+          "required": true,
+          "source_url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/"
+        },
+        {
+          "id": "counselor-recommendation-school-report",
+          "label": "Counselor recommendation and School Report",
+          "details": "One counselor recommendation and School Report/School Profile submitted through Common App Recommenders and FERPA.",
+          "required": true,
+          "source_url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/"
+        },
+        {
+          "id": "transcripts-and-test-scores",
+          "label": "Unofficial transcripts and test scores",
+          "details": "Self-report courses/grades and submit unofficial transcripts in Common App. Submit SAT, ACT, AP, or IB score(s); no minimum score but a test must have been taken.",
+          "required": true,
+          "source_url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/"
+        },
+        {
+          "id": "program-essays-and-financial-info",
+          "label": "JKCF essays and financial information",
+          "details": "Complete JKCF-specific questions including short essays and financial information demonstrating unmet need.",
+          "required": true,
+          "source_url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/faqs/"
+        }
+      ]
     },
     {
       "id": "dell-scholars",
@@ -103,9 +193,32 @@
       "estimated_deadline": "2027-02-15",
       "verification": {
         "source_url": "https://www.dellscholars.org/students/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Students page: $20,000 plus laptop and textbook credits, 2.4 GPA minimum, Pell Grant eligible senior in approved college-readiness program; prior cycle Dec 15–Feb 15 — next dates not yet published."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Students page: $20,000 plus laptop and textbook credits, 2.4 GPA minimum, Pell Grant eligible senior in approved college-readiness program; prior cycle Dec 15–Feb 15 — next dates not yet published. Checklist verified 2026-06-24; next-cycle open/close dates not yet published on official site."
+      },
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Complete online application",
+          "details": "All applications are submitted online only. Official Important Dates section lists December 15 open and February 15 final deadline for the published cycle.",
+          "required": true,
+          "source_url": "https://www.dellscholars.org/scholarship/"
+        },
+        {
+          "id": "self-report-coursework",
+          "label": "Self-report high school coursework and grades",
+          "details": "Initial application requires manually reporting high school coursework and grades with status for each course (In Progress, Completed, or Not Taken).",
+          "required": true,
+          "source_url": "https://apply.dellscholars.org/Application/Print"
+        },
+        {
+          "id": "finalist-transcript-fss-recommendation",
+          "label": "Finalist materials: transcript, FAFSA Summary, recommendation",
+          "details": "If selected as a finalist, upload current high school transcript, FAFSA Submission Summary, and provide one online recommendation.",
+          "required": false,
+          "source_url": "https://www.dellscholars.org/scholarship/"
+        }
+      ]
     },
     {
       "id": "horatio-alger-national",
@@ -130,9 +243,46 @@
       "estimated_deadline": "2027-03-01",
       "verification": {
         "source_url": "https://horatioalger.org/scholarships-and-services/undergraduate-scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Undergraduate scholarships page: 105×$25,000 National Scholarship, 2.0 GPA minimum, U.S. citizen, junior standing; toolkit shows junior application closes March 1 — next cycle not yet published."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Undergraduate scholarships page: 105×$25,000 National Scholarship, 2.0 GPA minimum, U.S. citizen, junior standing; toolkit shows junior application closes March 1 — next cycle not yet published. Application checklist verified 2026-06-24 from Horatio Alger undergraduate scholarships page."
+      },
+      "application_requirements": [
+        {
+          "id": "single-online-application",
+          "label": "Complete one online undergraduate application",
+          "details": "One application considers you for all eligible programs including the National Scholarship.",
+          "required": true,
+          "source_url": "https://horatioalger.org/scholarships-and-services/undergraduate-scholarships/"
+        },
+        {
+          "id": "essay-responses",
+          "label": "Craft essay responses",
+          "details": "Essays include your Horatio Alger story and American Dream experience per official how-to-apply steps.",
+          "required": true,
+          "source_url": "https://horatioalger.org/scholarships-and-services/undergraduate-scholarships/"
+        },
+        {
+          "id": "counselor-certification-form",
+          "label": "Counselor Certification Form",
+          "details": "Enter counselor email so counselor receives a request to submit the Counselor Certification Form verifying academic information.",
+          "required": true,
+          "source_url": "https://horatioalger.org/scholarships-and-services/undergraduate-scholarships/"
+        },
+        {
+          "id": "support-form-provider",
+          "label": "Support Form Provider",
+          "details": "Enter email for an unrelated adult 21+ familiar with adversities described in your short responses.",
+          "required": true,
+          "source_url": "https://horatioalger.org/scholarships-and-services/undergraduate-scholarships/"
+        },
+        {
+          "id": "transcript-and-income-verification",
+          "label": "Upload transcript and income verification",
+          "details": "Upload high school transcript including fall grades and income verification (most often parents' tax form) through the online application.",
+          "required": true,
+          "source_url": "https://horatioalger.org/scholarships-and-services/undergraduate-scholarships/"
+        }
+      ]
     },
     {
       "id": "davidson-fellows",
@@ -197,9 +347,39 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.societyforscience.org/regeneron-sts/frequently-asked-questions/",
-        "last_verified_at": "2026-06-21",
-        "notes": "STS FAQ: senior in last year of secondary school in U.S./territories (citizenship not required), up to $250k, application due Nov 5 2026 8pm ET; no minimum GPA."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "STS FAQ: senior in last year of secondary school in U.S./territories (citizenship not required), up to $250k, application due Nov 5 2026 8pm ET; no minimum GPA. Application checklist verified 2026-06-24 from Regeneron STS application requirements page."
+      },
+      "application_requirements": [
+        {
+          "id": "research-report",
+          "label": "Original research report",
+          "details": "Submit a research report describing an original independent research project meeting eligibility requirements.",
+          "required": true,
+          "source_url": "https://www.societyforscience.org/regeneron-sts/application-requirements/"
+        },
+        {
+          "id": "recommendations",
+          "label": "Three recommendations",
+          "details": "Educator recommendation, project recommendation, and High School Report (transcript) required.",
+          "required": true,
+          "source_url": "https://www.societyforscience.org/regeneron-sts/application-requirements/"
+        },
+        {
+          "id": "application-sections",
+          "label": "Complete application sections",
+          "details": "Sections cover you, your research project, prior research, activities, and how you spend your time.",
+          "required": true,
+          "source_url": "https://www.societyforscience.org/regeneron-sts/application-requirements/"
+        },
+        {
+          "id": "short-essays",
+          "label": "Short essays",
+          "details": "Short essay section required as part of holistic application review.",
+          "required": true,
+          "source_url": "https://www.societyforscience.org/regeneron-sts/application-requirements/"
+        }
+      ]
     },
     {
       "id": "national-merit",
@@ -277,9 +457,32 @@
       "estimated_deadline": "2027-11-12",
       "verification": {
         "source_url": "https://www.elks.org/scholars/scholarships/mvs.cfm",
-        "last_verified_at": "2026-06-21",
-        "notes": "MVS page: $4k–$30k four-year awards, U.S. citizen only (no permanent residents), senior; 2027 application opens Aug 1 2026 — deadline not yet published (2026 cycle was Nov 12)."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "MVS page: $4k–$30k four-year awards, U.S. citizen only (no permanent residents), senior; 2027 application opens Aug 1 2026 — deadline not yet published (2026 cycle was Nov 12). Checklist verified 2026-06-24 from ENF sample application PDF; 2027 exact deadlines not yet on main MVS page."
+      },
+      "application_requirements": [
+        {
+          "id": "complete-online-application",
+          "label": "Complete online MVS application fields",
+          "details": "Complete all required fields on the online application form and click Submit. Initial application requires no supporting documents.",
+          "required": true,
+          "source_url": "https://www.elks.org/sharedelksorg/enf/files/2026MVSApplicationSample.pdf"
+        },
+        {
+          "id": "counselor-report",
+          "label": "Request Counselor Report",
+          "details": "Request a Counselor Report from your counselor using name and email on the counselor page. Incomplete applications are not considered.",
+          "required": true,
+          "source_url": "https://www.elks.org/sharedelksorg/enf/files/2026MVSApplicationSample.pdf"
+        },
+        {
+          "id": "quarter-finalist-transcript",
+          "label": "Upload transcript if named Quarter Finalist",
+          "details": "If advanced to Quarter Finalist, upload high school transcript (PDF). Semi-Finalists later provide FAFSA Submission Summary.",
+          "required": false,
+          "source_url": "https://www.elks.org/sharedelksorg/enf/files/2026MVSApplicationSample.pdf"
+        }
+      ]
     },
     {
       "id": "ron-brown-scholar",
@@ -336,9 +539,25 @@
       "estimated_deadline": "2027-02-15",
       "verification": {
         "source_url": "https://www.hsf.net/scholarship",
-        "last_verified_at": "2026-06-21",
-        "notes": "Scholarship page: $500–$5k awards, 3.0 GPA (HS) / 2.5 (college), U.S. citizen/PR/DACA, Hispanic heritage, FAFSA required; 2026 cycle closed Feb 15 — next deadline not yet published."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Scholarship page: $500–$5k awards, 3.0 GPA (HS) / 2.5 (college), U.S. citizen/PR/DACA, Hispanic heritage, FAFSA required; 2026 cycle closed Feb 15 — next deadline not yet published. Checklist verified 2026-06-24 from HSF scholarship page; detailed upload list is inside myHSF portal."
+      },
+      "application_requirements": [
+        {
+          "id": "myhsf-application",
+          "label": "Complete myHSF Scholar application",
+          "details": "Apply through the myHSF profile/application portal on the official site.",
+          "required": true,
+          "source_url": "https://www.hsf.net/scholarship"
+        },
+        {
+          "id": "submit-fafsa",
+          "label": "Submit the FAFSA",
+          "details": "Complete and submit the FAFSA for the applicable aid year as an eligibility requirement listed on the official scholarship page.",
+          "required": true,
+          "source_url": "https://www.hsf.net/scholarship"
+        }
+      ]
     },
     {
       "id": "questbridge-match",
@@ -362,9 +581,46 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.questbridge.org/apply-to-college/programs/national-college-match/apply/dates-and-deadlines",
-        "last_verified_at": "2026-06-21",
-        "notes": "Dates page: Oct 1 application deadline (11:59pm PT), senior, full partner-college scholarship; open to U.S. high school seniors and U.S. citizens/PR abroad — no absolute GPA cutoff."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Dates page: Oct 1 application deadline (11:59pm PT), senior, full partner-college scholarship; open to U.S. high school seniors and U.S. citizens/PR abroad — no absolute GPA cutoff. Application checklist verified 2026-06-24 from QuestBridge how-to-apply and dates pages."
+      },
+      "application_requirements": [
+        {
+          "id": "complete-ncm-application",
+          "label": "Complete National College Match application",
+          "details": "Provide academics, activities, household/financial background, writing section, two core-subject teacher recommendations, transcript(s), counselor School Report, and test scores if taken.",
+          "required": true,
+          "source_url": "https://www.questbridge.org/high-school-students/national-college-match/how-to-apply"
+        },
+        {
+          "id": "gather-financial-documents",
+          "label": "Gather financial documents",
+          "details": "Have prior-year tax returns, W-2(s), or other financial documents ready to complete the application accurately.",
+          "required": true,
+          "source_url": "https://www.questbridge.org/high-school-students/national-college-match/how-to-apply"
+        },
+        {
+          "id": "rank-colleges",
+          "label": "Rank up to 15 college partners",
+          "details": "After submitting the application, rank up to 15 college partners via the Match Rankings Form for early admission and full four-year scholarship consideration.",
+          "required": true,
+          "source_url": "https://www.questbridge.org/high-school-students/national-college-match/how-to-apply"
+        },
+        {
+          "id": "match-agreement-form",
+          "label": "Submit signed Match Agreement Form",
+          "details": "Due October 15 after the Match Rankings Form. Must be signed by applicant, parent/guardian, and school counselor and uploaded to your Manage page.",
+          "required": true,
+          "source_url": "https://www.questbridge.org/apply-to-college/programs/national-college-match/apply/dates-and-deadlines"
+        },
+        {
+          "id": "submit-match-requirements",
+          "label": "Submit Match Requirements if named Finalist",
+          "details": "Finalists must submit additional requirements to each ranked college. Official 2026 timeline lists Match Requirements deadline November 1.",
+          "required": false,
+          "source_url": "https://www.questbridge.org/apply-to-college/programs/national-college-match/apply/dates-and-deadlines"
+        }
+      ]
     },
     {
       "id": "foot-locker-scholar-athletes",
@@ -417,9 +673,32 @@
       "estimated_deadline": "2027-05-01",
       "verification": {
         "source_url": "https://www.bryancameroneducationfoundation.org/faq",
-        "last_verified_at": "2026-06-21",
-        "notes": "FAQ: 15 awards, full tuition and qualified educational expenses, 3.7 unweighted GPA, U.S. citizen; Class of 2027 closed May 1 2026 — next cycle deadline not yet published."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "FAQ: 15 awards, full tuition and qualified educational expenses, 3.7 unweighted GPA, U.S. citizen; Class of 2027 closed May 1 2026 — next cycle deadline not yet published. Application checklist verified 2026-06-24 from Bryan Cameron scholarship and FAQ pages."
+      },
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Complete the online application",
+          "details": "Submit the online application by the deadline. Program accepts up to 3,000 complete eligible applications or closes when the published deadline passes, whichever occurs first.",
+          "required": true,
+          "source_url": "https://www.bryancameroneducationfoundation.org/scholarship"
+        },
+        {
+          "id": "two-recommendation-letters",
+          "label": "Two recommendation letters",
+          "details": "One from current school-affiliated personnel; second from someone who has made a significant impact on your life. Parent/guardian letters are not accepted.",
+          "required": true,
+          "source_url": "https://www.bryancameroneducationfoundation.org/faq"
+        },
+        {
+          "id": "transcript",
+          "label": "Submit transcript",
+          "details": "Transcript certifying academic performance required; unofficial copy acceptable. May upload in the application or email the foundation.",
+          "required": true,
+          "source_url": "https://www.bryancameroneducationfoundation.org/scholarship"
+        }
+      ]
     },
     {
       "id": "apia-scholars",
@@ -444,9 +723,39 @@
       "verified": true,
       "verification": {
         "source_url": "https://apiascholars.org/scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Scholarship page: $2,500–$20,000, no GPA minimum (removed), citizen/national/PR or Pacific compact states, undergrad; 2027-2028 cycle opens Nov 15 2026, closes Jan 15 2027 5pm EST."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Scholarship page: $2,500–$20,000, no GPA minimum (removed), citizen/national/PR or Pacific compact states, undergrad; 2027-2028 cycle opens Nov 15 2026, closes Jan 15 2027 5pm EST. Application checklist verified 2026-06-24 from APIA application guide."
+      },
+      "application_requirements": [
+        {
+          "id": "online-apia-application",
+          "label": "Complete online APIA Scholarship application",
+          "details": "One application covers all APIA scholarships. Initial application includes one 500-word essay and does not require recommendation letters or supporting documents.",
+          "required": true,
+          "source_url": "https://apiascholars.org/scholarships/application-support/application-guide-tips/"
+        },
+        {
+          "id": "essay-response",
+          "label": "Required essay",
+          "details": "Answer the published two-part essay prompt about experiences, identity, community, and future goals. Maximum 500 words.",
+          "required": true,
+          "source_url": "https://apiascholars.org/scholarships/application-support/application-guide-tips/"
+        },
+        {
+          "id": "fafsa-dependency-info",
+          "label": "Provide FAFSA dependency information",
+          "details": "Application asks dependency status for the FAFSA. APIA does not require FAFSA submission at the initial application stage per the official guide.",
+          "required": true,
+          "source_url": "https://apiascholars.org/scholarships/application-support/application-guide-tips/"
+        },
+        {
+          "id": "later-stage-documents",
+          "label": "Additional materials if advanced",
+          "details": "Applicants advancing to later selection stages may be asked for additional forms. Recipients later submit transcript and financial information.",
+          "required": false,
+          "source_url": "https://apiascholars.org/scholarships/application-support/faq/"
+        }
+      ]
     },
     {
       "id": "posse-foundation",
@@ -1051,9 +1360,46 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.truman.gov/apply/applying/eligibility",
-        "last_verified_at": "2026-06-21",
-        "notes": "Eligibility/dates pages: U.S. citizen or U.S. national (American Samoa), institution-nominated junior, upper quarter of class; application deadline Feb 2 2027 11:59pm local time."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Eligibility/dates pages: U.S. citizen or U.S. national (American Samoa), institution-nominated junior, upper quarter of class; application deadline Feb 2 2027 11:59pm local time. Application checklist verified 2026-06-24 from Truman Foundation applying pages."
+      },
+      "application_requirements": [
+        {
+          "id": "campus-nomination",
+          "label": "Secure institutional nomination",
+          "details": "Must be nominated by your institution's Truman Faculty Representative after the campus selection process.",
+          "required": true,
+          "source_url": "https://www.truman.gov/apply/applying/bulletin-information"
+        },
+        {
+          "id": "online-application-policy-proposal",
+          "label": "Complete online application and policy proposal",
+          "details": "Nominated candidates receive access to an online application including a policy proposal.",
+          "required": true,
+          "source_url": "https://www.truman.gov/apply/applying/selection-process"
+        },
+        {
+          "id": "three-recommendations",
+          "label": "Three letters of recommendation",
+          "details": "Secure three recommendation letters and give them to your campus Advisor for upload into the system.",
+          "required": true,
+          "source_url": "https://www.truman.gov/apply/applying/selection-process"
+        },
+        {
+          "id": "transcripts",
+          "label": "Transcripts from all institutions attended",
+          "details": "Provide transcripts from any institution attended to your Advisor for upload. All materials due by 11:59 p.m. in your time zone on deadline evening.",
+          "required": true,
+          "source_url": "https://www.truman.gov/apply/applying/selection-process"
+        },
+        {
+          "id": "advisor-submission",
+          "label": "Advisor submits application to Foundation",
+          "details": "Advisor reviews the application and sends it to the Foundation when ready. Candidate retains edit access until the deadline.",
+          "required": true,
+          "source_url": "https://www.truman.gov/apply/advisors/advisor-application-instructions"
+        }
+      ]
     },
     {
       "id": "udall-undergraduate-scholarship",
@@ -1169,9 +1515,39 @@
       "estimated_deadline": "2027-01-12",
       "verification": {
         "source_url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest",
-        "last_verified_at": "2026-06-21",
-        "notes": "Main contest page: grades 9-12 U.S. high school students including GED under 20 and U.S. citizens abroad; $10k/$3k/3×$1k + 15 honorable mentions; 2026 cycle closed Jan 12 2026 — next deadline not yet published; estimated Jan 12 2027."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Main contest page: grades 9-12 U.S. high school students including GED under 20 and U.S. citizens abroad; $10k/$3k/3×$1k + 15 honorable mentions; 2026 cycle closed Jan 12 2026 — next deadline not yet published; estimated Jan 12 2027. Application checklist verified 2026-06-24 from JFK Library contest pages; next-cycle deadline not yet published."
+      },
+      "application_requirements": [
+        {
+          "id": "original-essay",
+          "label": "Write original essay on contest topic",
+          "details": "Describe and analyze an act of political courage by a U.S. elected official who served during or after 1917. Minimum 700, maximum 1,000 words; bibliography excluded from count.",
+          "required": true,
+          "source_url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/getting-started"
+        },
+        {
+          "id": "bibliography-and-sources",
+          "label": "Include bibliography and at least five sources",
+          "details": "Minimum five varied sources with parenthetical in-text citations. Bibliography required in APA, MLA, or Turabian.",
+          "required": true,
+          "source_url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/eligibility-and-requirements"
+        },
+        {
+          "id": "registration-form-submission",
+          "label": "Submit registration form online",
+          "details": "Complete the registration form and submit online by the published contest deadline on the official site.",
+          "required": true,
+          "source_url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/getting-started"
+        },
+        {
+          "id": "nominating-teacher",
+          "label": "List nominating teacher",
+          "details": "All students must list a nominating teacher who may review the essay for syntax, grammar, spelling, and contest requirements.",
+          "required": true,
+          "source_url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/eligibility-and-requirements"
+        }
+      ]
     },
     {
       "id": "shpe-scholarship",
@@ -2877,9 +3253,39 @@
       "verified": true,
       "verification": {
         "source_url": "https://coolidgescholars.org/selection-timeline/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Full-ride for HS juniors (fall 2028 enrollment); citizen or LPR; 2026-27 app opens late summer/fall 2026 — submission deadline TBD."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Full-ride for HS juniors (fall 2028 enrollment); citizen or LPR; 2026-27 app opens late summer/fall 2026 — submission deadline TBD. Checklist verified 2026-06-24 from Coolidge FAQ; 2026-27 application deadline not yet published."
+      },
+      "application_requirements": [
+        {
+          "id": "online-application-forms",
+          "label": "Complete online application forms",
+          "details": "Complete Profile, Honesty Statement, Academic Information, and other required portal forms. Submit only when all forms show Complete.",
+          "required": true,
+          "source_url": "https://coolidgescholars.org/about/faq/"
+        },
+        {
+          "id": "three-essays",
+          "label": "Three application essays",
+          "details": "Application includes three essays. Essays 2 and 3 require reading The Autobiography of Calvin Coolidge.",
+          "required": true,
+          "source_url": "https://coolidgescholars.org/2025-26-coolidge-scholarship-essay-resources/"
+        },
+        {
+          "id": "two-letters-of-reference",
+          "label": "Two letters of reference",
+          "details": "Exactly two letters required, not from family or peers. Recommenders upload via a separate portal; you may submit before letters arrive.",
+          "required": true,
+          "source_url": "https://coolidgescholars.org/letter-of-recommendation/"
+        },
+        {
+          "id": "unofficial-transcript",
+          "label": "High school transcript and academic info",
+          "details": "Unofficial transcript acceptable at application stage. Report cumulative GPA and maximum possible cumulative GPA from the most recent transcript available.",
+          "required": true,
+          "source_url": "https://coolidgescholars.org/about/faq/"
+        }
+      ]
     },
     {
       "id": "cooke-young-scholars",
@@ -2961,9 +3367,25 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.amazonfutureengineer.com/scholarships",
-        "last_verified_at": "2026-06-21",
-        "notes": "Up to $40k unmet need ($10k/yr max) + Amazon internship; CS/engineering; 2.3 GPA; citizen/PR/work-authorized; 2026 cycle closed."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Up to $40k unmet need ($10k/yr max) + Amazon internship; CS/engineering; 2.3 GPA; citizen/PR/work-authorized; 2026 cycle closed. Checklist verified 2026-06-24 from official scholarships page; current-cycle open/close dates not published."
+      },
+      "application_requirements": [
+        {
+          "id": "online-application-essays",
+          "label": "Complete online application with essays",
+          "details": "Answer essay and informational questions in the online application when the cycle is open. Check the official page for current open dates.",
+          "required": true,
+          "source_url": "https://www.amazonfutureengineer.com/scholarships"
+        },
+        {
+          "id": "cs-course-or-assessment",
+          "label": "Computer science course or Amazon assessment",
+          "details": "High school senior enrolled in or completed a CS course, or opt in to an Amazon-offered assessment if no course was taken.",
+          "required": true,
+          "source_url": "https://www.amazonfutureengineer.com/scholarships"
+        }
+      ]
     },
     {
       "id": "chick-fil-a-remarkable-futures",
@@ -3042,9 +3464,39 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships",
-        "last_verified_at": "2026-06-21",
-        "notes": "Grades 9-12 audio-essay; $35k national first place; submit to local VFW Post by Oct 31 midnight for 2026-27 theme."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Grades 9-12 audio-essay; $35k national first place; submit to local VFW Post by Oct 31 midnight for 2026-27 theme. Application checklist verified 2026-06-24 from official VFW youth scholarships page."
+      },
+      "application_requirements": [
+        {
+          "id": "recorded-audio-essay",
+          "label": "Prepare recorded audio essay on theme",
+          "details": "Create an audio essay on the published theme. 2026-27 theme: \"What a Veteran Taught Me About America.\"",
+          "required": true,
+          "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships"
+        },
+        {
+          "id": "completed-entry-form",
+          "label": "Complete official entry form",
+          "details": "Download and complete the Voice of Democracy entry form from the official VFW youth scholarships page.",
+          "required": true,
+          "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships"
+        },
+        {
+          "id": "submit-to-local-vfw-post",
+          "label": "Submit to sponsoring local VFW Post",
+          "details": "Submit your audio essay and completed entry form to your local participating VFW Post. Find a sponsoring Post on the official site.",
+          "required": true,
+          "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships"
+        },
+        {
+          "id": "meet-post-deadline",
+          "label": "Meet local post deadline",
+          "details": "Essays must be turned in by midnight, October 31, per official 2026-27 cycle language.",
+          "required": true,
+          "source_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships"
+        }
+      ]
     },
     {
       "id": "vfw-patriots-pen",
@@ -3261,9 +3713,39 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/applications/united-states/",
-        "last_verified_at": "2026-06-21",
-        "notes": "2027 Rhodes open; U.S. districts; opens Jul 1 2026, closes Oct 7 2026 11:59pm ET; citizen/PR/DACA eligible."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "2027 Rhodes open; U.S. districts; opens Jul 1 2026, closes Oct 7 2026 11:59pm ET; citizen/PR/DACA eligible. Checklist verified 2026-06-24 from Rhodes Trust pages; detailed U.S. component list is in linked PDF guidance."
+      },
+      "application_requirements": [
+        {
+          "id": "online-rhodes-application",
+          "label": "Complete online Rhodes application for your constituency",
+          "details": "U.S. applicants apply through the Office of the American Secretary online system at rhodesscholar.org.",
+          "required": true,
+          "source_url": "https://www.americanrhodes.org/info-applying.html"
+        },
+        {
+          "id": "institutional-endorsement",
+          "label": "Obtain institutional endorsement",
+          "details": "U.S. Rhodes application requires institutional endorsement, typically from a president, dean, or designated fellowship officer.",
+          "required": true,
+          "source_url": "https://www.rhodesscholar.org/university-representatives/rhodes-endorsement-and-referee-processes/"
+        },
+        {
+          "id": "referee-letters",
+          "label": "Submit referee letters",
+          "details": "Referee letters are required in addition to endorsement. Official site publishes separate U.S. Endorsement and Referee guidance documents.",
+          "required": true,
+          "source_url": "https://www.rhodesscholar.org/university-representatives/rhodes-endorsement-and-referee-processes/"
+        },
+        {
+          "id": "apply-for-oxford-postgraduate-study",
+          "label": "Apply for Oxford postgraduate study",
+          "details": "Rhodes Scholarship supports full-time postgraduate study at the University of Oxford.",
+          "required": true,
+          "source_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/apply/"
+        }
+      ]
     },
     {
       "id": "marshall-scholarship",
@@ -3317,9 +3799,39 @@
       "estimated_deadline": "2027-10-16",
       "verification": {
         "source_url": "https://www.gatescambridge.org/apply/timeline/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Full-cost Cambridge postgraduate; opens Sep 2026 for 2027 entry; U.S.-resident citizens due mid-Oct — other deadlines vary by course."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "Full-cost Cambridge postgraduate; opens Sep 2026 for 2027 entry; U.S.-resident citizens due mid-Oct — other deadlines vary by course. Application checklist verified 2026-06-24 from gatescambridge.org how-to-apply page."
+      },
+      "application_requirements": [
+        {
+          "id": "cambridge-graduate-application",
+          "label": "Submit Cambridge graduate admission and funding application",
+          "details": "Apply via the University of Cambridge Graduate Application Portal. Complete admission to a course/college place and the Gates Cambridge funding subsection.",
+          "required": true,
+          "source_url": "https://www.gatescambridge.org/apply/how-to-apply/"
+        },
+        {
+          "id": "four-funding-essays",
+          "label": "Four Gates Cambridge funding questions",
+          "details": "Four short statements mapped to selection criteria: academic excellence; why this Cambridge course; commitment to improving others' lives; leadership capacity.",
+          "required": true,
+          "source_url": "https://www.gatescambridge.org/apply/how-to-apply/"
+        },
+        {
+          "id": "academic-references",
+          "label": "Two academic references for admission",
+          "details": "Standard two academic references required for Cambridge course admission as part of the combined application.",
+          "required": true,
+          "source_url": "https://www.gatescambridge.org/apply/how-to-apply/"
+        },
+        {
+          "id": "gates-cambridge-reference",
+          "label": "Gates Cambridge reference",
+          "details": "Additional reference assessing suitability against Gates criteria. Referee also ranks applicant within a defined group.",
+          "required": true,
+          "source_url": "https://www.gatescambridge.org/apply/how-to-apply/"
+        }
+      ]
     },
     {
       "id": "schwarzman-scholars",
@@ -3404,9 +3916,46 @@
       "verified": true,
       "verification": {
         "source_url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/application-deadlines",
-        "last_verified_at": "2026-06-21",
-        "notes": "2027 cohort open; any-country applicants; separate Stanford grad app due by Dec 1 2026; KHS deadline Oct 6 2026 1pm PT."
-      }
+        "last_verified_at": "2026-06-24",
+        "notes": "2027 cohort open; any-country applicants; separate Stanford grad app due by Dec 1 2026; KHS deadline Oct 6 2026 1pm PT. Application checklist verified 2026-06-24 from Knight-Hennessy application pages."
+      },
+      "application_requirements": [
+        {
+          "id": "khs-online-application",
+          "label": "Submit Knight-Hennessy Scholars online application",
+          "details": "Separate KHS application required in English via the online portal. Opens June 1, 2026; deadline October 6, 2026, 1:00 PM Pacific.",
+          "required": true,
+          "source_url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/your-applications"
+        },
+        {
+          "id": "stanford-graduate-application",
+          "label": "Apply concurrently to a Stanford graduate program",
+          "details": "Must apply to, be accepted by, and enroll in a full-time Stanford graduate degree program starting the same year, unless a listed exception applies.",
+          "required": true,
+          "source_url": "https://knight-hennessy.stanford.edu/admission/before-you-apply/eligibility"
+        },
+        {
+          "id": "resume-transcripts-test-scores",
+          "label": "Resume, transcript, and test scores",
+          "details": "KHS requires resume, transcript, and test scores if required by your Stanford graduate program(s).",
+          "required": true,
+          "source_url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/your-applications"
+        },
+        {
+          "id": "two-recommendation-letters",
+          "label": "Two recommendation letters",
+          "details": "Two recommenders who can address KHS criteria with specific examples. Due by the KHS deadline; you may submit before letters are received.",
+          "required": true,
+          "source_url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/recommendation-letters"
+        },
+        {
+          "id": "short-answers-and-essay",
+          "label": "Short answers and essay",
+          "details": "Three short answers (250/250/150 word limits) plus one 550-word essay.",
+          "required": true,
+          "source_url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications/short-answers-essay"
+        }
+      ]
     },
     {
       "id": "forty-acres-scholars-program",

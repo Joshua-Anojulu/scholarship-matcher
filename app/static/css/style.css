@@ -815,8 +815,8 @@ textarea:focus {
 .legal-updated { margin: 0 0 1.3rem; color: var(--muted); font-size: 0.82rem; }
 .legal-note { margin: 0 0 0.5rem; padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--paper-soft); }
 .legal-footnote { margin-top: 1.8rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; }
-.footer-links { margin-top: 0.45rem; }
-.footer-links a { color: var(--forest); }
+.footer-links { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.35rem 0.55rem; margin-top: 0.45rem; }
+.footer-links a { color: var(--forest); font-weight: 650; }
 
 /* Age + consent gate */
 .age-gate h2 { margin: 0 0 0.6rem; font-family: var(--font-display); font-size: 1.5rem; }
@@ -959,6 +959,7 @@ textarea:focus {
 .danger-zone h3 { margin: 0; color: var(--rose); font-size: 0.9rem; }
 
 .site-footer { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 2.5rem; color: var(--muted); font-size: 0.77rem; text-align: center; }
+.site-footer p { margin: 0.25rem 0; }
 
 /* Movement is deliberately reserved for orientation, progress, and new results. */
 .has-scrolled .site-header { box-shadow: 0 8px 24px rgba(24, 51, 42, 0.06); background: rgba(244, 246, 241, 0.95); }
