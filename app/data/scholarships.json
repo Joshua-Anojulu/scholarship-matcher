@@ -765,7 +765,7 @@
       "deadline": "VERIFY",
       "url": "https://www.possefoundation.org/recruiting-students/the-nomination-process",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -779,8 +779,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.possefoundation.org/recruiting-students/the-nomination-process",
-        "last_verified_at": "2026-06-21",
-        "notes": "Nomination page: not minority- or need-based; open to all backgrounds; must be nominated in a recruitment city; no national GPA minimum; deadlines vary by city."
+        "last_verified_at": "2026-06-25",
+        "notes": "Nomination page: not minority- or need-based; open to all backgrounds; must be nominated in a recruitment city; requirements mention academic potential but no national numeric GPA minimum; deadlines vary by city."
       }
     },
     {
@@ -788,7 +788,7 @@
       "name": "Barry Goldwater Scholarship",
       "sponsor": "Barry Goldwater Scholarship and Excellence in Education Foundation",
       "award_amount": "up to $7,500 per year",
-      "deadline": "VERIFY",
+      "deadline": "2027-01-29",
       "url": "https://goldwaterscholarship.gov/eligibility/",
       "eligibility": {
         "min_gpa": 3.0,
@@ -808,11 +808,10 @@
       },
       "description": "Premier undergraduate award for students pursuing research careers in the natural sciences, engineering, and mathematics. Nominated by participating institutions.",
       "verified": true,
-      "estimated_deadline": "2027-01-29",
       "verification": {
         "source_url": "https://goldwaterscholarship.gov/eligibility/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Eligibility page: 3.0 GPA, U.S. citizen/national/territories, STEM sophomores/juniors; institution nomination; research essay; last Friday in January nomination deadline — 2026 cycle complete."
+        "last_verified_at": "2026-06-25",
+        "notes": "Eligibility page: 3.0 GPA, U.S. citizen/national/territories, STEM sophomores/juniors; institution nomination; research essay; Foundation nomination deadline is the last Friday in January, with internal campus deadlines set locally."
       }
     },
     {
@@ -890,8 +889,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://haganscholarships.org/application/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Application/timeline pages: Class of 2027 cycle opens Sept 1 2026, deadline Dec 1 2026; 3.50 unweighted GPA; open regardless of nationality; no essay."
+        "last_verified_at": "2026-06-25",
+        "notes": "Application/timeline pages: 2027-2028 academic year fall application opens Sept 1 2026, deadline Dec 1 2026; spring application opens Jan 15 2027, deadline Mar 15 2027; 3.50 unweighted GPA; open regardless of nationality; no essay."
       }
     },
     {
@@ -902,7 +901,7 @@
       "deadline": "VERIFY",
       "url": "https://stampsscholars.org/how-to-apply/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior"
@@ -1129,7 +1128,7 @@
       "name": "AICPA Foundation Legacy Scholarships",
       "sponsor": "AICPA Foundation",
       "award_amount": "$5,000 to $10,000",
-      "deadline": "VERIFY",
+      "deadline": "2027-03-15",
       "url": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/future-cpas-scholarship/",
       "eligibility": {
         "min_gpa": 3.0,
@@ -1147,11 +1146,10 @@
       },
       "description": "Scholarships for accounting students pursuing CPA licensure, awarded through a single application. Requires a free AICPA student affiliate membership, full-time enrollment in an accredited accounting/business program, and a minimum 3.0 GPA.",
       "verified": true,
-      "estimated_deadline": "2027-03-15",
       "verification": {
         "source_url": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/future-cpas-scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Future CPAs page: 3.0 GPA, U.S. citizen or PR; 2026-27 cycle closed Mar 15 2026 — next window Dec 1 2026 through Mar 15 2027."
+        "last_verified_at": "2026-06-25",
+        "notes": "Future CPAs page: 3.0 GPA, U.S. citizen or PR; applications for 2027-2028 funding run Dec 1 2026 through Mar 15 2027."
       }
     },
     {
@@ -1307,8 +1305,8 @@
       "estimated_deadline": "2027-05-31",
       "verification": {
         "source_url": "https://collegefund.org/students/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "College Fund scholarships page: American Indian/Alaska Native students; application opens Feb 1 annually; priority review by May 31; 2.0 GPA minimum for Full Circle."
+        "last_verified_at": "2026-06-25",
+        "notes": "College Fund scholarships page: American Indian/Alaska Native students at tribal colleges or nonprofit accredited schools; one annual application opens Feb 1 and students are encouraged to apply by May 31 for priority review; award amounts vary but average $2,000-$3,000."
       }
     },
     {
@@ -1939,7 +1937,7 @@
       "name": "AIAA Foundation Undergraduate Scholarships",
       "sponsor": "American Institute of Aeronautics and Astronautics (AIAA)",
       "award_amount": "Varies by award ($500–$10,000)",
-      "deadline": "VERIFY",
+      "deadline": "2027-01-31",
       "url": "https://aiaa.org/get-involved/university-students/undergraduate-scholarships-graduate-awards/eligibility-requirements/",
       "eligibility": {
         "min_gpa": 3.3,
@@ -1957,11 +1955,10 @@
       },
       "description": "Scholarships ($500–$10,000) for AIAA student members pursuing science or engineering degrees leading to a career in aerospace. Requires AIAA membership, at least one completed semester, and minimum 3.3 GPA; enrolled at accredited U.S. institution.",
       "verified": true,
-      "estimated_deadline": "2027-01-31",
       "verification": {
         "source_url": "https://aiaa.org/get-involved/university-students/undergraduate-scholarships-graduate-awards/eligibility-requirements/",
-        "last_verified_at": "2026-06-21",
-        "notes": "AIAA eligibility page: Student member, ≥1 semester, 3.3 GPA, aerospace-related engineering/science; applications Oct 15–Jan 31 annually; no citizenship requirement stated."
+        "last_verified_at": "2026-06-25",
+        "notes": "AIAA eligibility page: Student member, at least one completed semester, 3.3 GPA for most undergraduate scholarships, aerospace-related engineering/science; applications accepted Oct 15-Jan 31 annually; no single citizenship rule because some awards have award-specific restrictions."
       }
     },
     {
@@ -1993,8 +1990,8 @@
       "estimated_deadline": "2027-02-01",
       "verification": {
         "source_url": "https://www.ans.org/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "ANS page: student member, nuclear-related field; opens Nov 1, general deadline Feb 1, incoming freshman deadline Apr 1; no min GPA or citizenship rule stated."
+        "last_verified_at": "2026-06-25",
+        "notes": "ANS page: student member and nuclear-related field; applications open Nov 1, general deadline Feb 1, incoming freshman and community/trade school deadline Apr 1; no single deadline fits all listed grade levels, and no numeric GPA or citizenship rule is stated."
       }
     },
     {
@@ -2002,7 +1999,7 @@
       "name": "Tau Beta Pi Scholarship Program",
       "sponsor": "Tau Beta Pi Association (The Engineering Honor Society)",
       "award_amount": "$2,000 (full year) or $1,000 (one semester)",
-      "deadline": "VERIFY",
+      "deadline": "2027-04-01",
       "url": "https://www.tbp.org/scholarships.cfm",
       "eligibility": {
         "min_gpa": null,
@@ -2019,11 +2016,10 @@
       },
       "description": "Awards of $2,000 (full year) or $1,000 (one semester) supporting the senior year of full-time undergraduate engineering study. Restricted to initiated Tau Beta Pi members.",
       "verified": true,
-      "estimated_deadline": "2027-04-01",
       "verification": {
         "source_url": "https://www.tbp.org/scholarships.cfm",
-        "last_verified_at": "2026-06-21",
-        "notes": "TBP page: initiated members who are full-time senior engineering undergraduates; application due Apr 1, rec letters Apr 8; GPA used in selection but no minimum stated."
+        "last_verified_at": "2026-06-25",
+        "notes": "TBP page: initiated members who are full-time senior engineering undergraduates; application due Apr 1, recommendation letters Apr 8; GPA is used in selection but no numeric minimum is stated."
       }
     },
     {
@@ -2067,7 +2063,7 @@
       "name": "AISES A.T. Anderson Memorial Scholarship",
       "sponsor": "American Indian Science and Engineering Society (AISES)",
       "award_amount": "$1,000 (undergraduate) or $2,000 (graduate)",
-      "deadline": "VERIFY",
+      "deadline": "2027-04-30",
       "url": "https://aises.org/scholarships/",
       "eligibility": {
         "min_gpa": 3.0,
@@ -2094,11 +2090,10 @@
       },
       "description": "Merit-based scholarship for AISES members pursuing STEM degrees who are enrolled citizens or descendants of a recognized American Indian Tribe/Alaska Native Village, Native Hawaiian, Pacific Islander, or Indigenous Canadian. Requires AISES membership and a minimum 3.0 GPA.",
       "verified": true,
-      "estimated_deadline": "2027-04-30",
       "verification": {
         "source_url": "https://aises.org/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "AISES page: A.T. Anderson $1k undergrad/$2k grad; AISES member, 3.0 GPA, STEM; tribal/Indigenous eligibility required; opens Dec 15, closes Apr 30."
+        "last_verified_at": "2026-06-25",
+        "notes": "AISES scholarships page: A.T. Anderson $1k undergrad/$2k grad; AISES member, 3.0 GPA, STEM; tribal/Indigenous eligibility required; applications open Dec 15 and close Apr 30."
       }
     },
     {
@@ -2186,8 +2181,8 @@
       "estimated_deadline": "2027-01-15",
       "verification": {
         "source_url": "https://bmifoundation.org/by-application/bmicomposerawards",
-        "last_verified_at": "2026-06-21",
-        "notes": "BMI page: classical/concert music, under age 28; U.S./territories resident or Western Hemisphere citizen; anonymous score submission; $20k total pool; Jan 15 2026 deadline closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "BMI page: classical/concert music, under age 28; U.S./territories resident or Western Hemisphere citizen; anonymous score submission; $20k total pool; 2026 deadline was Jan 15 and next-cycle deadline is not yet published."
       }
     },
     {
@@ -2484,9 +2479,9 @@
       "verified": true,
       "estimated_deadline": "2027-04-30",
       "verification": {
-        "source_url": "https://www.prsafoundation.org/scholarships-awards/betsy-plank-prssa-scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Suite $100,000+ annually; Betsy Plank requires PRSSA junior/senior membership; 2025–2026 scholarship deadlines mostly Apr 30 2026."
+        "source_url": "https://www.prsa.org/prssa/scholarships-awards",
+        "last_verified_at": "2026-06-25",
+        "notes": "PRSSA scholarships and awards page says PRSSA presents more than $100,000 annually; 2025-2026 scholarship deadlines vary, with many individual scholarships due Apr 30 2026; next-cycle dates are not yet published."
       }
     },
     {
@@ -2552,7 +2547,7 @@
       "id": "nfmc-competitions-and-awards",
       "name": "National Federation of Music Clubs Competitions and Awards",
       "sponsor": "National Federation of Music Clubs (NFMC)",
-      "award_amount": "VERIFY (more than $750,000 in prizes nationally; amounts vary by competition)",
+      "award_amount": "more than $750,000 in prizes nationally; amounts vary by competition",
       "deadline": "VERIFY",
       "url": "https://www.nfmc-music.org/competitions-awards/",
       "eligibility": {
@@ -2574,16 +2569,16 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.nfmc-music.org/competitions-awards/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Most awards require native-born/naturalized U.S. citizen and NFMC membership; deadlines vary per competition on C&A chart."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official competitions and awards page states NFMC offers more than $750,000 in prizes nationally; most awards require native-born/naturalized U.S. citizen and NFMC membership; deadlines vary per competition on C&A chart."
       }
     },
     {
       "id": "phi-alpha-theta-scholarships",
       "name": "Phi Alpha Theta Scholarships and Awards",
       "sponsor": "Phi Alpha Theta History Honor Society",
-      "award_amount": "VERIFY (multiple awards; e.g. Tunstall undergraduate $1,000)",
-      "deadline": "VERIFY",
+      "award_amount": "multiple undergraduate and graduate student awards; amounts vary by award",
+      "deadline": "2027-03-01",
       "url": "https://phialphatheta.org/prizes-awards/",
       "eligibility": {
         "min_gpa": "VERIFY",
@@ -2601,11 +2596,10 @@
       },
       "description": "Scholarships, paper prizes, and awards for undergraduate and graduate history students (e.g., the Graydon A. Tunstall Undergraduate Scholarship). Requires membership in the Phi Alpha Theta honor society.",
       "verified": true,
-      "estimated_deadline": "2027-03-01",
       "verification": {
         "source_url": "https://phialphatheta.org/prizes-awards/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Phi Alpha Theta membership required; student scholarship entry deadline Mar 1 2027; multiple undergraduate/graduate awards."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official prizes and awards page lists 11 student awards and a Mar 1, 2027 next deadline for undergraduate and graduate scholarships."
       }
     },
     {
@@ -2730,7 +2724,7 @@
       "deadline": "VERIFY",
       "url": "https://www.lnesc.org/scholarships/lulac/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior",
@@ -2746,8 +2740,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.lnesc.org/scholarships/lulac/",
-        "last_verified_at": "2026-06-21",
-        "notes": "$250–$2,000 by tier (3.0 honors, 3.5 national scholastic); citizen/PR/DACA; participating LULAC Council required; application closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page lists citizen/PR/DACA, college/vocational/graduate enrollment, and participating LULAC Council eligibility. GPA thresholds apply only to higher award tiers (3.0 honors, 3.5 national scholastic); general awards have no numeric GPA minimum. Application currently closed."
       }
     },
     {
@@ -2758,7 +2752,7 @@
       "deadline": "VERIFY",
       "url": "https://www.maldef.org/resources/scholarship-resources/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "law"
         ],
@@ -2774,17 +2768,17 @@
       "verified": true,
       "estimated_deadline": "2027-05-15",
       "verification": {
-        "source_url": "https://www.maldef.org/2026/04/maldef-announces-2025-2026-law-school-scholarship-recipients-and-releases-2026-2027-scholarship-application/",
-        "last_verified_at": "2026-06-21",
-        "notes": "$2,000–$10,000; full-time accredited U.S. law school; Latino civil-rights commitment; open regardless of immigration status; 2026-27 deadline May 15 2026 closed."
+        "source_url": "https://www.maldef.org/resources/scholarship-resources/",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official scholarship resources page says five to 15 awards of $2,000-$10,000 for full-time students at accredited U.S. law schools, evaluated on academics, activities, background, financial need, and commitment to Latino civil rights; no numeric GPA minimum stated."
       }
     },
     {
       "id": "cobell-scholarship",
       "name": "Cobell Scholarship",
       "sponsor": "Indigenous Education, Inc.",
-      "award_amount": "VERIFY (merit-based, disbursed per unmet need)",
-      "deadline": "VERIFY",
+      "award_amount": "merit-based award, disbursed according to need and institution financial-aid standards",
+      "deadline": "2027-03-31",
       "url": "https://cobellscholar.org/our-scholarships/",
       "eligibility": {
         "min_gpa": "VERIFY",
@@ -2802,18 +2796,17 @@
       },
       "description": "For enrolled members of U.S. federally recognized Tribes or Alaska Native corporations pursuing vocational, undergraduate, graduate, or professional degrees at accredited nonprofit institutions.",
       "verified": true,
-      "estimated_deadline": "2027-03-31",
       "verification": {
         "source_url": "https://cobellscholar.org/our-scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Merit-based awards disbursed per unmet need; enrolled federally recognized Tribe/Alaska Native Corp member; ug/grad apps Dec 15–Mar 31 (2026 cycle closed)."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says undergraduate and graduate applications are available Dec 15-Mar 31 each year; awards are merit-based and disbursed according to need and institution financial-aid standards."
       }
     },
     {
       "id": "native-forward-scholars-fund",
       "name": "Native Forward Scholars Fund",
       "sponsor": "Native Forward Scholars Fund (formerly American Indian Graduate Center)",
-      "award_amount": "VERIFY (varies by opportunity)",
+      "award_amount": "varies by opportunity",
       "deadline": "VERIFY",
       "url": "https://www.nativeforward.org/scholarship-finder/",
       "eligibility": {
@@ -2835,8 +2828,8 @@
       "estimated_deadline": "2027-06-01",
       "verification": {
         "source_url": "https://www.nativeforward.org/scholarship-finder/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Multiple tribal-citizen scholarships (Direct, Wells Fargo, etc.); Tribal Eligibility Certificate + FAFSA; homepage announces June 1 application deadline — 2026 cycle closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official scholarship finder lists multiple Native Forward opportunities with different award structures, including need-based awards and named scholarships with fixed or maximum amounts."
       }
     },
     {
@@ -2888,16 +2881,16 @@
       "verified": true,
       "estimated_deadline": "2027-02-28",
       "verification": {
-        "source_url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Undocumented Dreamers only (with/without DACA/TPS); 2.5 GPA; up to $33k bachelor's + stipend; 2026-27 closed Feb 28 2026 — next round opens Nov 1 2026."
+        "source_url": "https://www.thedream.us/scholarships/national-scholarship/",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says next round opens Nov 1 2026; 2026-27 round closed Feb 28 2026. Eligibility includes undocumented first-generation immigrant students with or without DACA/TPS, 2.5 GPA, significant unmet need, and Partner College enrollment."
       }
     },
     {
       "id": "pat-tillman-foundation-scholarship",
       "name": "Tillman Scholars Program",
       "sponsor": "Pat Tillman Foundation",
-      "award_amount": "VERIFY (avg ~$10,000/year; tuition, books, living)",
+      "award_amount": "average $10,000 per academic year; varies by financial need and educational expenses",
       "deadline": "VERIFY",
       "url": "https://pattillmanfoundation.org/apply/",
       "eligibility": {
@@ -2917,8 +2910,8 @@
       "estimated_deadline": "2027-02-28",
       "verification": {
         "source_url": "https://pattillmanfoundation.org/apply/",
-        "last_verified_at": "2026-06-21",
-        "notes": "2026 class closed; up to 60 scholars/year; veterans, active duty, spouses, surviving spouses; full-time U.S. accredited program; apps open Dec 1 — deadline varies Nov–Feb."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says the average award is $10,000 per academic year and varies by financial need and educational expenses; deadline varies yearly and the application window can range from Nov-Feb."
       }
     },
     {
@@ -2972,16 +2965,16 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.fisherhouse.org/programs/scholarship-programs/scholarships-for-military-children/",
-        "last_verified_at": "2026-06-21",
-        "notes": "500×$2,000; unmarried dependent under 23 with USID; HS applicants 3.0 GPA, college 2.5 GPA; 2026-27 closed — 2027-28 opens Dec 2026."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says 2027-2028 application opens Dec 2026; 500 awards of $2,000; unmarried dependent under 23 with USID; high school applicants need 3.0 GPA and college applicants 2.5 GPA."
       }
     },
     {
       "id": "folds-of-honor-higher-education",
       "name": "Folds of Honor Higher Education Scholarship",
       "sponsor": "Folds of Honor Foundation",
-      "award_amount": "VERIFY (unmet need; max $2,500/term full-time)",
-      "deadline": "VERIFY",
+      "award_amount": "unmet-need award; maximum payment $2,500 per term for full-time students",
+      "deadline": "2027-03-31",
       "url": "https://foldsofhonor.org/scholarships/",
       "eligibility": {
         "min_gpa": 2.0,
@@ -2998,11 +2991,10 @@
       },
       "description": "For the spouses and dependent children of U.S. service members who have fallen or have a service-connected disability (VA rating of at least 10%); awarded based on unmet financial need for postsecondary study.",
       "verified": true,
-      "estimated_deadline": "2027-03-31",
       "verification": {
         "source_url": "https://foldsofhonor.org/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Spouses/dependents of fallen or disabled (≥10% VA) service members; unmet-need awards; window Feb 1–Mar 31 annually — 2026 cycle closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page lists an annual Feb 1-Mar 31 application window, unmet-need basis, 2.0 term GPA requirement after award, and $2,500 maximum payment per term for full-time higher-education students."
       }
     },
     {
@@ -3013,7 +3005,7 @@
       "deadline": "VERIFY",
       "url": "https://www.dav.org/get-involved/volunteer/dav-scholarships/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior",
@@ -3029,15 +3021,15 @@
       "estimated_deadline": "2027-02-28",
       "verification": {
         "source_url": "https://www.dav.org/get-involved/volunteer/dav-scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "$140k pool annually ($30k top award); age ≤21, ≥100 DAV/Auxiliary volunteer hours; 2026 deadline Feb 28 closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page lists $140k awarded annually with awards from $2,500-$30,000; eligibility is age 21 or younger plus at least 100 volunteer hours through DAV or DAV Auxiliary; no numeric GPA minimum stated; 2026 deadline was Feb 28."
       }
     },
     {
       "id": "point-foundation-flagship",
       "name": "Point Foundation Flagship Scholarship",
       "sponsor": "Point Foundation",
-      "award_amount": "VERIFY (need-based; renewable up to 4 years)",
+      "award_amount": "need-based financial award, renewable for up to four years",
       "deadline": "2026-11-20",
       "url": "https://pointfoundation.org/scholarships/flagship",
       "eligibility": {
@@ -3057,15 +3049,15 @@
       "verified": true,
       "verification": {
         "source_url": "https://pointfoundation.org/scholarships/flagship",
-        "last_verified_at": "2026-06-21",
-        "notes": "LGBTQ+ and ally students; 3.3 GPA; opens Sept 10, closes Nov 20 2026 8pm ET for fall 2026 term; need-based renewable award."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official Flagship page lists a need-based financial award renewable for up to four years; 3.3 GPA; opens Sept 10 and closes Nov 20, 2026 at 8pm ET for fall 2026 funding."
       }
     },
     {
       "id": "jacl-national-scholarship",
       "name": "JACL National Scholarship Program",
       "sponsor": "Japanese American Citizens League (JACL)",
-      "award_amount": "VERIFY (30+ one-time awards; $70,000+ total annually)",
+      "award_amount": "30+ one-time awards totaling more than $70,000 annually",
       "deadline": "VERIFY",
       "url": "https://jacl.org/scholarships",
       "eligibility": {
@@ -3086,8 +3078,8 @@
       "estimated_deadline": "2027-04-03",
       "verification": {
         "source_url": "https://jacl.org/scholarships",
-        "last_verified_at": "2026-06-21",
-        "notes": "30+ one-time awards ($70k+ pool); JACL membership required (all ethnic backgrounds); freshman due Mar 2, all others Apr 3 HST — 2026 cycle closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says the program offers over 30 one-time awards with more than $70,000 total annually; JACL membership required and open to all ethnic backgrounds; 2026 freshman deadline was Mar 2 and other categories Apr 3."
       }
     },
     {
@@ -3211,7 +3203,7 @@
       "deadline": "VERIFY",
       "url": "https://www.kofc.org/resources/scholarships/us-undergraduate-scholarships/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior",
@@ -3226,9 +3218,9 @@
       "verified": true,
       "estimated_deadline": "2027-04-22",
       "verification": {
-        "source_url": "https://www.kofc.org/resources/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Up to $1,500/yr×4; K of C member/child/Columbian Squire entering Catholic college freshman year; Supreme Council apps Mar 5–Apr 22 — 2026 closed."
+        "source_url": "https://www.kofc.org/resources/scholarships/us-undergraduate-scholarships/",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says applicants must enter freshman year of a four-year bachelor's program at a Catholic college/university in the U.S. and be a K of C member, child of a member/deceased member, or Columbian Squire. Awards are $1,500 per year; no numeric GPA minimum stated."
       }
     },
     {
@@ -3253,8 +3245,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://coolidgescholars.org/selection-timeline/",
-        "last_verified_at": "2026-06-24",
-        "notes": "Full-ride for HS juniors (fall 2028 enrollment); citizen or LPR; 2026-27 app opens late summer/fall 2026 — submission deadline TBD. Checklist verified 2026-06-24 from Coolidge FAQ; 2026-27 application deadline not yet published."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official timeline says 2026-27 applications will open in late summer or early fall 2026 and the submission deadline is TBD. Full-ride for HS juniors (fall 2028 enrollment); citizen or LPR. Checklist verified 2026-06-24 from Coolidge FAQ."
       },
       "application_requirements": [
         {
@@ -3528,7 +3520,7 @@
       "id": "rotary-global-grant-scholarship",
       "name": "Rotary Foundation Global Grant Scholarship",
       "sponsor": "The Rotary Foundation (Rotary International)",
-      "award_amount": "VERIFY (typically $30,000+; varies by district)",
+      "award_amount": "varies by Rotary club, district, or global grant",
       "deadline": "VERIFY",
       "url": "https://www.rotary.org/en/our-programs/scholarships",
       "eligibility": {
@@ -3546,8 +3538,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.rotary.org/en/our-programs/scholarships",
-        "last_verified_at": "2026-06-21",
-        "notes": "Global grants for graduate study abroad in Rotary areas of focus; 1-4 years; club/district sponsorship required — deadlines set locally."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official scholarships page describes local club/district scholarships and global grants for graduate study abroad in Rotary areas of focus; 1-4 years; club/district sponsorship required and deadlines set locally."
       }
     },
     {
@@ -3799,8 +3791,8 @@
       "estimated_deadline": "2027-10-16",
       "verification": {
         "source_url": "https://www.gatescambridge.org/apply/timeline/",
-        "last_verified_at": "2026-06-24",
-        "notes": "Full-cost Cambridge postgraduate; opens Sep 2026 for 2027 entry; U.S.-resident citizens due mid-Oct — other deadlines vary by course. Application checklist verified 2026-06-24 from gatescambridge.org how-to-apply page."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official timeline says applications open September 2026 for 2027/8 entry. U.S. citizens resident in the USA apply in October 2026 (date to be confirmed); other applicants use course funding deadlines in December 2026 or early January 2027. Checklist verified 2026-06-24 from how-to-apply page."
       },
       "application_requirements": [
         {
@@ -3868,7 +3860,7 @@
       "deadline": "2026-11-02",
       "url": "https://www.churchillscholarship.org/the-scholarship",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "engineering",
           "mathematics",
@@ -3888,9 +3880,9 @@
       "description": "Funds one year of master's study in STEM fields (science, mathematics, engineering, computer science) at Churchill College, University of Cambridge, for U.S. citizens. Applicants must be nominated by one of the participating U.S. institutions.",
       "verified": true,
       "verification": {
-        "source_url": "https://www.churchillscholarship.org/",
-        "last_verified_at": "2026-06-21",
-        "notes": "U.S. citizens; STEM master's at Cambridge; institutional nomination; 2026 app open — nomination due Nov 2 2026 5pm ET."
+        "source_url": "https://www.churchillscholarship.org/the-scholarship",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official page says U.S. citizens at participating institutions need institutional nomination; next nomination deadline is Nov 2 2026 at 5pm ET. Selection criteria state there is no minimum GPA, though most applicants have a very high average."
       }
     },
     {
