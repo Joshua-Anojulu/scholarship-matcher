@@ -1636,14 +1636,14 @@
         "demographics": [],
         "states": "any",
         "essay_required": false,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "$10,000 (payable over four years of undergraduate study) awarded to one student finalist at the Regeneron International Science and Engineering Fair for an outstanding project in electrical/electronics engineering, computer science, or another IEEE field of interest. Must be an ISEF finalist; no separate application.",
       "verified": true,
       "verification": {
         "source_url": "https://students.ieee.org/ieee-presidents-scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "IEEE Students page: $10,000 over four years plus IEEE Student membership; selected by IEEE judges at Regeneron ISEF — no separate application or essay."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official IEEE Students page says the award is $10,000 payable over four years plus complimentary IEEE Student membership; finalists at Regeneron ISEF are eligible, and IEEE judges review projects in IEEE fields of interest. No separate application, essay, GPA minimum, or citizenship requirement is stated."
       }
     },
     {
@@ -1667,15 +1667,15 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Graduate fellowships for students pursuing a master's or doctoral degree in computational or data science, nominated by the student's graduate research advisor. Targets women and/or members of racial/ethnic groups underrepresented in computing; open to institutions worldwide.",
       "verified": true,
       "estimated_deadline": "2027-05-15",
       "verification": {
         "source_url": "https://www.sighpc.org/opportunities/fellowships",
-        "last_verified_at": "2026-06-21",
-        "notes": "2026 cycle nominations Mar 15–May 15 2026 (closed); $20k/yr stipend; advisor nomination plus student statement and endorser; PhD up to 4 years, MS up to 2 years."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official SIGHPC fellowship page says nominations for the 2026 cycle ran Mar 15-May 15 2026; awards are $20,000 annually for up to four years for PhD students or two years for master's students. Eligibility is for students pursuing graduate degrees in computational or data science at institutions anywhere in the world; no GPA minimum or citizenship requirement is stated."
       }
     },
     {
@@ -1886,7 +1886,7 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Merit-based $2,500 and $5,000 scholarships for full-time college students pursuing a career in property/casualty actuarial science. Requires CAS Student Central membership and having sat for at least one actuarial exam.",
       "verified": true,
@@ -1894,7 +1894,7 @@
       "verification": {
         "source_url": "https://www.casact.org/trustscholarship",
         "last_verified_at": "2026-06-25",
-        "notes": "Official CAS page says applicants must submit by Jan 31 2026, be full-time college students continuing full-time in 2026-27, have sat for at least one actuarial exam by Mar 31 2026, and be CAS Student Central members. Awards are $5,000 and $2,500; no numeric GPA minimum stated."
+        "notes": "Official CAS page says applicants must submit by Jan 31 2026, be full-time college students continuing full-time in 2026-27, have sat for at least one actuarial exam by Mar 31 2026, and be CAS Student Central members. Awards are $5,000 and $2,500; no numeric GPA minimum or citizenship requirement is stated."
       }
     },
     {
@@ -2267,14 +2267,14 @@
         "demographics": [],
         "states": "any",
         "essay_required": false,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Longest-running recognition program for creative teens in grades 7-12 (age 13+), offering scholarships to national medalists across visual art and writing categories. Open to students residing in the U.S., U.S. territories or military bases, or Canada.",
       "verified": true,
       "verification": {
         "source_url": "https://cms.artandwriting.org/faq/who-can-participate-in-the-scholastic-art-writing-awards/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Grades 7–12, age 13+; must reside in U.S., territories, military bases, or Canada; portfolio scholarships up to $12,500; regional fall deadlines."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official participation FAQ says students in grades 7-12 who are age 13+ and reside in the U.S., U.S. territories or military bases, or Canada may participate. Scholarship page lists portfolio scholarships up to $12,500. Eligibility is residency-based; no citizenship or GPA requirement is stated."
       }
     },
     {
@@ -2384,14 +2384,14 @@
         ],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Scholarship for graduating high school seniors who plan to pursue a journalism career and will bring diversity to U.S. journalism. Requires a 3.0+ GPA and work samples; U.S. citizenship is not required to apply.",
       "verified": true,
       "verification": {
         "source_url": "https://www.pressclubinstitute.org/national-press-club-scholarship-opportunities/",
-        "last_verified_at": "2026-06-21",
-        "notes": "$5,000/yr renewable up to 3 years; high school senior, 3.0 GPA, journalism career; citizenship not required; check page fall 2026 for next cycle."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official National Press Club Journalism Institute page was updated May 19 2026 and says to check back in fall 2026 for next-year opportunities. The Julie Schoo scholarship requires high-school senior status, U.S. college application, 3.0 GPA, and journalism-career plans; students do not need to be U.S. citizens."
       }
     },
     {
@@ -2950,7 +2950,7 @@
       "deadline": "VERIFY",
       "url": "https://www.fisherhouse.org/programs/scholarship-programs/scholarships-for-military-children/",
       "eligibility": {
-        "min_gpa": 2.5,
+        "min_gpa": "VERIFY",
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior",
@@ -2966,7 +2966,7 @@
       "verification": {
         "source_url": "https://www.fisherhouse.org/programs/scholarship-programs/scholarships-for-military-children/",
         "last_verified_at": "2026-06-25",
-        "notes": "Official page says 2027-2028 application opens Dec 2026; 500 awards of $2,000; unmarried dependent under 23 with USID; high school applicants need 3.0 GPA and college applicants 2.5 GPA."
+        "notes": "Official page says 2027-2028 application opens Dec 2026; 500 awards of $2,000; unmarried dependent under 23 with USID; high school applicants need 3.0 GPA and college applicants 2.5 GPA. Kept as VERIFY because the current schema cannot encode level-specific GPA cutoffs."
       }
     },
     {
@@ -3014,7 +3014,7 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "For youth volunteers age 21 or younger who have completed at least 100 lifetime volunteer hours serving veterans through DAV or the DAV Auxiliary; usable at any accredited institution of higher learning.",
       "verified": true,
@@ -3093,8 +3093,7 @@
         "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
-          "high_school_senior",
-          "college_undergraduate"
+          "high_school_senior"
         ],
         "demographics": [],
         "states": "any",
@@ -3104,9 +3103,9 @@
       "description": "Administered by OCA - Asian Pacific American Advocates for first-generation college students (whose parents did not complete a college degree); applicants need not be U.S. citizens, but DACA/undocumented students must have an SSN or ITIN.",
       "verified": true,
       "verification": {
-        "source_url": "https://www.ocanational.org/programs-overview",
-        "last_verified_at": "2026-06-21",
-        "notes": "$2,000 for first-gen high school seniors entering college; citizenship not required (DACA/undocumented need SSN or ITIN); detail-page deadline not published on accessible sponsor pages."
+        "source_url": "https://www.ocanational.org/scholarships",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official OCA scholarships page lists the UPS Gold Mountain Scholarship as $2,000 for first-generation Asian American, Native Hawaiian, and Pacific Islander high-school seniors. It says no minimum GPA is required and U.S. citizenship is not required; DACA or undocumented students must have a valid SSN or ITIN. The 2026 cycle closed Mar 22 2026."
       }
     },
     {
@@ -3125,15 +3124,15 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "For current high school seniors with a visible or invisible disability who are pursuing a degree at a four-year university or college in the U.S. or Canada; requires joining the (free) Lime Network.",
       "verified": true,
       "estimated_deadline": "2027-04-14",
       "verification": {
         "source_url": "https://limeconnect.com/awards/lime-connect-pathways-scholarship-for-high-school-seniors/",
-        "last_verified_at": "2026-06-21",
-        "notes": "$1,000 merit awards for HS seniors with visible/invisible disability pursuing 4-year U.S./Canada degree; 2026 cycle closed Apr 14."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official Lime Connect page says 2026 applications are closed; eligibility is current high-school senior status in the U.S. or Canada, visible or invisible disability, and acceptance/application to a four-year university or college in the U.S. or Canada for 2026-2027. No GPA minimum or citizenship requirement is stated."
       }
     },
     {
