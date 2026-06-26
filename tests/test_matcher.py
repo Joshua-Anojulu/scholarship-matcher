@@ -502,6 +502,14 @@ class TestVerifyPlaceholders:
         assert result is not None
         assert "GPA requirement not yet verified" in result.match_reasons
 
+    def test_any_citizenship_requirement_does_not_exclude(self):
+        student = make_student(citizenship="international")
+        scholarship = make_scholarship(eligibility={"citizenship_requirement": "any"})
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert "No citizenship restriction verified" in result.match_reasons
+
     def test_verify_deadline_does_not_exclude(self):
         student = make_student()
         scholarship = make_scholarship(deadline="VERIFY")

@@ -68,7 +68,7 @@ class Eligibility(BaseModel):
     essay_required: bool = False
     citizenship_requirement: str = Field(
         default="VERIFY",
-        description='Citizenship rule, e.g. "us_citizen", "us_citizen_or_permanent_resident".',
+        description='Citizenship rule, e.g. "us_citizen", "us_citizen_or_permanent_resident", or "any".',
     )
     eligible_schools: list[EligibleSchool] = Field(
         default_factory=list,

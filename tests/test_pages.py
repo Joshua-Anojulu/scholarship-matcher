@@ -52,8 +52,8 @@ class TestProductionHygiene:
     def test_index_uses_absolute_og_image_url(self, client):
         response = client.get("/")
         assert response.status_code == 200
-        assert 'property="og:image" content="http://testserver/static/og-image.svg"' in response.text
-        assert 'name="twitter:image" content="http://testserver/static/og-image.svg"' in response.text
+        assert 'property="og:image" content="http://testserver/static/og-image-dark.svg"' in response.text
+        assert 'name="twitter:image" content="http://testserver/static/og-image-dark.svg"' in response.text
 
     def test_openapi_available_in_development(self, client):
         response = client.get("/openapi.json")

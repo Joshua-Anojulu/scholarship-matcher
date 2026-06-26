@@ -53,7 +53,7 @@ STATIC_DIR = Path(__file__).parent / "static"
 # app refuses to boot with a guessable key (see _resolve_session_secret).
 DEV_SESSION_SECRET = "dev-only-insecure-session-secret-change-me"
 
-_OG_IMAGE_PATH = "/static/og-image.svg"
+_OG_IMAGE_PATH = "/static/og-image-dark.svg"
 _SITEMAP_PATHS = ("/", "/privacy", "/terms")
 _SECURITY_HEADERS = {
     "X-Content-Type-Options": "nosniff",

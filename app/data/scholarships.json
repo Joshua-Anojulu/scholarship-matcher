@@ -123,14 +123,14 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
-      "description": "Supports high-achieving high school seniors with financial need who seek to attend the nation's best four-year colleges and universities. Citizenship requirement: confirm on the sponsor site.",
+      "description": "Supports high-achieving high school seniors with financial need who complete four years of high school in the U.S., a U.S. territory, or on a U.S. military base and seek to attend a four-year college.",
       "verified": true,
       "verification": {
         "source_url": "https://www.jkcf.org/faq/am-i-eligible-to-apply-to-the-cooke-college-scholarship-program/",
-        "last_verified_at": "2026-06-24",
-        "notes": "JKCF eligibility FAQ: up to $55,000/year, 3.75 unweighted GPA minimum, 2027 cohort application Aug 19–Nov 11, 2026; must attend U.S. high school four years — citizenship not explicitly stated. Application checklist verified 2026-06-24 from JKCF how-to-apply page."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official eligibility FAQ lists senior standing after four years of high school in the U.S., a U.S. territory, or on a U.S. military base; fall 2027 four-year college enrollment; 3.75 unweighted GPA; test score submission; and unmet financial need. No citizenship requirement is listed. Application checklist verified 2026-06-24 from JKCF how-to-apply page."
       },
       "application_requirements": [
         {
@@ -341,14 +341,14 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Premier science and math competition for high school seniors conducting original research. Students submit research reports and compete for awards at the national level.",
       "verified": true,
       "verification": {
         "source_url": "https://www.societyforscience.org/regeneron-sts/frequently-asked-questions/",
-        "last_verified_at": "2026-06-24",
-        "notes": "STS FAQ: senior in last year of secondary school in U.S./territories (citizenship not required), up to $250k, application due Nov 5 2026 8pm ET; no minimum GPA. Application checklist verified 2026-06-24 from Regeneron STS application requirements page."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official FAQ says any student living in and attending their last year of secondary school in the U.S. and its territories may apply regardless of citizenship; U.S. citizens living abroad may also qualify, while non-citizens at American schools abroad are not eligible. Awards up to $250k; application due Nov 5 2026 8pm ET; no minimum GPA. Application checklist verified 2026-06-24 from Regeneron STS application requirements page."
       },
       "application_requirements": [
         {
@@ -883,14 +883,14 @@
         "demographics": [],
         "states": "any",
         "essay_required": false,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Need-based merit scholarship designed to help students graduate college debt-free. Requires enrollment at an eligible four-year nonprofit college, a 3.5 GPA, household income below the program cap, and 240 hours of work before enrolling. Open to applicants regardless of citizenship.",
       "verified": true,
       "verification": {
         "source_url": "https://haganscholarships.org/application/",
         "last_verified_at": "2026-06-25",
-        "notes": "Application/timeline pages: 2027-2028 academic year fall application opens Sept 1 2026, deadline Dec 1 2026; spring application opens Jan 15 2027, deadline Mar 15 2027; 3.50 unweighted GPA; open regardless of nationality; no essay."
+        "notes": "Official application page says all students who meet the eligibility criteria can apply regardless of nationality or citizenship; finalists submit either FAFSA summary if U.S. citizens or proof of non-U.S. citizenship. 2027-2028 fall application opens Sept 1 2026, deadline Dec 1 2026; 3.50 unweighted GPA; no essay."
       }
     },
     {
@@ -1008,7 +1008,7 @@
       "deadline": "VERIFY",
       "url": "https://www.ffa.org/participate/grants-and-scholarships/scholarships/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "agriculture"
         ],
@@ -1026,8 +1026,8 @@
       "estimated_deadline": "2027-01-15",
       "verification": {
         "source_url": "https://www.ffa.org/participate/grants-and-scholarships/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "FFA scholarships page: 2025-26 application open Nov 1 2025 through Jan 15 2026; single application for multiple awards — next cycle deadline not yet published."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official scholarships page says one application covers multiple opportunities totaling nearly $2.5M for high school senior FFA members or college FFA Alumni. 2025-26 application deadline was Jan 15 2026; no program-wide numeric GPA minimum or next-cycle deadline is published on the page."
       }
     },
     {
@@ -1058,8 +1058,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://swe.org/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "SWE scholarships page: 2026-27 applications closed on audit date; 2027-28 cycle not yet open; women in ABET-accredited engineering/technology/computing programs."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official SWE scholarships page says one application considers students for 330+ scholarships and supports undergraduate/graduate degrees in engineering, engineering technology, and related fields. Official FAQ lists level-specific GPA rules: 3.0 unweighted for Collegiate/Graduate applicants, 3.5 unweighted for Emerging First Year applicants, and re-entry/nontraditional students exempt; kept as VERIFY because the current schema cannot encode applicant-type-specific GPA cutoffs."
       }
     },
     {
@@ -1113,14 +1113,14 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Merit-based scholarship for college seniors entering graduate school and graduate students enrolled in medical, nursing, or pharmacy programs who will actively treat patients. Open to residents of the 50 U.S. states, Puerto Rico, or D.C.",
       "verified": true,
       "verification": {
         "source_url": "https://www.tylenol.com/tylenol-future-care-scholarship",
-        "last_verified_at": "2026-06-21",
-        "notes": "Official FAQ: residents of 50 states/PR/DC in medical/nursing/pharmacy grad programs; deadline July 13 2026 11:59pm PT; no GPA minimum stated; citizenship not specified."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official FAQ requires residence in the 50 United States, Puerto Rico, or D.C.; college senior entering graduate school or graduate student status; proof of enrollment in a medical, nursing, or pharmacy graduate program in the 50 United States, Puerto Rico, or D.C.; and one or more years of school remaining. Deadline July 13 2026 11:59pm PT; no citizenship or GPA minimum stated."
       }
     },
     {
@@ -1157,10 +1157,10 @@
       "name": "James Madison Memorial Fellowship",
       "sponsor": "James Madison Memorial Fellowship Foundation",
       "award_amount": "up to $24,000",
-      "deadline": "VERIFY",
-      "url": "https://www.jamesmadison.gov/foundation-information/quick-facts",
+      "deadline": "2027-03-01",
+      "url": "https://www.jamesmadison.gov/fellowship-information/fellowship-eligibility",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "education",
           "social_sciences",
@@ -1177,11 +1177,11 @@
       },
       "description": "Graduate fellowship for aspiring and current secondary-school teachers of American history, American government, or civics who pursue a master's degree focused on the U.S. Constitution. One fellowship per state may be awarded annually; applicants compete within their state of legal residence.",
       "verified": true,
-      "estimated_deadline": "2027-03-02",
+      "estimated_deadline": "2027-03-01",
       "verification": {
-        "source_url": "https://www.jamesmadison.gov/foundation-information/quick-facts",
-        "last_verified_at": "2026-06-21",
-        "notes": "Quick facts: $24,000 fellowships for teachers, college seniors, and graduates pursuing secondary teaching of American history, government, or civics; 2027 app opens June 1 2026, deadline Mar 2 2027."
+        "source_url": "https://www.jamesmadison.gov/fellowship-information/fellowship-eligibility",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official eligibility/FAQ pages say applicants must be U.S. citizens planning to teach American history, government, social studies, or political science in grades 7-12; maximum award is $24,000; applications and recommendations are due no later than March 1; no numeric GPA minimum stated."
       }
     },
     {
@@ -1344,7 +1344,7 @@
       "deadline": "2027-02-02",
       "url": "https://www.truman.gov/apply/applying/eligibility",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "college_junior"
@@ -1354,12 +1354,12 @@
         "essay_required": true,
         "citizenship_requirement": "us_citizen"
       },
-      "description": "Merit-based award for college juniors committed to careers in public service who are in the upper quarter of their class and nominated by their institution. Provides up to $30,000 for graduate study. Open to U.S. citizens and U.S. nationals from American Samoa; permanent residents are not eligible.",
+      "description": "Merit-based award for institution-nominated college juniors committed to careers in public service. Provides up to $30,000 for graduate study. Open to U.S. citizens and U.S. nationals from American Samoa; permanent residents are not eligible.",
       "verified": true,
       "verification": {
         "source_url": "https://www.truman.gov/apply/applying/eligibility",
-        "last_verified_at": "2026-06-24",
-        "notes": "Eligibility/dates pages: U.S. citizen or U.S. national (American Samoa), institution-nominated junior, upper quarter of class; application deadline Feb 2 2027 11:59pm local time. Application checklist verified 2026-06-24 from Truman Foundation applying pages."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official eligibility page lists citizenship, U.S.-based enrollment, penultimate/final-year status, institution nomination, and graduate-school/public-service intent; no numeric GPA minimum is stated. Application checklist verified 2026-06-24 from Truman Foundation applying pages."
       },
       "application_requirements": [
         {
@@ -1407,7 +1407,7 @@
       "deadline": "VERIFY",
       "url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "environmental_science"
         ],
@@ -1425,8 +1425,8 @@
       "estimated_deadline": "2027-03-04",
       "verification": {
         "source_url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship",
-        "last_verified_at": "2026-06-21",
-        "notes": "2026 eligibility PDF and dates page: citizen/national/PR sophomores/juniors; up to 65 awards of $7,500; 2026 cycle closed Mar 4 2026 — next estimated Mar 4 2027."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official 2026 eligibility criteria list U.S. citizen/national/PR sophomores or juniors in environmental, Tribal public policy, or Native health-care categories; scholarship page says up to 65 awards of $7,500. 2026 deadline was Mar 4; next deadline not yet published; no numeric GPA minimum stated."
       }
     },
     {
@@ -1612,8 +1612,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://nsbe.org/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Spring 2026 cycle closes June 30; paid NSBE membership and eligibility survey required; award amounts and GPA/citizenship vary by sponsor — no explicit race restriction on scholarships."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official NSBE scholarships page lists Spring 2026 awards with a June 30 deadline, required GPA and residency filters, and sponsor-specific GPA/citizenship rules. Examples include 3.0 GPA/U.S. citizen, 3.0 GPA/U.S. citizen or permanent resident, 2.8 GPA/U.S. citizen, 2.5 GPA/U.S. citizen or permanent resident, and 2.0 GPA/U.S. citizen; kept as VERIFY because there is no single program-wide GPA or citizenship rule."
       }
     },
     {
@@ -1718,7 +1718,7 @@
       "deadline": "VERIFY",
       "url": "https://www.astronautscholarship.org/programs/astronaut-scholarship/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "science",
           "engineering",
@@ -1740,8 +1740,8 @@
       "estimated_deadline": "2027-03-30",
       "verification": {
         "source_url": "https://www.astronautscholarship.org/programs/astronaut-scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Official program page: faculty nomination only at partner universities; U.S. citizen; personal statement and recommendations; 2026 liaison deadline Mar 30 2026 passed — next cycle not published."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official program page says applicants must be U.S. citizens, STEM sophomores/juniors at ASF partner universities, faculty-nominated, research-oriented, and full-time for the supported year. 2026 liaison deadline was Mar 30; next cycle not published; no numeric GPA minimum stated."
       }
     },
     {
@@ -1845,9 +1845,9 @@
       "sponsor": "The Actuarial Foundation",
       "award_amount": 20000,
       "deadline": "VERIFY",
-      "url": "https://actuarialfoundation.org/scholarships/",
+      "url": "https://actuarialfoundation.org/scholarships/stem-stars/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "mathematics"
         ],
@@ -1863,9 +1863,9 @@
       "verified": true,
       "estimated_deadline": "2027-02-27",
       "verification": {
-        "source_url": "https://actuarialfoundation.org/scholarships/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Actuarial Foundation scholarships page: $20k ($5k/yr × 4) for high school seniors interested in actuarial careers; 2026 season closed Feb 27 2026 — reopens fall 2026; no published GPA or citizenship minimum."
+        "source_url": "https://actuarialfoundation.org/scholarships/stem-stars/",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official STEM Stars page says the program offers $20,000 ($5,000 annually for four years), mentoring, internships, and networking for high school students skilled in math and interested in actuarial careers. 2026 season is closed and reopens in fall; no numeric GPA minimum published."
       }
     },
     {
@@ -1876,7 +1876,7 @@
       "deadline": "VERIFY",
       "url": "https://www.casact.org/trustscholarship",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "mathematics"
         ],
@@ -1893,8 +1893,8 @@
       "estimated_deadline": "2027-01-31",
       "verification": {
         "source_url": "https://www.casact.org/trustscholarship",
-        "last_verified_at": "2026-06-21",
-        "notes": "CAS page: $2,500/$5,000; CAS Student Central member; ≥1 actuarial exam; essay and recommendations; 2026-27 deadline Jan 31 2026 closed — annual Jan 31 pattern."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official CAS page says applicants must submit by Jan 31 2026, be full-time college students continuing full-time in 2026-27, have sat for at least one actuarial exam by Mar 31 2026, and be CAS Student Central members. Awards are $5,000 and $2,500; no numeric GPA minimum stated."
       }
     },
     {
@@ -2343,7 +2343,7 @@
       "deadline": "VERIFY",
       "url": "https://english.org/opportunities/scholarships/scholarship-descriptions/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "literature",
           "humanities"
@@ -2361,9 +2361,9 @@
       "verified": true,
       "estimated_deadline": "2027-04-13",
       "verification": {
-        "source_url": "https://english.org/opportunities/overview/#scholarships",
-        "last_verified_at": "2026-06-21",
-        "notes": "Active Sigma Tau Delta membership; spring 2026 due Apr 13; awards up to $6,000 (William C. Johnson up to $6,000, 3.5+ GPA for that award only)."
+        "source_url": "https://english.org/opportunities/scholarships/scholarship-descriptions/",
+        "last_verified_at": "2026-06-25",
+        "notes": "Official scholarship descriptions page lists general requirements of transcript, two recommendations, and scholarship-specific criteria. The William C. Johnson award requires 3.5+ GPA, but most listed scholarships do not publish a numeric GPA floor, so no program-wide minimum is encoded."
       }
     },
     {
@@ -2402,7 +2402,7 @@
       "deadline": "2026-10-22",
       "url": "https://www.rtdna.org/scholarships-and-fellowships",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "communications"
         ],
@@ -2420,8 +2420,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.rtdna.org/scholarships-and-fellowships",
-        "last_verified_at": "2026-06-21",
-        "notes": "Full-time soph/jr/sr broadcast/digital journalism; apply one scholarship only; 2026 apps open Sep 9, due Oct 22; citizenship not required but non-citizens need U.S. TIN."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official RTDNA page says scholarships are for full-time sophomores, juniors, or seniors in good standing pursuing radio, television, or digital journalism; apply for only one opportunity. 2026 applications open Sep 9 and are due Oct 22; no numeric GPA minimum stated."
       }
     },
     {
@@ -2432,7 +2432,7 @@
       "deadline": "VERIFY",
       "url": "https://quillandscroll.org/scholarships-2/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "communications"
         ],
@@ -2449,8 +2449,8 @@
       "estimated_deadline": "2027-05-08",
       "verification": {
         "source_url": "https://quillandscroll.org/resources-2/",
-        "last_verified_at": "2026-06-21",
-        "notes": "High school seniors; contest winners or Q&S members; journalism/communications major; 2026 application closed May 8."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official rules page says recipients must major in journalism or a related communications area, submit two recommendations, personal statement, work samples, and a photo. Recommenders report GPA/class rank/test scores if applicable, but no numeric GPA minimum is stated; 2026 application closed May 8."
       }
     },
     {
@@ -2461,7 +2461,7 @@
       "deadline": "VERIFY",
       "url": "https://www.prsa.org/prssa/scholarships-awards",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "communications"
         ],
@@ -2481,7 +2481,7 @@
       "verification": {
         "source_url": "https://www.prsa.org/prssa/scholarships-awards",
         "last_verified_at": "2026-06-25",
-        "notes": "PRSSA scholarships and awards page says PRSSA presents more than $100,000 annually; 2025-2026 scholarship deadlines vary, with many individual scholarships due Apr 30 2026; next-cycle dates are not yet published."
+        "notes": "Official PRSSA scholarships and awards page says PRSSA presents more than $100,000 annually to members and chapters; 2025-2026 deadlines vary by award, with many due Apr 30 2026. No program-wide numeric GPA minimum is published."
       }
     },
     {
@@ -2492,7 +2492,7 @@
       "deadline": "2027-01-11",
       "url": "https://www.deca.org/scholarships",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "business"
         ],
@@ -2509,8 +2509,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.deca.org/scholarships",
-        "last_verified_at": "2026-06-21",
-        "notes": "Merit-based; active DECA membership; applications open through Jan 11 2027; corporate and regional awards vary."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official DECA page says 2026-2027 applications are open through Jan 11, 2027; applicants upload a transcript and recommendations, must be current DECA members, and scholarships are merit-based with partner-specific criteria. No program-wide numeric GPA minimum is stated."
       }
     },
     {
@@ -2521,7 +2521,7 @@
       "deadline": "VERIFY",
       "url": "https://www.fbla.org/high-school/hs-scholarships-aid/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "business"
         ],
@@ -2539,8 +2539,8 @@
       "verified": true,
       "verification": {
         "source_url": "https://www.fbla.org/scholarships/fbla-x-futures-scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "Pearson Futures: 3×$2,000, active FBLA member, legal U.S. resident; partner deadlines vary (NTHS Apr 15, NLC Apr 15)."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official FBLA x Futures page lists active FBLA membership, legal residence in the U.S., D.C., or territories, high-school junior/senior or undergraduate status, and current/intended enrollment at an accredited U.S. college or university; no numeric GPA minimum is stated."
       }
     },
     {
@@ -2599,7 +2599,7 @@
       "verification": {
         "source_url": "https://phialphatheta.org/prizes-awards/",
         "last_verified_at": "2026-06-25",
-        "notes": "Official prizes and awards page lists 11 student awards and a Mar 1, 2027 next deadline for undergraduate and graduate scholarships."
+        "notes": "Official prizes and awards page lists 11 student awards and a Mar 1, 2027 next deadline for undergraduate and graduate scholarships. Official membership requirements page lists different GPA rules by level: undergraduates need 3.1 in history and 3.0 overall, while graduate students need better than 3.5; kept as VERIFY because the current schema cannot encode history-specific and level-specific GPA rules."
       }
     },
     {
@@ -2610,7 +2610,7 @@
       "deadline": "VERIFY",
       "url": "https://pdkintl.org/pdk-scholarship/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [
           "education"
         ],
@@ -2629,8 +2629,8 @@
       "estimated_deadline": "2028-04-01",
       "verification": {
         "source_url": "https://pdkintl.org/pdk-scholarship/",
-        "last_verified_at": "2026-06-21",
-        "notes": "100+ scholarships; Educators Rising/PLT/PDK membership; Jan–Apr application window; 2026-27 cycle closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official PDK page says 2026-2027 applications are closed and the 2027-2028 application opens in December. Eligibility requires membership in Educators Rising, Educators Rising Collegiate, Pi Lambda Theta, or PDK; public-education career pursuit; and fall enrollment with tuition/fees. No numeric GPA minimum is stated."
       }
     },
     {
@@ -2781,7 +2781,7 @@
       "deadline": "2027-03-31",
       "url": "https://cobellscholar.org/our-scholarships/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "college_undergraduate",
@@ -2799,7 +2799,7 @@
       "verification": {
         "source_url": "https://cobellscholar.org/our-scholarships/",
         "last_verified_at": "2026-06-25",
-        "notes": "Official page says undergraduate and graduate applications are available Dec 15-Mar 31 each year; awards are merit-based and disbursed according to need and institution financial-aid standards."
+        "notes": "Official page says undergraduate and graduate applications are available Dec 15-Mar 31 each year for enrolled members of U.S. federally recognized Tribes or Alaska Native corporations at nonprofit institutions. The page references academic strength and transcript review but does not state a numeric GPA minimum."
       }
     },
     {
@@ -2810,7 +2810,7 @@
       "deadline": "VERIFY",
       "url": "https://www.nativeforward.org/scholarship-finder/",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "college_undergraduate",
@@ -2829,7 +2829,7 @@
       "verification": {
         "source_url": "https://www.nativeforward.org/scholarship-finder/",
         "last_verified_at": "2026-06-25",
-        "notes": "Official scholarship finder lists multiple Native Forward opportunities with different award structures, including need-based awards and named scholarships with fixed or maximum amounts."
+        "notes": "Official FAQ says Native Forward offers 30+ scholarships/fellowships with opportunity-specific criteria; basic requirements include full-time U.S. accredited enrollment, Tribal Eligibility Certificate, Financial Needs Form, FAFSA/federal-aid eligibility, transcript, essays, and references. Some named opportunities list GPA floors, but no program-wide numeric GPA minimum is published."
       }
     },
     {
@@ -2922,7 +2922,7 @@
       "deadline": "VERIFY",
       "url": "https://www.amvets.org/scholarships",
       "eligibility": {
-        "min_gpa": "VERIFY",
+        "min_gpa": null,
         "fields_of_study": [],
         "grade_levels": [
           "high_school_senior",
@@ -2938,8 +2938,8 @@
       "estimated_deadline": "2027-04-30",
       "verification": {
         "source_url": "https://apply.mykaleidoscope.com/program/AMVETSchildrenandgrandchildren26",
-        "last_verified_at": "2026-06-21",
-        "notes": "$4,000 awards (children/spouses/veterans); $12,000 WD-40 skilled-trades track; U.S. citizen; apply Jan–Apr 30 — 2026 cycle closed."
+        "last_verified_at": "2026-06-25",
+        "notes": "Official AMVETS page lists $4,000 scholarships for veterans/active duty, spouses/widows, and children/grandchildren, plus $12,000 WD-40 skilled-trades awards. Kaleidoscope child/grandchild application lists U.S. citizenship, veteran relationship, high-school senior status, financial need, transcript/GPA status, FAFSA summary, and essay; no numeric GPA minimum is stated."
       }
     },
     {

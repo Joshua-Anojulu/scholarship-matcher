@@ -111,6 +111,8 @@ def _citizenship_satisfies(student_citizenship: str, requirement: str) -> bool |
     """Return True/False when requirement is known, None when unverified."""
     if requirement == "VERIFY":
         return None
+    if requirement == "any":
+        return True
     allowed = _CITIZENSHIP_ALLOWED.get(requirement)
     if allowed is None:
         allowed = {_normalize_tag(requirement)}
@@ -259,7 +261,10 @@ def _evaluate_scholarship(
     if citizenship_result is False:
         return None
     if citizenship_result is True:
-        reasons.append("Meets citizenship requirement")
+        if scholarship.eligibility.citizenship_requirement == "any":
+            reasons.append("No citizenship restriction verified")
+        else:
+            reasons.append("Meets citizenship requirement")
     else:
         reasons.append("Citizenship requirement not yet verified")
 

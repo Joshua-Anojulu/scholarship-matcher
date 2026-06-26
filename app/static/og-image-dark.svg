@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Scholarships4U">
+  <defs>
+    <radialGradient id="orbA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 120) rotate(48) scale(450 290)">
+      <stop stop-color="#6bdcff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#6bdcff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1010 470) rotate(118) scale(430 260)">
+      <stop stop-color="#f2b35c" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#f2b35c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="80" y1="80" x2="1120" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1b2443"/>
+      <stop offset="0.58" stop-color="#12172a"/>
+      <stop offset="1" stop-color="#241847"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#070a16"/>
+  <rect width="1200" height="630" fill="url(#orbA)"/>
+  <rect width="1200" height="630" fill="url(#orbB)"/>
+  <rect x="80" y="80" width="1040" height="470" rx="36" fill="url(#panel)" stroke="#6bdcff" stroke-opacity="0.22"/>
+  <circle cx="196" cy="198" r="58" fill="#6bdcff" opacity="0.12"/>
+  <circle cx="1010" cy="430" r="125" fill="#8b6cff" opacity="0.16"/>
+  <path d="M930 180c70 14 122 70 136 140" fill="none" stroke="#f2b35c" stroke-width="2" opacity="0.28"/>
+  <text x="120" y="260" fill="#eef3ff" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600">Scholarships4U</text>
+  <text x="120" y="340" fill="#9eeaff" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="500">Scholarship planning, made clearer</text>
+  <text x="120" y="430" fill="#aebbe0" font-family="Arial, Helvetica, sans-serif" font-size="28">Transparent matching - Deadline tracking - Essay guidance</text>
+</svg>
