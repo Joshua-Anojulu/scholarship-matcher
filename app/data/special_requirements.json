@@ -689,6 +689,74 @@
         "label": "Participating university channel",
         "details": "Selection runs through partner universities in Brazil, China, India, Indonesia, Russia, and the United States."
       }
+    ],
+    "asce-civil-engineering-scholarships": [
+      {
+        "kind": "membership",
+        "label": "ASCE student membership required",
+        "details": "Applicants must be ASCE student members in good standing."
+      }
+    ],
+    "adobe-women-in-technology-scholarship": [
+      {
+        "kind": "family_or_affiliation",
+        "label": "Women applicants only",
+        "details": "Adobe Women-in-Technology Scholarship is for women pursuing CS or closely related technical degrees, per official program eligibility."
+      }
+    ],
+    "4-h-youth-in-action-scholarship": [
+      {
+        "kind": "membership",
+        "label": "4-H participation required",
+        "details": "Youth in Action awardees are selected from 4-H alumni with documented program participation."
+      }
+    ],
+    "spie-optics-photonics-scholarships": [
+      {
+        "kind": "membership",
+        "label": "SPIE student membership required",
+        "details": "Applicants must hold SPIE student membership at the time of application."
+      }
+    ],
+    "first-scholarship-program": [
+      {
+        "kind": "institution_channel",
+        "label": "FIRST participation required",
+        "details": "Partner scholarships in the FIRST portal are for students with FIRST program participation; each partner award has additional rules."
+      }
+    ],
+    "first-bart-kamen-memorial-scholarship": [
+      {
+        "kind": "membership",
+        "label": "FIRST participation required",
+        "details": "Applicants must have participated in a FIRST robotics or tech program."
+      },
+      {
+        "kind": "institution_channel",
+        "label": "FIRST Bart Kamen Memorial channel",
+        "details": "Award is administered through the official FIRST Bart Kamen Memorial scholarship fund for biomedical engineering and pre-med pathways."
+      }
+    ],
+    "iise-scholarships-and-fellowships": [
+      {
+        "kind": "nomination",
+        "label": "Nomination required for several awards",
+        "details": "Many IISE scholarships require nomination by a faculty advisor or IISE student chapter before the student application."
+      }
+    ],
+    "acm-w-conference-scholarships": [
+      {
+        "kind": "family_or_affiliation",
+        "label": "Women in computing eligibility",
+        "details": "ACM-W conference scholarships support women in computing attending research conferences, per official ACM-W eligibility."
+      }
+    ],
+    "key-club-childrens-fund-scholarships": [
+      {
+        "kind": "membership",
+        "label": "Key Club membership required",
+        "details": "Kiwanis Children's Fund scholarships require active Key Club membership."
+      }
     ]
   }
 }

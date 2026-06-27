@@ -6914,6 +6914,819 @@
         "last_verified_at": "2026-06-21",
         "notes": "Official RTX article: $10,000 via Student Veterans of America for Army veterans, 2 per year; next-cycle deadline not published at verification."
       }
+    },
+    {
+      "id": "asce-civil-engineering-scholarships",
+      "name": "ASCE Civil Engineering Scholarships",
+      "sponsor": "American Society of Civil Engineers (ASCE)",
+      "award_amount": "Varies by award",
+      "deadline": "VERIFY",
+      "url": "https://www.asce.org/career-growth/awards-and-honors/scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "ASCE scholarships for undergraduate civil engineering students who are ASCE student members. Awards recognize academic achievement, leadership, and commitment to the civil engineering profession.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.asce.org/career-growth/awards-and-honors/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASCE scholarships page: civil engineering undergraduates, ASCE student membership required; annual cycle historically closes mid-January (est. 2027-01-15)."
+      },
+      "application_requirements": [
+        {
+          "id": "asce-scholarship-application",
+          "label": "Complete the ASCE scholarship application",
+          "details": "Apply through the official ASCE scholarships portal when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.asce.org/career-growth/awards-and-honors/scholarships"
+        },
+        {
+          "id": "asce-student-membership",
+          "label": "Hold ASCE student membership",
+          "details": "Applicants must be ASCE student members in good standing.",
+          "required": true,
+          "source_url": "https://www.asce.org/career-growth/awards-and-honors/scholarships"
+        }
+      ],
+      "estimated_deadline": "2027-01-15"
+    },
+    {
+      "id": "adobe-women-in-technology-scholarship",
+      "name": "Adobe Women-in-Technology Scholarship",
+      "sponsor": "Adobe / Scholarship America",
+      "award_amount": 10000,
+      "deadline": "VERIFY",
+      "url": "https://www.adobe.com/corporate-responsibility/creativity/scholarship-programs.html",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "computer_science",
+          "technology"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$10,000 scholarship for women pursuing undergraduate or master's degrees in computer science, computer engineering, or a closely related technical field. Applications are managed through Scholarship America.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.adobe.com/corporate-responsibility/creativity/scholarship-programs.html",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Adobe scholarship programs page: $10,000 award for women in CS/tech undergrad or master's programs; Scholarship America hub; next-cycle deadline VERIFY."
+      },
+      "application_requirements": [
+        {
+          "id": "adobe-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.adobe.com/corporate-responsibility/creativity/scholarship-programs.html"
+        }
+      ]
+    },
+    {
+      "id": "4-h-youth-in-action-scholarship",
+      "name": "4-H Youth in Action Scholarship",
+      "sponsor": "National 4-H Council",
+      "award_amount": 5000,
+      "deadline": "VERIFY",
+      "url": "https://4-h.org/programs/4-h-youth-in-action-program/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "agriculture",
+          "education",
+          "science"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National 4-H Youth in Action awards recognize four outstanding 4-H alumni who applied their leadership to community service. Each awardee receives a $5,000 scholarship for higher education or to start a community project.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://4-h.org/programs/4-h-youth-in-action-program/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official 4-H Youth in Action page: four $5,000 awards; 2026 cycle deadline April 13 — est. 2027-04-13 for next cycle."
+      },
+      "application_requirements": [
+        {
+          "id": "4-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://4-h.org/programs/4-h-youth-in-action-program/"
+        }
+      ],
+      "estimated_deadline": "2027-04-13"
+    },
+    {
+      "id": "spie-optics-photonics-scholarships",
+      "name": "SPIE Optics and Photonics Scholarships",
+      "sponsor": "SPIE",
+      "award_amount": "$3,000–$11,000",
+      "deadline": "VERIFY",
+      "url": "https://spie.org/membership/student-hub/scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "science",
+          "technology"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "SPIE scholarships for full-time students in optics, photonics, imaging, or optoelectronics programs. SPIE student membership is required; awards range from $3,000 to $11,000 depending on the fund.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://spie.org/membership/student-hub/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official SPIE student scholarships page: $3,000–$11,000, SPIE student member required; annual deadline historically mid-February (est. 2027-02-15)."
+      },
+      "application_requirements": [
+        {
+          "id": "spie-scholarship-application",
+          "label": "Submit the SPIE scholarship application",
+          "details": "Apply through the SPIE student hub when the cycle opens.",
+          "required": true,
+          "source_url": "https://spie.org/membership/student-hub/scholarships"
+        },
+        {
+          "id": "spie-student-membership",
+          "label": "Hold SPIE student membership",
+          "details": "Applicants must be SPIE student members at the time of application.",
+          "required": true,
+          "source_url": "https://spie.org/membership/student-hub/scholarships"
+        }
+      ],
+      "estimated_deadline": "2027-02-15"
+    },
+    {
+      "id": "spe-foundation-scholarships",
+      "name": "SPE Foundation Scholarships",
+      "sponsor": "Society of Plastics Engineers (SPE) Foundation",
+      "award_amount": "Varies by award",
+      "deadline": "VERIFY",
+      "url": "https://www.4spe.org/Scholarships/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "science"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "SPE Foundation scholarships for college students pursuing careers in the plastics industry, including polymer science, plastics engineering, and related fields.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.4spe.org/Scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official SPE scholarships page: plastics-industry majors at accredited colleges; multiple named awards through one application portal; next deadline VERIFY."
+      },
+      "application_requirements": [
+        {
+          "id": "spe-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.4spe.org/Scholarships/"
+        }
+      ]
+    },
+    {
+      "id": "first-scholarship-program",
+      "name": "FIRST Scholarship Program",
+      "sponsor": "FIRST / Pearson Futures",
+      "award_amount": "Varies (hundreds of partner scholarships)",
+      "deadline": "VERIFY",
+      "url": "https://www.firstinspires.org/resources/library/scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "computer_science",
+          "science",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Central scholarship portal for FIRST participants linking to hundreds of partner scholarships from colleges, universities, and corporations. Deadlines and award amounts vary by partner opportunity.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.firstinspires.org/resources/library/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official FIRST scholarships library: Pearson Futures portal aggregates partner scholarships for FIRST participants; deadlines vary by award — VERIFY each listing."
+      },
+      "application_requirements": [
+        {
+          "id": "first-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.firstinspires.org/resources/library/scholarships"
+        }
+      ]
+    },
+    {
+      "id": "first-bart-kamen-memorial-scholarship",
+      "name": "Dr. Bart Kamen Memorial FIRST Scholarship",
+      "sponsor": "FIRST",
+      "award_amount": "Up to $10,000 (renewable)",
+      "deadline": "VERIFY",
+      "url": "https://www.firstinspires.org/resources/library/dr-bart-kamen-memorial-scholarship-fund",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "health_medicine",
+          "science"
+        ],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Renewable scholarship of up to $10,000 for high school seniors who participated in FIRST programs and plan to study biomedical engineering, pre-med, or related health and engineering fields.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.firstinspires.org/resources/library/dr-bart-kamen-memorial-scholarship-fund",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official FIRST Bart Kamen Memorial page: up to $10,000 renewable, biomedical engineering/pre-med focus, FIRST participation required."
+      },
+      "application_requirements": [
+        {
+          "id": "first-bart-kamen-application",
+          "label": "Apply through the FIRST Bart Kamen Memorial portal",
+          "details": "Submit the official Bart Kamen Memorial application when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.firstinspires.org/resources/library/dr-bart-kamen-memorial-scholarship-fund"
+        },
+        {
+          "id": "first-program-participation",
+          "label": "Document FIRST program participation",
+          "details": "Applicants must have participated in a FIRST program.",
+          "required": true,
+          "source_url": "https://www.firstinspires.org/resources/library/dr-bart-kamen-memorial-scholarship-fund"
+        }
+      ]
+    },
+    {
+      "id": "iise-scholarships-and-fellowships",
+      "name": "IISE Scholarships and Fellowships",
+      "sponsor": "Institute of Industrial and Systems Engineers (IISE)",
+      "award_amount": "Up to $4,000",
+      "deadline": "VERIFY",
+      "url": "https://iise.org/details.aspx?id=857",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "IISE scholarships and fellowships for students in industrial engineering and related programs. Many awards require a faculty or IISE chapter nomination.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://iise.org/details.aspx?id=857",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official IISE scholarships page: up to $4,000, industrial engineering focus, nomination required for several awards; est. 2026-11-15 next cycle."
+      },
+      "application_requirements": [
+        {
+          "id": "iise-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://iise.org/details.aspx?id=857"
+        }
+      ],
+      "estimated_deadline": "2026-11-15"
+    },
+    {
+      "id": "national-garden-clubs-scholarships",
+      "name": "National Garden Clubs Scholarships",
+      "sponsor": "National Garden Clubs, Inc.",
+      "award_amount": "Up to $4,000",
+      "deadline": "VERIFY",
+      "url": "https://gardenclub.org/college-scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "agriculture",
+          "environmental_science",
+          "natural_sciences"
+        ],
+        "grade_levels": [
+          "college_junior",
+          "college_senior",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships up to $4,000 for juniors, seniors, and graduate students majoring in horticulture, floriculture, landscape design, botany, environmental science, and related fields.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://gardenclub.org/college-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NGC college scholarships page: up to $4,000, horticulture/environment majors, juniors/seniors/grad; est. 2027-02-01 deadline."
+      },
+      "application_requirements": [
+        {
+          "id": "national-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://gardenclub.org/college-scholarships"
+        }
+      ],
+      "estimated_deadline": "2027-02-01"
+    },
+    {
+      "id": "acm-w-conference-scholarships",
+      "name": "ACM-W Conference Scholarships",
+      "sponsor": "ACM-W",
+      "award_amount": "Up to $600 (student) / $1,200 (childcare)",
+      "deadline": "VERIFY",
+      "url": "https://women.acm.org/scholarships/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "computer_science",
+          "technology"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Travel scholarships for women in computing to attend research conferences. ACM-W offers rolling deadlines throughout the year (typically six application windows).",
+      "verified": true,
+      "verification": {
+        "source_url": "https://women.acm.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ACM-W scholarships page: up to $600 travel / $1,200 childcare supplements, women in computing conference attendance, rolling deadlines — VERIFY current windows."
+      },
+      "application_requirements": [
+        {
+          "id": "acm-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://women.acm.org/scholarships/"
+        }
+      ]
+    },
+    {
+      "id": "key-club-childrens-fund-scholarships",
+      "name": "Key Club Children's Fund Scholarships",
+      "sponsor": "Kiwanis Children's Fund",
+      "award_amount": "Varies by award",
+      "deadline": "VERIFY",
+      "url": "https://keyclub.org/scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships for Key Club members administered through the Kiwanis Children's Fund. Multiple awards recognize service, leadership, and academic achievement.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://keyclub.org/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Key Club scholarships page: Kiwanis Children's Fund awards for Key Club members; est. 2027-02-01 next cycle."
+      },
+      "application_requirements": [
+        {
+          "id": "key-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://keyclub.org/scholarships"
+        }
+      ],
+      "estimated_deadline": "2027-02-01"
+    },
+    {
+      "id": "american-society-for-engineering-education-asee-scholarships",
+      "name": "ASEE CEED Undergraduate and Graduate Research Scholarship",
+      "sponsor": "American Society for Engineering Education (ASEE) — CEED",
+      "award_amount": "Up to $8,000 over two years",
+      "deadline": "VERIFY",
+      "url": "https://ceed.asee.org/research-grants/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "CEED research scholarship of up to $8,000 over two years for undergraduate or graduate students conducting research on experiential, cooperative, or work-integrated education with direct implications for engineering and computer science.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://ceed.asee.org/research-grants/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASEE CEED research grants page: up to $8,000 research scholarship for undergrad/grad students; general /funding/scholarships page not found — CEED program verified."
+      },
+      "application_requirements": [
+        {
+          "id": "american-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://ceed.asee.org/research-grants/"
+        }
+      ]
+    },
+    {
+      "id": "american-statistical-association-scholarships",
+      "name": "ASA Norman Beery Memorial Scholarship",
+      "sponsor": "American Statistical Association (ASA)",
+      "award_amount": 3000,
+      "deadline": "VERIFY",
+      "url": "https://www.amstat.org/your-career/awards/norman-beery-memorial-scholarship",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "mathematics",
+          "science",
+          "computer_science",
+          "social_sciences"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "$3,000 annual scholarship for first-generation college students enrolled in or planning to enroll in statistics, biostatistics, or a science program that substantially incorporates statistics. Preference for undergraduates with financial need.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.amstat.org/your-career/awards/norman-beery-memorial-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASA Norman Beery page: $3,000, 3.0 GPA, first-generation, statistics/science programs; applications due March 1 — est. 2027-03-01."
+      },
+      "application_requirements": [
+        {
+          "id": "american-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.amstat.org/your-career/awards/norman-beery-memorial-scholarship"
+        }
+      ],
+      "estimated_deadline": "2027-03-01"
+    },
+    {
+      "id": "mathematical-association-of-america-scholarships",
+      "name": "MAA National Math Talent Fund",
+      "sponsor": "Mathematical Association of America (MAA)",
+      "award_amount": "Emergency financial aid (varies)",
+      "deadline": "VERIFY",
+      "url": "https://maa.org/national-math-talent-fund/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "mathematics",
+          "science"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Emergency financial support for mathematics and quantitative-science undergraduates in their final four semesters who face unexpected financial hardship that could derail degree completion.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://maa.org/national-math-talent-fund/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official MAA National Math Talent Fund page: emergency aid for math/quantitative-science undergrads in final four semesters; no GPA cutoff; partnership with Last Mile Education Fund."
+      },
+      "application_requirements": [
+        {
+          "id": "mathematical-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://maa.org/national-math-talent-fund/"
+        }
+      ]
+    },
+    {
+      "id": "nace-foundation-scholarships",
+      "name": "NACE Foundation Scholarships",
+      "sponsor": "NACE International Foundation",
+      "award_amount": "Varies (multiple awards up to $10,000)",
+      "deadline": "VERIFY",
+      "url": "https://nace-foundation.org/programs/students/scholarships/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "science"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Multiple scholarships promoting corrosion science and engineering for full-time undergraduate students at accredited two- or four-year institutions. Application window is typically September 1 through January 1.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://nace-foundation.org/programs/students/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "NACE Foundation scholarship program: corrosion science/engineering undergraduates; application window Sep 1–Jan 1 annually; est. 2027-01-01 deadline."
+      },
+      "application_requirements": [
+        {
+          "id": "nace-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://nace-foundation.org/programs/students/scholarships/"
+        }
+      ],
+      "estimated_deadline": "2027-01-01"
+    },
+    {
+      "id": "awis-undergraduate-scholarships",
+      "name": "AWIS Undergraduate Scholarships",
+      "sponsor": "Association for Women in Science (AWIS)",
+      "award_amount": "$2,000–$2,500",
+      "deadline": "VERIFY",
+      "url": "https://www.awis.org/education/scholarships/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "natural_sciences",
+          "engineering",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "college_freshman",
+          "college_sophomore",
+          "college_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "AWIS undergraduate scholarships including the First-Generation College Student Scholarship and Dr. Vicki L. Schechtman Scholarship for NSF-recognized science fields. AWIS membership and essays are required.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.awis.org/education/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official AWIS scholarships page: $2,000–$2,500 undergrad awards in NSF science fields; 2026 cycle closed at verification; AWIS member eligibility applies."
+      },
+      "application_requirements": [
+        {
+          "id": "awis-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.awis.org/education/scholarships/"
+        }
+      ]
+    },
+    {
+      "id": "american-statistical-association-pride-scholarship",
+      "name": "ASA Pride Scholarship",
+      "sponsor": "American Statistical Association (ASA)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "url": "https://www.amstat.org/your-career/awards-and-scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "mathematics",
+          "computer_science",
+          "social_sciences"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "ASA scholarship supporting LGBTQ+ statisticians and data scientists and allies pursuing statistics or data science education.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.amstat.org/your-career/awards-and-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASA awards hub: Pride Scholarship for LGBTQ+ statisticians/data scientists; deadline historically March 1 — est. 2027-03-01; award amount VERIFY on application page."
+      },
+      "application_requirements": [
+        {
+          "id": "american-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.amstat.org/your-career/awards-and-scholarships"
+        }
+      ],
+      "estimated_deadline": "2027-03-01"
+    },
+    {
+      "id": "maa-mathfest-student-scholars-travel-grants",
+      "name": "MAA MathFest Student Scholars Travel Grants",
+      "sponsor": "Mathematical Association of America (MAA)",
+      "award_amount": "Travel, registration, lodging, and stipend",
+      "deadline": "VERIFY",
+      "url": "https://maa.org/resource/maa-mathfest-student-scholars-travel-grants/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "mathematics"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Travel grants for students from historically underrepresented groups in mathematics to attend and present research at MAA MathFest, including registration, travel, lodging, and a meal/incidental stipend.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://maa.org/resource/maa-mathfest-student-scholars-travel-grants/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official MAA MathFest travel grants page: underrepresented groups in math, must present at MathFest; 2026 applications due May 31 — est. 2027-05-31."
+      },
+      "application_requirements": [
+        {
+          "id": "maa-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://maa.org/resource/maa-mathfest-student-scholars-travel-grants/"
+        }
+      ],
+      "estimated_deadline": "2027-05-31"
+    },
+    {
+      "id": "asee-wied-wasburn-early-engineering-educator-grant",
+      "name": "ASEE WIED Mara H. Wasburn Early Engineering Educator Grant",
+      "sponsor": "ASEE Women in Engineering Division (WIED)",
+      "award_amount": "Up to $2,000 travel grant",
+      "deadline": "VERIFY",
+      "url": "https://sites.asee.org/wied/wasburn-eeeg/",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "education"
+        ],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Travel grant of up to $2,000 for women pursuing careers in engineering education to attend the ASEE Annual Conference. Open to graduate students, post-docs, and early-career faculty.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://sites.asee.org/wied/wasburn-eeeg/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASEE WIED Wasburn EEEG page: up to $2,000 conference travel for women in engineering education; graduate students and early-career faculty eligible."
+      },
+      "application_requirements": [
+        {
+          "id": "asee-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://sites.asee.org/wied/wasburn-eeeg/"
+        }
+      ]
+    },
+    {
+      "id": "american-statistical-association-social-statistics-section-scholarship",
+      "name": "ASA Social Statistics Section Scholarship",
+      "sponsor": "American Statistical Association (ASA)",
+      "award_amount": "Up to $1,000",
+      "deadline": "VERIFY",
+      "url": "https://www.amstat.org/your-career/awards-and-scholarships",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "mathematics",
+          "social_sciences"
+        ],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Joint ASA Social Statistics Section scholarship of up to $1,000 supporting students exploring careers in government statistics.",
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.amstat.org/your-career/awards-and-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASA awards hub: Social Statistics Section scholarship up to $1,000 for government statistics careers; deadline historically May 1 — est. 2027-05-01."
+      },
+      "application_requirements": [
+        {
+          "id": "american-online-application",
+          "label": "Complete the official online application",
+          "details": "Apply through the sponsor's official page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.amstat.org/your-career/awards-and-scholarships"
+        }
+      ],
+      "estimated_deadline": "2027-05-01"
     }
   ]
 }

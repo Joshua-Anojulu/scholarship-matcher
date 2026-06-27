@@ -2568,6 +2568,461 @@
         "last_verified_at": "2026-06-21",
         "notes": "Official Harvard Summer School page: credit-bearing 4 or 7 weeks, age 16+ by Jun 20."
       }
+    },
+    {
+      "id": "harvard-pre-college-program",
+      "name": "Harvard Pre-College Program",
+      "host": "Harvard Summer School",
+      "subject": "Non-credit pre-college academic exploration",
+      "url": "https://summer.harvard.edu/programs/pre-college-program/",
+      "cost": "$6,100 + $75 application fee (financial aid available)",
+      "cost_category": "paid",
+      "selectivity": "Selective admission",
+      "program_format": "residential",
+      "location": "Cambridge, MA",
+      "program_dates": "Two-week sessions: June 21–July 2, July 5–17, or July 19–31, 2026",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Two-week residential non-credit pre-college program for rising high school juniors and seniors graduating in 2027 or 2028. Students must be at least 16 by June 20 and under 19 before July 31 of the program year.",
+      "application_requirements": [
+        {
+          "id": "harvard-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://summer.harvard.edu/programs/pre-college-program/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://summer.harvard.edu/programs/pre-college-program/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Harvard Pre-College page: 2 weeks, $6,100, rising juniors/seniors; early deadline Jan 7 / regular Feb 11 2026 — est. 2027-01-07 next early deadline."
+      },
+      "estimated_deadline": "2027-01-07"
+    },
+    {
+      "id": "stanford-summer-session-high-school",
+      "name": "Stanford Summer Session for High School Students",
+      "host": "Stanford University",
+      "subject": "College-level summer courses",
+      "url": "https://summer.stanford.edu/students/high-school",
+      "cost": "Tuition-based; financial aid available",
+      "cost_category": "paid",
+      "selectivity": "Selective admission",
+      "program_format": "hybrid",
+      "location": "Stanford, CA",
+      "program_dates": "Eight-week session: June 20–August 16, 2026",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Stanford Summer Session allows qualified high school students in grades 10–12 to take Stanford courses for credit alongside college students. Participants must be ages 16–19 by the start of the program.",
+      "application_requirements": [
+        {
+          "id": "stanford-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://summer.stanford.edu/students/high-school"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://summer.stanford.edu/students/high-school",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Stanford Summer Session high school page: grades 10–12, 8 weeks Jun 20–Aug 16 2026, ages 16–19."
+      }
+    },
+    {
+      "id": "mdibl-biomedical-bootcamp",
+      "name": "MDIBL Biomedical Bootcamp",
+      "host": "MDI Biological Laboratory",
+      "subject": "Biomedical research laboratory skills",
+      "url": "https://mdibl.org/course/biomedical-bootcamp-2026/",
+      "cost": "$1,000 (limited financial aid available)",
+      "cost_category": "paid",
+      "selectivity": "Limited slots",
+      "program_format": "commuter",
+      "location": "Bar Harbor, ME",
+      "program_dates": "June 29–July 3, 2026",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "health_medicine",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "One-week commuter biomedical research bootcamp for high school students entering junior or senior year (or graduating June 2026). Students must be at least 16 and commute daily to the MDIBL campus.",
+      "application_requirements": [
+        {
+          "id": "mdibl-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://mdibl.org/course/biomedical-bootcamp-2026/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://mdibl.org/course/biomedical-bootcamp-2026/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official MDIBL Biomedical Bootcamp 2026 page: 1 week commuter, grades 11–12, $1,000, deadline June 5 2026 — est. 2027-06-05."
+      },
+      "estimated_deadline": "2027-06-05"
+    },
+    {
+      "id": "uchicago-research-in-biological-sciences",
+      "name": "UChicago Research in the Biological Sciences (RIBS)",
+      "host": "University of Chicago",
+      "subject": "Biological sciences laboratory research",
+      "url": "https://summer.uchicago.edu/courses/research-in-the-biological-sciences/",
+      "cost": "$15,200",
+      "cost_category": "paid",
+      "selectivity": "Highly selective",
+      "program_format": "residential",
+      "location": "Chicago, IL",
+      "program_dates": "Four weeks: June 15–July 10, 2026",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "natural_sciences",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any",
+        "special_requirements": [
+          {
+            "kind": "institution_channel",
+            "label": "Residential requirement for Chicago residents",
+            "details": "All participants must live in campus housing; students who live in Chicago are not eligible to commute. Program is limited to grades 10–11."
+          }
+        ]
+      },
+      "description": "Four-week intensive residential practicum introducing molecular, microbiological, and cellular biology research techniques. High school biology required; advanced biology recommended. Chicago residents must live on campus — commuting is not permitted.",
+      "application_requirements": [
+        {
+          "id": "uchicago-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://summer.uchicago.edu/courses/research-in-the-biological-sciences/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://summer.uchicago.edu/courses/research-in-the-biological-sciences/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official UChicago RIBS course page: 4 weeks residential, grades 10–11, $15,200; application deadline Feb 11 2026 — est. 2027-02-11; Chicago residents cannot commute."
+      },
+      "estimated_deadline": "2027-02-11"
+    },
+    {
+      "id": "brown-summer-at-brown",
+      "name": "Summer at Brown",
+      "host": "Brown University Pre-College Programs",
+      "subject": "Non-credit pre-college courses",
+      "url": "https://precollege.brown.edu/programs/summerbrown",
+      "cost": "Tuition varies by course length; financial aid available",
+      "cost_category": "paid",
+      "selectivity": "Selective admission",
+      "program_format": "hybrid",
+      "location": "Providence, RI",
+      "program_dates": "Multiple one- to six-week sessions in summer",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Non-credit pre-college courses at Brown for students ages 14–18 in grades 9–12. Residential, commuter, and online formats are available across multiple summer sessions.",
+      "application_requirements": [
+        {
+          "id": "brown-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://precollege.brown.edu/programs/summerbrown"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://precollege.brown.edu/programs/summerbrown",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Summer at Brown page: grades 9–12, ages 14–18, non-credit; deadline May 15 2026 cited for some sessions — est. 2027-05-15."
+      },
+      "estimated_deadline": "2027-05-15"
+    },
+    {
+      "id": "columbia-pre-college-summer",
+      "name": "Columbia Pre-College Summer Programs",
+      "host": "Columbia University School of Professional Studies",
+      "subject": "Pre-college academic enrichment",
+      "url": "https://precollege.sps.columbia.edu/programs/summer-programs",
+      "cost": "Tuition varies by program; financial aid available",
+      "cost_category": "paid",
+      "selectivity": "Selective admission",
+      "program_format": "hybrid",
+      "location": "New York, NY",
+      "program_dates": "Multiple summer sessions",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Columbia pre-college summer programs for students age 15 and older in residential, commuter, and online formats. Rolling admission across program options.",
+      "application_requirements": [
+        {
+          "id": "columbia-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://precollege.sps.columbia.edu/programs/summer-programs"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://precollege.sps.columbia.edu/programs/summer-programs",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Columbia pre-college summer page: residential/commuter/online, age 15+, rolling admission — VERIFY session-specific deadlines."
+      }
+    },
+    {
+      "id": "michigan-math-science-scholars",
+      "name": "Michigan Math and Science Scholars (MMSS)",
+      "host": "University of Michigan",
+      "subject": "STEM pre-college courses",
+      "url": "https://sites.lsa.umich.edu/mmss/",
+      "cost": "Tuition-based residential program",
+      "cost_category": "paid",
+      "selectivity": "Competitive admission",
+      "program_format": "residential",
+      "location": "Ann Arbor, MI",
+      "program_dates": "Two-week sessions in July",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Two-week residential summer program at the University of Michigan for rising high school sophomores, juniors, and seniors exploring advanced topics in math and science.",
+      "application_requirements": [
+        {
+          "id": "michigan-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://sites.lsa.umich.edu/mmss/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://sites.lsa.umich.edu/mmss/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official MMSS page: rising soph/jun/sen, 2-week residential sessions, rolling admission — VERIFY current cycle dates."
+      }
+    },
+    {
+      "id": "dnalc-summer-science-camps",
+      "name": "DNALC Summer Science Camps",
+      "host": "Cold Spring Harbor Laboratory (DNA Learning Center)",
+      "subject": "Molecular biology and genetics",
+      "url": "https://summercamps.dnalc.org/",
+      "cost": "$600–$700 per camp (varies by program)",
+      "cost_category": "paid",
+      "selectivity": "Open enrollment (space limited)",
+      "program_format": "commuter",
+      "location": "Cold Spring Harbor, NY and other DNALC sites",
+      "program_dates": "Multiple one-week sessions in summer",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "natural_sciences"
+        ],
+        "grade_levels": [
+          "middle_school",
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "any"
+      },
+      "description": "Paid one-week day camps in molecular biology and genetics for students in grades 6–12 at Cold Spring Harbor Laboratory's DNA Learning Center and partner sites.",
+      "application_requirements": [
+        {
+          "id": "dnalc-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://summercamps.dnalc.org/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://summercamps.dnalc.org/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official DNALC summer camps page: grades 6–12, paid camps typically $600–$700 per session."
+      }
+    },
+    {
+      "id": "penn-summer-academies",
+      "name": "Penn Summer Academies",
+      "host": "University of Pennsylvania",
+      "subject": "Pre-college academic academies",
+      "url": "https://hs.sas.upenn.edu/summer-programs/academies",
+      "cost": "Tuition-based residential program",
+      "cost_category": "paid",
+      "selectivity": "Selective admission",
+      "program_format": "residential",
+      "location": "Philadelphia, PA",
+      "program_dates": "Two- to three-week residential sessions",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Residential pre-college academies at Penn for high school students in grades 9–11, offering intensive two- to three-week subject immersion experiences.",
+      "application_requirements": [
+        {
+          "id": "penn-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://hs.sas.upenn.edu/summer-programs/academies"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://hs.sas.upenn.edu/summer-programs/academies",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Penn Summer Academies page: grades 9–11, residential 2–3 weeks; deadline May 1 2026 — est. 2027-05-01."
+      },
+      "estimated_deadline": "2027-05-01"
+    },
+    {
+      "id": "georgetown-university-summer-hoya",
+      "name": "Georgetown Hoya Summer High School Sessions",
+      "host": "Georgetown University",
+      "subject": "Pre-college academies and college prep",
+      "url": "https://summer.georgetown.edu/",
+      "cost": "Tuition varies by program (college prep example ~$7,113+ fees)",
+      "cost_category": "paid",
+      "selectivity": "Selective admission",
+      "program_format": "hybrid",
+      "location": "Washington, DC",
+      "program_dates": "One- to five-week sessions in summer 2026",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Georgetown Hoya Summer High School Sessions include one- to three-week academies, a five-week College Prep Program, and online pre-college courses. Residential and online options available for motivated high school students.",
+      "application_requirements": [
+        {
+          "id": "georgetown-application",
+          "label": "Submit the official program application",
+          "details": "Apply through the host's official summer program page when the cycle opens.",
+          "required": true,
+          "source_url": "https://summer.georgetown.edu/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://summer.georgetown.edu/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Georgetown summer.georgetown.edu: Hoya Summer High School Sessions, academies and college prep, application open for Summer 2026."
+      }
     }
   ]
 }
