@@ -513,6 +513,104 @@ a { -webkit-tap-highlight-color: transparent; }
   font-size: 0.65rem;
 }
 
+.difference-panel {
+  display: grid;
+  padding: clamp(1.2rem, 3vw, 1.75rem);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: stretch;
+  gap: 1rem;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(107, 220, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(139, 108, 255, 0.08)),
+    var(--paper);
+}
+
+.difference-copy {
+  display: flex;
+  min-height: 100%;
+  padding: 0.25rem 0.35rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.difference-copy h2 {
+  max-width: 10ch;
+  margin: 0.08rem 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+}
+
+.difference-copy p:last-child {
+  max-width: 45ch;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.difference-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.difference-card {
+  position: relative;
+  min-height: 15rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.022)),
+    rgba(10, 14, 28, 0.54);
+}
+
+.difference-card::after {
+  position: absolute;
+  right: -2.5rem;
+  bottom: -2.6rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: rgba(107, 220, 255, 0.08);
+  content: "";
+}
+
+.difference-icon {
+  display: grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  margin-bottom: 1.25rem;
+  place-items: center;
+  border: 1px solid rgba(107, 220, 255, 0.3);
+  border-radius: 50%;
+  color: var(--cyan);
+  background: rgba(107, 220, 255, 0.09);
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.difference-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.difference-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
 /* Intake */
 .resume-import,
 .profile-form { padding: clamp(1.3rem, 3vw, 2rem); }
@@ -1634,6 +1732,10 @@ html.motion-ready .match-card-enter { animation: card-arrive 440ms both cubic-be
   .trust-strip { grid-template-columns: 1fr; }
   .trust-item { min-height: 58px; padding: 0.8rem 1rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .trust-item:last-child { border-bottom: 0; }
+  .difference-panel { grid-template-columns: 1fr; }
+  .difference-copy h2 { max-width: 12ch; }
+  .difference-grid { grid-template-columns: 1fr; }
+  .difference-card { min-height: auto; }
   .opportunity-tabs { grid-template-columns: 1fr; }
   .opportunity-tab-list { width: 100%; border-radius: var(--radius); }
   .opportunity-tab { flex: 1 1 100%; justify-content: space-between; }
