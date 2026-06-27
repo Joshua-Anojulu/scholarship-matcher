@@ -1,6 +1,6 @@
 # Scholarships4U
 
-**Live demo:** [scholarship-matcher-fqr2.onrender.com](https://scholarship-matcher-fqr2.onrender.com/)
+**Live demo:** [scholarships4u.dev](https://scholarships4u.dev/)
 
 Scholarships4U is a **curated scholarship planner** for U.S. students — a portfolio-grade web app backed by a manually verified dataset of real national programs. Students build a profile once, see ranked matches with transparent scoring, track applications, and get practical essay guidance from a server-side LLM. Optional free accounts save the profile and bookmark scholarships between visits.
 
@@ -25,11 +25,12 @@ Scholarships4U is a **curated scholarship planner** for U.S. students — a port
 ## Tech stack
 
 - **Backend:** Python, FastAPI
-- **Frontend:** Vanilla HTML, CSS, and JavaScript (served by FastAPI)
+- **Frontend:** Vanilla HTML, CSS, and JavaScript (served by FastAPI), with a dark responsive interface and source-linked match cards
 - **Scholarship data:** Pydantic models, local JSON file loaded at startup
 - **Accounts and saved data:** SQLAlchemy ORM, SQLite locally and Postgres in production, bcrypt password hashing, signed session cookies
 - **Schema migrations:** Alembic, run automatically at startup and before the Render web service starts
 - **LLM:** Anthropic API (Claude Sonnet) for essay advice, server-side only
+- **Transactional email:** Resend for password-reset links
 
 ## Run locally
 
@@ -115,14 +116,18 @@ This repo includes a [`render.yaml`](render.yaml) for [Render](https://render.co
 3. In the Render dashboard, set these secrets under **Environment Variables**:
    - `ANTHROPIC_API_KEY` = your Anthropic API key
    - `RESEND_API_KEY` = a Resend API key for transactional email
-   - `EMAIL_FROM` = a sender address verified in Resend, such as `Scholarships4U <hello@yourdomain.com>`
-   - `PUBLIC_APP_URL` = the public HTTPS URL for the app, such as `https://scholarship-matcher-fqr2.onrender.com`
+   - `EMAIL_FROM` = a sender address verified in Resend, such as `Scholarships4U <no-reply@mail.scholarships4u.dev>`
+   - `PUBLIC_APP_URL` = the public HTTPS URL for the app, such as `https://scholarships4u.dev`
 
 Do not commit API keys. Set them only in the host's environment variable UI. The app reads `DATABASE_URL` and switches from SQLite to Postgres automatically, so saved accounts persist across deploys.
 
+### Custom domain
+
+The production deployment is intended to run at [`https://scholarships4u.dev`](https://scholarships4u.dev). Add the custom domain in Render, copy Render's DNS records into the domain registrar, and wait for Render to verify the records and issue HTTPS. After the domain resolves, set `PUBLIC_APP_URL=https://scholarships4u.dev` and redeploy so password-reset links, sitemap URLs, and social preview image URLs point at the public domain.
+
 ### Password-reset email
 
-Password reset uses Resend over its HTTPS API. The app stores only a SHA-256 hash of each one-time reset token, expires tokens after one hour, uses the same response for known and unknown email addresses, and invalidates other active sessions after a successful reset. Until the three email settings above are configured, the reset form safely reports that it is temporarily unavailable instead of pretending an email was sent.
+Password reset uses Resend over its HTTPS API. The app stores only a SHA-256 hash of each one-time reset token, expires tokens after one hour, uses the same response for known and unknown email addresses, and invalidates other active sessions after a successful reset. The production sender is expected to be a verified Resend domain such as `mail.scholarships4u.dev`; until `RESEND_API_KEY`, `EMAIL_FROM`, and `PUBLIC_APP_URL` are configured and redeployed, the reset form safely reports that it is temporarily unavailable instead of pretending an email was sent.
 
 The free Postgres plan and free web service are enough for a demo. On the free tier the database can expire after a period of inactivity, so treat saved data as non-critical.
 
@@ -136,7 +141,7 @@ uvicorn app.main:app --host 0.0.0.0 --port $PORT
 ```
 
 3. Add a Postgres database to the project. Railway exposes its connection string as `DATABASE_URL`.
-4. In the **Variables** tab, set `ANTHROPIC_API_KEY`, `SESSION_SECRET` (any long random string), and `SESSION_COOKIE_SECURE=true`.
+4. In the **Variables** tab, set `ANTHROPIC_API_KEY`, `SESSION_SECRET` (any long random string), `SESSION_COOKIE_SECURE=true`, and the same email variables described in the Render section if password reset should be enabled.
 
 ## API endpoints
 
@@ -187,6 +192,16 @@ python -m playwright install chromium
 python scripts/capture_readme_screenshots.py
 ```
 
+The screenshot script defaults to `https://scholarships4u.dev`. Set `SCHOLARSHIPS4U_URL` to target a staging or local deployment instead.
+
+To smoke-test the live deployment:
+
+```bash
+python scripts/smoke_test_live.py
+```
+
+The smoke test also defaults to `https://scholarships4u.dev`; override it with `SCHOLARSHIPS4U_URL` when needed.
+
 ### Dataset validation
 
 Audit the scholarship dataset for structural and vocabulary issues, and see how many fields still need verification:
@@ -234,7 +249,7 @@ As of the latest update, **122 programs** are in the dataset (including a small 
 ## Project structure
 
 ```
-scholarship-matcher/
+ScholarMatch/
 ├── render.yaml
 ├── requirements.txt
 ├── requirements-dev.txt
@@ -259,7 +274,7 @@ scholarship-matcher/
 - The scholarship dataset is a **curated set** (122 programs, including a small school-specific pilot), not a comprehensive directory.
 - Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship data and verification](#scholarship-data-and-verification) for how entries are confirmed over time.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
-- Password reset is available once the Resend sender, key, and public app URL are configured. Email verification is still not implemented, so this is suited to a demo rather than production use.
+- Password reset depends on the Resend sender, API key, and `PUBLIC_APP_URL` environment variables being configured on the host. Email verification is still not implemented, so this is suited to a demo rather than production use.
 - The age and terms notice is a browser-stored acknowledgment, not age verification or parental consent. This is not a production-ready service for children under 13.
 - Sensitive endpoints (login, signup, password change, and the AI features) are rate limited per client IP. The limiter is in-memory, which suits a single-instance deploy; multi-instance hosting would need a shared store such as Redis.
 - On the free Postgres tier, saved data should be treated as non-critical because the database can expire after inactivity.
@@ -275,4 +290,4 @@ MIT — see [LICENSE](LICENSE).
 - Expand the school-specific scholarship pilot with verified institution records
 - Live data integration with sponsor feeds or APIs
 - Account improvement: email verification
-- Custom domain and production email sender
+- Production monitoring for uptime, email deliverability, and stale scholarship audits

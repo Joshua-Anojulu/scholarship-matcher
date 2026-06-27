@@ -3014,7 +3014,7 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "any"
+        "citizenship_requirement": "VERIFY"
       },
       "description": "For youth volunteers age 21 or younger who have completed at least 100 lifetime volunteer hours serving veterans through DAV or the DAV Auxiliary; usable at any accredited institution of higher learning.",
       "verified": true,
@@ -3098,7 +3098,7 @@
         "demographics": [],
         "states": "any",
         "essay_required": true,
-        "citizenship_requirement": "VERIFY"
+        "citizenship_requirement": "any"
       },
       "description": "Administered by OCA - Asian Pacific American Advocates for first-generation college students (whose parents did not complete a college degree); applicants need not be U.S. citizens, but DACA/undocumented students must have an SSN or ITIN.",
       "verified": true,

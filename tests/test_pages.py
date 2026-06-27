@@ -55,6 +55,16 @@ class TestProductionHygiene:
         assert 'property="og:image" content="http://testserver/static/og-image-dark.svg"' in response.text
         assert 'name="twitter:image" content="http://testserver/static/og-image-dark.svg"' in response.text
 
+    def test_public_pages_include_production_canonical_urls(self, client):
+        index = client.get("/")
+        privacy = client.get("/privacy")
+        terms = client.get("/terms")
+
+        assert 'property="og:url" content="https://scholarships4u.dev/"' in index.text
+        assert 'rel="canonical" href="https://scholarships4u.dev/"' in index.text
+        assert 'rel="canonical" href="https://scholarships4u.dev/privacy"' in privacy.text
+        assert 'rel="canonical" href="https://scholarships4u.dev/terms"' in terms.text
+
     def test_openapi_available_in_development(self, client):
         response = client.get("/openapi.json")
         assert response.status_code == 200

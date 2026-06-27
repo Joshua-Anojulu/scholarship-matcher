@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 import uuid
 
 import httpx
 
-BASE = "https://scholarship-matcher-fqr2.onrender.com"
+BASE = os.getenv("SCHOLARSHIPS4U_URL", "https://scholarships4u.dev").rstrip("/")
 TIMEOUT = 120.0
 
 
@@ -92,7 +93,8 @@ def main() -> int:
         check("GET /account/saved", False, "skipped")
         check("GET /account/saved/calendar.ics", False, "skipped")
 
-    # Password reset (expect 503 until Resend configured, or 200 if configured)
+    # Password reset (200 when Resend is configured; 503 is acceptable for a
+    # deployment that intentionally has transactional email disabled).
     r = client.post("/auth/password-reset/request", json={"email": email})
     if r.status_code == 503:
         check(

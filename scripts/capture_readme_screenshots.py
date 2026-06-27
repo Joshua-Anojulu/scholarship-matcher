@@ -6,7 +6,7 @@ Usage:
     python scripts/capture_readme_screenshots.py
 
 Optional:
-    SCHOLARSHIPS4U_URL=https://your-host.onrender.com python scripts/capture_readme_screenshots.py
+    SCHOLARSHIPS4U_URL=https://staging.example.com python scripts/capture_readme_screenshots.py
 """
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 BASE_URL = os.getenv(
-    "SCHOLARSHIPS4U_URL", "https://scholarship-matcher-fqr2.onrender.com"
+    "SCHOLARSHIPS4U_URL", "https://scholarships4u.dev"
 ).rstrip("/")
 OUT_DIR = Path(__file__).resolve().parent.parent / "docs" / "screenshots"
 
@@ -42,8 +42,22 @@ def main() -> None:
         page.locator('#fields-of-study input[value="engineering"]').check()
         page.locator("#submit-btn").click()
 
-        page.locator("#results-section").wait_for(state="visible", timeout=60_000)
-        page.locator("#results-section").screenshot(path=OUT_DIR / "match-results.png")
+        results = page.locator("#results-section")
+        results.wait_for(state="visible", timeout=60_000)
+        page.wait_for_timeout(1_000)
+        page.add_style_tag(
+            content=(
+                ".site-header { position: static !important; } "
+                "#results-section { "
+                "max-height: 900px !important; "
+                "overflow: hidden !important; "
+                "padding-left: 24px !important; "
+                "padding-right: 24px !important; "
+                "box-sizing: border-box !important; "
+                "}"
+            )
+        )
+        results.screenshot(path=OUT_DIR / "match-results.png")
 
         page.locator(".match-card").first.screenshot(path=OUT_DIR / "match-card.png")
         browser.close()
