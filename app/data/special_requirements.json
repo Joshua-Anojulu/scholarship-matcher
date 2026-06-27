@@ -378,6 +378,115 @@
         "label": "Participating institution required",
         "details": "Only students from participating institutions can use the U.S. nomination process."
       }
+    ],
+    "nesa-eagle-scout-scholarship": [
+      {
+        "kind": "membership",
+        "label": "NESA membership required",
+        "details": "Applicants must be members of the National Eagle Scout Association (NESA) to apply for NESA scholarships."
+      },
+      {
+        "kind": "family_or_affiliation",
+        "label": "Eagle Scout rank required",
+        "details": "Applicants must have achieved the Eagle Scout rank; Eagle Board of Review must be completed by the program's published cutoff date."
+      }
+    ],
+    "phi-kappa-phi-fellowship": [
+      {
+        "kind": "membership",
+        "label": "Phi Kappa Phi membership required",
+        "details": "Applicants must be active (dues-paid) Phi Kappa Phi members, or accepted for initiation by the published deadline."
+      },
+      {
+        "kind": "nomination",
+        "label": "Local chapter nomination required",
+        "details": "Each chapter selects one nominee; applications must be submitted to the local chapter by its deadline before national review."
+      }
+    ],
+    "samsung-american-legion-scholarship": [
+      {
+        "kind": "competition_or_finalist",
+        "label": "Current Boys State or ALA Girls State attendee",
+        "details": "Applications are restricted to high school juniors attending the current session of American Legion Boys State or ALA Girls State."
+      },
+      {
+        "kind": "military_affiliation",
+        "label": "Wartime veteran descendant required",
+        "details": "Applicant must be a direct descendant or legally adopted child of a wartime veteran who served on active duty during a Legion-eligible period."
+      }
+    ],
+    "american-legion-eagle-scout-of-the-year": [
+      {
+        "kind": "family_or_affiliation",
+        "label": "Eagle Scout rank required",
+        "details": "Nominees must be Eagle Scouts submitting a nomination packet to their state American Legion department."
+      },
+      {
+        "kind": "nomination",
+        "label": "Department nomination path",
+        "details": "Packets go to the applicant's American Legion department by March 1; departments certify one nominee to national headquarters by April 1."
+      }
+    ],
+    "peo-star-scholarship": [
+      {
+        "kind": "nomination",
+        "label": "P.E.O. chapter recommendation required",
+        "details": "Students cannot self-apply; a local P.E.O. chapter must recommend the student before the Executive Office sends the online application link."
+      },
+      {
+        "kind": "family_or_affiliation",
+        "label": "Women applicants only",
+        "details": "The P.E.O. STAR Scholarship is for graduating women in their final year of high school, per official P.E.O. eligibility requirements."
+      }
+    ],
+    "naacp-inspire-initiatives-scholarships": [
+      {
+        "kind": "membership",
+        "label": "NAACP membership required",
+        "details": "Applicants must be NAACP members for Inspire Initiatives scholarships listed on the official NAACP scholarships portal."
+      }
+    ],
+    "agnes-jones-jackson-scholarship": [
+      {
+        "kind": "membership",
+        "label": "NAACP membership required",
+        "details": "Applicants must be NAACP members and apply through the Inspire Initiatives scholarship portal."
+      }
+    ],
+    "american-legion-legacy-scholarship": [
+      {
+        "kind": "military_affiliation",
+        "label": "Post-9/11 fallen or disabled-veteran parent required",
+        "details": "Eligible if a legal parent died on active duty on or after 9/11, or is a post-9/11 veteran with a VA disability rating of 50% or higher."
+      }
+    ],
+    "elks-emergency-educational-grant": [
+      {
+        "kind": "family_or_affiliation",
+        "label": "Elks parent affiliation required",
+        "details": "Applicant must be the child of a deceased or totally disabled Elk who met membership requirements described on the official ENF page."
+      }
+    ],
+    "ala-children-of-warriors-scholarship": [
+      {
+        "kind": "military_affiliation",
+        "label": "Armed Forces veteran descendant required",
+        "details": "Candidates must be direct descendants of veterans who served during American Legion membership eligibility dates and were honorably discharged."
+      }
+    ],
+    "ala-non-traditional-student-scholarship": [
+      {
+        "kind": "membership",
+        "label": "Legion Family membership or veteran/spouse path",
+        "details": "Applicants must meet one of the ALA paths: two-year Legion Family membership, honorable veteran status, or spouse of active-duty/veteran servicemember."
+      }
+    ],
+    "nih-undergraduate-scholarship-program": [
+      {
+        "kind": "no_direct_application",
+        "label": "Service payback commitment",
+        "details": "Scholars must fulfill NIH service payback requirements after graduation as described in the official UGSP terms and conditions."
+      }
     ]
   }
 }

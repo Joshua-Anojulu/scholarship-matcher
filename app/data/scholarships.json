@@ -4237,6 +4237,822 @@
         "last_verified_at": "2026-06-21",
         "notes": "CMU SFS FAQ confirms no general merit scholarships; costs-aid page confirms Pathway thresholds and full-need commitment."
       }
+    },
+    {
+      "id": "noaa-hollings-undergraduate-scholarship",
+      "name": "NOAA Ernest F. Hollings Undergraduate Scholarship",
+      "sponsor": "National Oceanic and Atmospheric Administration (NOAA)",
+      "award_amount": "up to $9,500 per academic year for two years plus paid NOAA summer internship",
+      "deadline": "2027-01-31",
+      "url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "natural_sciences",
+          "social_sciences",
+          "education"
+        ],
+        "grade_levels": [
+          "college_sophomore"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Two-year undergraduate scholarship for sophomores at accredited U.S. colleges and universities, with a paid NOAA internship between the first and second award years. Supports students pursuing NOAA-mission fields including oceanic, atmospheric, and environmental sciences.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Complete the Hollings online application",
+          "details": "Apply through the Hollings Scholarship website during the annual September–January window.",
+          "required": true,
+          "source_url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective/faq"
+        },
+        {
+          "id": "essay-questions",
+          "label": "Answer Hollings essay questions",
+          "details": "Essay responses are required components of the online application.",
+          "required": true,
+          "source_url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective/faq"
+        },
+        {
+          "id": "official-transcripts",
+          "label": "Upload official college transcript(s)",
+          "details": "One official transcript for each institution attended must be uploaded into the online application.",
+          "required": true,
+          "source_url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective/faq"
+        },
+        {
+          "id": "two-references",
+          "label": "Submit two academic references",
+          "details": "Two references must be received by the published deadline; incomplete applications are ineligible.",
+          "required": true,
+          "source_url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective/faq"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective/faq",
+        "last_verified_at": "2026-06-21",
+        "notes": "NOAA FAQ and news: up to $9,500/year for two years plus paid internship; sophomore status; 3.0 GPA; class of 2027 opens Sept 1, 2026 and closes Jan 31, 2027."
+      }
+    },
+    {
+      "id": "boren-scholarship",
+      "name": "Boren Scholarship",
+      "sponsor": "Defense Language and National Security Education Office (via Boren Awards)",
+      "award_amount": "up to $25,000 (duration-based; maximum for 25–52 weeks abroad)",
+      "deadline": "2027-01-27",
+      "url": "https://www.borenawards.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "social_sciences",
+          "humanities"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Funds study abroad in world regions critical to U.S. interests for matriculated U.S. undergraduate students who propose language study outside Western Europe, Canada, Australia, or New Zealand. Recipients commit to federal national-security service after graduation.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "create-application",
+          "label": "Start a Boren Scholarship application online",
+          "details": "Begin at the Boren Awards Apply Now page and complete eligibility determination before other sections unlock.",
+          "required": true,
+          "source_url": "https://www.borenawards.org/application-instructions-boren-scholarships"
+        },
+        {
+          "id": "campus-representative",
+          "label": "Contact your Boren campus representative early",
+          "details": "Campus representatives may set earlier on-campus deadlines for feedback before the national deadline.",
+          "required": false,
+          "source_url": "https://www.borenawards.org/application-instructions-boren-scholarships"
+        },
+        {
+          "id": "study-program-plan",
+          "label": "Identify or design an eligible overseas study program",
+          "details": "Proposed study must be in an eligible destination and language outside Western Europe, Canada, Australia, and New Zealand.",
+          "required": true,
+          "source_url": "https://www.borenawards.org/eligible-programs"
+        },
+        {
+          "id": "essays-and-recommendations",
+          "label": "Complete essays and required application sections",
+          "details": "Boren guidance recommends drafting essays early and sharing them with recommenders before the national deadline.",
+          "required": true,
+          "source_url": "https://www.borenawards.org/"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.borenawards.org/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official homepage: 2027 Boren Scholarship national deadline Jan 27, 2027; max awards by duration; U.S. citizens only; matriculated undergraduates."
+      }
+    },
+    {
+      "id": "nesa-eagle-scout-scholarship",
+      "name": "National Eagle Scout Association (NESA) Scholarships",
+      "sponsor": "National Eagle Scout Association",
+      "award_amount": "varies by award ($6,000–$50,000; multiple CST and national awards)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-31",
+      "url": "https://nesa.org/scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Merit scholarships for Eagle Scouts who are NESA members and full-time students in degree or skilled-trade programs. Awards recognize Scouting participation, school and community service, and character; one-time awards with multiple national and council-service-territory tiers.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "nesa-membership",
+          "label": "Confirm NESA membership",
+          "details": "You must be a NESA member to apply; membership is verified through the application system.",
+          "required": true,
+          "source_url": "https://nesa.org/scholarships/"
+        },
+        {
+          "id": "online-application",
+          "label": "Complete the NESA scholarship application in the portal",
+          "details": "Create or use your scholarship database login; applications are submitted online when the portal is open.",
+          "required": true,
+          "source_url": "https://nesa.org/scholarships/account-instructions/"
+        },
+        {
+          "id": "eagle-board-review",
+          "label": "Confirm Eagle Board of Review date meets cutoff",
+          "details": "For the 2025–2026 cycle, Eagle Board of Review must be on or before January 24, 2026; check the official page for the next cycle cutoff.",
+          "required": true,
+          "source_url": "https://nesa.org/scholarships/"
+        }
+      ],
+      "verification": {
+        "source_url": "https://nesa.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NESA page: NESA membership required; Eagle Scout; senior year through college junior; portal Dec 1–Jan 31 for 2025–26 cycle; next cycle opens Dec 1, 2026 per page footer."
+      }
+    },
+    {
+      "id": "scholarship-america-dream-award",
+      "name": "Scholarship America Dream Award",
+      "sponsor": "Scholarship America",
+      "award_amount": "up to $10,000 per year (renewable up to three additional years)",
+      "deadline": "VERIFY",
+      "url": "https://scholarshipamerica.org/scholarship/dreamaward/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_permanent_resident_or_daca"
+      },
+      "description": "Renewable scholarship for current college undergraduates who have completed at least one year of full-time study and are pursuing a first associate's or bachelor's degree. High school seniors are not eligible. Financial need is emphasized in selection.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Apply through Scholarship America when the Dream Award opens",
+          "details": "Use the official Dream Award page; sign up for Remind Me notifications when the program is closed.",
+          "required": true,
+          "source_url": "https://scholarshipamerica.org/scholarship/dreamaward/"
+        },
+        {
+          "id": "semifinalist-materials",
+          "label": "Submit semifinalist documents if invited",
+          "details": "Semifinalists must provide an official transcript and financial documentation such as FAFSA Submission Summary.",
+          "required": false,
+          "source_url": "https://scholarshipamerica.org/scholarship/dreamaward/"
+        }
+      ],
+      "verification": {
+        "source_url": "https://scholarshipamerica.org/scholarship/dreamaward/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official page: 3.0 GPA; U.S. citizen, PR, or DACA; current undergrads only (not HS seniors); up to $10,000 renewable; applications closed for current cycle; reopening fall 2026 per Scholarship America student page."
+      }
+    },
+    {
+      "id": "sallie-mae-bridging-the-dream-high-school",
+      "name": "Sallie Mae Bridging the Dream Scholarship for High School Seniors",
+      "sponsor": "The Sallie Mae Fund (administered by Thurgood Marshall Scholarship Fund)",
+      "award_amount": "up to $10,000",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-04-24",
+      "url": "https://www.salliemae.com/content/dam/slm/writtencontent/Research/2026-2027_BTD_HS_Contest_Official_Rules.pdf",
+      "eligibility": {
+        "min_gpa": 2.75,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Needs-based scholarship contest for Pell-eligible high school seniors planning full-time undergraduate study within one year of graduation. Up to thirty awards of up to $10,000 each.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "tmcf-portal-entry",
+          "label": "Submit entry through the TMCF open scholarships portal",
+          "details": "Apply at tmcf.org/students-alumni/scholarships/open-scholarships/ during the published contest period.",
+          "required": true,
+          "source_url": "https://www.salliemae.com/content/dam/slm/writtencontent/Research/2026-2027_BTD_HS_Contest_Official_Rules.pdf"
+        },
+        {
+          "id": "transcript",
+          "label": "Upload transcript for most recently completed term",
+          "details": "Official or unofficial transcript must include end-of-term grades and cumulative GPA.",
+          "required": true,
+          "source_url": "https://www.salliemae.com/content/dam/slm/writtencontent/Research/2026-2027_BTD_HS_Contest_Official_Rules.pdf"
+        },
+        {
+          "id": "fafsa-sar",
+          "label": "Upload FAFSA Student Aid Report",
+          "details": "2026–2027 official rules require a copy of the AY 26–27 FAFSA Student Aid Report.",
+          "required": true,
+          "source_url": "https://www.salliemae.com/content/dam/slm/writtencontent/Research/2026-2027_BTD_HS_Contest_Official_Rules.pdf"
+        },
+        {
+          "id": "video-response",
+          "label": "Submit required video response",
+          "details": "Video must address the community-values prompt in the official rules.",
+          "required": true,
+          "source_url": "https://www.salliemae.com/content/dam/slm/writtencontent/Research/2026-2027_BTD_HS_Contest_Official_Rules.pdf"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.salliemae.com/content/dam/slm/writtencontent/Research/2026-2027_BTD_HS_Contest_Official_Rules.pdf",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official 2026–2027 PDF: March 16–April 24, 2026 contest period; Pell-eligible; 2.75 GPA; up to 30 awards of up to $10,000; next-cycle dates not yet published."
+      }
+    },
+    {
+      "id": "sallie-mae-bridging-the-dream-graduate",
+      "name": "Sallie Mae Bridging the Dream Scholarship for Graduate Students",
+      "sponsor": "The Sallie Mae Fund (administered by Thurgood Marshall College Fund)",
+      "award_amount": "VERIFY",
+      "deadline": "2026-07-17",
+      "url": "https://www.salliemae.com/landing/bridging-the-dream-for-graduates/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Graduate-student scholarship contest administered with Thurgood Marshall College Fund for legal residents enrolled in accredited U.S. graduate programs. Official landing page publishes the active application window for the current award year.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "tmcf-portal-entry",
+          "label": "Apply through the TMCF open scholarships portal",
+          "details": "Follow the apply link from the official Sallie Mae Bridging the Dream for Graduate Students landing page.",
+          "required": true,
+          "source_url": "https://www.salliemae.com/landing/bridging-the-dream-for-graduates/"
+        },
+        {
+          "id": "video-response",
+          "label": "Submit required video entry",
+          "details": "See the official rules PDF linked from the landing page for the current video prompt and entry requirements.",
+          "required": true,
+          "source_url": "https://www.salliemae.com/content/dam/slm/writtencontent/Corporate/2025-2026_BTD_Grad_Contest_Official_Rules.pdf"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.salliemae.com/landing/bridging-the-dream-for-graduates/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official landing page: AY 2026–2027 applications open June 1 through July 17, 2026; 3.0 GPA and graduate enrollment per official rules PDF."
+      }
+    },
+    {
+      "id": "phi-kappa-phi-fellowship",
+      "name": "Phi Kappa Phi Fellowship",
+      "sponsor": "The Honor Society of Phi Kappa Phi",
+      "award_amount": "up to $35,000 (52 awards; amounts vary by tier)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-04-15",
+      "url": "https://www.phikappaphi.org/grants-awards/fellowship",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "National graduate-study fellowships for active Phi Kappa Phi members entering their first year of full-time graduate or professional study. Each chapter nominates one candidate for the society-wide competition.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-application-pdf",
+          "label": "Complete the online fellowship application and save the PDF",
+          "details": "Apply through the Phi Kappa Phi awards portal; save the completed PDF for chapter submission.",
+          "required": true,
+          "source_url": "https://apply.phikappaphi.org/Awards/"
+        },
+        {
+          "id": "chapter-submission",
+          "label": "Submit to your local chapter by its deadline",
+          "details": "Submit application PDF, official transcripts, 2,500-word work sample, and two recommendation letters to your chapter.",
+          "required": true,
+          "source_url": "https://www.phikappaphi.org/grants-awards/fellowship/fellowship-resources"
+        },
+        {
+          "id": "membership-status",
+          "label": "Confirm active Phi Kappa Phi membership",
+          "details": "Must be active (dues paid) through April 15 of the award year or accepted for initiation by June 30.",
+          "required": true,
+          "source_url": "https://www.phikappaphi.org/grants-awards/fellowship"
+        }
+      ],
+      "verification": {
+        "source_url": "https://apply.phikappaphi.org/Awards/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official portal: 50×$8,500, 6×$20,000, 2×$35,000; Dec 15–Apr 15 national window for 2025–26 cycle; chapter nomination required; international students eligible."
+      }
+    },
+    {
+      "id": "samsung-american-legion-scholarship",
+      "name": "Samsung American Legion Scholarship",
+      "sponsor": "Samsung (endowment administered by The American Legion)",
+      "award_amount": "up to $10,000 (national scholars); $5,000 runners-up; $1,250 department finalists",
+      "deadline": "VERIFY",
+      "url": "https://www.legion.org/get-involved/scholarships/samsung-american-legion-scholarship/samsung-american-legion-scholarship-frequently-asked-questions",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships for high school juniors who attend the current American Legion Boys State or ALA Girls State session and are direct descendants of eligible wartime veterans. Awards are tiered at national and department-finalist levels.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Complete the Samsung American Legion online application",
+          "details": "Create a user account on the application page and submit during the Boys State/Girls State session window.",
+          "required": true,
+          "source_url": "https://www.legion.org/get-involved/scholarships/samsung-american-legion-scholarship/samsung-american-legion-scholarship-frequently-asked-questions"
+        },
+        {
+          "id": "boys-or-girls-state-attendance",
+          "label": "Attend current Boys State or ALA Girls State",
+          "details": "Applicants must participate in the current session of Legion Boys State or ALA Girls State.",
+          "required": true,
+          "source_url": "http://www.alaforveterans.org/Scholarships/FAQ"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.legion.org/get-involved/scholarships/samsung-american-legion-scholarship/samsung-american-legion-scholarship-frequently-asked-questions",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Legion FAQ: $10k national scholars, $5k runners-up, $1,250 department finalists; due no later than first day of Boys/Girls State per ALA FAQ."
+      }
+    },
+    {
+      "id": "american-legion-eagle-scout-of-the-year",
+      "name": "American Legion Eagle Scout of the Year Scholarship",
+      "sponsor": "The American Legion",
+      "award_amount": 10000,
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-01",
+      "url": "https://www.legion.org/get-involved/scholarships/american-legion-eagle-scout-of-the-year-scholarship",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National scholarship for Eagle Scouts nominated through their American Legion department. One national winner receives $10,000; three runners-up receive $2,500 each. Nomination window runs November 1 through March 1 annually.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "nomination-packet",
+          "label": "Submit Eagle Scout of the Year nomination packet to your department",
+          "details": "Packets must be received by the applicant's American Legion department no later than March 1.",
+          "required": true,
+          "source_url": "https://www.legion.org/get-involved/scholarships/american-legion-eagle-scout-of-the-year-scholarship"
+        },
+        {
+          "id": "nomination-form",
+          "label": "Use the official nomination form",
+          "details": "Download the Eagle Scout of the Year Nomination Form from the official scholarship page during the nomination window.",
+          "required": true,
+          "source_url": "https://www.legion.org/getmedia/e660e1bc-6726-42a9-964e-83776b727473/16ACY1021-Eagle-Scout-Nomination-Form.pdf"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.legion.org/get-involved/scholarships/american-legion-eagle-scout-of-the-year-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official page: $10,000 winner and three $2,500 runners-up; department deadline March 1; national certification by April 1; 2026 cycle deadline was March 1, 2026."
+      }
+    },
+    {
+      "id": "ala-children-of-warriors-scholarship",
+      "name": "ALA Children of Warriors National Presidents' Scholarship",
+      "sponsor": "American Legion Auxiliary",
+      "award_amount": 5000,
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-01",
+      "url": "http://www.alaforveterans.org/Scholarships/FAQ",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Fifteen $5,000 scholarships for high school seniors who are direct descendants of veterans who served during American Legion membership eligibility dates and were honorably discharged. Legion Family membership is not required.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Submit the online application at ALAforVeterans.org",
+          "details": "Application is at www.ALAforVeterans.org/Scholarships/Children-of-Warriors; submitted online to National Headquarters.",
+          "required": true,
+          "source_url": "http://www.alaforveterans.org/Scholarships/FAQ"
+        },
+        {
+          "id": "community-service-documentation",
+          "label": "Document community service hours if applicable",
+          "details": "Volunteer hours for ALA/Legion Family or other organizations may require signed documentation per FAQ.",
+          "required": false,
+          "source_url": "http://www.alaforveterans.org/Scholarships/FAQ"
+        }
+      ],
+      "verification": {
+        "source_url": "http://www.alaforveterans.org/Scholarships/FAQ",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ALA FAQ: 15×$5,000; senior only; veteran descendant; deadline March 1 at 11:59 p.m. Eastern annually."
+      }
+    },
+    {
+      "id": "peo-star-scholarship",
+      "name": "P.E.O. STAR Scholarship",
+      "sponsor": "P.E.O. Sisterhood",
+      "award_amount": 2500,
+      "deadline": "VERIFY",
+      "url": "https://www.peointernational.org/educational-support/star-scholarship/eligibility-and-application-process/",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Non-renewable $2,500 scholarship for graduating women recommended by a local P.E.O. chapter. Open to U.S. or Canadian citizens or permanent residents planning accredited postsecondary study.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "chapter-recommendation",
+          "label": "Secure a local P.E.O. chapter recommendation",
+          "details": "Students must be recommended by a local chapter; chapters submit recommendations online August 15–October 15.",
+          "required": true,
+          "source_url": "https://www.peointernational.org/educational-support/star-scholarship/eligibility-and-application-process/"
+        },
+        {
+          "id": "online-student-application",
+          "label": "Complete the online STAR application within 30 days",
+          "details": "After chapter recommendation, the Executive Office emails a link; submit profile, 700-word essay, two recommendations, and transcript within 30 days.",
+          "required": true,
+          "source_url": "https://www.peointernational.org/resource/star-student-application-instructions/"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.peointernational.org/educational-support/star-scholarship/eligibility-and-application-process/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official P.E.O. page: $2,500 non-renewable; 3.0 GPA; women; chapter recommendation required; chapter window Aug 15–Oct 15."
+      }
+    },
+    {
+      "id": "naacp-inspire-initiatives-scholarships",
+      "name": "NAACP Inspire Initiatives Scholarships",
+      "sponsor": "NAACP",
+      "award_amount": "varies by scholarship ($1,000–$10,000+)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-05-22",
+      "url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Portfolio of need-based and merit scholarships administered through the NAACP Inspire Initiatives portal for members enrolled or accepted at accredited U.S. colleges. Individual awards have additional field, demographic, or activity requirements.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "naacp-membership",
+          "label": "Join or confirm NAACP membership",
+          "details": "Applicants must be NAACP members for Inspire Initiatives scholarships.",
+          "required": true,
+          "source_url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships"
+        },
+        {
+          "id": "inspire-portal-application",
+          "label": "Apply through the Inspire Initiatives scholarship portal",
+          "details": "Gather transcript, FAFSA Submission Summary, resume, headshot, and activity list; apply when the portal is open.",
+          "required": true,
+          "source_url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships"
+        }
+      ],
+      "verification": {
+        "source_url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NAACP scholarships page: 3.0 GPA; membership required; 2026 portal April 13–May 22; next-cycle dates not yet published."
+      }
+    },
+    {
+      "id": "agnes-jones-jackson-scholarship",
+      "name": "Agnes Jones Jackson Scholarship",
+      "sponsor": "NAACP",
+      "award_amount": 2000,
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-05-22",
+      "url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships/agnes-jones-jackson-scholarship",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Non-renewable $2,000 NAACP Inspire Initiatives scholarship for members under age 25 who demonstrate financial need and are enrolled or accepted at accredited U.S. institutions.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "inspire-portal-application",
+          "label": "Apply through the NAACP Inspire Initiatives portal",
+          "details": "Apply when the portal is open; under-25 and financial-need requirements apply.",
+          "required": true,
+          "source_url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships/agnes-jones-jackson-scholarship"
+        }
+      ],
+      "verification": {
+        "source_url": "https://naacp.org/find-resources/scholarships-awards-internships/scholarships/agnes-jones-jackson-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NAACP page: $2,000; NAACP membership; 3.0 GPA; under 25; financial need; 2026 cycle April 13–May 22."
+      }
+    },
+    {
+      "id": "nih-undergraduate-scholarship-program",
+      "name": "NIH Undergraduate Scholarship Program (UGSP)",
+      "sponsor": "National Institutes of Health",
+      "award_amount": "tuition and educational expenses plus paid NIH research training (see official UGSP terms)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-31",
+      "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+      "eligibility": {
+        "min_gpa": 3.3,
+        "fields_of_study": [
+          "science",
+          "health_medicine",
+          "social_sciences",
+          "research"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Scholarship and research-training program for disadvantaged-background undergraduates committed to biomedical, behavioral, or social science research careers. Includes paid summer research at NIH and a post-graduation service commitment.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "nih-application-center-profile",
+          "label": "Create NIH Application Center profile",
+          "details": "Complete profile and start the Undergraduate Scholarship Program application in the NIH Application Center.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/ugsp/"
+        },
+        {
+          "id": "eligibility-screener",
+          "label": "Pass the UGSP eligibility screener",
+          "details": "Confirm you meet citizenship, enrollment, GPA, and exceptional-financial-need requirements before submitting.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/ugsp/"
+        },
+        {
+          "id": "personal-statement-and-coursework",
+          "label": "Submit personal statement and coursework list",
+          "details": "Application requires coursework history and a personal statement describing research interests and goals.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/ugsp/"
+        },
+        {
+          "id": "financial-need-certification",
+          "label": "Arrange Exceptional Financial Need certification",
+          "details": "Financial aid office must complete EFN certification by the published deadline.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/ugsp/"
+        },
+        {
+          "id": "three-references",
+          "label": "Submit three references",
+          "details": "References must be received by the published reference deadline.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/ugsp/"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official UGSP page: 3.3 GPA or top 5%; U.S. citizen or PR; full-time undergrad; exceptional financial need; 2026 cycle closed March 31, 2026; service payback required."
+      }
+    },
+    {
+      "id": "american-legion-legacy-scholarship",
+      "name": "The American Legion Legacy Scholarship",
+      "sponsor": "The American Legion",
+      "award_amount": "up to $20,000 (children of the fallen) or up to $5,000 (children of disabled veterans)",
+      "deadline": "VERIFY",
+      "url": "https://register.legion.org/legacy-scholarship-application",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Needs-based scholarship for children of post-9/11 servicemembers who died on active duty or post-9/11 veterans with a VA disability rating of 50% or higher. Covers qualified educational expenses after other aid; recipients may reapply up to six times.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-legacy-portal",
+          "label": "Complete the online Legacy Scholarship application",
+          "details": "Apply through register.legion.org/legacy-scholarship-application; create a Legion.org account to save progress.",
+          "required": true,
+          "source_url": "https://register.legion.org/legacy-scholarship-application"
+        },
+        {
+          "id": "military-documentation",
+          "label": "Upload required military and disability documentation",
+          "details": "Requires DD1300, DD214/NGB Form 22, or official VA disability rating paperwork as applicable.",
+          "required": true,
+          "source_url": "https://www.legion.org/get-involved/scholarships/the-american-legion-legacy-scholarship/legacy-scholarship-faq"
+        },
+        {
+          "id": "financial-information",
+          "label": "Submit financial information for need-based review",
+          "details": "Legacy Scholarship is needs-based; portal determines eligibility after financial data entry.",
+          "required": true,
+          "source_url": "https://www.legion.org/get-involved/scholarships/the-american-legion-legacy-scholarship/legacy-scholarship-faq"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.legion.org/information-center/news/scholarships/2025/january/application-open-for-2025-american-legion-legacy-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Legion news and application page: post-9/11 fallen or 50%+ disabled veteran parent; up to $20k/$5k; opens annually in January; 2026 application open; closing date not published on FAQ."
+      }
+    },
+    {
+      "id": "elks-emergency-educational-grant",
+      "name": "Elks Emergency Educational Grant",
+      "sponsor": "Elks National Foundation",
+      "award_amount": "up to $5,000 per year (renewable up to four years)",
+      "deadline": "2026-12-31",
+      "url": "https://www.elks.org/scholars/scholarships/eefgrants.cfm",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Renewable one-year grants up to $5,000 for unmarried undergraduate students under 24 whose Elk parent died or is totally disabled. Demonstrated financial need required; applications available by request starting May 1.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "request-application",
+          "label": "Request an EEG application from ENF",
+          "details": "Email scholarship@elks.org or call 773-755-4732 starting May 1, 2026 to request the application.",
+          "required": true,
+          "source_url": "https://www.elks.org/scholars/scholarships/eefgrants.cfm"
+        },
+        {
+          "id": "submit-by-december-31",
+          "label": "Return completed application to ENF by December 31",
+          "details": "All applications must be received by the ENF Scholarship Office by December 31, 2026.",
+          "required": true,
+          "source_url": "https://www.elks.org/scholars/scholarships/eefgrants.cfm"
+        }
+      ],
+      "verification": {
+        "source_url": "https://www.elks.org/scholars/scholarships/eefgrants.cfm",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ENF page: up to $5,000; child of deceased/totally disabled Elk; full-time undergrad under 24; applications available May 1; due Dec 31, 2026."
+      }
+    },
+    {
+      "id": "ala-non-traditional-student-scholarship",
+      "name": "ALA Non-Traditional Student Scholarship",
+      "sponsor": "American Legion Auxiliary",
+      "award_amount": 2000,
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-01",
+      "url": "http://www.alaforveterans.org/Scholarships/FAQ",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Five $2,000 scholarships (one per division) for returning students who are Legion Family members in good standing, honorably discharged veterans, or spouses of active-duty servicemembers or veterans. Part-time and graduate study eligible.",
+      "verified": true,
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Submit the online application at ALAforVeterans.org",
+          "details": "Application at https://www.ALAforVeterans.org/Scholarships/Non-Traditional-Student-Scholarship submitted to National Headquarters.",
+          "required": true,
+          "source_url": "http://www.alaforveterans.org/Scholarships/FAQ"
+        }
+      ],
+      "verification": {
+        "source_url": "http://www.alaforveterans.org/Scholarships/FAQ",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ALA FAQ: $2,000×5; Legion Family/veteran/spouse paths; deadline March 1 at 11:59 p.m. Eastern annually."
+      }
     }
   ]
 }
