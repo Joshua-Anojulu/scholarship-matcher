@@ -56,6 +56,13 @@ def test_grade_level_gates_out_a_non_junior():
     assert "summer-science-program" in ids  # SSP is rising seniors
 
 
+def test_broad_legacy_high_school_profile_does_not_match_junior_only_program():
+    programs = load_summer_programs()
+    broad = _profile(grade_level="high_school")
+    ids = {r.program_id for r in match_programs(broad, programs, today=REF_DATE)}
+    assert "mites-summer" not in ids
+
+
 def test_citizenship_gates_out_international_for_us_only_program():
     programs = load_summer_programs()
     intl = _profile(

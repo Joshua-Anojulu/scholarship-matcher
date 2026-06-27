@@ -93,7 +93,7 @@ const CRITERIA_HELP = {
   gpa:
     "Used as an eligibility gate when a scholarship publishes a minimum GPA. It does not boost ranking by itself.",
   "grade-level":
-    "Used as an eligibility gate. Awards for other school levels are hidden when the requirement is known.",
+    "Used as an eligibility gate. Pick your actual class year; broad sponsor rules like 'high school students' or 'undergraduates' are handled automatically.",
   citizenship:
     "Used as an eligibility gate when the sponsor publishes a citizenship rule. Unverified rules stay visible with a warning.",
   state:
@@ -108,6 +108,11 @@ const CRITERIA_HELP = {
     "Adds points for school-specific scholarships at schools you list. If a school-specific award points elsewhere, it is capped from Strong to Possible.",
   activities:
     "Adds a small capped bonus when meaningful activity keywords appear in the scholarship description. It never replaces eligibility.",
+};
+
+const LEGACY_GRADE_LABELS = {
+  high_school: "High school (saved broad estimate)",
+  college_undergraduate: "College undergraduate (saved broad estimate)",
 };
 
 document.addEventListener("DOMContentLoaded", init);
@@ -930,8 +935,25 @@ function prefillForm(profile) {
 function setValue(elementId, value) {
   const el = document.getElementById(elementId);
   if (el && value !== undefined && value !== null) {
+    if (el.tagName === "SELECT") {
+      ensureSelectValue(el, value, elementId);
+    }
     el.value = value;
   }
+}
+
+function ensureSelectValue(select, value, elementId) {
+  if (!value || Array.from(select.options).some((option) => option.value === value)) {
+    return;
+  }
+  if (elementId !== "grade-level" || !LEGACY_GRADE_LABELS[value]) {
+    return;
+  }
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = LEGACY_GRADE_LABELS[value];
+  option.title = "This broad saved value is still accepted, but choosing your exact class year will return better matches.";
+  select.appendChild(option);
 }
 
 function setCheckboxes(containerId, values) {
@@ -1413,7 +1435,7 @@ function selectOptionHelp(elementId, option) {
     return `${option.label} financial need affects ranking only for scholarships that publish a need-based preference or requirement.`;
   }
   if (elementId === "grade-level") {
-    return `${option.label} is used to screen out awards limited to other school levels.`;
+    return `${option.label} is used to screen out awards limited to other school levels. Broad sponsor rules are matched automatically.`;
   }
   if (elementId === "citizenship") {
     return `${option.label} is compared with published citizenship rules when those rules are verified.`;

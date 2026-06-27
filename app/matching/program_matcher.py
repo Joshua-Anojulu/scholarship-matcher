@@ -39,19 +39,17 @@ def _match_tier(score: float) -> str:
 def _grade_compatible(student_grade: str, program_grades: list[str]) -> bool:
     """Whether a student's grade satisfies a program's accepted grades.
 
-    Exact grades must match, but the broad "high_school" tag (any high-school
-    grade) is treated as an umbrella for specific high-school grades in both
-    directions, so a program open to "high_school" still fits a
-    "high_school_junior", and a student who selected the broad "high_school"
-    still fits a juniors-only program.
+    Exact grades match. A broad program tag such as "high_school" also accepts
+    specific student class years, but the reverse is intentionally not true:
+    a vague legacy student value should not satisfy a junior-only program.
     """
     for grade in program_grades:
         if grade == student_grade:
             return True
-        both_high_school = grade.startswith("high_school") and student_grade.startswith(
-            "high_school"
+        broad_high_school_program = grade == "high_school" and student_grade.startswith(
+            "high_school_"
         )
-        if both_high_school and "high_school" in (grade, student_grade):
+        if broad_high_school_program:
             return True
     return False
 

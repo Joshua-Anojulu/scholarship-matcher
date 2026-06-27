@@ -81,6 +81,19 @@ class TestVocabularyEndpoint:
                 assert "label" in option
                 assert "value" in option
 
+    def test_grade_level_vocabulary_shows_specific_student_choices(self, client):
+        response = client.get("/vocabulary")
+        assert response.status_code == 200
+
+        grade_values = {option["value"] for option in response.json()["grade_level"]}
+
+        assert "high_school_freshman" in grade_values
+        assert "high_school_sophomore" in grade_values
+        assert "college_freshman" in grade_values
+        assert "college_senior" in grade_values
+        assert "high_school" not in grade_values
+        assert "college_undergraduate" not in grade_values
+
 
 class TestScholarshipsEndpoint:
     def test_scholarships_returns_loaded_dataset(self, client):

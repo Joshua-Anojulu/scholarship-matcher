@@ -16,7 +16,7 @@ class StudentProfile(BaseModel):
 
     gpa: float = Field(ge=0.0, le=4.0)
     grade_level: str = Field(
-        description="Canonical grade level tag from GET /vocabulary.",
+        description="Student class-year tag from GET /vocabulary, or a legacy broad grade tag.",
     )
     intended_majors: list[str] = Field(
         default_factory=list,

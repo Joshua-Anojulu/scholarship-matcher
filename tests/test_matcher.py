@@ -148,6 +148,50 @@ class TestFieldScoring:
         assert "Field of study overlap: science" in result.match_reasons
 
 
+class TestGradeLevelMatching:
+    def test_specific_high_school_grade_matches_broad_high_school_award(self):
+        student = make_student(grade_level="high_school_senior")
+        scholarship = make_scholarship(
+            id="broad-high-school",
+            eligibility={"grade_levels": ["high_school"]},
+        )
+
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert "Grade level matches (high_school_senior)" in result.match_reasons
+
+    def test_specific_college_grade_matches_broad_undergraduate_award(self):
+        student = make_student(grade_level="college_junior")
+        scholarship = make_scholarship(
+            id="broad-undergrad",
+            eligibility={"grade_levels": ["college_undergraduate"]},
+        )
+
+        result = match_one(student, scholarship)
+
+        assert result is not None
+        assert "Grade level matches (college_junior)" in result.match_reasons
+
+    def test_broad_legacy_high_school_student_does_not_match_senior_only_award(self):
+        student = make_student(grade_level="high_school")
+        scholarship = make_scholarship(
+            id="senior-only",
+            eligibility={"grade_levels": ["high_school_senior"]},
+        )
+
+        assert match_one(student, scholarship) is None
+
+    def test_broad_legacy_undergraduate_student_does_not_match_junior_only_award(self):
+        student = make_student(grade_level="college_undergraduate")
+        scholarship = make_scholarship(
+            id="junior-only",
+            eligibility={"grade_levels": ["college_junior"]},
+        )
+
+        assert match_one(student, scholarship) is None
+
+
 class TestTieBreaking:
     def test_equal_scores_prefer_confirmed_deadline(self):
         student = make_student()

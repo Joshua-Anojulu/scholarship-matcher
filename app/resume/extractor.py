@@ -20,6 +20,7 @@ from app.vocabulary import (
     DEMOGRAPHIC_TAG_VALUES,
     FIELD_OF_STUDY_VALUES,
     FINANCIAL_NEED_LEVEL_VALUES,
+    GRADE_LEVEL_INPUT_VALUES,
     GRADE_LEVEL_VALUES,
     STATE_CODE_VALUES,
 )
@@ -52,7 +53,7 @@ def _profile_tool_schema() -> dict[str, Any]:
             "type": "object",
             "properties": {
                 "gpa": {"type": "number", "description": "GPA on a 4.0 scale, if stated."},
-                "grade_level": {"type": "string", "enum": sorted(GRADE_LEVEL_VALUES)},
+                "grade_level": {"type": "string", "enum": sorted(GRADE_LEVEL_INPUT_VALUES)},
                 "intended_majors": {
                     "type": "array",
                     "items": {"type": "string", "enum": sorted(FIELD_OF_STUDY_VALUES)},

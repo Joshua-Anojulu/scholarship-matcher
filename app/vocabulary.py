@@ -11,16 +11,28 @@ class VocabularyOption(TypedDict):
     value: str
 
 
-# Grade levels appearing in eligibility.grade_levels across the dataset.
+# Grade levels shown to students in the profile form. The dataset can still use
+# broad umbrella tags such as "high_school" and "college_undergraduate" when a
+# sponsor states broad eligibility, but users should pick their actual class
+# year so the matcher can apply those umbrella rules transparently.
 GRADE_LEVEL_OPTIONS: dict[str, str] = {
     "Middle school": "middle_school",
-    "High school (any grade)": "high_school",
+    "High school freshman": "high_school_freshman",
+    "High school sophomore": "high_school_sophomore",
     "High school junior": "high_school_junior",
     "High school senior": "high_school_senior",
-    "College undergraduate": "college_undergraduate",
-    "College graduate": "college_graduate",
+    "College freshman": "college_freshman",
     "College sophomore": "college_sophomore",
     "College junior": "college_junior",
+    "College senior": "college_senior",
+    "College graduate": "college_graduate",
+}
+
+# Legacy/internal values remain accepted by API validation, saved profiles, and
+# dataset validation. They are intentionally not returned from GET /vocabulary.
+LEGACY_GRADE_LEVEL_OPTIONS: dict[str, str] = {
+    "High school (any grade)": "high_school",
+    "College undergraduate": "college_undergraduate",
 }
 
 # Citizenship values accepted by the matcher for student profiles.
@@ -138,7 +150,8 @@ STATE_OPTIONS: dict[str, str] = {
     "Wyoming": "WY",
 }
 
-GRADE_LEVEL_VALUES = frozenset(GRADE_LEVEL_OPTIONS.values())
+GRADE_LEVEL_INPUT_VALUES = frozenset(GRADE_LEVEL_OPTIONS.values())
+GRADE_LEVEL_VALUES = GRADE_LEVEL_INPUT_VALUES | frozenset(LEGACY_GRADE_LEVEL_OPTIONS.values())
 CITIZENSHIP_VALUES = frozenset(CITIZENSHIP_OPTIONS.values())
 DEMOGRAPHIC_TAG_VALUES = frozenset(DEMOGRAPHIC_TAG_OPTIONS.values())
 FIELD_OF_STUDY_VALUES = frozenset(FIELD_OF_STUDY_OPTIONS.values())

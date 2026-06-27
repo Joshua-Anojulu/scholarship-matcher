@@ -91,6 +91,24 @@ _FIELD_REQUIREMENT_CHILDREN: dict[str, set[str]] = {
     "technology": {"computer_science", "engineering"},
 }
 
+# Grade matching is also asymmetric. A scholarship open to a broad level should
+# accept a student's specific class year, but a vague legacy student value should
+# not satisfy a narrow senior-only or junior-only award.
+_GRADE_REQUIREMENT_CHILDREN: dict[str, set[str]] = {
+    "high_school": {
+        "high_school_freshman",
+        "high_school_sophomore",
+        "high_school_junior",
+        "high_school_senior",
+    },
+    "college_undergraduate": {
+        "college_freshman",
+        "college_sophomore",
+        "college_junior",
+        "college_senior",
+    },
+}
+
 
 def _normalize_tag(value: str) -> str:
     return value.strip().lower().replace(" ", "_").replace("-", "_")
@@ -130,6 +148,17 @@ def _matching_fields(student_majors: list[str], required_fields: list[str]) -> l
         if norm_majors.intersection(accepted_student_fields):
             matches.append(field)
     return matches
+
+
+def _grade_level_matches(student_grade: str, required_grades: list[str]) -> bool:
+    for grade in required_grades:
+        norm_grade = _normalize_tag(grade)
+        if _normalize_tag(student_grade) == norm_grade:
+            return True
+        accepted_student_grades = _GRADE_REQUIREMENT_CHILDREN.get(norm_grade, set())
+        if _normalize_tag(student_grade) in accepted_student_grades:
+            return True
+    return False
 
 
 def _matching_demographics(student_tags: list[str], required_tags: list[str]) -> list[str]:
@@ -235,7 +264,7 @@ def _evaluate_scholarship(
 
     grade_levels = scholarship.eligibility.grade_levels
     if grade_levels:
-        if student.grade_level not in grade_levels:
+        if not _grade_level_matches(student.grade_level, grade_levels):
             return None
         reasons.append(f"Grade level matches ({student.grade_level})")
     else:
