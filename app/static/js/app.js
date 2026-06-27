@@ -2827,6 +2827,22 @@ function buildProgramCard(program, options = {}) {
   link.rel = "noopener noreferrer";
   link.textContent = requiresSpecialCheck ? "Check program page" : "View program";
   footer.appendChild(link);
+
+  const adviceLoading = document.createElement("div");
+  adviceLoading.className = "essay-advice-loading";
+  adviceLoading.hidden = true;
+  adviceLoading.innerHTML =
+    '<div class="loading-spinner" aria-hidden="true"></div><p>Writing application advice for this program...</p>';
+
+  const adviceError = document.createElement("div");
+  adviceError.className = "essay-advice-error";
+  adviceError.hidden = true;
+  adviceError.setAttribute("role", "alert");
+
+  const advicePanel = document.createElement("div");
+  advicePanel.className = "essay-advice-panel";
+  advicePanel.hidden = true;
+
   if (programId) {
     const actions = document.createElement("div");
     actions.className = "card-actions";
@@ -2836,9 +2852,22 @@ function buildProgramCard(program, options = {}) {
     applySavedButtonState(saveBtn, savedProgramIds.has(programId));
     saveBtn.addEventListener("click", () => toggleSavedProgram(programId, saveBtn));
     actions.appendChild(saveBtn);
+
+    const adviceBtn = document.createElement("button");
+    adviceBtn.type = "button";
+    adviceBtn.className = "btn-secondary";
+    adviceBtn.textContent = "Get application advice";
+    adviceBtn.addEventListener("click", () =>
+      handleProgramAdvice(programId, adviceBtn, advicePanel, adviceLoading, adviceError)
+    );
+    actions.appendChild(adviceBtn);
+
     footer.appendChild(actions);
   }
   body.appendChild(footer);
+  body.appendChild(adviceLoading);
+  body.appendChild(adviceError);
+  body.appendChild(advicePanel);
 
   article.appendChild(pathBar);
   article.appendChild(body);
@@ -3527,6 +3556,67 @@ async function handleEssayReview(scholarshipId, input, button, panel, loading, e
   } catch (err) {
     errorEl.textContent =
       "Feedback could not be loaded. Check your connection and try again.";
+    errorEl.hidden = false;
+    console.error(err);
+  } finally {
+    loading.hidden = true;
+    button.disabled = false;
+  }
+}
+
+async function handleProgramAdvice(programId, button, panel, loading, errorEl) {
+  if (!lastSubmittedProfile) {
+    errorEl.textContent =
+      "Submit your profile first so application advice can use your current answers.";
+    errorEl.hidden = false;
+    panel.hidden = true;
+    return;
+  }
+
+  if (!ensureAiConsent()) {
+    return;
+  }
+
+  errorEl.hidden = true;
+  panel.hidden = true;
+  loading.hidden = false;
+  button.disabled = true;
+
+  try {
+    const response = await fetch("/program-advice", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        student: lastSubmittedProfile,
+        program_id: programId,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      const message =
+        data.detail?.error ||
+        (typeof data.detail === "string" ? data.detail : null) ||
+        "Application advice could not be loaded. Try again in a few minutes.";
+      errorEl.textContent = message;
+      errorEl.hidden = false;
+      return;
+    }
+
+    panel.innerHTML = "";
+    const heading = document.createElement("h5");
+    heading.className = "essay-advice-heading";
+    heading.textContent = "Application advice";
+    const content = document.createElement("div");
+    content.className = "essay-advice-content";
+    content.textContent = data.advice;
+    panel.appendChild(heading);
+    panel.appendChild(content);
+    panel.hidden = false;
+  } catch (err) {
+    errorEl.textContent =
+      "Application advice could not be loaded. Check your connection and try again.";
     errorEl.hidden = false;
     console.error(err);
   } finally {

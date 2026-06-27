@@ -36,3 +36,18 @@ class EssayReviewResponse(BaseModel):
     scholarship_id: str
     scholarship_name: str
     feedback: str
+
+
+class ProgramAdviceRequest(BaseModel):
+    """Request body for tailored summer-program application guidance."""
+
+    student: StudentProfile
+    program_id: str = Field(min_length=1)
+
+
+class ProgramAdviceResponse(BaseModel):
+    """Generated application guidance for one student and program pair."""
+
+    program_id: str
+    program_name: str
+    advice: str

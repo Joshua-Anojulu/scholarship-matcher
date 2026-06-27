@@ -1,3 +1,7 @@
+# Blueprint reference for a clean redeploy. The currently live service was
+# created manually under a different name (scholarship-matcher-fqr2) and is
+# served at scholarships4u.dev, so the names below are not the live resource
+# names. Update them here if you recreate the service from this blueprint.
 databases:
   - name: scholarships4u-db
     plan: free

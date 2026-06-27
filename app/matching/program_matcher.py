@@ -1,8 +1,8 @@
 """Transparent matching for elite summer programs.
 
-Mirrors the scholarship matcher's additive, explainable approach and reuses its
-field, demographic, citizenship, and deadline helpers so the two stay
-consistent. Programs are scored on subject overlap, demographic fit, and a
+Mirrors the scholarship matcher's additive, explainable approach and shares its
+field, demographic, citizenship, grade, and deadline helpers (app.matching.common)
+so the two stay consistent. Programs are scored on subject overlap, demographic fit, and a
 financial-accessibility signal (a free or stipend program is a strong fit for a
 student who indicated financial need). Grade level, GPA, citizenship, and a
 passed deadline act as gates only when a real (non-VERIFY) value is present.
@@ -12,11 +12,12 @@ from __future__ import annotations
 
 from datetime import date
 
-from app.matching.matcher import (
-    _citizenship_satisfies,
-    _matching_demographics,
-    _matching_fields,
-    _parse_iso_deadline,
+from app.matching.common import (
+    citizenship_satisfies,
+    grade_level_matches,
+    matching_demographics,
+    matching_fields,
+    parse_iso_deadline,
 )
 from app.models.program import (
     ProgramMatchResult,
@@ -36,24 +37,6 @@ def _match_tier(score: float) -> str:
     return "strong" if score >= STRONG_MATCH_THRESHOLD else "possible"
 
 
-def _grade_compatible(student_grade: str, program_grades: list[str]) -> bool:
-    """Whether a student's grade satisfies a program's accepted grades.
-
-    Exact grades match. A broad program tag such as "high_school" also accepts
-    specific student class years, but the reverse is intentionally not true:
-    a vague legacy student value should not satisfy a junior-only program.
-    """
-    for grade in program_grades:
-        if grade == student_grade:
-            return True
-        broad_high_school_program = grade == "high_school" and student_grade.startswith(
-            "high_school_"
-        )
-        if broad_high_school_program:
-            return True
-    return False
-
-
 def _evaluate_program(
     student: StudentProfile,
     program: SummerProgram,
@@ -65,7 +48,7 @@ def _evaluate_program(
 
     # Grade level is a gate when the program states which grades it accepts.
     if elig.grade_levels:
-        if not _grade_compatible(student.grade_level, elig.grade_levels):
+        if not grade_level_matches(student.grade_level, elig.grade_levels):
             return None
         reasons.append(f"Open to your grade level ({student.grade_level})")
     else:
@@ -78,7 +61,7 @@ def _evaluate_program(
         reasons.append(f"Meets GPA requirement (minimum {elig.min_gpa})")
 
     # Citizenship gates only when known and not satisfied.
-    citizenship_result = _citizenship_satisfies(
+    citizenship_result = citizenship_satisfies(
         student.citizenship, elig.citizenship_requirement
     )
     if citizenship_result is False:
@@ -92,13 +75,13 @@ def _evaluate_program(
         reasons.append("Citizenship requirement not yet verified")
 
     # A passed deadline excludes only when a real date is published.
-    parsed_deadline = _parse_iso_deadline(program.deadline)
+    parsed_deadline = parse_iso_deadline(program.deadline)
     if parsed_deadline is not None and parsed_deadline < today:
         return None
 
     # Subject overlap is the primary fit signal.
     required_fields = elig.fields_of_study
-    matched_fields = _matching_fields(student.intended_majors, required_fields)
+    matched_fields = matching_fields(student.intended_majors, required_fields)
     field_mismatch = bool(required_fields) and not matched_fields
     if not required_fields:
         breakdown.subject = WEIGHT_SUBJECT_OPEN
@@ -109,7 +92,7 @@ def _evaluate_program(
     else:
         reasons.append("May focus on a different subject area, check eligibility")
 
-    matched_demographics = _matching_demographics(
+    matched_demographics = matching_demographics(
         student.demographic_tags, elig.demographics
     )
     if elig.demographics and matched_demographics:

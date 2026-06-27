@@ -5,6 +5,12 @@ from __future__ import annotations
 import re
 from datetime import date
 
+from app.matching.common import citizenship_satisfies as _citizenship_satisfies
+from app.matching.common import grade_level_matches as _grade_level_matches
+from app.matching.common import matching_demographics as _matching_demographics
+from app.matching.common import matching_fields as _matching_fields
+from app.matching.common import normalize_tag as _normalize_tag
+from app.matching.common import parse_iso_deadline as _parse_iso_deadline
 from app.models.match import MatchResult, ScoreBreakdown
 from app.models.scholarship import EligibleSchool, Scholarship
 from app.models.student import StudentProfile
@@ -45,128 +51,6 @@ _NEED_KEYWORDS = (
     "demonstrated need",
     "pell",
 )
-
-_CITIZENSHIP_ALLOWED: dict[str, set[str]] = {
-    "us_citizen": {"us_citizen"},
-    "permanent_resident": {"permanent_resident"},
-    "us_citizen_or_permanent_resident": {"us_citizen", "permanent_resident"},
-    "us_citizen_national_or_permanent_resident": {
-        "us_citizen",
-        "permanent_resident",
-        "us_national",
-    },
-    "us_citizen_permanent_resident_or_daca": {
-        "us_citizen",
-        "permanent_resident",
-        "daca",
-    },
-    "us_citizen_permanent_resident_or_national": {
-        "us_citizen",
-        "permanent_resident",
-        "us_national",
-    },
-    "us_citizen_permanent_resident_or_us_national": {
-        "us_citizen",
-        "permanent_resident",
-        "us_national",
-    },
-}
-
-# Field matching is intentionally asymmetric. A scholarship that says it is open
-# to a broad area like "science" may reasonably fit a student who chose a more
-# specific science-related field. The reverse is not true: a student choosing a
-# broad field like "science" should not be told they overlap with a scholarship
-# that specifically requires "computer_science".
-_FIELD_REQUIREMENT_CHILDREN: dict[str, set[str]] = {
-    "arts": {"music"},
-    "health_medicine": {"nursing"},
-    "natural_sciences": {"environmental_science"},
-    "science": {
-        "computer_science",
-        "environmental_science",
-        "mathematics",
-        "natural_sciences",
-        "research",
-    },
-    "technology": {"computer_science", "engineering"},
-}
-
-# Grade matching is also asymmetric. A scholarship open to a broad level should
-# accept a student's specific class year, but a vague legacy student value should
-# not satisfy a narrow senior-only or junior-only award.
-_GRADE_REQUIREMENT_CHILDREN: dict[str, set[str]] = {
-    "high_school": {
-        "high_school_freshman",
-        "high_school_sophomore",
-        "high_school_junior",
-        "high_school_senior",
-    },
-    "college_undergraduate": {
-        "college_freshman",
-        "college_sophomore",
-        "college_junior",
-        "college_senior",
-    },
-}
-
-
-def _normalize_tag(value: str) -> str:
-    return value.strip().lower().replace(" ", "_").replace("-", "_")
-
-
-def _parse_iso_deadline(deadline: str) -> date | None:
-    if deadline == "rolling":
-        return None
-    if deadline == "VERIFY" or deadline.startswith("VERIFY"):
-        return None
-    try:
-        return date.fromisoformat(deadline)
-    except ValueError:
-        return None
-
-
-def _citizenship_satisfies(student_citizenship: str, requirement: str) -> bool | None:
-    """Return True/False when requirement is known, None when unverified."""
-    if requirement == "VERIFY":
-        return None
-    if requirement == "any":
-        return True
-    allowed = _CITIZENSHIP_ALLOWED.get(requirement)
-    if allowed is None:
-        allowed = {_normalize_tag(requirement)}
-    return _normalize_tag(student_citizenship) in allowed
-
-
-def _matching_fields(student_majors: list[str], required_fields: list[str]) -> list[str]:
-    if not required_fields:
-        return []
-    norm_majors = {_normalize_tag(major) for major in student_majors}
-    matches: list[str] = []
-    for field in required_fields:
-        norm_field = _normalize_tag(field)
-        accepted_student_fields = {norm_field, *_FIELD_REQUIREMENT_CHILDREN.get(norm_field, set())}
-        if norm_majors.intersection(accepted_student_fields):
-            matches.append(field)
-    return matches
-
-
-def _grade_level_matches(student_grade: str, required_grades: list[str]) -> bool:
-    for grade in required_grades:
-        norm_grade = _normalize_tag(grade)
-        if _normalize_tag(student_grade) == norm_grade:
-            return True
-        accepted_student_grades = _GRADE_REQUIREMENT_CHILDREN.get(norm_grade, set())
-        if _normalize_tag(student_grade) in accepted_student_grades:
-            return True
-    return False
-
-
-def _matching_demographics(student_tags: list[str], required_tags: list[str]) -> list[str]:
-    if not required_tags:
-        return []
-    student_set = {_normalize_tag(tag) for tag in student_tags}
-    return [tag for tag in required_tags if _normalize_tag(tag) in student_set]
-
 
 def _normalize_school(value: str) -> str:
     """Normalize a school name or declared alias for exact comparison."""

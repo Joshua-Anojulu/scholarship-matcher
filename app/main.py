@@ -19,6 +19,7 @@ from app.essay.advice import (
     EssayAdviceError,
     generate_essay_advice,
     generate_essay_review,
+    generate_program_advice,
 )
 from app.llm import AIFeatureError
 from app.matching.matcher import match_scholarships
@@ -28,6 +29,8 @@ from app.models.essay import (
     EssayAdviceResponse,
     EssayReviewRequest,
     EssayReviewResponse,
+    ProgramAdviceRequest,
+    ProgramAdviceResponse,
 )
 from app.models.match import MatchResult
 from app.models.program import ProgramMatchResult, SummerProgram
@@ -162,6 +165,13 @@ def _find_scholarship(scholarships: list[Scholarship], scholarship_id: str) -> S
     for scholarship in scholarships:
         if scholarship.id == scholarship_id:
             return scholarship
+    return None
+
+
+def _find_program(programs: list[SummerProgram], program_id: str) -> SummerProgram | None:
+    for program in programs:
+        if program.id == program_id:
+            return program
     return None
 
 
@@ -304,6 +314,35 @@ def essay_review(request: Request, body: EssayReviewRequest) -> EssayReviewRespo
         scholarship_id=scholarship.id,
         scholarship_name=scholarship.name,
         feedback=feedback_text,
+    )
+
+
+@app.post(
+    "/program-advice",
+    response_model=ProgramAdviceResponse,
+    dependencies=[Depends(_essay_limit)],
+)
+def program_advice(request: Request, body: ProgramAdviceRequest) -> ProgramAdviceResponse:
+    programs: list[SummerProgram] = request.app.state.programs
+    program = _find_program(programs, body.program_id)
+    if program is None:
+        raise HTTPException(
+            status_code=404,
+            detail={"error": "That summer program was not found in the current dataset."},
+        )
+
+    try:
+        advice_text = generate_program_advice(body.student, program)
+    except EssayAdviceError as exc:
+        raise HTTPException(
+            status_code=exc.status_code,
+            detail={"error": exc.user_message},
+        ) from None
+
+    return ProgramAdviceResponse(
+        program_id=program.id,
+        program_name=program.name,
+        advice=advice_text,
     )
 
 
