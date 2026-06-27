@@ -15,8 +15,14 @@
       "deadline": "VERIFY",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "engineering", "mathematics"],
-        "grade_levels": ["high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -89,8 +95,14 @@
       "deadline": "VERIFY",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "research", "natural_sciences"],
-        "grade_levels": ["high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "research",
+          "natural_sciences"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": false,
@@ -164,8 +176,12 @@
       "estimated_deadline": "2026-02-27",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["mathematics"],
-        "grade_levels": ["high_school"],
+        "fields_of_study": [
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -232,8 +248,16 @@
       "estimated_deadline": "2025-12-03",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["humanities", "social_sciences", "literature", "arts"],
-        "grade_levels": ["high_school_sophomore", "high_school_junior"],
+        "fields_of_study": [
+          "humanities",
+          "social_sciences",
+          "literature",
+          "arts"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -279,8 +303,18 @@
       "estimated_deadline": "2026-02-16",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "engineering", "computer_science", "mathematics", "research", "social_sciences"],
-        "grade_levels": ["high_school_junior", "high_school_senior"],
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "computer_science",
+          "mathematics",
+          "research",
+          "social_sciences"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -347,8 +381,13 @@
       "estimated_deadline": "2026-02-02",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["mathematics"],
-        "grade_levels": ["high_school_sophomore", "high_school_junior"],
+        "fields_of_study": [
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -421,8 +460,18 @@
       "deadline": "VERIFY",
       "eligibility": {
         "min_gpa": 3.8,
-        "fields_of_study": ["science", "engineering", "natural_sciences", "research"],
-        "grade_levels": ["high_school_sophomore", "high_school_junior", "high_school_senior", "college_freshman"],
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "natural_sciences",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior",
+          "college_freshman"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": false,
@@ -482,8 +531,16 @@
       "estimated_deadline": "2026-02-05",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "engineering", "mathematics", "research", "natural_sciences"],
-        "grade_levels": ["high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "research",
+          "natural_sciences"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -564,10 +621,22 @@
       "estimated_deadline": "2026-02-06",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "technology", "engineering", "mathematics"],
-        "grade_levels": ["middle_school", "high_school_freshman", "high_school_sophomore", "high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "technology",
+          "engineering",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "middle_school",
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
         "demographics": [],
-        "states": ["CA"],
+        "states": [
+          "CA"
+        ],
         "essay_required": true,
         "citizenship_requirement": "VERIFY"
       },
@@ -632,8 +701,17 @@
       "estimated_deadline": "2026-02-04",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "engineering", "computer_science", "health_medicine", "natural_sciences", "research"],
-        "grade_levels": ["high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "computer_science",
+          "health_medicine",
+          "natural_sciences",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -707,8 +785,17 @@
       "estimated_deadline": "2026-02-01",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "technology", "engineering", "mathematics", "computer_science", "research"],
-        "grade_levels": ["high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "technology",
+          "engineering",
+          "mathematics",
+          "computer_science",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -782,8 +869,17 @@
       "estimated_deadline": "2026-01-21",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["business", "social_sciences", "law", "technology", "science", "humanities"],
-        "grade_levels": ["high_school_junior"],
+        "fields_of_study": [
+          "business",
+          "social_sciences",
+          "law",
+          "technology",
+          "science",
+          "humanities"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -850,8 +946,18 @@
       "estimated_deadline": "2026-01-07",
       "eligibility": {
         "min_gpa": null,
-        "fields_of_study": ["science", "technology", "social_sciences", "business", "law", "humanities"],
-        "grade_levels": ["high_school_sophomore", "high_school_junior"],
+        "fields_of_study": [
+          "science",
+          "technology",
+          "social_sciences",
+          "business",
+          "law",
+          "humanities"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
         "demographics": [],
         "states": "any",
         "essay_required": true,
@@ -907,6 +1013,542 @@
         "source_url": "https://globalscholars.yale.edu/",
         "last_verified_at": "2026-06-27",
         "notes": "Official YYGS pages confirm residential 2026 sessions, global eligibility, sophomore/junior eligibility, all-country applications and aid, tuition, application deadlines, components, essays, transcript, recommender form, and financial-aid process. Upcoming-cycle deadline remains VERIFY; 2026-01-07 is stored as prior-cycle estimate."
+      }
+    },
+    {
+      "id": "research-science-institute",
+      "name": "Research Science Institute (RSI)",
+      "host": "Center for Excellence in Education (CEE) at MIT",
+      "subject": "STEM research",
+      "url": "https://www.cee.org/programs/research-science-institute",
+      "cost": "Free (cost-free to students)",
+      "cost_category": "free",
+      "selectivity": "Highly competitive (~100 students selected nationally and internationally)",
+      "program_format": "residential",
+      "location": "Cambridge, MA (MIT)",
+      "program_dates": "About six weeks in summer (one week coursework plus five-week research internship)",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Cost-free summer science and engineering program at MIT combining intensive STEM coursework with a five-week research internship. High school juniors apply directly to CEE; seniors are not eligible.",
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Submit the RSI application to CEE",
+          "details": "U.S. citizens and permanent residents apply directly to CEE; international applicants follow country-specific selection where available.",
+          "required": true,
+          "source_url": "https://www.cee.org/apply-rsi"
+        },
+        {
+          "id": "essay-responses",
+          "label": "Complete essay responses on STEM goals",
+          "details": "Essays should detail goals in science, technology, engineering, or mathematics.",
+          "required": true,
+          "source_url": "https://www.cee.org/apply-rsi"
+        },
+        {
+          "id": "recommendations",
+          "label": "Submit two teacher recommendations (max three)",
+          "details": "Math/science teachers or research supervisors familiar with the applicant; research supervisors preferred for students with 4+ week lab experience.",
+          "required": true,
+          "source_url": "https://www.cee.org/apply-rsi"
+        },
+        {
+          "id": "transcript-and-test-scores",
+          "label": "Upload official transcript and standardized test scores",
+          "details": "Include PSAT, SAT, ACT, and AP scores; PSAT strongly encouraged.",
+          "required": true,
+          "source_url": "https://www.cee.org/apply-rsi"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.cee.org/apply-rsi",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official CEE RSI pages: free program at MIT; juniors only; U.S. citizens/PR apply to CEE; RSI 2026 applications closed; upcoming deadline not published."
+      }
+    },
+    {
+      "id": "bank-of-america-student-leaders",
+      "name": "Bank of America Student Leaders",
+      "host": "Bank of America",
+      "subject": "Leadership and community service",
+      "url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
+      "cost": "Paid six-week internship ($17/hour or local minimum wage, whichever is higher)",
+      "cost_category": "stipend",
+      "selectivity": "Competitive (300+ students; top 20% of recommended applicants)",
+      "program_format": "commuter",
+      "location": "Eligible U.S. program markets (local nonprofit placement)",
+      "program_dates": "Six weeks mid-June through July 2026, including mandatory 3-day Leadership Summit (June 16–18, 2026)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-16",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_freshman"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident",
+        "special_requirements": [
+          {
+            "kind": "institution_channel",
+            "label": "Post-secondary credit-hour window",
+            "details": "Applicants must have earned 12–18 post-secondary credit hours and achieved a high school diploma within the last 24 months."
+          }
+        ]
+      },
+      "description": "Paid six-week nonprofit internship plus an all-expenses-paid Leadership Summit for community-minded young adults authorized to work in the U.S. Program targets early college students with leadership experience, not high school juniors.",
+      "application_requirements": [
+        {
+          "id": "cybergrants-application",
+          "label": "Apply through the CyberGrants Student Leaders portal",
+          "details": "Apply at cybergrants.com/boa/slselection when the application opens.",
+          "required": true,
+          "source_url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders-program-faq"
+        },
+        {
+          "id": "transcript",
+          "label": "Provide post-secondary transcript",
+          "details": "Transcript must verify credit hours earned.",
+          "required": true,
+          "source_url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders-program-faq"
+        },
+        {
+          "id": "two-recommendations",
+          "label": "Obtain two recommendations after applying",
+          "details": "Recommendations from college or high school officials; not from family or close friends.",
+          "required": true,
+          "source_url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders-program-faq"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders-program-faq",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official BofA FAQ: 2026 cycle Feb 9–March 16; 12–18 credits; age 18+; paid internship and summit; 2026 deadline passed."
+      }
+    },
+    {
+      "id": "american-legion-boys-state",
+      "name": "American Legion Boys State",
+      "host": "The American Legion (state departments)",
+      "subject": "Civic leadership and government",
+      "url": "https://www.legion.org/get-involved/youth-programs/boys-state-boys-nation/about-boys-state-boys-nation",
+      "cost": "Typically sponsored (Legion posts often cover participant costs; varies by state)",
+      "cost_category": "free",
+      "selectivity": "Selective (Legion post or school nomination; varies by department)",
+      "program_format": "residential",
+      "location": "Varies by state (49 Boys State programs)",
+      "program_dates": "Varies by state department (typically summer after junior year)",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "social_sciences",
+          "humanities"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY",
+        "special_requirements": [
+          {
+            "kind": "nomination",
+            "label": "Legion post or school selection",
+            "details": "Students are typically recommended by schools to local Legion posts, which select delegates; process varies by department."
+          }
+        ]
+      },
+      "description": "Selective week-long residential program where high school juniors operate mock city, county, and state governments. Founded in 1935; each state department runs its own dates, costs, and selection process.",
+      "application_requirements": [
+        {
+          "id": "contact-state-program",
+          "label": "Find your state Boys State program and contacts",
+          "details": "Use register.legion.org/boysnation/stateeligibility for state links, dates, and application instructions.",
+          "required": true,
+          "source_url": "https://www.legion.org/get-involved/youth-programs/boys-state-boys-nation/boys-state-eligibility-dates"
+        },
+        {
+          "id": "school-or-post-nomination",
+          "label": "Work with your school and sponsoring Legion post",
+          "details": "Ideal path is school recommendation to a local post, which interviews and selects representatives.",
+          "required": true,
+          "source_url": "https://www.legion.org/get-involved/youth-programs/boys-state-boys-nation/boys-state-eligibility-dates"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.legion.org/get-involved/youth-programs/boys-state-boys-nation/about-boys-state-boys-nation",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Legion pages: juniors; state-specific dates/deadlines; post selection; programs in 49 states except Hawaii."
+      }
+    },
+    {
+      "id": "ala-girls-state",
+      "name": "ALA Girls State",
+      "host": "American Legion Auxiliary (state programs)",
+      "subject": "Civic leadership and government",
+      "url": "https://www.alaforveterans.org/",
+      "cost": "Typically sponsored (ALA units often cover participant costs; varies by state)",
+      "cost_category": "free",
+      "selectivity": "Selective (ALA unit recruitment; varies by state)",
+      "program_format": "residential",
+      "location": "Varies by state ALA Girls State program",
+      "program_dates": "Varies by state program (typically summer after junior year)",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "social_sciences",
+          "humanities"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY",
+        "special_requirements": [
+          {
+            "kind": "nomination",
+            "label": "ALA unit or school recruitment",
+            "details": "Local ALA units recruit and select delegates; contact your state program for dates and application process."
+          },
+          {
+            "kind": "family_or_affiliation",
+            "label": "Women participants only",
+            "details": "ALA Girls State is the Auxiliary's mock-government program for high school junior women; eligibility follows each state program's rules."
+          }
+        ]
+      },
+      "description": "Parallel to American Legion Boys State, ALA Girls State is a selective mock-government leadership program for high school junior women, operated at the state level by the American Legion Auxiliary.",
+      "application_requirements": [
+        {
+          "id": "contact-state-program",
+          "label": "Contact your state ALA Girls State program",
+          "details": "Recruitment is managed by local ALA units and state programs; guidance counselors are a common contact point.",
+          "required": true,
+          "source_url": "http://www.alaforveterans.org/Blog/How-to-reach-out-to-schools-to-introduce-ALA-progr?guid=b63fb7e9-706a-4b27-8907-a532d9e2480c"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.legion.org/get-involved/youth-programs/boys-state-boys-nation/about-boys-state-boys-nation",
+        "last_verified_at": "2026-06-21",
+        "notes": "Legion about page confirms ALA Girls State as companion program; state-level operation; official ALA site for program outreach."
+      }
+    },
+    {
+      "id": "nih-summer-internship-program",
+      "name": "NIH Summer Internship Program (SIP)",
+      "host": "National Institutes of Health",
+      "subject": "Biomedical research",
+      "url": "https://www.training.nih.gov/research-training/pb/sip/",
+      "cost": "Paid research internship (stipend)",
+      "cost_category": "stipend",
+      "selectivity": "Competitive (investigator-led selection from application pool)",
+      "program_format": "commuter",
+      "location": "NIH campuses (Bethesda, MD and other sites)",
+      "program_dates": "SIP 2026 runs May 11 through August 31, 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-18",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "research",
+          "health_medicine",
+          "engineering"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident",
+        "special_requirements": [
+          {
+            "kind": "institution_channel",
+            "label": "Age and proximity rules for high school seniors",
+            "details": "High school seniors must be 18 by Sept 30 of the internship year; 17-year-olds as of June 1 must live within 40 miles of an NIH campus."
+          }
+        ]
+      },
+      "description": "Summer biomedical research internships in the NIH Intramural Research Program for high school seniors, undergraduates, and graduate students. Apply through the NIH Application Center; investigators select candidates for lab placements.",
+      "application_requirements": [
+        {
+          "id": "nih-application-center",
+          "label": "Apply through the NIH Application Center",
+          "details": "Complete profile, select Summer internships, pass eligibility screener, and submit application materials.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/sip/"
+        },
+        {
+          "id": "personal-statement",
+          "label": "Submit personal statement",
+          "details": "Describe research interests, experiences, and career goals.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/sip/"
+        },
+        {
+          "id": "two-references",
+          "label": "Provide two references",
+          "details": "Two references required through the application system.",
+          "required": true,
+          "source_url": "https://www.training.nih.gov/research-training/pb/sip/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.training.nih.gov/research-training/pb/sip/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NIH SIP page: U.S. citizen or PR; HS seniors and college students; 2026 closed Feb 18; program May 11–Aug 31, 2026."
+      }
+    },
+    {
+      "id": "jax-summer-student-program",
+      "name": "JAX Summer Student Program",
+      "host": "The Jackson Laboratory",
+      "subject": "Genetics and genomics research",
+      "url": "https://www.jax.org/education-and-learning/high-school-students-and-undergraduates/learn-earn-and-explore",
+      "cost": "$7,500 stipend plus room, board, and round-trip travel",
+      "cost_category": "stipend",
+      "selectivity": "Competitive (admission competitive; all backgrounds considered)",
+      "program_format": "residential",
+      "location": "Bar Harbor, ME and Farmington, CT",
+      "program_dates": "10 weeks: May 30 – August 7, 2026 (Bar Harbor) or May 30 – August 10, 2026 (Farmington)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-26",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "research",
+          "natural_sciences"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Ten-week paid research fellowship in genetics and genomics for high school seniors and undergraduates at Jackson Laboratory campuses. Students may not hold other jobs or take classes during the program.",
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Submit the online JAX SSP application",
+          "details": "Apply through the JAX education application portal; save progress and submit before the deadline.",
+          "required": true,
+          "source_url": "https://www.jax.org/education-and-learning/high-school-students-and-undergraduates/learn-earn-and-explore/admission"
+        },
+        {
+          "id": "application-checklist",
+          "label": "Complete all required application materials",
+          "details": "See the admission page checklist for personal, academic, and essay materials required for review.",
+          "required": true,
+          "source_url": "https://www.jax.org/education-and-learning/high-school-students-and-undergraduates/learn-earn-and-explore/admission"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.jax.org/education-and-learning/high-school-students-and-undergraduates/learn-earn-and-explore/admission",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official JAX admission page: $7,500 stipend plus room/board/travel; 2026 deadline Jan 26; HS seniors and undergraduates."
+      }
+    },
+    {
+      "id": "mit-wtp-me",
+      "name": "MIT Women's Technology Program in Mechanical Engineering (WTP-ME)",
+      "host": "Massachusetts Institute of Technology",
+      "subject": "Mechanical engineering",
+      "url": "https://web.mit.edu/wtp-me/",
+      "cost": "VERIFY",
+      "cost_category": "VERIFY",
+      "selectivity": "Highly competitive (20 participants selected nationally)",
+      "program_format": "residential",
+      "location": "Cambridge, MA",
+      "program_dates": "Four weeks: June 27 – July 25, 2026",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "engineering",
+          "mathematics",
+          "science"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY",
+        "special_requirements": [
+          {
+            "kind": "family_or_affiliation",
+            "label": "Women-focused engineering program",
+            "details": "WTP-ME is a women-focused collaborative community that also serves students underserved in engineering; all applicants are reviewed equitably per official MIT WTP pages."
+          }
+        ]
+      },
+      "description": "Four-week residential introduction to mechanical engineering at MIT for rising high school seniors with strong math and science records and limited prior engineering exposure. WTP-ME emphasizes students underserved in engineering.",
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Complete the WTP online application",
+          "details": "Apply through web.mit.edu/wtp/application.html when the cycle is open.",
+          "required": true,
+          "source_url": "https://web.mit.edu/wtp/application.html"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://web.mit.edu/wtp-me/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official WTP-ME page: 20 students; juniors; four weeks; 2026 applications closed; program cost not confirmed on pages checked."
+      }
+    },
+    {
+      "id": "nasa-sees-internship",
+      "name": "NASA SEES High School Intern Program",
+      "host": "University of Texas Center for Space Research (NASA Science Activation)",
+      "subject": "Earth and space science research",
+      "url": "https://www.csr.utexas.edu/sees-internship/",
+      "cost": "No tuition; housing/meals provided for selected on-site interns; limited travel scholarships may be available",
+      "cost_category": "free",
+      "selectivity": "Nationally competitive (174 students selected for 2025 cohort per NASA Science)",
+      "program_format": "hybrid",
+      "location": "Virtual plus optional on-site at UT Austin, TX",
+      "program_dates": "June–July 2026: virtual work June–July 3; on-site July 5–18, 2026; symposium July 20–21, 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-22",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "research",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Nationally competitive NASA-funded STEM internship where high school students analyze NASA mission data with mentors across aerospace, Earth observation, and planetary science. Hybrid format with distance-learning modules and optional residential week at UT Austin.",
+      "application_requirements": [
+        {
+          "id": "online-application",
+          "label": "Apply at spacegrant.net/apps/sees",
+          "details": "Submit application, essay questions, introduction video, and request recommendation forms by the published deadline.",
+          "required": true,
+          "source_url": "https://www.csr.utexas.edu/sees-internship/"
+        },
+        {
+          "id": "recommendation-form",
+          "label": "Ensure recommendation form is submitted",
+          "details": "Recommendation forms due March 1 for the 2026 cycle (one week after application deadline).",
+          "required": true,
+          "source_url": "https://www.csr.utexas.edu/sees-internship/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.csr.utexas.edu/sees-internship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official CSR SEES page: Feb 22, 2026 deadline passed; hybrid virtual/on-site; 2026 dates published; continuation contingent on funding."
+      }
+    },
+    {
+      "id": "stanford-simr",
+      "name": "Stanford Institutes of Medicine Summer Research Program (SIMR)",
+      "host": "Stanford University School of Medicine",
+      "subject": "Biomedical research",
+      "url": "https://simr.stanford.edu/",
+      "cost": "No program tuition ($50 application fee; fee waivers available)",
+      "cost_category": "free",
+      "selectivity": "Highly competitive (selection favors Bay Area students per official FAQ)",
+      "program_format": "commuter",
+      "location": "Stanford, CA",
+      "program_dates": "Eight weeks: June 8 – July 30, 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-21",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "research",
+          "health_medicine"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident",
+        "special_requirements": [
+          {
+            "kind": "institution_channel",
+            "label": "U.S. residency and age requirements",
+            "details": "Must live in and attend high school in the U.S.; be 16+ by program start; U.S. citizen or permanent resident."
+          }
+        ]
+      },
+      "description": "Eight-week mentored biomedical research internship at Stanford Medicine institutes for current high school juniors and seniors. Students must be able to start on the first program day; Bay Area students are strongly favored.",
+      "application_requirements": [
+        {
+          "id": "slideroom-application",
+          "label": "Submit the SIMR SlideRoom application",
+          "details": "Upload transcripts, test scores, and complete all forms; pay $50 fee or request a fee waiver.",
+          "required": true,
+          "source_url": "https://simr.stanford.edu/application.html"
+        },
+        {
+          "id": "teacher-recommendation",
+          "label": "Submit teacher recommendation via SlideRoom",
+          "details": "Recommendation grace period extends one week after application deadline; student must follow up with recommender.",
+          "required": true,
+          "source_url": "https://simr.stanford.edu/application.html"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://simr.stanford.edu/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official SIMR pages: juniors/seniors; U.S. citizen/PR; 16+; June 8–July 30, 2026; Feb 21, 2026 deadline passed; $50 application fee."
       }
     }
   ]
