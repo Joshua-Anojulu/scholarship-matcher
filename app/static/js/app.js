@@ -9,6 +9,8 @@
 let vocabulary = null;
 let lastSubmittedProfile = null;
 let lastResults = null;
+let lastPrograms = null;
+let activeOpportunityView = "scholarships";
 
 let currentUser = null;
 const savedIds = new Set();
@@ -32,6 +34,11 @@ const programsContainer = document.getElementById("programs-container");
 const programsSummary = document.getElementById("programs-summary");
 const programsEmpty = document.getElementById("programs-empty");
 const submitBtn = document.getElementById("submit-btn");
+const opportunityTabs = document.getElementById("opportunity-tabs");
+const opportunityTabButtons = Array.from(document.querySelectorAll(".opportunity-tab"));
+const scholarshipsTabCount = document.getElementById("scholarships-tab-count");
+const programsTabCount = document.getElementById("programs-tab-count");
+const savedTabCount = document.getElementById("saved-tab-count");
 
 const authLoggedOut = document.getElementById("auth-logged-out");
 const authLoggedIn = document.getElementById("auth-logged-in");
@@ -139,6 +146,7 @@ async function init() {
   wirePageMotion();
   wireAuthControls();
   wirePasswordReset();
+  wireOpportunityTabs();
   wireFilterControls();
   wireResumeImport();
   wireSettings();
@@ -208,6 +216,74 @@ function wirePageMotion() {
   );
   for (const target of targets) {
     observer.observe(target);
+  }
+}
+
+function wireOpportunityTabs() {
+  for (const button of opportunityTabButtons) {
+    button.addEventListener("click", () => {
+      const view = button.dataset.view || "scholarships";
+      activateOpportunityView(view, { scroll: true });
+    });
+  }
+  updateOpportunityTabCounts();
+}
+
+function updateOpportunityTabCounts() {
+  if (scholarshipsTabCount) {
+    scholarshipsTabCount.textContent = lastResults ? String(lastResults.length) : "0";
+  }
+  if (programsTabCount) {
+    programsTabCount.textContent = lastPrograms ? String(lastPrograms.length) : "0";
+  }
+  if (savedTabCount) {
+    savedTabCount.textContent = String(savedIds.size + savedProgramIds.size);
+  }
+}
+
+function setOpportunityTabsVisible(visible) {
+  if (!opportunityTabs) {
+    return;
+  }
+  opportunityTabs.hidden = !visible;
+}
+
+async function activateOpportunityView(view, options = {}) {
+  activeOpportunityView = view;
+  setOpportunityTabsVisible(true);
+
+  for (const button of opportunityTabButtons) {
+    const selected = button.dataset.view === view;
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-selected", selected ? "true" : "false");
+  }
+
+  resultsSection.hidden = view !== "scholarships" || !lastResults;
+  programsSection.hidden = view !== "programs" || lastPrograms === null;
+  savedSection.hidden = view !== "saved";
+
+  if (view === "programs" && lastPrograms !== null) {
+    renderPrograms(lastPrograms);
+    programsSection.hidden = false;
+  }
+
+  if (view === "saved") {
+    if (currentUser) {
+      await showSavedView({ scroll: false });
+    } else {
+      savedSection.hidden = false;
+      savedContainer.innerHTML = "";
+      savedEmpty.hidden = false;
+      savedSummary.textContent = "Log in to save scholarships and summer programs to your application plan.";
+    }
+  }
+
+  updateOpportunityTabCounts();
+
+  if (options.scroll) {
+    const target =
+      view === "programs" ? programsSection : view === "saved" ? savedSection : resultsSection;
+    (target || opportunityTabs).scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
@@ -911,6 +987,7 @@ function renderAuthState() {
     accountEmail.title = currentUser.email;
   }
   updateSavedCount();
+  updateOpportunityTabCounts();
 }
 
 /* ---------- Profile persistence ---------- */
@@ -1034,17 +1111,14 @@ function updateSavedCount() {
   const count = savedIds.size + savedProgramIds.size;
   savedCountEl.textContent = String(count);
   savedCountEl.hidden = count === 0;
+  updateOpportunityTabCounts();
 }
 
 async function toggleSavedView() {
-  if (savedSection.hidden) {
-    await showSavedView();
-  } else {
-    savedSection.hidden = true;
-  }
+  await activateOpportunityView("saved", { scroll: true });
 }
 
-async function showSavedView() {
+async function showSavedView(options = {}) {
   savedSection.hidden = false;
   savedContainer.innerHTML = "";
   savedSummary.textContent = "Loading...";
@@ -1061,7 +1135,9 @@ async function showSavedView() {
     savedSummary.textContent = "Saved items could not be loaded.";
     console.error(err);
   }
-  savedSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (options.scroll !== false) {
+    savedSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 const SAVED_STATUSES = [
@@ -1106,6 +1182,10 @@ function trackerSummary(items) {
 function refreshTrackerSummary() {
   if (trackerItems.length > 0) {
     savedSummary.textContent = trackerSummary(trackerItems);
+    const existingPlan = savedContainer.querySelector(".plan-guidance");
+    if (existingPlan) {
+      existingPlan.replaceWith(buildPlanGuidance(trackerItems));
+    }
   }
 }
 
@@ -1120,6 +1200,7 @@ function renderSaved(scholarshipItems, programItems = []) {
   }
   savedEmpty.hidden = true;
   savedSummary.textContent = trackerSummary(items);
+  savedContainer.appendChild(buildPlanGuidance(items));
 
   for (const item of items) {
     if (!item.scholarship) {
@@ -1147,6 +1228,650 @@ function renderSaved(scholarshipItems, programItems = []) {
     (cardBody || card).appendChild(buildTrackerControls(item, card, "program"));
     savedContainer.appendChild(card);
   }
+}
+
+function savedOpportunity(item) {
+  return item.scholarship || item.program || null;
+}
+
+function savedOpportunityKind(item) {
+  return item.program ? "Program" : "Scholarship";
+}
+
+function savedOpportunityName(item) {
+  const opportunity = savedOpportunity(item);
+  return opportunity?.name || opportunity?.scholarship_name || "Saved opportunity";
+}
+
+function savedOpportunityDeadline(item) {
+  const opportunity = savedOpportunity(item);
+  return opportunity?.deadline || "";
+}
+
+function savedOpportunityEstimatedDeadline(item) {
+  const opportunity = savedOpportunity(item);
+  return opportunity?.estimated_deadline || null;
+}
+
+function savedOpportunityRequirements(item) {
+  return savedOpportunity(item)?.application_requirements || [];
+}
+
+function savedOpportunitySpecialRequirements(item) {
+  const opportunity = savedOpportunity(item);
+  return opportunity?.special_requirements?.length
+    ? opportunity.special_requirements
+    : opportunity?.eligibility?.special_requirements || [];
+}
+
+function parseRealDeadline(deadline) {
+  if (!deadline || deadline === "rolling" || String(deadline).startsWith("VERIFY")) {
+    return null;
+  }
+  const parsed = new Date(`${deadline}T00:00:00`);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function daysUntil(deadline) {
+  const parsed = parseRealDeadline(deadline);
+  if (!parsed) {
+    return null;
+  }
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.ceil((parsed - today) / (1000 * 60 * 60 * 24));
+}
+
+function deadlinePriority(item) {
+  const realDays = daysUntil(savedOpportunityDeadline(item));
+  if (realDays === null) {
+    return 12000;
+  }
+  return realDays < 0 ? 30000 + Math.abs(realDays) : realDays;
+}
+
+function incompleteRequirements(item) {
+  const completed = new Set(item.completed_requirement_ids || []);
+  return savedOpportunityRequirements(item).filter((requirement) => !completed.has(requirement.id));
+}
+
+function requirementMatches(requirement, patterns) {
+  const text = `${requirement.label || ""} ${requirement.details || ""}`.toLowerCase();
+  return patterns.some((pattern) => text.includes(pattern));
+}
+
+function firstIncompleteRequired(items) {
+  const sorted = [...items].sort((a, b) => {
+    return deadlinePriority(a) - deadlinePriority(b);
+  });
+  for (const item of sorted) {
+    const next = incompleteRequirements(item).find((requirement) => requirement.required !== false);
+    if (next) {
+      return { item, requirement: next };
+    }
+  }
+  return null;
+}
+
+function collectRequirementNeeds(items, patterns, limit = 4) {
+  const needs = [];
+  for (const item of items) {
+    for (const requirement of incompleteRequirements(item)) {
+      if (requirementMatches(requirement, patterns)) {
+        needs.push({ item, requirement });
+      }
+    }
+  }
+  return needs.slice(0, limit);
+}
+
+function formatNeedList(needs) {
+  return needs
+    .map(({ item, requirement }) => `${savedOpportunityName(item)}: ${requirement.label}`)
+    .join("; ");
+}
+
+const REQUIREMENT_GROUPS = [
+  {
+    key: "writing",
+    label: "Writing",
+    patterns: ["essay", "short answer", "short-answer", "response", "personal statement", "statement"],
+  },
+  {
+    key: "recommendations",
+    label: "Recs",
+    patterns: ["recommend", "teacher", "counselor", "reference", "letter"],
+  },
+  {
+    key: "records",
+    label: "Records",
+    patterns: ["transcript", "grade report", "academic record", "school profile", "test score"],
+  },
+  {
+    key: "forms",
+    label: "Forms",
+    patterns: ["application", "form", "portal", "account", "submit"],
+  },
+  {
+    key: "interview",
+    label: "Interview",
+    patterns: ["interview", "finalist", "selection weekend"],
+  },
+];
+
+function requirementGroup(requirement) {
+  const text = `${requirement.label || ""} ${requirement.details || ""}`.toLowerCase();
+  return (
+    REQUIREMENT_GROUPS.find((group) =>
+      group.patterns.some((pattern) => text.includes(pattern))
+    ) || { key: "other", label: "Other" }
+  );
+}
+
+function requirementMatrixForItem(item) {
+  const completed = new Set(item.completed_requirement_ids || []);
+  const matrix = Object.fromEntries(
+    [...REQUIREMENT_GROUPS, { key: "other", label: "Other" }].map((group) => [
+      group.key,
+      { total: 0, complete: 0 },
+    ])
+  );
+  for (const requirement of savedOpportunityRequirements(item)) {
+    const group = requirementGroup(requirement);
+    matrix[group.key].total += 1;
+    if (completed.has(requirement.id)) {
+      matrix[group.key].complete += 1;
+    }
+  }
+  return matrix;
+}
+
+function formatRequirementProgress(progress) {
+  if (!progress.total) {
+    return "None";
+  }
+  return `${progress.complete}/${progress.total}`;
+}
+
+function buildRequirementMatrix(items) {
+  const section = document.createElement("section");
+  section.className = "plan-matrix";
+  section.setAttribute("aria-label", "Requirement matrix");
+
+  const head = document.createElement("div");
+  head.className = "plan-subsection-head";
+  head.innerHTML =
+    "<div><p class=\"eyebrow\">Requirement matrix</p>" +
+    "<h4>See what each opportunity is asking for</h4></div>" +
+    "<p>Counts show completed checklist steps over total source-linked steps.</p>";
+  section.appendChild(head);
+
+  const tableWrap = document.createElement("div");
+  tableWrap.className = "plan-table-wrap";
+  const table = document.createElement("table");
+  table.className = "plan-table";
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  ["Opportunity", ...REQUIREMENT_GROUPS.map((group) => group.label), "Other"].forEach((label) => {
+    const th = document.createElement("th");
+    th.scope = "col";
+    th.textContent = label;
+    headRow.appendChild(th);
+  });
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  for (const item of items) {
+    const row = document.createElement("tr");
+    const name = document.createElement("th");
+    name.scope = "row";
+    const kind = document.createElement("span");
+    kind.textContent = savedOpportunityKind(item);
+    const strong = document.createElement("strong");
+    strong.textContent = savedOpportunityName(item);
+    name.appendChild(kind);
+    name.appendChild(strong);
+    row.appendChild(name);
+
+    const matrix = requirementMatrixForItem(item);
+    [...REQUIREMENT_GROUPS.map((group) => group.key), "other"].forEach((key) => {
+      const td = document.createElement("td");
+      const progress = matrix[key];
+      td.textContent = formatRequirementProgress(progress);
+      if (progress.total && progress.complete === progress.total) {
+        td.className = "is-complete";
+      } else if (progress.total) {
+        td.className = "has-work";
+      }
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  }
+  table.appendChild(tbody);
+  tableWrap.appendChild(table);
+  section.appendChild(tableWrap);
+  return section;
+}
+
+function timelineSortValue(item) {
+  const realDays = daysUntil(savedOpportunityDeadline(item));
+  if (realDays !== null) {
+    return realDays < 0 ? 30000 + Math.abs(realDays) : realDays;
+  }
+  const deadline = savedOpportunityDeadline(item);
+  if (deadline === "rolling") {
+    return 20000;
+  }
+  if (String(deadline || "").startsWith("VERIFY")) {
+    return 15000;
+  }
+  return 12000;
+}
+
+function timelineStatus(item) {
+  const realDays = daysUntil(savedOpportunityDeadline(item));
+  if (realDays === null) {
+    const parts = deadlineParts(savedOpportunityDeadline(item), savedOpportunityEstimatedDeadline(item));
+    return parts.note ? `${parts.value} · ${parts.note}` : parts.value;
+  }
+  if (realDays < 0) {
+    return "Deadline passed";
+  }
+  if (realDays === 0) {
+    return "Due today";
+  }
+  if (realDays <= 14) {
+    return `Due in ${realDays} day${realDays === 1 ? "" : "s"}`;
+  }
+  return `Due in ${realDays} days`;
+}
+
+function buildDeadlineTimeline(items) {
+  const section = document.createElement("section");
+  section.className = "plan-timeline";
+  section.setAttribute("aria-label", "Deadline timeline");
+
+  const head = document.createElement("div");
+  head.className = "plan-subsection-head";
+  head.innerHTML =
+    "<div><p class=\"eyebrow\">Deadline timeline</p>" +
+    "<h4>Order your work by time pressure</h4></div>" +
+    "<p>Verified dates come first; estimated or unknown dates stay labeled.</p>";
+  section.appendChild(head);
+
+  const list = document.createElement("div");
+  list.className = "timeline-list";
+  const sorted = [...items].sort((a, b) => timelineSortValue(a) - timelineSortValue(b));
+
+  for (const item of sorted.slice(0, 8)) {
+    const row = document.createElement("article");
+    const realDays = daysUntil(savedOpportunityDeadline(item));
+    row.className = "timeline-item";
+    if (realDays !== null && realDays <= 14 && realDays >= 0) {
+      row.classList.add("is-urgent");
+    } else if (realDays !== null && realDays < 0) {
+      row.classList.add("is-past");
+    } else if (realDays === null) {
+      row.classList.add("is-estimated");
+    }
+
+    const date = document.createElement("span");
+    date.className = "timeline-date";
+    date.textContent = timelineStatus(item);
+
+    const copy = document.createElement("div");
+    const title = document.createElement("strong");
+    title.textContent = savedOpportunityName(item);
+    const next = incompleteRequirements(item).find((requirement) => requirement.required !== false);
+    const detail = document.createElement("p");
+    detail.textContent = next
+      ? `${savedOpportunityKind(item)} · next step: ${next.label}`
+      : `${savedOpportunityKind(item)} · checklist complete or no source-linked steps yet`;
+    copy.appendChild(title);
+    copy.appendChild(detail);
+
+    row.appendChild(date);
+    row.appendChild(copy);
+    list.appendChild(row);
+  }
+
+  section.appendChild(list);
+  return section;
+}
+
+const WRITING_REUSE_GROUPS = [
+  {
+    key: "identity",
+    label: "Identity, community, and lived experience",
+    patterns: ["identity", "community", "background", "experiences", "adversit", "story"],
+  },
+  {
+    key: "why-fit",
+    label: "Why this program or scholarship",
+    patterns: ["why", "fit", "course", "program", "major", "future goals", "career"],
+  },
+  {
+    key: "leadership-service",
+    label: "Leadership, service, and impact",
+    patterns: ["leadership", "service", "impact", "improving", "courage", "veteran", "activities"],
+  },
+  {
+    key: "academic-research",
+    label: "Academic interest, research, or problem solving",
+    patterns: ["academic", "research", "problem set", "solutions", "project", "stem", "science", "mathematics"],
+  },
+  {
+    key: "general-writing",
+    label: "General essays and short answers",
+    patterns: ["essay", "short answer", "short-answer", "response", "statement", "writing"],
+  },
+];
+
+function isWritingRequirement(requirement) {
+  return requirementMatches(requirement, [
+    "essay",
+    "short answer",
+    "short-answer",
+    "response",
+    "statement",
+    "writing",
+    "problem set",
+    "solutions",
+  ]);
+}
+
+function writingReuseGroup(requirement) {
+  const text = `${requirement.label || ""} ${requirement.details || ""}`.toLowerCase();
+  return (
+    WRITING_REUSE_GROUPS.find((group) =>
+      group.patterns.some((pattern) => text.includes(pattern))
+    ) || WRITING_REUSE_GROUPS[WRITING_REUSE_GROUPS.length - 1]
+  );
+}
+
+function collectWritingClusters(items) {
+  const clusters = new Map(
+    WRITING_REUSE_GROUPS.map((group) => [group.key, { group, needs: [] }])
+  );
+  for (const item of items) {
+    for (const requirement of incompleteRequirements(item)) {
+      if (!isWritingRequirement(requirement)) {
+        continue;
+      }
+      const group = writingReuseGroup(requirement);
+      clusters.get(group.key).needs.push({ item, requirement });
+    }
+  }
+  return Array.from(clusters.values())
+    .filter((cluster) => cluster.needs.length > 0)
+    .sort((a, b) => b.needs.length - a.needs.length);
+}
+
+function buildEssayReuseMap(items) {
+  const section = document.createElement("section");
+  section.className = "plan-essay-map";
+  section.setAttribute("aria-label", "Essay reuse map");
+
+  const head = document.createElement("div");
+  head.className = "plan-subsection-head";
+  head.innerHTML =
+    "<div><p class=\"eyebrow\">Essay reuse map</p>" +
+    "<h4>Draft once, tailor carefully</h4></div>" +
+    "<p>Groups unfinished writing steps by likely reusable theme. Always answer each official prompt directly.</p>";
+  section.appendChild(head);
+
+  const clusters = collectWritingClusters(items);
+  const wrap = document.createElement("div");
+  wrap.className = "essay-clusters";
+  if (!clusters.length) {
+    const empty = document.createElement("p");
+    empty.className = "plan-empty-note";
+    empty.textContent = "No unfinished essay, short-answer, or problem-set steps detected in your saved checklist.";
+    wrap.appendChild(empty);
+  }
+
+  for (const cluster of clusters.slice(0, 5)) {
+    const card = document.createElement("article");
+    card.className = "essay-cluster";
+    const title = document.createElement("h5");
+    title.textContent = cluster.group.label;
+    const meta = document.createElement("p");
+    const count = cluster.needs.length;
+    meta.textContent = `${count} unfinished writing step${count === 1 ? "" : "s"} could share a base draft.`;
+
+    const list = document.createElement("ul");
+    for (const need of cluster.needs.slice(0, 4)) {
+      const li = document.createElement("li");
+      li.textContent = `${savedOpportunityName(need.item)}: ${need.requirement.label}`;
+      list.appendChild(li);
+    }
+    if (cluster.needs.length > 4) {
+      const li = document.createElement("li");
+      li.textContent = `+ ${cluster.needs.length - 4} more`;
+      list.appendChild(li);
+    }
+
+    card.appendChild(title);
+    card.appendChild(meta);
+    card.appendChild(list);
+    wrap.appendChild(card);
+  }
+
+  section.appendChild(wrap);
+  return section;
+}
+
+function buildSpecialEligibilityPanel(items) {
+  const section = document.createElement("section");
+  section.className = "plan-special-panel";
+  section.setAttribute("aria-label", "Special eligibility checks");
+
+  const head = document.createElement("div");
+  head.className = "plan-subsection-head";
+  head.innerHTML =
+    "<div><p class=\"eyebrow\">Special eligibility checks</p>" +
+    "<h4>Confirm the strict gates before going deep</h4></div>" +
+    "<p>These are niche requirements like nomination, finalist status, membership, or sponsor affiliation.</p>";
+  section.appendChild(head);
+
+  const specialItems = items.filter((item) => savedOpportunitySpecialRequirements(item).length > 0);
+  const wrap = document.createElement("div");
+  wrap.className = "special-check-list";
+  if (!specialItems.length) {
+    const empty = document.createElement("p");
+    empty.className = "plan-empty-note";
+    empty.textContent = "No special eligibility checks detected in the opportunities you saved.";
+    wrap.appendChild(empty);
+  }
+
+  for (const item of specialItems) {
+    const card = document.createElement("article");
+    card.className = "special-check-card";
+    const title = document.createElement("h5");
+    title.textContent = savedOpportunityName(item);
+    const type = document.createElement("p");
+    type.textContent = `${savedOpportunityKind(item)} · verify this before investing major time`;
+    const list = document.createElement("ul");
+    for (const check of savedOpportunitySpecialRequirements(item)) {
+      const li = document.createElement("li");
+      li.textContent = String(check);
+      list.appendChild(li);
+    }
+    card.appendChild(title);
+    card.appendChild(type);
+    card.appendChild(list);
+    wrap.appendChild(card);
+  }
+
+  section.appendChild(wrap);
+  return section;
+}
+
+function deadlineUrgencyText(item) {
+  const deadline = savedOpportunityDeadline(item);
+  const realDays = daysUntil(deadline);
+  if (realDays === null) {
+    const parts = deadlineParts(deadline, savedOpportunityEstimatedDeadline(item));
+    return `${savedOpportunityName(item)}: ${parts.value}${parts.note ? ` (${parts.note})` : ""}`;
+  }
+  if (realDays < 0) {
+    return `${savedOpportunityName(item)}: deadline has passed`;
+  }
+  if (realDays === 0) {
+    return `${savedOpportunityName(item)}: due today`;
+  }
+  return `${savedOpportunityName(item)}: due in ${realDays} day${realDays === 1 ? "" : "s"}`;
+}
+
+function makePlanCard(title, body, meta = "", tone = "") {
+  const card = document.createElement("article");
+  card.className = `plan-card ${tone ? `plan-card-${tone}` : ""}`;
+  const heading = document.createElement("h4");
+  heading.textContent = title;
+  const copy = document.createElement("p");
+  copy.textContent = body;
+  card.appendChild(heading);
+  card.appendChild(copy);
+  if (meta) {
+    const detail = document.createElement("span");
+    detail.className = "plan-card-meta";
+    detail.textContent = meta;
+    card.appendChild(detail);
+  }
+  return card;
+}
+
+function buildPlanGuidance(items) {
+  const wrap = document.createElement("div");
+  wrap.className = "plan-guidance";
+
+  const totalSteps = items.reduce(
+    (sum, item) => sum + savedOpportunityRequirements(item).length,
+    0
+  );
+  const completedSteps = items.reduce(
+    (sum, item) => sum + (item.completed_requirement_ids?.length || 0),
+    0
+  );
+  const specialChecks = items.filter((item) => savedOpportunitySpecialRequirements(item).length > 0);
+  const realDeadlineItems = items
+    .filter((item) => daysUntil(savedOpportunityDeadline(item)) !== null)
+    .sort((a, b) => deadlinePriority(a) - deadlinePriority(b));
+  const upcomingDeadlines = realDeadlineItems.filter(
+    (item) => daysUntil(savedOpportunityDeadline(item)) >= 0
+  );
+  const nextRequired = firstIncompleteRequired(items);
+  const recommendationNeeds = collectRequirementNeeds(items, [
+    "recommend",
+    "teacher",
+    "counselor",
+    "reference",
+  ]);
+  const writingNeeds = collectRequirementNeeds(items, [
+    "essay",
+    "short answer",
+    "short-answer",
+    "response",
+    "personal statement",
+    "problem set",
+  ]);
+  const transcriptNeeds = collectRequirementNeeds(items, [
+    "transcript",
+    "grade report",
+    "academic record",
+    "school profile",
+  ]);
+
+  const head = document.createElement("div");
+  head.className = "plan-guidance-head";
+  head.innerHTML =
+    "<div><p class=\"eyebrow\">Application command center</p>" +
+    "<h3>What needs attention next</h3>" +
+    "<p>Built from your saved scholarships, summer programs, and source-linked checklist steps.</p></div>" +
+    `<div class="plan-progress"><strong>${completedSteps}/${totalSteps || 0}</strong><span>steps complete</span></div>`;
+  wrap.appendChild(head);
+
+  const stats = document.createElement("div");
+  stats.className = "plan-stats";
+  stats.appendChild(makePlanCard("Saved", `${items.length} active item${items.length === 1 ? "" : "s"}`));
+  stats.appendChild(makePlanCard("Verified steps", totalSteps ? `${totalSteps - completedSteps} left` : "No checklist steps yet"));
+  stats.appendChild(makePlanCard("Special checks", `${specialChecks.length} to confirm`));
+  stats.appendChild(makePlanCard("Real deadlines", `${upcomingDeadlines.length} dated item${upcomingDeadlines.length === 1 ? "" : "s"}`));
+  wrap.appendChild(stats);
+
+  const actions = document.createElement("div");
+  actions.className = "plan-actions";
+  if (nextRequired) {
+    actions.appendChild(
+      makePlanCard(
+        "Do this next",
+        nextRequired.requirement.label,
+        `${savedOpportunityKind(nextRequired.item)} - ${savedOpportunityName(nextRequired.item)}`,
+        "primary"
+      )
+    );
+  } else {
+    actions.appendChild(
+      makePlanCard(
+        "Do this next",
+        "Save an opportunity with checklist steps, or mark your remaining steps complete.",
+        "The plan updates as you save and check items off.",
+        "primary"
+      )
+    );
+  }
+  actions.appendChild(
+    makePlanCard(
+      "Recommendations",
+      recommendationNeeds.length ? formatNeedList(recommendationNeeds) : "No unfinished recommendation steps detected.",
+      recommendationNeeds.length ? "Ask early; recommenders are usually the bottleneck." : "",
+      "recommendation"
+    )
+  );
+  actions.appendChild(
+    makePlanCard(
+      "Writing work",
+      writingNeeds.length ? formatNeedList(writingNeeds) : "No unfinished essays or written-response steps detected.",
+      writingNeeds.length ? "See the essay reuse map below for likely shared draft themes." : "",
+      "writing"
+    )
+  );
+  actions.appendChild(
+    makePlanCard(
+      "Transcripts & records",
+      transcriptNeeds.length ? formatNeedList(transcriptNeeds) : "No unfinished transcript or academic-record steps detected.",
+      transcriptNeeds.length ? "Some must come from school staff, so start early." : "",
+      "records"
+    )
+  );
+  if (specialChecks.length) {
+    actions.appendChild(
+      makePlanCard(
+        "Special eligibility",
+        specialChecks.map((item) => savedOpportunityName(item)).join("; "),
+        "Confirm nomination, membership, finalist status, or affiliation before investing heavy effort.",
+        "special"
+      )
+    );
+  }
+  if (upcomingDeadlines.length) {
+    actions.appendChild(
+      makePlanCard(
+        "Upcoming deadlines",
+        upcomingDeadlines.slice(0, 3).map(deadlineUrgencyText).join("; "),
+        "Only verified ISO deadlines are counted here.",
+        "deadline"
+      )
+    );
+  }
+  wrap.appendChild(actions);
+  wrap.appendChild(buildRequirementMatrix(items));
+  wrap.appendChild(buildEssayReuseMap(items));
+  wrap.appendChild(buildSpecialEligibilityPanel(items));
+  wrap.appendChild(buildDeadlineTimeline(items));
+
+  return wrap;
 }
 
 function buildTrackerControls(item, card, kind = "scholarship") {
@@ -1674,6 +2399,10 @@ function setLoading(isLoading) {
     resultsContainer.innerHTML = "";
     resultsEmpty.hidden = true;
     resultsFilters.hidden = true;
+    programsContainer.innerHTML = "";
+    programsEmpty.hidden = true;
+    lastPrograms = null;
+    updateOpportunityTabCounts();
   }
 }
 
@@ -1688,6 +2417,9 @@ async function handleSubmit(event) {
   }
 
   resultsSection.hidden = false;
+  programsSection.hidden = true;
+  savedSection.hidden = true;
+  setOpportunityTabsVisible(false);
   setLoading(true);
 
   try {
@@ -1712,6 +2444,8 @@ async function handleSubmit(event) {
     lastSubmittedProfile = built.profile;
     lastResults = results;
     renderResults(results);
+    updateOpportunityTabCounts();
+    await activateOpportunityView("scholarships");
     saveProfileSilently(built.profile);
     loadPrograms(built.profile);
   } catch (err) {
@@ -1818,24 +2552,35 @@ async function loadPrograms(profile) {
       body: JSON.stringify(profile),
     });
     if (!response.ok) {
-      programsSection.hidden = true;
+      lastPrograms = [];
+      updateOpportunityTabCounts();
       return;
     }
     const programs = await response.json();
-    if (!programs.length) {
-      programsSection.hidden = true;
-      return;
-    }
-    programsSection.hidden = false;
+    lastPrograms = programs;
+    updateOpportunityTabCounts();
     renderPrograms(programs);
+    if (activeOpportunityView === "programs") {
+      programsSection.hidden = false;
+    }
   } catch (err) {
-    programsSection.hidden = true;
+    lastPrograms = [];
+    updateOpportunityTabCounts();
     console.error(err);
   }
 }
 
 function renderPrograms(programs) {
   programsContainer.innerHTML = "";
+  lastPrograms = programs;
+  updateOpportunityTabCounts();
+
+  if (programs.length === 0) {
+    programsSummary.textContent = "";
+    programsEmpty.hidden = false;
+    return;
+  }
+
   programsEmpty.hidden = true;
 
   const regular = programs.filter((p) => !p.requires_special_check);

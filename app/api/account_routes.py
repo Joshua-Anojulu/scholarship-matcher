@@ -121,18 +121,34 @@ def saved_calendar(
     db: Session = Depends(get_db),
 ) -> Response:
     index = _scholarship_index(request)
-    rows = (
+    program_index = _program_index(request)
+    scholarship_rows = (
         db.query(SavedScholarship)
         .filter(SavedScholarship.user_id == user.id)
         .order_by(SavedScholarship.created_at.desc())
         .all()
     )
-    scholarships = [index[row.scholarship_id] for row in rows if row.scholarship_id in index]
+    program_rows = (
+        db.query(SavedProgram)
+        .filter(SavedProgram.user_id == user.id)
+        .order_by(SavedProgram.created_at.desc())
+        .all()
+    )
+    scholarships = [
+        index[row.scholarship_id]
+        for row in scholarship_rows
+        if row.scholarship_id in index
+    ]
+    programs = [
+        program_index[row.program_id]
+        for row in program_rows
+        if row.program_id in program_index
+    ]
     return Response(
-        content=build_calendar(scholarships),
+        content=build_calendar(scholarships, programs),
         media_type="text/calendar",
         headers={
-            "Content-Disposition": 'attachment; filename="scholarship-deadlines.ics"'
+            "Content-Disposition": 'attachment; filename="scholarships4u-deadlines.ics"'
         },
     )
 
