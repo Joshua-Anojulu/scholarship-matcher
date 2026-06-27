@@ -8,14 +8,16 @@ from sqlalchemy.orm import Session
 
 from app.auth.dependencies import get_current_user
 from app.db.database import get_db
-from app.db.models import SavedScholarship, User, UserProfile
+from app.db.models import SavedProgram, SavedScholarship, User, UserProfile
 from app.ics import build_calendar
 from app.models.auth import (
     ProfileResponse,
     SavedListResponse,
+    SavedProgramItem,
     SavedScholarshipItem,
     SavedUpdateRequest,
 )
+from app.models.program import SummerProgram
 from app.models.scholarship import Scholarship
 from app.models.student import StudentProfile
 
@@ -25,6 +27,11 @@ router = APIRouter(prefix="/account", tags=["account"])
 def _scholarship_index(request: Request) -> dict[str, Scholarship]:
     scholarships: list[Scholarship] = request.app.state.scholarships
     return {s.id: s for s in scholarships}
+
+
+def _program_index(request: Request) -> dict[str, SummerProgram]:
+    programs: list[SummerProgram] = request.app.state.programs
+    return {p.id: p for p in programs}
 
 
 @router.get("/profile", response_model=ProfileResponse)
@@ -69,10 +76,17 @@ def list_saved(
     db: Session = Depends(get_db),
 ) -> SavedListResponse:
     index = _scholarship_index(request)
-    rows = (
+    program_index = _program_index(request)
+    scholarship_rows = (
         db.query(SavedScholarship)
         .filter(SavedScholarship.user_id == user.id)
         .order_by(SavedScholarship.created_at.desc())
+        .all()
+    )
+    program_rows = (
+        db.query(SavedProgram)
+        .filter(SavedProgram.user_id == user.id)
+        .order_by(SavedProgram.created_at.desc())
         .all()
     )
     items = [
@@ -84,9 +98,20 @@ def list_saved(
             completed_requirement_ids=row.completed_requirement_ids,
             scholarship=index.get(row.scholarship_id),
         )
-        for row in rows
+        for row in scholarship_rows
     ]
-    return SavedListResponse(saved=items)
+    program_items = [
+        SavedProgramItem(
+            program_id=row.program_id,
+            saved_at=row.created_at,
+            status=row.status,
+            notes=row.notes,
+            completed_requirement_ids=row.completed_requirement_ids,
+            program=program_index.get(row.program_id),
+        )
+        for row in program_rows
+    ]
+    return SavedListResponse(saved=items, programs=program_items)
 
 
 @router.get("/saved/calendar.ics")
@@ -163,6 +188,57 @@ def save_scholarship(
     )
 
 
+@router.post(
+    "/saved/programs/{program_id}",
+    response_model=SavedProgramItem,
+    status_code=status.HTTP_201_CREATED,
+)
+def save_program(
+    program_id: str,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> SavedProgramItem:
+    index = _program_index(request)
+    program = index.get(program_id)
+    if program is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "That summer program was not found in the current dataset."},
+        )
+
+    existing = (
+        db.query(SavedProgram)
+        .filter(
+            SavedProgram.user_id == user.id,
+            SavedProgram.program_id == program_id,
+        )
+        .first()
+    )
+    if existing is not None:
+        return SavedProgramItem(
+            program_id=existing.program_id,
+            saved_at=existing.created_at,
+            status=existing.status,
+            notes=existing.notes,
+            completed_requirement_ids=existing.completed_requirement_ids,
+            program=program,
+        )
+
+    row = SavedProgram(user_id=user.id, program_id=program_id)
+    db.add(row)
+    db.commit()
+    db.refresh(row)
+    return SavedProgramItem(
+        program_id=row.program_id,
+        saved_at=row.created_at,
+        status=row.status,
+        notes=row.notes,
+        completed_requirement_ids=row.completed_requirement_ids,
+        program=program,
+    )
+
+
 @router.patch("/saved/{scholarship_id}", response_model=SavedScholarshipItem)
 def update_saved_scholarship(
     scholarship_id: str,
@@ -216,6 +292,59 @@ def update_saved_scholarship(
     )
 
 
+@router.patch("/saved/programs/{program_id}", response_model=SavedProgramItem)
+def update_saved_program(
+    program_id: str,
+    body: SavedUpdateRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> SavedProgramItem:
+    row = (
+        db.query(SavedProgram)
+        .filter(
+            SavedProgram.user_id == user.id,
+            SavedProgram.program_id == program_id,
+        )
+        .first()
+    )
+    if row is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "That summer program is not in your saved list."},
+        )
+
+    if body.status is not None:
+        row.status = body.status
+    if body.notes is not None:
+        row.notes = body.notes
+
+    index = _program_index(request)
+    if body.completed_requirement_ids is not None:
+        program = index.get(row.program_id)
+        requirement_ids = {
+            requirement.id for requirement in (program.application_requirements if program else [])
+        }
+        invalid_ids = set(body.completed_requirement_ids) - requirement_ids
+        if invalid_ids:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail={"error": "Checklist steps must belong to this summer program."},
+            )
+        row.completed_requirement_ids = body.completed_requirement_ids
+    db.commit()
+    db.refresh(row)
+
+    return SavedProgramItem(
+        program_id=row.program_id,
+        saved_at=row.created_at,
+        status=row.status,
+        notes=row.notes,
+        completed_requirement_ids=row.completed_requirement_ids,
+        program=index.get(row.program_id),
+    )
+
+
 @router.delete("/saved/{scholarship_id}", status_code=status.HTTP_200_OK)
 def unsave_scholarship(
     scholarship_id: str,
@@ -227,6 +356,26 @@ def unsave_scholarship(
         .filter(
             SavedScholarship.user_id == user.id,
             SavedScholarship.scholarship_id == scholarship_id,
+        )
+        .first()
+    )
+    if row is not None:
+        db.delete(row)
+        db.commit()
+    return {"ok": True}
+
+
+@router.delete("/saved/programs/{program_id}", status_code=status.HTTP_200_OK)
+def unsave_program(
+    program_id: str,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> dict[str, bool]:
+    row = (
+        db.query(SavedProgram)
+        .filter(
+            SavedProgram.user_id == user.id,
+            SavedProgram.program_id == program_id,
         )
         .first()
     )

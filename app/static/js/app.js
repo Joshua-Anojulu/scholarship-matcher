@@ -2,7 +2,7 @@
  * Scholarships4U frontend.
  *
  * Logged-out users get the original stateless experience. Logged-in users can
- * save their profile (it prefills on return) and bookmark scholarships. Session
+ * save their profile (it prefills on return) and bookmark scholarships/programs. Session
  * state lives in an httponly cookie set by the server, not in browser storage.
  */
 
@@ -12,6 +12,7 @@ let lastResults = null;
 
 let currentUser = null;
 const savedIds = new Set();
+const savedProgramIds = new Set();
 let authMode = "login";
 let passwordResetToken = null;
 
@@ -566,7 +567,7 @@ async function handleDeleteAccount() {
   }
   if (
     !window.confirm(
-      "Delete your account permanently? This removes your profile and saved scholarships."
+      "Delete your account permanently? This removes your profile and saved scholarships/programs."
     )
   ) {
     return;
@@ -584,6 +585,7 @@ async function handleDeleteAccount() {
     }
     currentUser = null;
     savedIds.clear();
+    savedProgramIds.clear();
     savedSection.hidden = true;
     closeSettingsModal();
     renderAuthState();
@@ -655,8 +657,8 @@ function openAuthModal(mode, message) {
   authModalIntro.textContent =
     message ||
     (isLogin
-      ? "Log in to save your profile and bookmark scholarships."
-      : "Sign up to save your profile and bookmark scholarships.");
+      ? "Log in to save your profile and bookmark scholarships/programs."
+      : "Sign up to save your profile and bookmark scholarships/programs.");
   authSubmit.textContent = isLogin ? "Log in" : "Create account";
   authSwitchText.textContent = isLogin ? "New here?" : "Already have an account?";
   authSwitchBtn.textContent = isLogin ? "Create an account" : "Log in";
@@ -869,6 +871,7 @@ async function handleLogout() {
   }
   currentUser = null;
   savedIds.clear();
+  savedProgramIds.clear();
   savedSection.hidden = true;
   renderAuthState();
   updateSavedCount();
@@ -886,10 +889,14 @@ async function loadSession() {
       await Promise.all([loadProfileIntoForm(), loadSaved()]);
     } else {
       currentUser = null;
+      savedIds.clear();
+      savedProgramIds.clear();
       renderAuthState();
     }
   } catch (err) {
     currentUser = null;
+    savedIds.clear();
+    savedProgramIds.clear();
     renderAuthState();
     console.error(err);
   }
@@ -990,7 +997,19 @@ async function saveProfileSilently(profile) {
   }
 }
 
-/* ---------- Saved scholarships ---------- */
+/* ---------- Saved scholarships/programs ---------- */
+
+function syncSavedState(data) {
+  savedIds.clear();
+  savedProgramIds.clear();
+  for (const item of data.saved || []) {
+    savedIds.add(item.scholarship_id);
+  }
+  for (const item of data.programs || []) {
+    savedProgramIds.add(item.program_id);
+  }
+  updateSavedCount();
+}
 
 async function loadSaved() {
   if (!currentUser) {
@@ -1002,13 +1021,9 @@ async function loadSaved() {
       return;
     }
     const data = await response.json();
-    savedIds.clear();
-    for (const item of data.saved) {
-      savedIds.add(item.scholarship_id);
-    }
-    updateSavedCount();
+    syncSavedState(data);
     if (!savedSection.hidden) {
-      renderSaved(data.saved);
+      renderSaved(data.saved, data.programs || []);
     }
   } catch (err) {
     console.error(err);
@@ -1016,7 +1031,7 @@ async function loadSaved() {
 }
 
 function updateSavedCount() {
-  const count = savedIds.size;
+  const count = savedIds.size + savedProgramIds.size;
   savedCountEl.textContent = String(count);
   savedCountEl.hidden = count === 0;
 }
@@ -1036,18 +1051,14 @@ async function showSavedView() {
   try {
     const response = await fetch("/account/saved");
     if (!response.ok) {
-      savedSummary.textContent = "Saved scholarships could not be loaded.";
+      savedSummary.textContent = "Saved items could not be loaded.";
       return;
     }
     const data = await response.json();
-    savedIds.clear();
-    for (const item of data.saved) {
-      savedIds.add(item.scholarship_id);
-    }
-    updateSavedCount();
-    renderSaved(data.saved);
+    syncSavedState(data);
+    renderSaved(data.saved, data.programs || []);
   } catch (err) {
-    savedSummary.textContent = "Saved scholarships could not be loaded.";
+    savedSummary.textContent = "Saved items could not be loaded.";
     console.error(err);
   }
   savedSection.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1072,9 +1083,13 @@ function trackerSummary(items) {
     (s) => `${counts[s.value]} ${s.label.toLowerCase()}`
   );
   const total = items.length;
-  const head = `${total} saved scholarship${total === 1 ? "" : "s"}`;
+  const head = `${total} saved item${total === 1 ? "" : "s"}`;
   const totalSteps = items.reduce(
-    (sum, item) => sum + (item.scholarship?.application_requirements?.length || 0),
+    (sum, item) =>
+      sum +
+      (item.scholarship?.application_requirements?.length ||
+        item.program?.application_requirements?.length ||
+        0),
     0
   );
   const completedSteps = items.reduce(
@@ -1094,10 +1109,11 @@ function refreshTrackerSummary() {
   }
 }
 
-function renderSaved(items) {
-  trackerItems = items || [];
+function renderSaved(scholarshipItems, programItems = []) {
+  const items = [...(scholarshipItems || []), ...(programItems || [])];
+  trackerItems = items;
   savedContainer.innerHTML = "";
-  if (!items || items.length === 0) {
+  if (items.length === 0) {
     savedSummary.textContent = "";
     savedEmpty.hidden = false;
     return;
@@ -1117,16 +1133,30 @@ function renderSaved(items) {
     // Append inside the card-body (the wide grid column), not the card grid
     // itself, or the controls land in the narrow path-bar column.
     const cardBody = card.querySelector(".card-body");
-    (cardBody || card).appendChild(buildTrackerControls(item, card));
+    (cardBody || card).appendChild(buildTrackerControls(item, card, "scholarship"));
+    savedContainer.appendChild(card);
+  }
+
+  for (const item of programItems || []) {
+    if (!item.program) {
+      continue;
+    }
+    const card = buildProgramCard(item.program, { savedContext: true });
+    card.classList.add(`status-${item.status || "interested"}`);
+    const cardBody = card.querySelector(".card-body");
+    (cardBody || card).appendChild(buildTrackerControls(item, card, "program"));
     savedContainer.appendChild(card);
   }
 }
 
-function buildTrackerControls(item, card) {
+function buildTrackerControls(item, card, kind = "scholarship") {
   const wrap = document.createElement("div");
   wrap.className = "tracker-controls";
 
-  const checklist = buildApplicationChecklist(item);
+  const itemId = kind === "program" ? item.program_id : item.scholarship_id;
+  const patcher = kind === "program" ? patchSavedProgram : patchSaved;
+
+  const checklist = buildApplicationChecklist(item, kind);
   if (checklist) {
     wrap.appendChild(checklist);
   }
@@ -1148,7 +1178,7 @@ function buildTrackerControls(item, card) {
     select.appendChild(option);
   }
   select.addEventListener("change", async () => {
-    const ok = await patchSaved(item.scholarship_id, { status: select.value });
+    const ok = await patcher(itemId, { status: select.value });
     if (ok) {
       item.status = select.value;
       card.className = card.className.replace(/\bstatus-\w+\b/, `status-${select.value}`);
@@ -1173,7 +1203,7 @@ function buildTrackerControls(item, card) {
   notes.addEventListener("blur", () => {
     if (notes.value !== lastSaved) {
       lastSaved = notes.value;
-      patchSaved(item.scholarship_id, { notes: notes.value });
+      patcher(itemId, { notes: notes.value });
     }
   });
   notesField.appendChild(notesLabelEl);
@@ -1184,11 +1214,17 @@ function buildTrackerControls(item, card) {
   return wrap;
 }
 
-function buildApplicationChecklist(item) {
-  const requirements = item.scholarship?.application_requirements || [];
+function buildApplicationChecklist(item, kind = "scholarship") {
+  const requirements =
+    kind === "program"
+      ? item.program?.application_requirements || []
+      : item.scholarship?.application_requirements || [];
   if (!requirements.length) {
     return null;
   }
+
+  const itemId = kind === "program" ? item.program_id : item.scholarship_id;
+  const patcher = kind === "program" ? patchSavedProgram : patchSaved;
 
   const field = document.createElement("div");
   field.className = "tracker-field tracker-checklist";
@@ -1269,7 +1305,7 @@ function buildApplicationChecklist(item) {
       }
       checkbox.disabled = true;
       updateProgress();
-      const ok = await patchSaved(item.scholarship_id, {
+      const ok = await patcher(itemId, {
         completed_requirement_ids: Array.from(completed),
       });
       checkbox.disabled = false;
@@ -1290,6 +1326,20 @@ function buildApplicationChecklist(item) {
 async function patchSaved(scholarshipId, payload) {
   try {
     const response = await fetch(`/account/saved/${encodeURIComponent(scholarshipId)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return response.ok;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+async function patchSavedProgram(programId, payload) {
+  try {
+    const response = await fetch(`/account/saved/programs/${encodeURIComponent(programId)}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -1329,7 +1379,46 @@ async function toggleSaved(scholarshipId, button) {
     updateSavedCount();
     if (!savedSection.hidden) {
       const refreshed = await fetch("/account/saved").then((r) => r.json());
-      renderSaved(refreshed.saved);
+      syncSavedState(refreshed);
+      renderSaved(refreshed.saved, refreshed.programs || []);
+    }
+  } catch (err) {
+    console.error(err);
+  } finally {
+    button.disabled = false;
+  }
+}
+
+async function toggleSavedProgram(programId, button) {
+  if (!currentUser) {
+    openAuthModal("login", "Log in to save summer programs to your account.");
+    return;
+  }
+
+  const isSaved = savedProgramIds.has(programId);
+  button.disabled = true;
+  try {
+    if (isSaved) {
+      const response = await fetch(`/account/saved/programs/${encodeURIComponent(programId)}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        savedProgramIds.delete(programId);
+      }
+    } else {
+      const response = await fetch(`/account/saved/programs/${encodeURIComponent(programId)}`, {
+        method: "POST",
+      });
+      if (response.ok) {
+        savedProgramIds.add(programId);
+      }
+    }
+    applySavedButtonState(button, savedProgramIds.has(programId));
+    updateSavedCount();
+    if (!savedSection.hidden) {
+      const refreshed = await fetch("/account/saved").then((r) => r.json());
+      syncSavedState(refreshed);
+      renderSaved(refreshed.saved, refreshed.programs || []);
     }
   } catch (err) {
     console.error(err);
@@ -1889,8 +1978,15 @@ function buildProgramSteps(steps) {
   return wrap;
 }
 
-function buildProgramCard(program) {
-  const tierClass = program.requires_special_check
+function buildProgramCard(program, options = {}) {
+  const programId = program.program_id || program.id;
+  const specialRequirements =
+    program.special_requirements || program.eligibility?.special_requirements || [];
+  const requiresSpecialCheck =
+    Boolean(program.requires_special_check) || specialRequirements.length > 0;
+  const tierClass = options.savedContext
+    ? "saved"
+    : requiresSpecialCheck
     ? "special"
     : program.match_tier === "possible"
     ? "possible"
@@ -1953,15 +2049,15 @@ function buildProgramCard(program) {
     body.appendChild(buildReasons(program.match_reasons));
   }
 
-  if (program.requires_special_check) {
+  if (requiresSpecialCheck) {
     const badges = document.createElement("div");
     badges.className = "badge-row";
     badges.appendChild(makeBadge("Special eligibility", "badge-special"));
     body.appendChild(badges);
   }
 
-  if (program.special_requirements && program.special_requirements.length > 0) {
-    body.appendChild(buildSpecialRequirements(program.special_requirements));
+  if (specialRequirements.length > 0) {
+    body.appendChild(buildSpecialRequirements(specialRequirements));
   }
 
   const steps = program.application_requirements || [];
@@ -1976,8 +2072,19 @@ function buildProgramCard(program) {
   link.href = program.url;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.textContent = program.requires_special_check ? "Check program page" : "View program";
+  link.textContent = requiresSpecialCheck ? "Check program page" : "View program";
   footer.appendChild(link);
+  if (programId) {
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+    const saveBtn = document.createElement("button");
+    saveBtn.type = "button";
+    saveBtn.className = "btn-save";
+    applySavedButtonState(saveBtn, savedProgramIds.has(programId));
+    saveBtn.addEventListener("click", () => toggleSavedProgram(programId, saveBtn));
+    actions.appendChild(saveBtn);
+    footer.appendChild(actions);
+  }
   body.appendChild(footer);
 
   article.appendChild(pathBar);

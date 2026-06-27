@@ -307,6 +307,75 @@ class TestApplicationTracker:
         assert response.status_code == 401
 
 
+class TestSavedPrograms:
+    def _first_program_id(self, client):
+        return client.get("/programs").json()[0]["id"]
+
+    def test_save_list_update_checklist_and_remove_program(self, client):
+        signup(client)
+        program_id = "mites-summer"
+
+        saved = client.post(f"/account/saved/programs/{program_id}")
+        assert saved.status_code == 201
+        assert saved.json()["program"]["id"] == program_id
+        assert saved.json()["status"] == "interested"
+
+        listing = client.get("/account/saved")
+        assert listing.status_code == 200
+        body = listing.json()
+        assert body["saved"] == []
+        assert len(body["programs"]) == 1
+        assert body["programs"][0]["program_id"] == program_id
+
+        updated = client.patch(
+            f"/account/saved/programs/{program_id}",
+            json={
+                "status": "drafting",
+                "notes": "Need teacher recs",
+                "completed_requirement_ids": ["online_application"],
+            },
+        )
+        assert updated.status_code == 200
+        assert updated.json()["status"] == "drafting"
+        assert updated.json()["notes"] == "Need teacher recs"
+        assert updated.json()["completed_requirement_ids"] == ["online_application"]
+
+        removed = client.delete(f"/account/saved/programs/{program_id}")
+        assert removed.status_code == 200
+        assert client.get("/account/saved").json()["programs"] == []
+
+    def test_saving_same_program_twice_is_idempotent(self, client):
+        signup(client)
+        program_id = self._first_program_id(client)
+        assert client.post(f"/account/saved/programs/{program_id}").status_code == 201
+        assert client.post(f"/account/saved/programs/{program_id}").status_code == 201
+        assert len(client.get("/account/saved").json()["programs"]) == 1
+
+    def test_saving_unknown_program_returns_404(self, client):
+        signup(client)
+        assert client.post("/account/saved/programs/does-not-exist").status_code == 404
+
+    def test_rejects_checklist_steps_from_another_program(self, client):
+        signup(client)
+        program_id = "mites-summer"
+        client.post(f"/account/saved/programs/{program_id}")
+
+        response = client.patch(
+            f"/account/saved/programs/{program_id}",
+            json={"completed_requirement_ids": ["problem_set"]},
+        )
+        assert response.status_code == 422
+
+    def test_saved_programs_are_per_user(self, client):
+        signup(client, email="a@example.com")
+        program_id = self._first_program_id(client)
+        client.post(f"/account/saved/programs/{program_id}")
+        client.post("/auth/logout")
+
+        signup(client, email="b@example.com")
+        assert client.get("/account/saved").json()["programs"] == []
+
+
 class TestStudentJourney:
     def test_signup_match_save_track_and_export_calendar(self, client):
         assert signup(client).status_code == 201

@@ -44,6 +44,10 @@ class User(Base):
         back_populates="user",
         cascade="all, delete-orphan",
     )
+    saved_programs: Mapped[list["SavedProgram"]] = relationship(
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
     password_reset_tokens: Mapped[list["PasswordResetToken"]] = relationship(
         back_populates="user",
         cascade="all, delete-orphan",
@@ -108,3 +112,26 @@ class SavedScholarship(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
 
     user: Mapped[User] = relationship(back_populates="saved_scholarships")
+
+
+class SavedProgram(Base):
+    """A summer program a user is tracking, referenced by its dataset id."""
+
+    __tablename__ = "saved_programs"
+    __table_args__ = (UniqueConstraint("user_id", "program_id", name="uq_user_program"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), index=True, nullable=False
+    )
+    program_id: Mapped[str] = mapped_column(String(128), nullable=False)
+    status: Mapped[str] = mapped_column(
+        String(20), nullable=False, default="interested", server_default="interested"
+    )
+    notes: Mapped[str] = mapped_column(Text, nullable=False, default="", server_default="")
+    completed_requirement_ids: Mapped[list[str]] = mapped_column(
+        JSON, nullable=False, default=list, server_default="[]"
+    )
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+
+    user: Mapped[User] = relationship(back_populates="saved_programs")

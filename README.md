@@ -22,7 +22,7 @@ Scholarships4U is a **curated scholarship and summer-program planner** for U.S. 
 
 **Resume auto-fill.** A student can upload a PDF resume or paste its text instead of filling the form by hand. With consent, the server sends it to the Anthropic API with a tool schema constrained to the app's vocabulary, and the model returns a structured profile that pre-fills the form. Every value is filtered against the allowed vocabulary on the server, so only known tags reach the form, and the student reviews and completes the profile before matching. Demographics are set only when the resume states them explicitly, uploaded files are not stored, and both file and text sizes are capped before content is sent upstream.
 
-**Accounts.** Accounts are optional. Without one, the app works exactly as before and keeps no data between visits. With an account (email and password), the student's profile is saved and prefilled on their next visit, and they can bookmark scholarships to a personal saved list. Saved scholarships double as an application tracker: each one carries a status (interested, drafting, submitted, awarded, or rejected) and free-text notes, so the student can see where every application stands. Verified pilot awards also include a persistent, source-linked application checklist, so students can see the next required step instead of only a match score. Tracker cards use their application status, not a stale match tier, as their visual signal. Saved deadlines export to an `.ics` calendar file. Passwords are stored as bcrypt hashes, never in plain text. The login is kept in a signed, httponly session cookie, so the session identifier is not readable by client JavaScript.
+**Accounts.** Accounts are optional. Without one, the app works exactly as before and keeps no data between visits. With an account (email and password), the student's profile is saved and prefilled on their next visit, and they can bookmark scholarships and summer programs to a personal saved list. Saved items double as an application tracker: each one carries a status (interested, drafting, submitted, awarded, or rejected) and free-text notes, so the student can see where every application stands. Verified pilot awards and all seed summer programs include persistent, source-linked application checklists, so students can see the next required step instead of only a match score. Tracker cards use their application status, not a stale match tier, as their visual signal. Scholarship deadlines export to an `.ics` calendar file. Passwords are stored as bcrypt hashes, never in plain text. The login is kept in a signed, httponly session cookie, so the session identifier is not readable by client JavaScript.
 
 ## Tech stack
 
@@ -277,7 +277,6 @@ ScholarMatch/
 
 - The scholarship dataset is a **curated set** (122 scholarships, including a small school-specific pilot), and the summer-program dataset is a **curated set** (13 programs), not a comprehensive directory.
 - Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship and summer-program data verification](#scholarship-and-summer-program-data-verification) for how entries are confirmed over time.
-- Accounts currently save and track scholarships; saving summer programs is the next integration step.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
 - Password reset depends on the Resend sender, API key, and `PUBLIC_APP_URL` environment variables being configured on the host. Email verification is still not implemented, so this is suited to a demo rather than production use.
 - The age and terms notice is a browser-stored acknowledgment, not age verification or parental consent. This is not a production-ready service for children under 13.
@@ -293,7 +292,6 @@ MIT — see [LICENSE](LICENSE).
 
 - Expand and fully verify the scholarship dataset
 - Expand the school-specific scholarship pilot with verified institution records
-- Save summer programs alongside scholarships in the account tracker
 - Live data integration with sponsor feeds or APIs
 - Account improvement: email verification
 - Production monitoring for uptime, email deliverability, and stale scholarship audits
