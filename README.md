@@ -246,7 +246,7 @@ Run the validator at any time to see how many entries are verified, which ones n
 python scripts/validate_dataset.py
 ```
 
-As of the latest update, the app includes **139 scholarships** and **22 elite summer programs**. Every entry is sponsor-verified at the record level; many individual fields still carry `VERIFY` placeholders where the upcoming cycle has not been published yet. A sidecar file, [`app/data/special_requirements.json`](app/data/special_requirements.json), records niche scholarship eligibility gates that should be surfaced as special checks rather than normal Strong matches. Summer programs can carry the same special-check metadata directly in their eligibility block. Run the validator for the current re-verification queue and placeholder counts.
+As of the latest update, the app includes **163 scholarships** and **32 elite summer programs**. Every entry is sponsor-verified at the record level; many individual fields still carry `VERIFY` placeholders where the upcoming cycle has not been published yet. A sidecar file, [`app/data/special_requirements.json`](app/data/special_requirements.json), records niche scholarship eligibility gates that should be surfaced as special checks rather than normal Strong matches. Summer programs can carry the same special-check metadata directly in their eligibility block. Run the validator for the current re-verification queue and placeholder counts.
 
 ## Project structure
 
@@ -275,7 +275,7 @@ ScholarMatch/
 
 ## Limitations
 
-- The scholarship dataset is a **curated set** (139 scholarships, including a small school-specific pilot), and the summer-program dataset is a **curated set** (22 programs), not a comprehensive directory.
+- The scholarship dataset is a **curated set** (163 scholarships, including a small school-specific pilot), and the summer-program dataset is a **curated set** (32 programs), not a comprehensive directory.
 - Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship and summer-program data verification](#scholarship-and-summer-program-data-verification) for how entries are confirmed over time.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
 - Password reset depends on the Resend sender, API key, and `PUBLIC_APP_URL` environment variables being configured on the host. Email verification is still not implemented, so this is suited to a demo rather than production use.

@@ -1550,6 +1550,526 @@
         "last_verified_at": "2026-06-21",
         "notes": "Official SIMR pages: juniors/seniors; U.S. citizen/PR; 16+; June 8–July 30, 2026; Feb 21, 2026 deadline passed; $50 application fee."
       }
+    },
+    {
+      "id": "mites-semester",
+      "name": "MITES Semester",
+      "host": "Massachusetts Institute of Technology (MIT)",
+      "subject": "STEM and college preparation (virtual)",
+      "url": "https://mites.mit.edu/discover-mites/mites-semester/",
+      "cost": "Free (all program-related costs covered)",
+      "cost_category": "free",
+      "selectivity": "Highly competitive (admit rate not published)",
+      "program_format": "virtual",
+      "location": "Online (U.S. residents only during program)",
+      "program_dates": "June through December (summer STEM courses plus fall college prep)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-01",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Six-month national online STEM and college-preparation program (formerly MOSTEC) for high school juniors, with synchronous summer courses and fall webinars on college applications. Shares one application with MITES Summer.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Submit the shared MITES online application",
+          "details": "Choose MITES Semester, MITES Summer, or both on one application during fall of junior year.",
+          "required": true,
+          "source_url": "https://mites.mit.edu/discover-mites/apply-to-mites/prepare-your-application-mites-summer-and-mites-semester/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://mites.mit.edu/discover-mites/mites-semester/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official MITES Semester page: free; U.S. citizen or PR; juniors; June-December virtual program; shared application with MITES Summer."
+      }
+    },
+    {
+      "id": "brookhaven-hsrp",
+      "name": "Brookhaven High School Research Program (HSRP)",
+      "host": "Brookhaven National Laboratory",
+      "subject": "STEM research",
+      "url": "https://www.bnl.gov/education/programs/program.php?q=219",
+      "cost": "No program fee (commuter; housing not provided)",
+      "cost_category": "free",
+      "selectivity": "Highly competitive",
+      "program_format": "commuter",
+      "location": "Upton, NY",
+      "program_dates": "Six weeks, Monday-Friday 8:30 a.m.-5:00 p.m.",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-01",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "research"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Six-week commuter research program where students collaborate with Brookhaven scientific staff on hands-on STEM projects, weekly meetings, and a concluding poster session.",
+      "application_requirements": [
+        {
+          "id": "online-hsrp-application",
+          "label": "Complete the HSRP online application",
+          "details": "Requires superintendent name/email, personal email, parent contact, and two STEM recommendation letters.",
+          "required": true,
+          "source_url": "https://www.bnl.gov/education/programs/program.php?q=219"
+        },
+        {
+          "id": "two-recommendations",
+          "label": "Submit two teacher or mentor recommendations",
+          "details": "Complete applications include two recommendation letters; notifications may arrive as late as early June.",
+          "required": true,
+          "source_url": "https://www.bnl.gov/education/programs/program.php?q=219"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.bnl.gov/education/programs/program.php?q=219",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official BNL page: age 16+; U.S. citizen or PR; recommended after 11th grade; commuter only; six-week full-time commitment."
+      }
+    },
+    {
+      "id": "mit-bwsi",
+      "name": "MIT Beaver Works Summer Institute (BWSI)",
+      "host": "MIT Lincoln Laboratory / MIT School of Engineering",
+      "subject": "STEM (robotics, AI, cybersecurity, and more)",
+      "url": "https://bwsi.mit.edu/beaver-works-summer-institute/about/",
+      "cost": "Free online prerequisites; summer courses may require fee for families above income threshold",
+      "cost_category": "VERIFY",
+      "selectivity": "Highly competitive",
+      "program_format": "hybrid",
+      "location": "Cambridge, MA (in-person courses) or virtual",
+      "program_dates": "July 6 – August 2, 2026 (2026 schedule on FAQ)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-01",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "computer_science",
+          "engineering",
+          "technology",
+          "mathematics"
+        ],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY",
+        "special_requirements": [
+          {
+            "kind": "institution_channel",
+            "label": "U.S. high school enrollment required",
+            "details": "Must reside in and attend high school physically in the United States through the program; generally rising seniors selected for summer seats."
+          }
+        ]
+      },
+      "description": "Project-based STEM program hosted by MIT Lincoln Laboratory with free online prerequisite courses and competitive summer team-based courses in robotics, AI, cybersecurity, and related fields.",
+      "application_requirements": [
+        {
+          "id": "online-prerequisite-course",
+          "label": "Complete the online prerequisite course for your chosen track",
+          "details": "Summer enrollment is competitive and strongly based on final online course grades.",
+          "required": true,
+          "source_url": "https://bwsi.mit.edu/beaver-works-summer-institute/application-for-summer-program/faq/"
+        },
+        {
+          "id": "summer-application",
+          "label": "Submit the BWSI summer program application",
+          "details": "Eligible students are in grade 11 or below; seniors and college students are not accepted.",
+          "required": true,
+          "source_url": "https://bwsi.mit.edu/beaver-works-summer-institute/application-for-summer-program/faq/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://bwsi.mit.edu/beaver-works-summer-institute/application-for-summer-program/faq/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official BWSI FAQ: U.S. high school enrollment; grades 9-11; July 6-Aug 2 2026; in-person courses require adult housing; income-based fees possible."
+      }
+    },
+    {
+      "id": "wharton-lbw",
+      "name": "Wharton Leadership in the Business World (LBW)",
+      "host": "University of Pennsylvania (Wharton School)",
+      "subject": "Business and leadership",
+      "url": "https://globalyouth.wharton.upenn.edu/programs-services/leadership-in-the-business-world/",
+      "cost": "Paid pre-college program (financial aid available)",
+      "cost_category": "paid",
+      "selectivity": "Highly competitive (~120 students per session)",
+      "program_format": "residential",
+      "location": "Philadelphia, PA",
+      "program_dates": "Three weeks; multiple sessions June-August 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-28",
+      "eligibility": {
+        "min_gpa": 3.5,
+        "fields_of_study": [
+          "business"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Three-week residential introduction to undergraduate business education with team projects, simulations, and a capstone case competition. International applicants welcome.",
+      "application_requirements": [
+        {
+          "id": "wharton-global-youth-application",
+          "label": "Apply through Wharton Global Youth when applications open",
+          "details": "Priority deadline January 28, 2026; final deadline March 18, 2026 for prior cycle.",
+          "required": true,
+          "source_url": "https://globalyouth.wharton.upenn.edu/programs-services/leadership-in-the-business-world/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://globalyouth.wharton.upenn.edu/programs-services/leadership-in-the-business-world/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Wharton Global Youth page: grade 11; 3.5 unweighted GPA; leadership experience; priority Jan 28 / final Mar 18 2026."
+      }
+    },
+    {
+      "id": "wharton-mtsi",
+      "name": "Wharton Management & Technology Summer Institute (M&TSI)",
+      "host": "University of Pennsylvania (Wharton & Penn Engineering)",
+      "subject": "Management and technology",
+      "url": "https://globalyouth.wharton.upenn.edu/programs-services/management-technology-summer-institute/",
+      "cost": "$9,000 on-campus program fee (need-based aid available)",
+      "cost_category": "paid",
+      "selectivity": "Highly competitive (75 participants)",
+      "program_format": "residential",
+      "location": "Philadelphia, PA",
+      "program_dates": "July 5-25, 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-28",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "business",
+          "engineering",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "For-credit three-week summer institute for rising seniors exploring the integration of business and technology through Wharton and Penn Engineering coursework and a team prototype capstone.",
+      "application_requirements": [
+        {
+          "id": "mtsi-application",
+          "label": "Apply through Wharton Global Youth M&TSI portal",
+          "details": "Priority deadline January 28, 2026; final deadline March 25, 2026 for 2026 cycle.",
+          "required": true,
+          "source_url": "https://globalyouth.wharton.upenn.edu/programs-services/management-technology-summer-institute/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://globalyouth.wharton.upenn.edu/programs-services/management-technology-summer-institute/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official page: rising seniors; 75 seats; $9,000 fee; one college credit; priority Jan 28 / final Mar 25 2026."
+      }
+    },
+    {
+      "id": "stanford-precollegiate-summer-institutes",
+      "name": "Stanford Pre-Collegiate Summer Institutes",
+      "host": "Stanford University (Pre-Collegiate Studies)",
+      "subject": "Single-subject intensive study (STEM, humanities, business, and more)",
+      "url": "https://spcs.stanford.edu/programs/stanford-pre-collegiate-summer-institutes",
+      "cost": "Tuition-based online program",
+      "cost_category": "paid",
+      "selectivity": "Competitive",
+      "program_format": "virtual",
+      "location": "Online",
+      "program_dates": "Two-week sessions: June 15-26 and July 6-17, 2026",
+      "deadline": "2026-03-13",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "science",
+          "humanities",
+          "mathematics",
+          "business",
+          "computer_science",
+          "social_sciences"
+        ],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Online two-week intensive courses for grades 8-11 in subjects ranging from bioscience and engineering to creative writing and philosophy, with small classes and hands-on projects.",
+      "application_requirements": [
+        {
+          "id": "spcs-application",
+          "label": "Apply through Stanford Pre-Collegiate Studies",
+          "details": "Application deadline March 13, 2026 for listed 2026 sessions.",
+          "required": true,
+          "source_url": "https://spcs.stanford.edu/programs/stanford-pre-collegiate-summer-institutes"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://spcs.stanford.edu/programs/stanford-pre-collegiate-summer-institutes",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official SPCS page: grades 8-11; online; Mar 13 2026 deadline; two summer 2026 sessions published."
+      }
+    },
+    {
+      "id": "iowa-young-writers-studio",
+      "name": "Iowa Young Writers' Studio (Summer Residential Program)",
+      "host": "University of Iowa",
+      "subject": "Creative writing",
+      "url": "https://iyws.program.uiowa.edu/how-to-apply/summer-residential-program",
+      "cost": "$2,500 program fee (plus $10 application reading fee)",
+      "cost_category": "paid",
+      "selectivity": "Highly competitive (writing-sample based)",
+      "program_format": "residential",
+      "location": "Iowa City, IA",
+      "program_dates": "Session 1: June 14-27, 2026; Session 2: July 12-25, 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-01",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "literature",
+          "humanities",
+          "arts"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Two-week immersive creative writing program at the University of Iowa for students in grades 10-12. Admissions decisions are based almost entirely on the writing sample.",
+      "application_requirements": [
+        {
+          "id": "submittable-application",
+          "label": "Apply via Submittable during the two-week application window",
+          "details": "2026 window: Jan 19 12:00 a.m. CST through Feb 1 11:59 p.m. CST.",
+          "required": true,
+          "source_url": "https://iyws.program.uiowa.edu/how-to-apply/summer-residential-program"
+        },
+        {
+          "id": "writing-sample",
+          "label": "Upload genre-specific writing sample and statement of purpose",
+          "details": "Separate Submittable forms for fiction/poetry/creative writing, TV writing, or playwriting.",
+          "required": true,
+          "source_url": "https://iyws.program.uiowa.edu/how-to-apply/summer-residential-program"
+        },
+        {
+          "id": "recommendation-letter",
+          "label": "Upload one letter of recommendation",
+          "details": "Letter from an English teacher or writing mentor; applicant uploads the letter to Submittable.",
+          "required": true,
+          "source_url": "https://iyws.program.uiowa.edu/how-to-apply/summer-residential-program"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://iyws.program.uiowa.edu/how-to-apply/summer-residential-program",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official UIowa IYWS page: grades 10-12; Jan 19-Feb 1 2026 application window; $2,500 fee; decisions April 3 2026."
+      }
+    },
+    {
+      "id": "fermilab-target",
+      "name": "Fermilab TARGET Internship Program",
+      "host": "Fermi National Accelerator Laboratory (Fermilab)",
+      "subject": "Physics, engineering, and computer science research",
+      "url": "https://diversity.fnal.gov/target/",
+      "cost": "Paid internship (stipend)",
+      "cost_category": "stipend",
+      "selectivity": "Highly competitive (~15-25 interns)",
+      "program_format": "commuter",
+      "location": "Batavia, IL area",
+      "program_dates": "Six weeks each summer",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-15",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": [
+          "IL"
+        ],
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY",
+        "special_requirements": [
+          {
+            "kind": "institution_channel",
+            "label": "Illinois high school enrollment required",
+            "details": "Applicants must be enrolled in an Illinois high school; Fermilab high school programs do not provide housing."
+          }
+        ]
+      },
+      "description": "Six-week summer research internship at Fermilab for Illinois high school sophomores and juniors with strong interest in physics, math, computer science, or engineering.",
+      "application_requirements": [
+        {
+          "id": "fermilab-target-application",
+          "label": "Apply at internships.fnal.gov/target when open",
+          "details": "Applications are due the winter before the summer program.",
+          "required": true,
+          "source_url": "https://diversity.fnal.gov/target/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://diversity.fnal.gov/target/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Fermilab TARGET page: IL high school sophomores/juniors; six weeks; ~15-25 cohort; no housing."
+      }
+    },
+    {
+      "id": "iyws-online-writing-courses",
+      "name": "Iowa Young Writers' Studio (6-Week Online Courses)",
+      "host": "University of Iowa",
+      "subject": "Creative writing (online)",
+      "url": "https://iyws.program.uiowa.edu/6-week-online-courses",
+      "cost": "$475 per course",
+      "cost_category": "paid",
+      "selectivity": "Competitive (enthusiasm-weighted)",
+      "program_format": "virtual",
+      "location": "Online",
+      "program_dates": "Summer 2026: June 14 – July 26, 2026",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-04-20",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": [
+          "literature",
+          "humanities",
+          "arts"
+        ],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Asynchronous six-week online creative writing courses taught by graduates of the Iowa Writers' Workshop. Admissions emphasize enthusiasm and commitment more than polished publication-ready work.",
+      "application_requirements": [
+        {
+          "id": "submittable-online-application",
+          "label": "Apply via iowayoungwritersstudio.submittable.com",
+          "details": "Summer 2026 applications accepted March 1 through April 20, 2026.",
+          "required": true,
+          "source_url": "https://iyws.program.uiowa.edu/how-to-apply/online-courses"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://iyws.program.uiowa.edu/6-week-online-courses",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official UIowa pages: grades 9-12; Mar 1-Apr 20 2026 window; $475 fee; June 14-July 26 2026 session dates."
+      }
+    },
+    {
+      "id": "wharton-moneyball-academy",
+      "name": "Wharton Moneyball Academy",
+      "host": "University of Pennsylvania (Wharton School)",
+      "subject": "Sports analytics and data science",
+      "url": "https://globalyouth.wharton.upenn.edu/programs-services/moneyball-academy/",
+      "cost": "Paid pre-college program (financial aid available)",
+      "cost_category": "paid",
+      "selectivity": "Competitive",
+      "program_format": "residential",
+      "location": "Philadelphia, PA",
+      "program_dates": "Three weeks in summer (dates vary by year)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-28",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "mathematics",
+          "business",
+          "computer_science"
+        ],
+        "grade_levels": [
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "Wharton Global Youth residential academy introducing statistics, data science, and analytics through sports contexts for academically strong high school students.",
+      "application_requirements": [
+        {
+          "id": "moneyball-application",
+          "label": "Apply through Wharton Global Youth when the cycle opens",
+          "details": "Applications open in November per Wharton Global Youth program pages.",
+          "required": true,
+          "source_url": "https://globalyouth.wharton.upenn.edu/programs-services/moneyball-academy/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://globalyouth.wharton.upenn.edu/programs-services/moneyball-academy/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Wharton Global Youth Moneyball Academy page: residential analytics program; shares Global Youth application timeline with other on-campus programs."
+      }
     }
   ]
 }

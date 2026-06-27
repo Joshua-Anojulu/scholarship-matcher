@@ -5053,6 +5053,1052 @@
         "last_verified_at": "2026-06-21",
         "notes": "Official ALA FAQ: $2,000×5; Legion Family/veteran/spouse paths; deadline March 1 at 11:59 p.m. Eastern annually."
       }
+    },
+    {
+      "id": "nhs-scholarship",
+      "name": "NHS Scholarship",
+      "sponsor": "National Association of Secondary School Principals (NASSP) / National Honor Society",
+      "award_amount": "part of $2,000,000 awarded to 600 seniors annually (individual award varies)",
+      "deadline": "2026-11-20",
+      "url": "https://www.nationalhonorsociety.org/the-nhs-scholarship/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National scholarship for high school seniors who are active NHS members in good standing, verified by their chapter adviser, and planning to pursue a degree at an accredited U.S. college, university, military institute, or trade school. Recipients are selected on NHS pillars: Scholarship, Service, Leadership, and Character.",
+      "application_requirements": [
+        {
+          "id": "nhs-student-account",
+          "label": "Create or use an NHS student account verified by your adviser",
+          "details": "Applicants must be NHS student account holders verified by the chapter adviser before applying.",
+          "required": true,
+          "source_url": "https://www.nationalhonorsociety.org/the-nhs-scholarship/"
+        },
+        {
+          "id": "online-nhs-application",
+          "label": "Complete the online NHS Scholarship application when open",
+          "details": "Application opens September 3, 2026 and closes November 20, 2026 at 5:00 p.m. ET.",
+          "required": true,
+          "source_url": "https://www.nationalhonorsociety.org/the-nhs-scholarship/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.nationalhonorsociety.org/the-nhs-scholarship/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NHS page: $2M to 600 seniors; opens Sept 3, 2026; deadline Nov 20, 2026 5 p.m. ET; active NHS senior membership required."
+      }
+    },
+    {
+      "id": "afcea-stem-majors-scholarship",
+      "name": "AFCEA STEM Majors Scholarship",
+      "sponsor": "AFCEA Educational Foundation",
+      "award_amount": "$2,500 (STEM Major); up to $5,000 (Cyber Security track)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-05-01",
+      "url": "https://www.afcea.org/stem-majors-scholarships",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "computer_science",
+          "engineering",
+          "mathematics",
+          "technology"
+        ],
+        "grade_levels": [
+          "college_sophomore",
+          "college_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Undergraduate scholarships for sophomores and juniors at accredited four-year U.S. colleges pursuing STEM majors such as computer science, cybersecurity, engineering, mathematics, and related fields. One application considers applicants for STEM Major, Cyber Security, and Student Member scholarship options.",
+      "application_requirements": [
+        {
+          "id": "online-afcea-application",
+          "label": "Complete the AFCEA STEM Majors online application",
+          "details": "One application automatically considers you for all AFCEA STEM Major scholarships for which you qualify.",
+          "required": true,
+          "source_url": "https://www.afcea.org/stem-majors-scholarships"
+        },
+        {
+          "id": "professor-recommendation",
+          "label": "Arrange at least one professor recommendation",
+          "details": "Recommender submits a PDF letter to edfoundation@afcea.org; applicant coordinates submission.",
+          "required": true,
+          "source_url": "https://www.afcea.org/stem-majors-scholarships"
+        },
+        {
+          "id": "official-transcripts",
+          "label": "Submit official college transcript(s)",
+          "details": "Transcripts must be sent electronically through the school to edfoundation@afcea.org or mailed by the published deadline.",
+          "required": true,
+          "source_url": "https://www.afcea.org/stem-majors-scholarships"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.afcea.org/stem-majors-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official AFCEA page: $2,500 STEM / $5,000 cyber; sophomore or junior; 3.0 GPA; U.S. citizen or PR; applications closed at verification; May 1 transcript mailing deadline shown for prior cycle."
+      }
+    },
+    {
+      "id": "jeannette-rankin-scholar-grant",
+      "name": "Jeannette Rankin Foundation Scholar Grant",
+      "sponsor": "Jeannette Rankin Foundation",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-28",
+      "url": "https://rankinfoundation.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Need-based grants for women and nonbinary applicants age 35 and older working toward a first associate's or bachelor's degree. The Foundation supports students from all states and backgrounds who demonstrate financial need.",
+      "application_requirements": [
+        {
+          "id": "rankin-online-application",
+          "label": "Apply during the Scholar Grant application period",
+          "details": "Application period opens November 2026 per the official homepage; apply through rankinfoundation.org when open.",
+          "required": true,
+          "source_url": "https://rankinfoundation.org/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://rankinfoundation.org/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official homepage: women/nonbinary age 35+; first associate or bachelor's; financial need; application opening Nov 2026."
+      }
+    },
+    {
+      "id": "mensa-foundation-scholarship",
+      "name": "Mensa Foundation Scholarship",
+      "sponsor": "Mensa Foundation",
+      "award_amount": "over $200,000 awarded annually across multiple essay-based scholarships",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-15",
+      "url": "https://www.mensafoundation.org/scholarships/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Essay-based scholarships awarded from a single online application. Applicants write a 550-word or fewer essay outlining academic and professional goals and how personal experiences support them.",
+      "application_requirements": [
+        {
+          "id": "award-spring-application",
+          "label": "Complete the Mensa Foundation AwardSpring application",
+          "details": "One portal application considers you for all Mensa Foundation scholarships for which you qualify.",
+          "required": true,
+          "source_url": "https://www.mensafoundation.org/scholarships/"
+        },
+        {
+          "id": "550-word-essay",
+          "label": "Submit the 550-word goal essay in plain text",
+          "details": "Essay must be original, in English, and must not include identifying information in the essay body.",
+          "required": true,
+          "source_url": "https://www.mensafoundation.org/scholarships/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.mensafoundation.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official page: opens Sept 15; closes Jan 15; 550-word essay; winners announced June; prior cycle dates used for estimated_deadline."
+      }
+    },
+    {
+      "id": "courageous-persuaders-scholarship",
+      "name": "Courageous Persuaders Scholarship",
+      "sponsor": "Detroit Auto Dealers Association (DADA) Educational Foundation",
+      "award_amount": "$21,000+ in awards (multiple category prizes)",
+      "deadline": "2026-03-30",
+      "url": "https://www.courageouspersuaders.com/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "communications",
+          "arts"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National video scholarship competition where high school students create 30-second television commercials promoting safe driving. Middle school classrooms judge entries in categories such as impaired driving, distracted driving, and passenger empowerment.",
+      "application_requirements": [
+        {
+          "id": "video-contest-entry",
+          "label": "Submit a 30-second safe-driving commercial",
+          "details": "Enter through the official video contest form; entry deadline March 30, 2026.",
+          "required": true,
+          "source_url": "https://www.courageouspersuaders.com/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.courageouspersuaders.com/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official site: 30-second TV commercial contest; entry deadline March 30, 2026; administered by DADA Educational Foundation."
+      }
+    },
+    {
+      "id": "create-real-impact-scholarship",
+      "name": "Create Real Impact Contest",
+      "sponsor": "Impact Teen Drivers",
+      "award_amount": "up to $27,000 total across video, graphic design, and school campaign categories",
+      "deadline": "2026-04-15",
+      "url": "https://www.createrealimpact.com/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "communications",
+          "arts"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Contest for students ages 14-22 to submit a video PSA or graphic design promoting positive solutions to reckless and distracted driving. High school campaign category awards grants to schools for broader awareness projects.",
+      "application_requirements": [
+        {
+          "id": "contest-registration",
+          "label": "Register and submit a video or graphic design entry",
+          "details": "Contest opens October 20, 2025 and closes April 15, 2026 at 5:00 p.m. ET; high school campaign schools register by March 30, 2026.",
+          "required": true,
+          "source_url": "https://www.createrealimpact.com/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.createrealimpact.com/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official site: ages 14-22; U.S. legal residents; closes Apr 15, 2026 5 p.m. ET; video/graphic/campaign categories."
+      }
+    },
+    {
+      "id": "college-board-bigfuture-scholarships",
+      "name": "BigFuture Scholarships",
+      "sponsor": "College Board",
+      "award_amount": "$500 and $40,000 scholarship drawings",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-28",
+      "url": "https://opportunity.collegeboard.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_sophomore",
+          "high_school_junior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "No-essay scholarship drawings for high school sophomores and juniors who complete BigFuture planning steps on their dashboard by class-year deadlines. Steps can qualify students for $500 and $40,000 awards.",
+      "application_requirements": [
+        {
+          "id": "bigfuture-account",
+          "label": "Create or sign in to a BigFuture account",
+          "details": "Students qualify by completing planning steps on the BigFuture dashboard for their class year.",
+          "required": true,
+          "source_url": "https://opportunity.collegeboard.org/"
+        },
+        {
+          "id": "complete-class-year-steps",
+          "label": "Complete class-year planning steps by published deadlines",
+          "details": "Each completed step earns entries; earlier completion yields more chances to win per official rules.",
+          "required": true,
+          "source_url": "https://opportunity.collegeboard.org/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://opportunity.collegeboard.org/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official College Board BigFuture page: no-essay; $500 and $40,000 drawings for sophomores/juniors; step deadlines vary by class year."
+      }
+    },
+    {
+      "id": "phi-theta-kappa-coca-cola-leaders-of-promise",
+      "name": "Coca-Cola Leaders of Promise Scholarship",
+      "sponsor": "Coca-Cola Scholars Foundation (via Phi Theta Kappa)",
+      "award_amount": "up to $1,000",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-31",
+      "url": "https://www.ptk.org/scholarships/coca-cola-leaders-of-promise-scholarship",
+      "eligibility": {
+        "min_gpa": 3.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Phi Theta Kappa scholarship for newer members enrolled in associate-degree coursework who demonstrate leadership potential through PTK programs. Requires federal financial aid eligibility residency status.",
+      "application_requirements": [
+        {
+          "id": "ptk-scholarship-portal",
+          "label": "Apply through the Phi Theta Kappa scholarship portal",
+          "details": "Apply Now link on the official PTK Coca-Cola Leaders of Promise page when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.ptk.org/scholarships/coca-cola-leaders-of-promise-scholarship"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.ptk.org/scholarships/coca-cola-leaders-of-promise-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official PTK page: up to $1,000; PTK member; 3.5 GPA; 12-36 credits by Jan 31 of application year; federal aid eligibility."
+      }
+    },
+    {
+      "id": "phi-theta-kappa-all-usa-academic-team",
+      "name": "All-USA Academic Team Scholarship",
+      "sponsor": "Phi Theta Kappa (with Follett Higher Education Group and AACC)",
+      "award_amount": "$5,000 per national team member",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-31",
+      "url": "https://www.ptk.org/All-USA-Academic-Team",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Prestigious national honor for community college students nominated by their colleges for intellectual rigor, academic achievement, leadership, and civic engagement. Twenty national team members each receive a $5,000 scholarship.",
+      "application_requirements": [
+        {
+          "id": "college-nomination",
+          "label": "Be nominated by your community college for the All-USA Academic Team",
+          "details": "Students are nominated through their college; more than 2,000 nominees compete nationally each year.",
+          "required": true,
+          "source_url": "https://www.ptk.org/All-USA-Academic-Team"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.ptk.org/All-USA-Academic-Team",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official PTK news page: 20 members at $5,000 each; college nomination required; PTK competitive scholarship program."
+      }
+    },
+    {
+      "id": "phi-theta-kappa-coca-cola-academic-team",
+      "name": "Coca-Cola Academic Team Scholarship",
+      "sponsor": "Coca-Cola Scholars Foundation (via Phi Theta Kappa)",
+      "award_amount": "up to 1,300 awards (Gold/Silver/Bronze tiers; amounts vary)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-31",
+      "url": "https://www.ptk.org/scholarships/coca-cola-academic-team-scholarship",
+      "eligibility": {
+        "min_gpa": 3.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Recognizes high-achieving community college students with academic excellence, leadership, and service. Requires college nomination for the All-USA Academic Team pathway and enrollment in associate-degree coursework.",
+      "application_requirements": [
+        {
+          "id": "college-nomination-all-usa",
+          "label": "Be nominated by your college for the All-USA Academic Team",
+          "details": "Applicants must be nominated by their college; must not have been previously nominated for All-USA or Coca-Cola Academic Teams.",
+          "required": true,
+          "source_url": "https://www.ptk.org/scholarships/coca-cola-academic-team-scholarship"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.ptk.org/scholarships/coca-cola-academic-team-scholarship",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official PTK page: up to 1,300 awards; 3.5 GPA; 36+ credits by December; college nomination required."
+      }
+    },
+    {
+      "id": "ncwit-aspirations-in-computing-high-school-award",
+      "name": "NCWIT Aspirations in Computing High School Award",
+      "sponsor": "National Center for Women & Information Technology (NCWIT)",
+      "award_amount": "recognition and prizes at national and regional levels (amount varies)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-10-28",
+      "url": "https://www.aspirations.org/award-programs/apply-for-the-award-for-aic",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "computer_science",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_freshman",
+          "high_school_sophomore",
+          "high_school_junior",
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "National and regional awards honoring high school students active in computing and technology. Selection weighs computing experience, leadership, persistence, academic performance, and post-secondary plans.",
+      "application_requirements": [
+        {
+          "id": "join-aic-community",
+          "label": "Join the free AiC Community before applying",
+          "details": "Applicants must be AiC Community members; parent/guardian approval required for applicants under 18.",
+          "required": true,
+          "source_url": "https://www.aspirations.org/award-programs/apply-for-the-award-for-aic"
+        },
+        {
+          "id": "online-aic-application",
+          "label": "Submit the completed AiC High School Award application",
+          "details": "Application includes short essays and multiple-choice sections; educator endorsement strongly recommended for national consideration.",
+          "required": true,
+          "source_url": "https://www.aspirations.org/award-programs/apply-for-the-award-for-aic"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.aspirations.org/award-programs/apply-for-the-award-for-aic",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official aspirations.org page: grades 9-12; AiC membership required; prior cycle closed Oct 28; opens Sept 1 pattern for estimated_deadline."
+      }
+    },
+    {
+      "id": "ashrae-scholarship-program",
+      "name": "ASHRAE Society Scholarship Program",
+      "sponsor": "ASHRAE (American Society of Heating, Refrigerating and Air-Conditioning Engineers)",
+      "award_amount": "$3,000 to $10,000 (varies by scholarship)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-12-01",
+      "url": "https://www.ashrae.org/communities/student-zone/scholarships-and-grants/scholarship-program",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "engineering",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Single annual application for multiple ASHRAE undergraduate engineering and engineering-technology scholarships supporting HVAC&R-related degree paths at eligible accredited programs.",
+      "application_requirements": [
+        {
+          "id": "ashrae-online-application",
+          "label": "Submit one ASHRAE Scholarship Application online",
+          "details": "One application automatically places you in consideration for every scholarship for which you meet criteria.",
+          "required": true,
+          "source_url": "https://info.ashrae.org/ScholarshipApplication/"
+        },
+        {
+          "id": "official-transcript",
+          "label": "Have official transcripts sent directly to ASHRAE",
+          "details": "Transcripts must be sent by the registrar to ASHRAE Scholarship Administrator; photocopies not accepted.",
+          "required": true,
+          "source_url": "https://info.ashrae.org/ScholarshipApplication/"
+        },
+        {
+          "id": "three-recommendations",
+          "label": "Submit three signed recommendation letters",
+          "details": "Letters from instructor/faculty advisor, employer, and character reference sent directly to ASHRAE.",
+          "required": true,
+          "source_url": "https://info.ashrae.org/ScholarshipApplication/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.ashrae.org/communities/student-zone/scholarships-and-grants/scholarship-program",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official ASHRAE pages: Dec 1 and May 1 deadline tiers; 3.0 GPA; HVAC&R-related engineering paths; one application for all society scholarships."
+      }
+    },
+    {
+      "id": "skillsusa-member-scholarships",
+      "name": "SkillsUSA Member Scholarships",
+      "sponsor": "SkillsUSA and industry partners",
+      "award_amount": "varies by scholarship (e.g., up to $5,000 Aerotek Make Your Mark)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-04-17",
+      "url": "https://www.skillsusa.org/recognition/scholarships-and-grants/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering",
+          "technology",
+          "business"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Multiple annual scholarships available only to registered, paid SkillsUSA members planning postsecondary education or training. Awards include partner-funded scholarships in construction, manufacturing, transportation, and related skilled pathways.",
+      "application_requirements": [
+        {
+          "id": "skillsusa-scholarship-portal",
+          "label": "Apply through scholarships.skillsusa.org",
+          "details": "Each scholarship has its own deadline and required materials such as essay, resume, and recommendation.",
+          "required": true,
+          "source_url": "https://www.skillsusa.org/recognition/scholarships-and-grants/"
+        },
+        {
+          "id": "paid-membership",
+          "label": "Confirm current paid SkillsUSA membership",
+          "details": "Applicants must be registered and active SkillsUSA members for the application year.",
+          "required": true,
+          "source_url": "https://www.skillsusa.org/recognition/scholarships-and-grants/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.skillsusa.org/recognition/scholarships-and-grants/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official SkillsUSA page: member-only; portal at scholarships.skillsusa.org; multiple partner scholarships with varying deadlines."
+      }
+    },
+    {
+      "id": "noaa-epp-msi-undergraduate-scholarship",
+      "name": "NOAA EPP/MSI Undergraduate Scholarship Program",
+      "sponsor": "NOAA Office of Education",
+      "award_amount": "up to $45,000 over two years (stipend plus paid internships)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-31",
+      "url": "https://www.noaa.gov/office-education/epp-msi/undergraduate-scholarship",
+      "eligibility": {
+        "min_gpa": 3.2,
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "social_sciences",
+          "environmental_science"
+        ],
+        "grade_levels": [
+          "college_sophomore"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Two-year undergraduate scholarship for rising juniors at accredited minority-serving institutions majoring in NOAA-mission fields, with two paid NOAA summer internships and academic-year stipend support.",
+      "application_requirements": [
+        {
+          "id": "shared-noaa-application",
+          "label": "Complete the shared NOAA undergraduate scholarship application",
+          "details": "EPP and Hollings share one application portal; opens annually September through January when offered.",
+          "required": true,
+          "source_url": "https://www.noaa.gov/office-education/epp-msi/undergraduate-scholarship/prospective"
+        },
+        {
+          "id": "msi-enrollment",
+          "label": "Document enrollment at an eligible minority-serving institution",
+          "details": "Applicants must attend an accredited MSI as defined by the program.",
+          "required": true,
+          "source_url": "https://www.noaa.gov/office-education/epp-msi/undergraduate-scholarship/prospective"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.noaa.gov/office-education/undergraduate-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "NOAA undergraduate scholarships page: no 2026 EPP class due to budget uncertainty; program otherwise opens Sept-Jan; 3.2 GPA; U.S. citizen; MSI enrollment required."
+      }
+    },
+    {
+      "id": "optimist-international-essay-contest",
+      "name": "Optimist International Essay Contest",
+      "sponsor": "Optimist International",
+      "award_amount": "club and district scholarships (amounts vary by district)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-01",
+      "url": "https://www.optimist.org/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "humanities",
+          "communications"
+        ],
+        "grade_levels": [
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Essay contest for students under age 19 who have not completed secondary school. Club winners advance to district scholarship competition on the annual Optimist topic.",
+      "application_requirements": [
+        {
+          "id": "local-optimist-club-entry",
+          "label": "Enter through a local Optimist Club",
+          "details": "Contestants must enter through a local Optimist Club; use the Optimist Club Locator to find a club.",
+          "required": true,
+          "source_url": "https://optimist.org/Documents/2026/programs/25-26_Essay_Application.pdf"
+        },
+        {
+          "id": "700-800-word-essay",
+          "label": "Submit an original 700-800 word essay",
+          "details": "2025-2026 topic: How My Acts of Service Help Me Understand What My Community Means to Me.",
+          "required": true,
+          "source_url": "https://optimist.org/Documents/2026/programs/25-26_Essay_Club_Planning_Guide.pdf"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://optimist.org/Documents/2026/programs/25-26_Essay_Application.pdf",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Optimist PDF rules: under 19; local club entry required; 700-800 words; club then district levels."
+      }
+    },
+    {
+      "id": "doodle-for-google",
+      "name": "Doodle for Google",
+      "sponsor": "Google LLC",
+      "award_amount": "national winner scholarship plus finalist awards (e.g., $10,000 college scholarship per finalist)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-12-03",
+      "url": "https://doodles.google.com/d4g/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "arts"
+        ],
+        "grade_levels": [
+          "middle_school",
+          "high_school"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Annual K-12 art contest where students create a Google Doodle on the published theme. National finalists receive scholarships and homepage recognition.",
+      "application_requirements": [
+        {
+          "id": "doodle-entry-form",
+          "label": "Complete the official Doodle for Google entry form",
+          "details": "Submit doodle artwork plus 50-word description; parent/guardian signature required on entry form.",
+          "required": true,
+          "source_url": "https://doodles.google.com/static/pdf/d4g-entry-form-2025.pdf"
+        },
+        {
+          "id": "online-or-mail-submission",
+          "label": "Submit online or by mail before the deadline",
+          "details": "2025-26 cycle entry form shows submit by December 3, 2025 8:00 PM PST; check doodles.google.com/d4g/ for next cycle dates.",
+          "required": true,
+          "source_url": "https://doodles.google.com/d4g/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://doodles.google.com/d4g/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Doodle for Google site and 2025-26 entry form PDF: K-12; theme My superpower is...; Dec 3 deadline on prior cycle form."
+      }
+    },
+    {
+      "id": "national-space-club-keynote-scholarship",
+      "name": "National Space Club Keynote Scholarship",
+      "sponsor": "National Space Club and Foundation",
+      "award_amount": "$20,000 (2025 application page; amounts may vary by year)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-15",
+      "url": "https://www.spaceclub.org/scholarship/index.html",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "science",
+          "engineering",
+          "mathematics",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Prestigious STEM scholarship where the selected student delivers the keynote address at the Goddard Memorial Dinner. Requires strong public speaking and a video audition on why you are inspired by space.",
+      "application_requirements": [
+        {
+          "id": "online-spaceclub-application",
+          "label": "Complete the online Keynote Scholar application",
+          "details": "Apply at spaceclub.org/scholarship when the cycle opens.",
+          "required": true,
+          "source_url": "https://www.spaceclub.org/scholarship/index.html"
+        },
+        {
+          "id": "video-audition",
+          "label": "Upload a video on why you are inspired by space",
+          "details": "Video must be no longer than three minutes, MPEG-4 with H.264 and AAC, featuring applicant speaking to camera.",
+          "required": true,
+          "source_url": "https://www.spaceclub.org/scholarship/selection.html"
+        },
+        {
+          "id": "transcript-and-recommendations",
+          "label": "Submit transcript and at least two STEM recommendation letters",
+          "details": "Includes statement of intent (150 words or less) on STEM study/career plans.",
+          "required": true,
+          "source_url": "https://www.spaceclub.org/scholarship/selection.html"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.spaceclub.org/scholarship/index.html",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official NSCF pages: U.S. citizen; high school senior through graduate; STEM career intent; $20,000 on 2025 page; keynote at Goddard Memorial Dinner."
+      }
+    },
+    {
+      "id": "kfc-foundation-scholarship",
+      "name": "KFC Foundation Scholarship",
+      "sponsor": "KFC Foundation",
+      "award_amount": "$5,000, $10,000, or $20,000",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-03-01",
+      "url": "https://kfcfoundation.org/scholarships/",
+      "eligibility": {
+        "min_gpa": 2.5,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Scholarships for eligible KFC restaurant employees in the U.S. to attend accredited two- or four-year colleges, trade schools, or graduate programs. Higher award tiers require higher GPA minimums.",
+      "application_requirements": [
+        {
+          "id": "kfc-foundation-application",
+          "label": "Apply at kfcfoundation.org/scholarships when open",
+          "details": "Optional Janet L. Kuhn essay can double one recipient's award.",
+          "required": true,
+          "source_url": "https://kfcfoundation.org/scholarships/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://kfcfoundation.org/scholarships/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official KFC Foundation page: employee at participating U.S. KFC; $5k/$10k/$20k tiers; 2.5 GPA for $5k, 3.5 for $10k/$20k."
+      }
+    },
+    {
+      "id": "stephen-j-brady-stop-hunger-scholarship",
+      "name": "Stephen J. Brady Stop Hunger Scholarship",
+      "sponsor": "Sodexo Stop Hunger Foundation",
+      "award_amount": "$10,000 scholarship plus $5,000 grant to hunger charity (national scholars)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-11-05",
+      "url": "https://www.us.stop-hunger.org/grants/youth-scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate",
+          "college_graduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "Recognizes students ages 5-25 who have demonstrated leadership fighting hunger through unpaid community service. National scholars receive scholarship funds and a grant for their hunger-relief charity.",
+      "application_requirements": [
+        {
+          "id": "stop-hunger-application",
+          "label": "Apply through the Stop Hunger Scholars portal",
+          "details": "Application period runs September 5 through November 5 annually per official program page.",
+          "required": true,
+          "source_url": "https://www.us.stop-hunger.org/grants/youth-scholarships"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.us.stop-hunger.org/grants/youth-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Sodexo Stop Hunger page: ages 5-25; Sept 5-Nov 5 window; $10k scholarship + $5k charity grant for national scholars."
+      }
+    },
+    {
+      "id": "aopa-flight-training-scholarships",
+      "name": "AOPA Foundation Flight Training Scholarships",
+      "sponsor": "AOPA Foundation (You Can Fly)",
+      "award_amount": "$250 to $14,000 (varies; high school awards up to $12,000)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-12-31",
+      "url": "https://www.aopa.org/training-and-safety/students/aopa-flight-training-scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "engineering",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Multiple aviation scholarships for current AOPA members pursuing flight training, advanced ratings, maintenance, or aviation career pathways. One general application matches eligible candidates to available awards.",
+      "application_requirements": [
+        {
+          "id": "aopa-membership",
+          "label": "Hold current AOPA membership",
+          "details": "High school students may qualify for complimentary membership per official FAQs.",
+          "required": true,
+          "source_url": "https://www.aopa.org/training-and-safety/students/aopa-flight-training-scholarships"
+        },
+        {
+          "id": "openwater-application",
+          "label": "Complete the AOPA Foundation scholarship application portal",
+          "details": "Create a separate OpenWater account; AOPA login credentials do not work in the scholarship portal.",
+          "required": true,
+          "source_url": "https://download.aopa.org/youcanfly/2026scholarshipfaq.pdf"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.aopa.org/training-and-safety/students/aopa-flight-training-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official AOPA pages and 2026 FAQ PDF: member required; windows Apr 1-Jun 30 and Oct 1-Dec 31; one application matches all eligible awards."
+      }
+    },
+    {
+      "id": "comcast-leaders-and-achievers-scholarship",
+      "name": "Comcast Leaders and Achievers Scholarship",
+      "sponsor": "Comcast NBCUniversal Foundation",
+      "award_amount": "$2,500 one-time scholarship",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-12-06",
+      "url": "https://corporate.comcast.com/impact/community-impact/leaders-and-achievers",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [],
+        "grade_levels": [
+          "high_school_senior"
+        ],
+        "demographics": [],
+        "states": "VERIFY",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "One-time scholarship for high school seniors in Comcast-served communities who demonstrate community service, academic performance, leadership, and financial need.",
+      "application_requirements": [
+        {
+          "id": "scholarship-america-application",
+          "label": "Apply through the Scholarship America Leaders and Achievers portal when open",
+          "details": "Email leadersandachievers@scholarshipamerica.org or call 1-800-537-4180 for program questions.",
+          "required": true,
+          "source_url": "https://corporate.comcast.com/stories/leaders-and-achievers-scholarships-now-open"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://corporate.comcast.com/stories/leaders-and-achievers-scholarships-now-open",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Comcast corporate page: $2,500; 3.0 GPA; community service and leadership; Comcast-served communities; prior cycles used December deadline pattern."
+      }
+    },
+    {
+      "id": "apple-swift-student-challenge",
+      "name": "Apple Swift Student Challenge",
+      "sponsor": "Apple",
+      "award_amount": "recognition award; Distinguished Winners receive WWDC travel experience (not a cash tuition scholarship)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-02-28",
+      "url": "https://developer.apple.com/swift-student-challenge/",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [
+          "computer_science",
+          "technology"
+        ],
+        "grade_levels": [
+          "high_school",
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Apple's annual coding challenge for student developers to submit an app playground demonstrating creativity, innovation, or social impact. Winners may be invited to Apple in Cupertino as Distinguished Winners.",
+      "application_requirements": [
+        {
+          "id": "app-playground-submission",
+          "label": "Build and submit an app playground",
+          "details": "Submissions are judged on innovation, creativity, social impact, or inclusivity; check developer.apple.com for the active cycle window.",
+          "required": true,
+          "source_url": "https://developer.apple.com/swift-student-challenge/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://developer.apple.com/swift-student-challenge/",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official Apple Developer page: app playground submission; up to three lifetime awards; 2026 results announced; not a traditional tuition scholarship."
+      }
+    },
+    {
+      "id": "afcea-rotc-scholarship",
+      "name": "AFCEA ROTC Scholarship",
+      "sponsor": "AFCEA Educational Foundation",
+      "award_amount": "$2,500 to $3,000 (varies by ROTC scholarship)",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-05-01",
+      "url": "https://www.afcea.org/rotc-scholarships",
+      "eligibility": {
+        "min_gpa": 3.0,
+        "fields_of_study": [
+          "computer_science",
+          "engineering",
+          "mathematics",
+          "technology"
+        ],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "us_citizen"
+      },
+      "description": "Scholarship for ROTC cadets at U.S. colleges and universities majoring in STEM or related fields supporting defense and intelligence missions.",
+      "application_requirements": [
+        {
+          "id": "rotc-online-application",
+          "label": "Complete the AFCEA ROTC online application",
+          "details": "One application automatically considers you for all AFCEA ROTC scholarships for which you qualify.",
+          "required": true,
+          "source_url": "https://www.afcea.org/rotc-scholarships"
+        },
+        {
+          "id": "rotc-nomination-letter",
+          "label": "Obtain ROTC nomination letter from command or PMS",
+          "details": "Professor of Military Science, Naval Science, Aerospace Studies, or designated commanding officer must email a PDF nomination to edfoundation@afcea.org.",
+          "required": true,
+          "source_url": "https://www.afcea.org/rotc-scholarships"
+        },
+        {
+          "id": "official-transcripts",
+          "label": "Submit official college transcript(s)",
+          "details": "Transcripts must be sent electronically through the school to edfoundation@afcea.org or mailed by the published deadline.",
+          "required": true,
+          "source_url": "https://www.afcea.org/rotc-scholarships"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.afcea.org/rotc-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official AFCEA ROTC page: $2,500; ROTC enrollment; STEM majors; 3.0 GPA; U.S. citizen."
+      }
+    },
+    {
+      "id": "phi-theta-kappa-new-century-transfer-pathway",
+      "name": "New Century Transfer Pathway Scholarship",
+      "sponsor": "Phi Theta Kappa (with partner donors)",
+      "award_amount": "VERIFY",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2027-01-31",
+      "url": "https://www.ptk.org/scholarships/competitive-scholarships",
+      "eligibility": {
+        "min_gpa": "VERIFY",
+        "fields_of_study": [],
+        "grade_levels": [
+          "college_undergraduate"
+        ],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "Competitive Phi Theta Kappa transfer scholarship for members planning to complete an associate degree and transfer to a four-year institution.",
+      "application_requirements": [
+        {
+          "id": "ptk-competitive-application",
+          "label": "Apply through the Phi Theta Kappa competitive scholarships portal",
+          "details": "Update your PTK scholarship application each term to remain competitive.",
+          "required": true,
+          "source_url": "https://www.ptk.org/scholarships/competitive-scholarships"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.ptk.org/scholarships/competitive-scholarships",
+        "last_verified_at": "2026-06-21",
+        "notes": "Official PTK competitive scholarships page lists New Century Transfer Pathway among member-only awards."
+      }
     }
   ]
 }

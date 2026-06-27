@@ -487,6 +487,121 @@
         "label": "Service payback commitment",
         "details": "Scholars must fulfill NIH service payback requirements after graduation as described in the official UGSP terms and conditions."
       }
+    ],
+    "nhs-scholarship": [
+      {
+        "kind": "membership",
+        "label": "NHS membership required",
+        "details": "Applicants must be active NHS members in good standing with an NHS student account verified by the chapter adviser."
+      }
+    ],
+    "phi-theta-kappa-coca-cola-leaders-of-promise": [
+      {
+        "kind": "membership",
+        "label": "Phi Theta Kappa membership required",
+        "details": "Applicants must be PTK members in good standing applying through the PTK scholarship portal."
+      }
+    ],
+    "phi-theta-kappa-all-usa-academic-team": [
+      {
+        "kind": "nomination",
+        "label": "College nomination required",
+        "details": "Students must be nominated by their community college for the All-USA Academic Team; self-nomination is not the standard path."
+      },
+      {
+        "kind": "membership",
+        "label": "Phi Theta Kappa membership required",
+        "details": "All-USA Academic Team is a Phi Theta Kappa competitive scholarship program."
+      }
+    ],
+    "phi-theta-kappa-coca-cola-academic-team": [
+      {
+        "kind": "nomination",
+        "label": "College nomination for All-USA required",
+        "details": "Applicants must be nominated by their college for the All-USA Academic Team and must not have been previously nominated."
+      }
+    ],
+    "phi-theta-kappa-new-century-transfer-pathway": [
+      {
+        "kind": "membership",
+        "label": "Phi Theta Kappa membership required",
+        "details": "Competitive PTK transfer scholarships require active membership and portal application."
+      }
+    ],
+    "ncwit-aspirations-in-computing-high-school-award": [
+      {
+        "kind": "family_or_affiliation",
+        "label": "Women, genderqueer, or non-binary applicants",
+        "details": "NCWIT AiC high school awards are for students who self-identify as women, genderqueer, or non-binary and meet AiC Community eligibility rules."
+      }
+    ],
+    "skillsusa-member-scholarships": [
+      {
+        "kind": "membership",
+        "label": "SkillsUSA membership required",
+        "details": "Applicants must be registered, paid SkillsUSA members for the application year."
+      }
+    ],
+    "kfc-foundation-scholarship": [
+      {
+        "kind": "institution_channel",
+        "label": "Participating KFC employer required",
+        "details": "Applicants must be employees at a participating U.S. KFC restaurant in good standing that contributes to the KFC Foundation donation program."
+      }
+    ],
+    "optimist-international-essay-contest": [
+      {
+        "kind": "institution_channel",
+        "label": "Local Optimist Club entry required",
+        "details": "Contestants must enter through a local Optimist Club; club winners advance to district scholarship competition."
+      }
+    ],
+    "noaa-epp-msi-undergraduate-scholarship": [
+      {
+        "kind": "institution_channel",
+        "label": "Minority-serving institution enrollment required",
+        "details": "Applicants must be rising juniors at accredited minority-serving institutions as defined by NOAA."
+      }
+    ],
+    "aopa-flight-training-scholarships": [
+      {
+        "kind": "membership",
+        "label": "AOPA membership required",
+        "details": "Applicants must hold current AOPA membership to apply for Foundation flight training scholarships."
+      }
+    ],
+    "comcast-leaders-and-achievers-scholarship": [
+      {
+        "kind": "institution_channel",
+        "label": "Comcast-served community required",
+        "details": "Applicants must reside in a community served by Comcast per the program's eligible-community list."
+      }
+    ],
+    "afcea-rotc-scholarship": [
+      {
+        "kind": "military_affiliation",
+        "label": "ROTC enrollment required",
+        "details": "Applicants must be Army, Navy, Marine Corps, or Air Force ROTC sophomores or juniors at the time of application."
+      },
+      {
+        "kind": "nomination",
+        "label": "ROTC command nomination letter required",
+        "details": "A nomination letter from the Professor of Military Science, Naval Science, Aerospace Studies, or designated commanding officer must be emailed to AFCEA."
+      }
+    ],
+    "jeannette-rankin-scholar-grant": [
+      {
+        "kind": "family_or_affiliation",
+        "label": "Women/nonbinary age 35+ applicants",
+        "details": "Applicants must identify as women or nonbinary, be age 35 or older, and pursue a first associate or bachelor's degree."
+      }
+    ],
+    "national-space-club-keynote-scholarship": [
+      {
+        "kind": "competition_or_finalist",
+        "label": "Keynote speech and video audition required",
+        "details": "Selected scholar delivers the Goddard Memorial Dinner keynote; application includes a space-inspiration video and finalist speech rounds."
+      }
     ]
   }
 }
