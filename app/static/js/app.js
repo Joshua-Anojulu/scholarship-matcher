@@ -1749,8 +1749,10 @@ function renderPrograms(programs) {
   programsContainer.innerHTML = "";
   programsEmpty.hidden = true;
 
-  const strong = programs.filter((p) => p.match_tier === "strong");
-  const possible = programs.filter((p) => p.match_tier === "possible");
+  const regular = programs.filter((p) => !p.requires_special_check);
+  const special = programs.filter((p) => p.requires_special_check);
+  const strong = regular.filter((p) => p.match_tier === "strong");
+  const possible = regular.filter((p) => p.match_tier === "possible");
   programsSummary.textContent = `${programs.length} program${
     programs.length === 1 ? "" : "s"
   } matched your profile.`;
@@ -1763,16 +1765,35 @@ function renderPrograms(programs) {
       buildProgramTierSection("Possible fits", possible, "possible")
     );
   }
+  if (special.length > 0) {
+    programsContainer.appendChild(
+      buildProgramTierSection(
+        "Special programs to check",
+        special,
+        "special",
+        "These programs may fit, but they require a condition like school nomination, a special application channel, or another gate this profile cannot verify yet."
+      )
+    );
+  }
 }
 
-function buildProgramTierSection(title, programs, tierClass) {
+function buildProgramTierSection(title, programs, tierClass, description = "") {
   const section = document.createElement("div");
   section.className = "tier-section";
 
   const heading = document.createElement("h3");
-  heading.className = `tier-heading ${tierClass === "possible" ? "possible" : ""}`;
+  heading.className = `tier-heading ${
+    tierClass === "possible" || tierClass === "special" ? tierClass : ""
+  }`;
   heading.innerHTML = `${escapeHtml(title)} <span class="tier-count">${programs.length}</span>`;
   section.appendChild(heading);
+
+  if (description) {
+    const note = document.createElement("p");
+    note.className = "tier-note";
+    note.textContent = description;
+    section.appendChild(note);
+  }
 
   programs.forEach((program, index) => {
     const card = buildProgramCard(program);
@@ -1869,7 +1890,11 @@ function buildProgramSteps(steps) {
 }
 
 function buildProgramCard(program) {
-  const tierClass = program.match_tier === "possible" ? "possible" : "strong";
+  const tierClass = program.requires_special_check
+    ? "special"
+    : program.match_tier === "possible"
+    ? "possible"
+    : "strong";
   const article = document.createElement("article");
   article.className = `match-card ${tierClass}`;
 
@@ -1928,6 +1953,17 @@ function buildProgramCard(program) {
     body.appendChild(buildReasons(program.match_reasons));
   }
 
+  if (program.requires_special_check) {
+    const badges = document.createElement("div");
+    badges.className = "badge-row";
+    badges.appendChild(makeBadge("Special eligibility", "badge-special"));
+    body.appendChild(badges);
+  }
+
+  if (program.special_requirements && program.special_requirements.length > 0) {
+    body.appendChild(buildSpecialRequirements(program.special_requirements));
+  }
+
   const steps = program.application_requirements || [];
   if (steps.length > 0) {
     body.appendChild(buildProgramSteps(steps));
@@ -1940,7 +1976,7 @@ function buildProgramCard(program) {
   link.href = program.url;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.textContent = "View program";
+  link.textContent = program.requires_special_check ? "Check program page" : "View program";
   footer.appendChild(link);
   body.appendChild(footer);
 

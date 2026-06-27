@@ -131,9 +131,17 @@ def _evaluate_program(
         breakdown.subject + breakdown.demographics + breakdown.financial_access, 2
     )
     match_tier = _match_tier(breakdown.total)
+    special_requirements = elig.special_requirements
     # A subject-mismatched program stays visible but never as a strong match.
     if field_mismatch and match_tier == "strong":
         match_tier = "possible"
+    if special_requirements:
+        reasons.append(
+            "Special eligibility to check: "
+            + "; ".join(requirement.label for requirement in special_requirements)
+        )
+        if match_tier == "strong":
+            match_tier = "possible"
 
     return ProgramMatchResult(
         program_id=program.id,
@@ -166,6 +174,8 @@ def _evaluate_program(
         match_reasons=reasons,
         score_breakdown=breakdown,
         application_requirements=program.application_requirements,
+        requires_special_check=bool(special_requirements),
+        special_requirements=special_requirements,
     )
 
 

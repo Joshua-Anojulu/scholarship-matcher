@@ -2,7 +2,7 @@
 
 **Live demo:** [scholarships4u.dev](https://scholarships4u.dev/)
 
-Scholarships4U is a **curated scholarship planner** for U.S. students — a portfolio-grade web app backed by a manually verified dataset of real national programs. Students build a profile once, see ranked matches with transparent scoring, track applications, and get practical essay guidance from a server-side LLM. Optional free accounts save the profile and bookmark scholarships between visits.
+Scholarships4U is a **curated scholarship and summer-program planner** for U.S. students — a portfolio-grade web app backed by manually verified datasets of real scholarships and elite pre-college programs. Students build a profile once, see ranked matches with transparent scoring, track applications, and get practical essay guidance from a server-side LLM. Optional free accounts save the profile and bookmark scholarships between visits.
 
 > **What this is:** a focused demo with honest data provenance, not a comprehensive scholarship search engine. Always confirm eligibility and deadlines on each sponsor's official site.
 
@@ -16,6 +16,8 @@ Scholarships4U is a **curated scholarship planner** for U.S. students — a port
 
 **Matching.** The app scores each scholarship with a transparent additive algorithm over field-of-study overlap, demographic tag overlap, an optional target-school match, activity keywords found in the scholarship description, and a need-based signal for students who indicated financial need. GPA, grade level, state, citizenship, and passed deadlines act as hard filters only when the dataset holds a real value (not a `VERIFY` placeholder). Students choose their actual class year; broad sponsor rules such as `high_school` or `college_undergraduate` are handled internally so a senior still sees awards open to all high school students, and a junior still sees broad undergraduate awards. Open-to-all scholarships receive a lower field score than specific field matches. A scholarship with a specific field or school but no corresponding student overlap stays visible as a **Possible** match with an eligibility caveat, never a **Strong** one. Scholarships with niche requirements the profile cannot verify (for example nomination, membership, finalist status, military affiliation, or no direct application) stay visible in a separate **Special opportunities to check** lane instead of being treated like ordinary matches. Every result shows human-readable reasons plus score-component chips. The results view can sort by fit, deadline, award, or name and filter by tier, minimum score, essay requirement, field/school/background overlap, closing-soon status, verified data, and special-check status. These display filters run in the browser over the current match response, which is appropriate for the small curated dataset.
 
+**Elite summer programs.** The same profile also powers a smaller source-verified summer-program catalog. Program matching reuses the scholarship gates for grade level, GPA, citizenship, field overlap, and deadlines, then adds a practical financial-access signal for free or stipend programs. Program cards show cost, format, dates, source provenance, and source-linked application steps. Programs with gates the profile cannot verify, such as a school nomination, are separated into a **Special programs to check** lane instead of being treated like ordinary Strong fits.
+
 **Essay advice.** When a student clicks **Get essay advice** on a result card, the backend sends the student's actual profile inputs and the scholarship description to the Anthropic API. The response suggests essay angles tied to the student's stated activities and background, notes what the sponsor likely values, and flags one common mistake. A separate **Review my draft** action sends a draft the student pastes in and returns targeted feedback (strengths, the highest-impact improvements, alignment with the sponsor, and mechanics) without rewriting the essay for them. Before any AI feature sends profile, resume, or essay content to Anthropic, the browser shows a clear consent prompt. The API key never leaves the server.
 
 **Resume auto-fill.** A student can upload a PDF resume or paste its text instead of filling the form by hand. With consent, the server sends it to the Anthropic API with a tool schema constrained to the app's vocabulary, and the model returns a structured profile that pre-fills the form. Every value is filtered against the allowed vocabulary on the server, so only known tags reach the form, and the student reviews and completes the profile before matching. Demographics are set only when the resume states them explicitly, uploaded files are not stored, and both file and text sizes are capped before content is sent upstream.
@@ -26,7 +28,7 @@ Scholarships4U is a **curated scholarship planner** for U.S. students — a port
 
 - **Backend:** Python, FastAPI
 - **Frontend:** Vanilla HTML, CSS, and JavaScript (served by FastAPI), with a dark responsive interface and source-linked match cards
-- **Scholarship data:** Pydantic models, local JSON file loaded at startup
+- **Curated data:** Pydantic models, local JSON files for scholarships and elite summer programs loaded at startup
 - **Accounts and saved data:** SQLAlchemy ORM, SQLite locally and Postgres in production, bcrypt password hashing, signed session cookies
 - **Schema migrations:** Alembic, run automatically at startup and before the Render web service starts
 - **LLM:** Anthropic API (Claude Sonnet) for essay advice, server-side only
@@ -212,9 +214,9 @@ python scripts/validate_dataset.py
 
 It exits non-zero on structural errors (duplicate ids, unparseable deadlines), so it is suitable for a pre-commit or CI check.
 
-## Scholarship data and verification
+## Scholarship and summer-program data verification
 
-The dataset in [`app/data/scholarships.json`](app/data/scholarships.json) is a **curated seed set** of real national programs that is verified incrementally over time. Each entry carries a boolean `verified` flag:
+The scholarship dataset in [`app/data/scholarships.json`](app/data/scholarships.json) and the summer-program dataset in [`app/data/summer_programs.json`](app/data/summer_programs.json) are **curated seed sets** of real programs that are verified incrementally over time. Each entry carries a boolean `verified` flag:
 
 - **`verified: true`** — the entry's key facts (award, eligibility, and, where the current cycle is published, the deadline) have been checked against the sponsor's official page. These entries show no "Unverified data" badge in the app.
 - **`verified: false`** (the default) — not yet confirmed. These entries may hold `VERIFY` placeholders for fields that are not yet known (`deadline`, `min_gpa`, `citizenship_requirement`, or `states`). The matcher treats `VERIFY` permissively (it never excludes on an unknown value), and the UI shows an "Unverified data" badge.
@@ -234,7 +236,7 @@ Verification is an ongoing pass, done in small batches so each fact is checked r
 3. Set a real ISO `deadline` **only when the sponsor has published the current cycle's date.** Deadlines change yearly, so an unconfirmed date is left as `VERIFY` on purpose — a wrong deadline in a student-facing tool is worse than an honest placeholder.
 4. Flip `verified` to `true` once the material facts are confirmed.
 
-Because some programs have not yet announced their upcoming cycle, full verification is a moving target: a portion of the dataset stays honestly marked `VERIFY` until those dates are posted.
+Because some scholarships and programs have not yet announced their upcoming cycle, full verification is a moving target: a portion of the dataset stays honestly marked `VERIFY` until those dates are posted.
 
 ### Checking current status
 
@@ -244,7 +246,7 @@ Run the validator at any time to see how many entries are verified, which ones n
 python scripts/validate_dataset.py
 ```
 
-As of the latest update, **122 programs** are in the dataset (including a small school-specific pilot). Every entry is sponsor-verified at the record level; many individual fields still carry `VERIFY` placeholders where the upcoming cycle has not been published yet. A sidecar file, [`app/data/special_requirements.json`](app/data/special_requirements.json), records niche eligibility gates that should be surfaced as special checks rather than normal Strong matches. Run the validator for the current re-verification queue and placeholder counts.
+As of the latest update, the app includes **122 scholarships** and **13 elite summer programs**. Every entry is sponsor-verified at the record level; many individual fields still carry `VERIFY` placeholders where the upcoming cycle has not been published yet. A sidecar file, [`app/data/special_requirements.json`](app/data/special_requirements.json), records niche scholarship eligibility gates that should be surfaced as special checks rather than normal Strong matches. Summer programs can carry the same special-check metadata directly in their eligibility block. Run the validator for the current re-verification queue and placeholder counts.
 
 ## Project structure
 
@@ -266,13 +268,16 @@ ScholarMatch/
     ├── models/
     ├── static/
     └── data/
-        └── scholarships.json
+        ├── scholarships.json
+        ├── special_requirements.json
+        └── summer_programs.json
 ```
 
 ## Limitations
 
-- The scholarship dataset is a **curated set** (122 programs, including a small school-specific pilot), not a comprehensive directory.
-- Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship data and verification](#scholarship-data-and-verification) for how entries are confirmed over time.
+- The scholarship dataset is a **curated set** (122 scholarships, including a small school-specific pilot), and the summer-program dataset is a **curated set** (13 programs), not a comprehensive directory.
+- Some fields are marked `VERIFY` and must be confirmed on each sponsor's official page before you rely on them. See [Scholarship and summer-program data verification](#scholarship-and-summer-program-data-verification) for how entries are confirmed over time.
+- Accounts currently save and track scholarships; saving summer programs is the next integration step.
 - Essay advice is generated guidance, not a guarantee of admission or funding.
 - Password reset depends on the Resend sender, API key, and `PUBLIC_APP_URL` environment variables being configured on the host. Email verification is still not implemented, so this is suited to a demo rather than production use.
 - The age and terms notice is a browser-stored acknowledgment, not age verification or parental consent. This is not a production-ready service for children under 13.
@@ -288,6 +293,7 @@ MIT — see [LICENSE](LICENSE).
 
 - Expand and fully verify the scholarship dataset
 - Expand the school-specific scholarship pilot with verified institution records
+- Save summer programs alongside scholarships in the account tracker
 - Live data integration with sponsor feeds or APIs
 - Account improvement: email verification
 - Production monitoring for uptime, email deliverability, and stale scholarship audits

@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field, HttpUrl
 from app.models.scholarship import (
     ApplicationRequirement,
     Eligibility,
+    SpecialRequirement,
     VerificationMetadata,
 )
 
@@ -99,3 +100,8 @@ class ProgramMatchResult(BaseModel):
     match_reasons: list[str]
     score_breakdown: ProgramScoreBreakdown
     application_requirements: list[ApplicationRequirement] = Field(default_factory=list)
+    requires_special_check: bool = Field(
+        default=False,
+        description="True when niche eligibility requirements need manual confirmation.",
+    )
+    special_requirements: list[SpecialRequirement] = Field(default_factory=list)

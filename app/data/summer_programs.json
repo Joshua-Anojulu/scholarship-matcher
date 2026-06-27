@@ -215,6 +215,699 @@
         "last_verified_at": "2026-06-26",
         "notes": "Official PROMYS student/application pages: six-week residential mathematics program at Boston University for high-school students from the U.S. and around the world; 2026 dates/deadline, eligibility, cost, financial aid, and application components are published. Upcoming-cycle deadline remains VERIFY; 2026-02-27 is stored as the prior-cycle estimate."
       }
+    },
+    {
+      "id": "tass",
+      "name": "Telluride Association Summer Seminar (TASS)",
+      "host": "Telluride Association",
+      "subject": "Humanities and social sciences",
+      "url": "https://tellurideassociation.org/our-programs/high-school-students/",
+      "cost": "Free; Telluride covers tuition, books, room and board, field trips, and facilities fees",
+      "cost_category": "free",
+      "selectivity": "Highly competitive (admit rate not published)",
+      "program_format": "residential",
+      "location": "Host campuses vary by seminar",
+      "program_dates": "2026 program dates: June 21 to July 25",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2025-12-03",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["humanities", "social_sciences", "literature", "arts"],
+        "grade_levels": ["high_school_sophomore", "high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "A free residential seminar for high school sophomores and juniors centered on college-level humanities and social-science study, democratic community, writing, public speaking, and leadership. TASS welcomes U.S. and international students, with extra age/grade nuance for students studying outside the U.S.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Submit the TASS online application",
+          "details": "The official 2026 page lists the application opening and closing dates; future-cycle dates should be checked on the sponsor page.",
+          "required": true,
+          "source_url": "https://tellurideassociation.org/our-programs/high-school-students/"
+        },
+        {
+          "id": "program_area_choice",
+          "label": "Choose one TASS area of study",
+          "details": "Applicants may apply to only one of the two TASS areas: Critical Black Studies or Anti-Oppressive Studies.",
+          "required": true,
+          "source_url": "https://tellurideassociation.org/our-programs/high-school-students/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://tellurideassociation.org/our-programs/high-school-students/",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official TASS page confirms free cost coverage, residential 2026 dates, sophomore/junior eligibility, U.S. and international eligibility, program areas, and the 2026 application timeline. Upcoming-cycle deadline remains VERIFY; 2025-12-03 is stored as the 2026-cycle deadline."
+      }
+    },
+    {
+      "id": "clark-scholars",
+      "name": "Anson L. Clark Scholars Program",
+      "host": "Texas Tech University",
+      "subject": "Research across STEM and other faculty areas",
+      "url": "https://www.depts.ttu.edu/clarkscholars/index.php",
+      "cost": "No program participation fee; room and board provided; $750 stipend after successful research report",
+      "cost_category": "stipend",
+      "selectivity": "Twelve scholars selected for 2026",
+      "program_format": "residential",
+      "location": "Lubbock, TX (Texas Tech University)",
+      "program_dates": "2026 program dates: June 21 to August 6",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-02-16",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["science", "engineering", "computer_science", "mathematics", "research", "social_sciences"],
+        "grade_levels": ["high_school_junior", "high_school_senior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "An intensive seven-week Texas Tech research program for highly qualified rising high school seniors and recent high school graduates. Scholars conduct hands-on research with faculty and receive campus room, board, programming, and a stipend after completing a successful research report.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Create an account and complete the online application",
+          "details": "Applicants create an account from the Clark Scholars application site, save each section, and submit by the published deadline.",
+          "required": true,
+          "source_url": "https://www.depts.ttu.edu/clarkscholars/ApplicationDetails.php"
+        },
+        {
+          "id": "short_essays",
+          "label": "Complete the required short essays",
+          "details": "Texas Tech says short essays are required and publishes prompts/limits for applicants to prepare in advance.",
+          "required": true,
+          "source_url": "https://www.depts.ttu.edu/clarkscholars/ApplicationDetails.php"
+        },
+        {
+          "id": "transcript_scores",
+          "label": "Upload transcript and standardized-test score report",
+          "details": "Unofficial transcripts and score reports are accepted; at least a PSAT or PACT score is required if SAT/ACT scores are unavailable.",
+          "required": true,
+          "source_url": "https://www.depts.ttu.edu/clarkscholars/ApplicationDetails.php"
+        },
+        {
+          "id": "recommendations",
+          "label": "Request three recommendations",
+          "details": "Three recommendations are required; at least two must be from teachers and all are completed through an online questionnaire.",
+          "required": true,
+          "source_url": "https://www.depts.ttu.edu/clarkscholars/ApplicationDetails.php"
+        },
+        {
+          "id": "activities",
+          "label": "List top five activities and accomplishments",
+          "details": "The program asks applicants to list their five most important involvement activities or accomplishments; extra activity lists/resumes are not accepted.",
+          "required": true,
+          "source_url": "https://www.depts.ttu.edu/clarkscholars/ApplicationDetails.php"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.depts.ttu.edu/clarkscholars/ProgramDetails.php",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official Texas Tech Clark pages confirm seven-week dates, twelve-student scale, eligibility, no participation fees, room/board, $750 stipend, U.S./PR citizenship, application deadline, and components. Upcoming-cycle deadline remains VERIFY; 2026-02-16 is stored as the prior-cycle estimate."
+      }
+    },
+    {
+      "id": "stanford-sumac",
+      "name": "Stanford University Mathematics Camp (SUMaC)",
+      "host": "Stanford Pre-Collegiate Studies",
+      "subject": "Advanced mathematics",
+      "url": "https://sumac.spcs.stanford.edu/",
+      "cost": "Tuition-based: 2026 online $3,750; residential $8,950; need-based aid available",
+      "cost_category": "paid",
+      "selectivity": "Small, competitive program (2026 residential 40; online 64)",
+      "program_format": "hybrid",
+      "location": "Online or Stanford, CA",
+      "program_dates": "2026 online sessions: June 15 to July 3 or July 6 to July 24; residential: June 21 to July 17",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-02-02",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["mathematics"],
+        "grade_levels": ["high_school_sophomore", "high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "A selective Stanford mathematics program for students in grades 10 and 11 with strong interest in advanced math, proof-writing, algebra, number theory, or topology. SUMaC offered both online and residential options for 2026 and considers students from around the world.",
+      "application_requirements": [
+        {
+          "id": "application_account",
+          "label": "Create a SUMaC application account",
+          "details": "Applicants use a SUMaC account; parents or guardians are required to submit the application for minor students.",
+          "required": true,
+          "source_url": "https://sumac.spcs.stanford.edu/sumac-admissions"
+        },
+        {
+          "id": "course_preferences",
+          "label": "Rank SUMaC course preferences",
+          "details": "Students rank the two available courses, Program I and Program II, in the application.",
+          "required": true,
+          "source_url": "https://sumac.spcs.stanford.edu/sumac-admissions"
+        },
+        {
+          "id": "academic_records",
+          "label": "Upload academic records",
+          "details": "SUMaC requires unofficial transcripts for schools or academic programs where the applicant earned grades over the listed period.",
+          "required": true,
+          "source_url": "https://sumac.spcs.stanford.edu/sumac-admissions"
+        },
+        {
+          "id": "teacher_recommendation",
+          "label": "Request one math teacher recommendation",
+          "details": "SUMaC requires one online recommendation form from a math teacher.",
+          "required": true,
+          "source_url": "https://sumac.spcs.stanford.edu/sumac-admissions"
+        },
+        {
+          "id": "admission_exam",
+          "label": "Complete the SUMaC admission exam",
+          "details": "The admission exam is a set of challenging proof-based math problems completed at home before the application deadline.",
+          "required": true,
+          "source_url": "https://sumac.spcs.stanford.edu/sumac-admissions"
+        },
+        {
+          "id": "video_essay_optional",
+          "label": "Submit the optional video essay if useful",
+          "details": "The video essay is optional; Stanford strongly encourages it for students whose school language of instruction is not English.",
+          "required": false,
+          "source_url": "https://sumac.spcs.stanford.edu/sumac-admissions"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://sumac.spcs.stanford.edu/",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official Stanford SUMaC pages confirm grades 10-11 eligibility, online/residential 2026 options and dates, tuition, financial aid, application deadline, records, recommendation, exam, and optional video essay. Citizenship has no restriction stated beyond global admission language, so it is marked any."
+      }
+    },
+    {
+      "id": "garcia-summer-research",
+      "name": "Garcia Summer Research Program",
+      "host": "Stony Brook University Garcia Center",
+      "subject": "Materials science and polymer research",
+      "url": "https://www.stonybrook.edu/garcia/summer-program/program-description.html",
+      "cost": "Paid: 2026 laboratory usage fee $4,000; room, board, and meal plan not included",
+      "cost_category": "paid",
+      "selectivity": "Competitive research program (admit rate not published)",
+      "program_format": "commuter",
+      "location": "Stony Brook, NY",
+      "program_dates": "2026 program dates: June 24 to August 7",
+      "deadline": "VERIFY",
+      "eligibility": {
+        "min_gpa": 3.8,
+        "fields_of_study": ["science", "engineering", "natural_sciences", "research"],
+        "grade_levels": ["high_school_sophomore", "high_school_junior", "high_school_senior", "college_freshman"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": false,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "A seven-week in-person research program at Stony Brook's Garcia Center where high school students work in laboratories on original research projects. International students are eligible only if they already have documents allowing legal presence in the U.S. for the program period; the app cannot verify that condition yet.",
+      "application_requirements": [
+        {
+          "id": "application_parts",
+          "label": "Submit application form Parts 1 and 2",
+          "details": "The 2026 Garcia application page lists Part 1 and Part 2 of the application form as required.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/garcia/summer-program/apply.html"
+        },
+        {
+          "id": "transcript",
+          "label": "Have your school submit the transcript",
+          "details": "The transcript must be submitted by school staff or via Parchment; Garcia says self-submitted transcripts are not accepted.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/garcia/summer-program/faqs.html"
+        },
+        {
+          "id": "recommendations",
+          "label": "Request three letters of recommendation",
+          "details": "Three letters are required, with at least one from a science teacher; letters must be submitted by the writer through the portal.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/garcia/summer-program/apply.html"
+        },
+        {
+          "id": "registration_fee",
+          "label": "Pay the non-refundable registration fee",
+          "details": "The 2026 application page lists a non-refundable $50 registration fee payable by check or wire transfer.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/garcia/summer-program/apply.html"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.stonybrook.edu/garcia/summer-program/apply.html",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official Garcia pages confirm 2026 dates, high-school age/GPA/course/test expectations, international conditional eligibility, application parts, transcript, recommendations, fee, in-person/commuter nature, no aid, and lab/housing costs. Deadline remains VERIFY because a specific deadline was not published on the fetched page."
+      }
+    },
+    {
+      "id": "simons-summer-research",
+      "name": "Simons Summer Research Program",
+      "host": "Stony Brook University",
+      "subject": "Science, math, and engineering research",
+      "url": "https://www.stonybrook.edu/commcms/simons/",
+      "cost": "No tuition; participants cover transportation and dining or residential costs if dorming",
+      "cost_category": "paid",
+      "selectivity": "Highly selective; about <5% admitted",
+      "program_format": "hybrid",
+      "location": "Stony Brook, NY",
+      "program_dates": "2026 program dates: June 29 to August 7",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-02-05",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["science", "engineering", "mathematics", "research", "natural_sciences"],
+        "grade_levels": ["high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident",
+        "special_requirements": [
+          {
+            "kind": "nomination",
+            "label": "High school nomination required",
+            "details": "Each high school may nominate no more than two eligible students before the student application."
+          }
+        ]
+      },
+      "description": "A national Stony Brook research fellowship for academically talented 11th-grade students. Applicants must be nominated by their high school, be U.S. citizens or permanent residents, and select preferred faculty mentors or research areas.",
+      "application_requirements": [
+        {
+          "id": "school_nomination",
+          "label": "Secure school nomination",
+          "details": "Each high school may nominate no more than two eligible students; independently submitted applications can be disqualified.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/nomination.php"
+        },
+        {
+          "id": "online_application",
+          "label": "Submit the online application",
+          "details": "Applicants can begin after confirming nomination status; the 2026 application deadline was February 5.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/how-to-apply.php"
+        },
+        {
+          "id": "transcript",
+          "label": "Upload transcript or grade report",
+          "details": "The online application asks students to upload an unofficial transcript or grade report as a PDF.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/how-to-apply.php"
+        },
+        {
+          "id": "brief_questions",
+          "label": "Answer brief application questions",
+          "details": "Simons lists brief responses of 300 words or less and prohibits AI-generated or AI-rewritten application content.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/how-to-apply.php"
+        },
+        {
+          "id": "recommendations",
+          "label": "Request two teacher recommendations",
+          "details": "Two math/science-preferred teacher letters are required; prior research supervisor letters are encouraged if applicable.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/how-to-apply.php"
+        },
+        {
+          "id": "mentor_preferences",
+          "label": "Select top three mentor or research-area preferences",
+          "details": "Applicants are required to select three preferred mentors or research areas in the online application.",
+          "required": true,
+          "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/how-to-apply.php"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.stonybrook.edu/commcms/simons/applying_to/how-to-apply.php",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official Simons pages confirm junior-only, U.S./PR eligibility, nomination requirement, 2026 dates/deadlines, transcript, recommendations, brief questions, mentor choices, cost language, and about <5% admission. Deadline remains VERIFY for future cycle; 2026-02-05 is stored as prior-cycle estimate."
+      }
+    },
+    {
+      "id": "cosmos",
+      "name": "California State Summer School for Mathematics and Science (COSMOS)",
+      "host": "University of California",
+      "subject": "STEM",
+      "url": "https://cosmos-ucop.ucdavis.edu/app/main/page/program-overview",
+      "cost": "Paid: 2026 residential program cost $5,518 plus $46 application fee; financial assistance may be available",
+      "cost_category": "paid",
+      "selectivity": "Competitive; each campus can accommodate about 160-200 participants",
+      "program_format": "residential",
+      "location": "Multiple University of California campuses",
+      "program_dates": "2026 program dates: July 5 to July 31 or August 1, depending on campus",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-02-06",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["science", "technology", "engineering", "mathematics"],
+        "grade_levels": ["middle_school", "high_school_freshman", "high_school_sophomore", "high_school_junior"],
+        "demographics": [],
+        "states": ["CA"],
+        "essay_required": true,
+        "citizenship_requirement": "VERIFY"
+      },
+      "description": "A four-week UC residential STEM program for California students who will be in grades 9-12 in fall 2026. Students apply to a UC campus and cluster, live on campus, and study advanced STEM topics with faculty, researchers, and scientists.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Submit the online COSMOS application",
+          "details": "The application includes one personal statement and campus/cluster choices.",
+          "required": true,
+          "source_url": "https://cosmos-ucop.ucdavis.edu/app/main/page/application-and-payment-basics"
+        },
+        {
+          "id": "teacher_recommendation",
+          "label": "Request teacher recommendation",
+          "details": "One teacher recommendation is required and two are recommended.",
+          "required": true,
+          "source_url": "https://cosmos-ucop.ucdavis.edu/app/main/page/application-and-payment-basics"
+        },
+        {
+          "id": "transcript",
+          "label": "Upload unofficial transcript or report-card materials",
+          "details": "Unofficial transcripts are uploaded before submission; 8th and 9th graders must also submit prior-grade report cards.",
+          "required": true,
+          "source_url": "https://cosmos-ucop.ucdavis.edu/app/main/page/application-and-payment-basics"
+        },
+        {
+          "id": "parent_signature_fee",
+          "label": "Collect parent/guardian e-signature and pay application fee",
+          "details": "COSMOS requires parent/guardian signature acknowledgment and a non-refundable application fee by the deadline.",
+          "required": true,
+          "source_url": "https://cosmos-ucop.ucdavis.edu/app/main/page/dates-deadlines"
+        },
+        {
+          "id": "financial_assistance_optional",
+          "label": "Submit financial-assistance materials if needed",
+          "details": "Financial assistance is optional and reviewed separately from admission; complete documentation is required by the stated deadline.",
+          "required": false,
+          "source_url": "https://cosmos-ucop.ucdavis.edu/app/main/page/financial-aid"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://cosmos-ucop.ucdavis.edu/app/main/page/application-and-payment-basics",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official COSMOS pages confirm California-only eligibility, rising grades 9-12, residential STEM program, UC campuses, 2026 dates/cost/deadline, application materials, and financial assistance. Citizenship is not published on the reviewed pages, so it remains VERIFY."
+      }
+    },
+    {
+      "id": "bu-rise",
+      "name": "RISE Internship/Practicum",
+      "host": "Boston University",
+      "subject": "Science and engineering research",
+      "url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/",
+      "cost": "Paid: 2026 tuition $5,930 plus fees; housing and dining optional; limited need-based aid available",
+      "cost_category": "paid",
+      "selectivity": "Competitive research program (admit rate not published)",
+      "program_format": "hybrid",
+      "location": "Boston, MA",
+      "program_dates": "2026 residential dates: June 28 to August 7; commuter dates: June 29 to August 7",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-02-04",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["science", "engineering", "computer_science", "health_medicine", "natural_sciences", "research"],
+        "grade_levels": ["high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "A six-week Boston University research program for domestic students entering senior year. RISE offers an Internship track with faculty research and a Practicum track with structured group research, with residential and commuter options.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Submit the online RISE application",
+          "details": "The application must be submitted by the prospective student and can be edited before submission.",
+          "required": true,
+          "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/how-to-apply/"
+        },
+        {
+          "id": "transcript",
+          "label": "Upload high-school transcript",
+          "details": "BU requires a full high-school transcript beginning in 9th grade and including fall 2025 grades for the 2026 application.",
+          "required": true,
+          "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/how-to-apply/"
+        },
+        {
+          "id": "essays",
+          "label": "Complete RISE essays",
+          "details": "RISE requires three essays; Internship applicants also list three faculty of interest and explain research alignment.",
+          "required": true,
+          "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/how-to-apply/"
+        },
+        {
+          "id": "recommendation",
+          "label": "Request one recommendation",
+          "details": "The recommender should be a STEM teacher, guidance counselor, or research supervisor who has known the applicant for at least six months.",
+          "required": true,
+          "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/how-to-apply/"
+        },
+        {
+          "id": "test_scores_optional",
+          "label": "Upload standardized-test scores if choosing to submit",
+          "details": "BU lists standardized tests as optional for summer 2026 applicants.",
+          "required": false,
+          "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/how-to-apply/"
+        },
+        {
+          "id": "financial_aid_optional",
+          "label": "Upload financial-aid documents if applying for aid",
+          "details": "Financial aid documents must be uploaded with the application; admission decisions are made without regard to aid requests.",
+          "required": false,
+          "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/tuition-aid-payment/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/how-to-apply/",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official BU RISE pages confirm junior/domestic eligibility, U.S./PR requirement, 2026 dates, residential/commuter options, tuition/fees/aid, tracks, application deadline, transcript, essays, recommendation, optional tests, and financial-aid materials."
+      }
+    },
+    {
+      "id": "cmu-sams",
+      "name": "Summer Academy for Math and Science (SAMS)",
+      "host": "Carnegie Mellon University",
+      "subject": "STEM",
+      "url": "https://www.cmu.edu/pre-college/academic-programs/sams.html",
+      "cost": "Fully funded; no cost beyond travel to and from Pittsburgh",
+      "cost_category": "free",
+      "selectivity": "Highly competitive (admit rate not published)",
+      "program_format": "hybrid",
+      "location": "Virtual Jumpstart plus Pittsburgh, PA (Carnegie Mellon University)",
+      "program_dates": "2026 virtual Jumpstart: June 15-16; in-person program: June 20 to August 1",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-02-01",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["science", "technology", "engineering", "mathematics", "computer_science", "research"],
+        "grade_levels": ["high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "us_citizen_or_permanent_resident"
+      },
+      "description": "A fully funded CMU program for 11th-grade students interested in STEM, combining a short virtual Jumpstart with six weeks in person at Carnegie Mellon. SAMS emphasizes math, science, research, writing, mentoring, and access for students underrepresented in STEM-related fields.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Submit the online SAMS application",
+          "details": "CMU says the SAMS application includes more specific details, but applicants can expect an online application.",
+          "required": true,
+          "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+        },
+        {
+          "id": "transcript",
+          "label": "Upload unofficial high-school transcript",
+          "details": "The application requirements list an unofficial high-school transcript.",
+          "required": true,
+          "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+        },
+        {
+          "id": "test_scores",
+          "label": "Submit standardized test scores",
+          "details": "CMU lists standardized test scores among expected SAMS application requirements.",
+          "required": true,
+          "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+        },
+        {
+          "id": "recommendations",
+          "label": "Request two recommendation letters",
+          "details": "Two letters are required; one must be from a current math instructor unless the applicant emails SAMS about that limitation.",
+          "required": true,
+          "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+        },
+        {
+          "id": "essays",
+          "label": "Complete the SAMS essay prompts",
+          "details": "Applicants complete one general CMU Pre-College essay and one SAMS-specific essay prompt.",
+          "required": true,
+          "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+        },
+        {
+          "id": "financial_documentation",
+          "label": "Submit required financial documentation",
+          "details": "SAMS says financial documentation is required for application submission because the program is fully funded and merit-based.",
+          "required": true,
+          "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://www.cmu.edu/pre-college/academic-programs/sams.html",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official CMU SAMS page confirms fully funded cost, hybrid virtual/in-person structure, 2026 dates, resident-only in-person phase, grade/age/citizenship eligibility, financial documentation, application components, and essay prompts. Deadline remains VERIFY; 2026-02-01 is a prior-cycle estimate."
+      }
+    },
+    {
+      "id": "notre-dame-leadership-seminars",
+      "name": "Leadership Seminars",
+      "host": "University of Notre Dame",
+      "subject": "Leadership, global issues, business, law, and technology",
+      "url": "https://precollege.nd.edu/leadership-seminars/",
+      "cost": "Tuition, housing, and meals paid by Notre Dame; application, enrollment, and travel fees remain",
+      "cost_category": "free",
+      "selectivity": "Competitive; approximately 150 students admitted each year",
+      "program_format": "residential",
+      "location": "Notre Dame, IN",
+      "program_dates": "2026 program dates: July 18 to July 29",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-01-21",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["business", "social_sciences", "law", "technology", "science", "humanities"],
+        "grade_levels": ["high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "A competitive 10-day residential Notre Dame program for current high-school juniors entering senior year who show strong academic preparation and leadership. Courses span business, global issues, inequality, law, AI/data/technology, and financial literacy.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Submit the online Leadership Seminars application",
+          "details": "Notre Dame lists the application opening and deadline dates for the 2026 cycle.",
+          "required": true,
+          "source_url": "https://precollege.nd.edu/leadership-seminars/dates-deadlines/"
+        },
+        {
+          "id": "transcript_counselor_report",
+          "label": "Provide counselor contact for transcript, counselor report, and school profile",
+          "details": "Notre Dame sends an auto-email to the counselor; applicants are responsible for following up.",
+          "required": true,
+          "source_url": "https://precollege.nd.edu/leadership-seminars/application-and-admission/"
+        },
+        {
+          "id": "teacher_recommendation",
+          "label": "Request a high-school teacher recommendation",
+          "details": "Applicants provide a recommending teacher's name and email; Notre Dame sends the teacher an auto-email.",
+          "required": true,
+          "source_url": "https://precollege.nd.edu/leadership-seminars/application-and-admission/"
+        },
+        {
+          "id": "test_scores_optional",
+          "label": "Upload standardized-test scores if submitting",
+          "details": "SAT, ACT, or PSAT scores are preferred but not required; international applicants outside English-speaking schools have an English-test requirement.",
+          "required": false,
+          "source_url": "https://precollege.nd.edu/leadership-seminars/application-and-admission/"
+        },
+        {
+          "id": "application_fee",
+          "label": "Pay the application fee",
+          "details": "Notre Dame lists a $75 application fee for Leadership Seminars.",
+          "required": true,
+          "source_url": "https://precollege.nd.edu/leadership-seminars/application-and-admission/"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://precollege.nd.edu/leadership-seminars/",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official Notre Dame pages confirm 10-day residential dates, approximately 150 admits, tuition/housing/meals coverage, junior eligibility, top academic/leadership profile, application deadline, counselor report/transcript, teacher rec, optional tests, English test for some international applicants, and fees."
+      }
+    },
+    {
+      "id": "yale-young-global-scholars",
+      "name": "Yale Young Global Scholars (YYGS)",
+      "host": "Yale University",
+      "subject": "Interdisciplinary global issues, STEM, law, economics, and technology",
+      "url": "https://globalscholars.yale.edu/",
+      "cost": "Paid: 2026 residential tuition $7,000; need-based financial aid available up to full tuition",
+      "cost_category": "paid",
+      "selectivity": "Highly competitive (admit rate not published)",
+      "program_format": "residential",
+      "location": "New Haven, CT (Yale University)",
+      "program_dates": "2026 residential sessions: June 21 to July 3, July 5 to July 17, or July 19 to July 31",
+      "deadline": "VERIFY",
+      "estimated_deadline": "2026-01-07",
+      "eligibility": {
+        "min_gpa": null,
+        "fields_of_study": ["science", "technology", "social_sciences", "business", "law", "humanities"],
+        "grade_levels": ["high_school_sophomore", "high_school_junior"],
+        "demographics": [],
+        "states": "any",
+        "essay_required": true,
+        "citizenship_requirement": "any"
+      },
+      "description": "A two-week residential academic enrichment program at Yale for outstanding high school students from around the world. YYGS offers interdisciplinary sessions in science and technology, politics/law/economics, and global challenges, with need-based aid available to domestic and international students.",
+      "application_requirements": [
+        {
+          "id": "online_application",
+          "label": "Complete and submit the YYGS online application",
+          "details": "Applicants must submit the application from the Review page and then pay or resolve the fee in the Applicant Status Portal.",
+          "required": true,
+          "source_url": "https://globalscholars.yale.edu/how-to-apply"
+        },
+        {
+          "id": "activities",
+          "label": "Enter activities list",
+          "details": "YYGS lists an activities list as a required application component.",
+          "required": true,
+          "source_url": "https://globalscholars.yale.edu/required-components"
+        },
+        {
+          "id": "essays",
+          "label": "Complete essay and short-response questions",
+          "details": "YYGS requires one 400-word essay, one 200-word response, and two 280-character fast-take responses.",
+          "required": true,
+          "source_url": "https://globalscholars.yale.edu/required-components"
+        },
+        {
+          "id": "transcript",
+          "label": "Submit official school transcript",
+          "details": "An official school transcript is listed among required YYGS components.",
+          "required": true,
+          "source_url": "https://globalscholars.yale.edu/required-components"
+        },
+        {
+          "id": "recommendation_form",
+          "label": "Request one YYGS recommender form",
+          "details": "YYGS accepts only the online recommendation form, not written letters.",
+          "required": true,
+          "source_url": "https://globalscholars.yale.edu/required-components"
+        },
+        {
+          "id": "financial_aid_optional",
+          "label": "Complete financial-aid section if applying for aid",
+          "details": "Need-based aid is included in the online application and can cover up to 100% of tuition for domestic and international students.",
+          "required": false,
+          "source_url": "https://globalscholars.yale.edu/tuition/financial-aid"
+        }
+      ],
+      "verified": true,
+      "verification": {
+        "source_url": "https://globalscholars.yale.edu/",
+        "last_verified_at": "2026-06-27",
+        "notes": "Official YYGS pages confirm residential 2026 sessions, global eligibility, sophomore/junior eligibility, all-country applications and aid, tuition, application deadlines, components, essays, transcript, recommender form, and financial-aid process. Upcoming-cycle deadline remains VERIFY; 2026-01-07 is stored as prior-cycle estimate."
+      }
     }
   ]
 }

@@ -69,6 +69,22 @@ def test_junior_matches_ssp_and_programs_include_checklists():
     assert by_id["promys"].essay_required is True
 
 
+def test_special_program_requirement_caps_strong_match_and_flags_manual_check():
+    programs = load_summer_programs()
+    junior = _profile(
+        grade_level="high_school_junior",
+        intended_majors=["science"],
+        citizenship="us_citizen",
+    )
+    by_id = {r.program_id: r for r in match_programs(junior, programs, today=REF_DATE)}
+
+    simons = by_id["simons-summer-research"]
+    assert simons.match_tier == "possible"
+    assert simons.requires_special_check is True
+    assert simons.special_requirements[0].label == "High school nomination required"
+    assert any("Special eligibility to check" in reason for reason in simons.match_reasons)
+
+
 def test_broad_legacy_high_school_profile_does_not_match_junior_only_program():
     programs = load_summer_programs()
     broad = _profile(grade_level="high_school")
