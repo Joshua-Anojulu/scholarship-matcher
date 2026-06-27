@@ -1695,7 +1695,7 @@ function buildSpecialEligibilityPanel(items) {
     const list = document.createElement("ul");
     for (const check of savedOpportunitySpecialRequirements(item)) {
       const li = document.createElement("li");
-      li.textContent = String(check);
+      li.textContent = specialRequirementText(check);
       list.appendChild(li);
     }
     card.appendChild(title);
@@ -1706,6 +1706,14 @@ function buildSpecialEligibilityPanel(items) {
 
   section.appendChild(wrap);
   return section;
+}
+
+function specialRequirementText(requirement) {
+  if (typeof requirement === "string") {
+    return requirement;
+  }
+  const label = requirement?.label || "Extra eligibility check";
+  return requirement?.details ? `${label} — ${requirement.details}` : label;
 }
 
 function deadlineUrgencyText(item) {
