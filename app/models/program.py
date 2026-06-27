@@ -98,3 +98,4 @@ class ProgramMatchResult(BaseModel):
     match_tier: str
     match_reasons: list[str]
     score_breakdown: ProgramScoreBreakdown
+    application_requirements: list[ApplicationRequirement] = Field(default_factory=list)

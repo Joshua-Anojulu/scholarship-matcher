@@ -940,6 +940,7 @@ textarea:focus {
 .card-headline { min-width: 0; }
 .card-title { margin: 0; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; color: var(--ink); text-wrap: balance; }
 .card-sponsor { margin: 0.32rem 0 0; color: var(--muted); font-size: 0.84rem; font-weight: 600; }
+.card-program-meta { margin: 0.28rem 0 0; color: var(--muted-light); font-size: 0.77rem; line-height: 1.4; }
 
 /* Fit gauge — one scannable anchor per card */
 .fit-ring { display: grid; flex: 0 0 auto; justify-items: center; gap: 0.3rem; }

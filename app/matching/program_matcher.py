@@ -167,6 +167,7 @@ def _evaluate_program(
         match_tier=match_tier,
         match_reasons=reasons,
         score_breakdown=breakdown,
+        application_requirements=program.application_requirements,
     )
 
 

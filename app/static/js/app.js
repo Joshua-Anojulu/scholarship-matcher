@@ -26,6 +26,10 @@ const resultsContainer = document.getElementById("results-container");
 const resultsSummary = document.getElementById("results-summary");
 const resultsEmpty = document.getElementById("results-empty");
 const loadingEl = document.getElementById("loading");
+const programsSection = document.getElementById("programs-section");
+const programsContainer = document.getElementById("programs-container");
+const programsSummary = document.getElementById("programs-summary");
+const programsEmpty = document.getElementById("programs-empty");
 const submitBtn = document.getElementById("submit-btn");
 
 const authLoggedOut = document.getElementById("auth-logged-out");
@@ -1590,6 +1594,7 @@ async function handleSubmit(event) {
     lastResults = results;
     renderResults(results);
     saveProfileSilently(built.profile);
+    loadPrograms(built.profile);
   } catch (err) {
     showFormError(
       "The match request did not go through. Check your connection and try again."
@@ -1661,6 +1666,236 @@ function buildTierSection(title, matches, tierClass) {
   }
 
   return section;
+}
+
+/* ---------- Summer programs ---------- */
+
+async function loadPrograms(profile) {
+  try {
+    const response = await fetch("/programs/match", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(profile),
+    });
+    if (!response.ok) {
+      programsSection.hidden = true;
+      return;
+    }
+    const programs = await response.json();
+    if (!programs.length) {
+      programsSection.hidden = true;
+      return;
+    }
+    programsSection.hidden = false;
+    renderPrograms(programs);
+  } catch (err) {
+    programsSection.hidden = true;
+    console.error(err);
+  }
+}
+
+function renderPrograms(programs) {
+  programsContainer.innerHTML = "";
+  programsEmpty.hidden = true;
+
+  const strong = programs.filter((p) => p.match_tier === "strong");
+  const possible = programs.filter((p) => p.match_tier === "possible");
+  programsSummary.textContent = `${programs.length} program${
+    programs.length === 1 ? "" : "s"
+  } matched your profile.`;
+
+  if (strong.length > 0) {
+    programsContainer.appendChild(buildProgramTierSection("Strong fits", strong, "strong"));
+  }
+  if (possible.length > 0) {
+    programsContainer.appendChild(
+      buildProgramTierSection("Possible fits", possible, "possible")
+    );
+  }
+}
+
+function buildProgramTierSection(title, programs, tierClass) {
+  const section = document.createElement("div");
+  section.className = "tier-section";
+
+  const heading = document.createElement("h3");
+  heading.className = `tier-heading ${tierClass === "possible" ? "possible" : ""}`;
+  heading.innerHTML = `${escapeHtml(title)} <span class="tier-count">${programs.length}</span>`;
+  section.appendChild(heading);
+
+  programs.forEach((program, index) => {
+    const card = buildProgramCard(program);
+    card.classList.add("match-card-enter");
+    card.style.setProperty("--card-delay", `${Math.min(index * 42, 252)}ms`);
+    section.appendChild(card);
+  });
+
+  return section;
+}
+
+function programStatValue(value) {
+  if (!value || value === "VERIFY" || String(value).startsWith("VERIFY")) {
+    return "Not listed";
+  }
+  return value;
+}
+
+function buildProgramStatRow(program) {
+  const row = document.createElement("div");
+  row.className = "card-stats";
+
+  const cost = document.createElement("div");
+  cost.className = "stat";
+  if (program.cost_category === "free" || program.cost_category === "stipend") {
+    cost.classList.add("stat-award");
+  }
+  cost.innerHTML =
+    '<span class="stat-label">Cost</span>' +
+    `<span class="stat-value">${escapeHtml(programStatValue(program.cost))}</span>`;
+  row.appendChild(cost);
+
+  const selectivity = document.createElement("div");
+  selectivity.className = "stat";
+  selectivity.innerHTML =
+    '<span class="stat-label">Selectivity</span>' +
+    `<span class="stat-value">${escapeHtml(programStatValue(program.selectivity))}</span>`;
+  row.appendChild(selectivity);
+
+  const dates = document.createElement("div");
+  dates.className = "stat";
+  dates.innerHTML =
+    '<span class="stat-label">Dates</span>' +
+    `<span class="stat-value">${escapeHtml(programStatValue(program.program_dates))}</span>`;
+  row.appendChild(dates);
+
+  const dl = deadlineParts(program.deadline, program.estimated_deadline);
+  const apply = document.createElement("div");
+  apply.className = "stat stat-deadline";
+  apply.innerHTML =
+    '<span class="stat-label">Apply by</span>' +
+    `<span class="stat-value">${escapeHtml(dl.value)}</span>` +
+    (dl.note ? `<span class="stat-note">${escapeHtml(dl.note)}</span>` : "");
+  row.appendChild(apply);
+
+  return row;
+}
+
+function buildProgramSteps(steps) {
+  const wrap = document.createElement("div");
+  wrap.className = "reasons program-steps";
+
+  const heading = document.createElement("p");
+  heading.className = "reasons-heading";
+  heading.textContent = "Application steps";
+  wrap.appendChild(heading);
+
+  const list = document.createElement("ul");
+  list.className = "reason-list";
+  for (const step of steps) {
+    const li = document.createElement("li");
+    const title = document.createElement("strong");
+    title.textContent = step.label;
+    li.appendChild(title);
+    if (step.details) {
+      const details = document.createElement("span");
+      details.className = "tracker-task-details";
+      details.textContent = ` ${step.details}`;
+      li.appendChild(details);
+    }
+    if (step.source_url) {
+      li.appendChild(document.createTextNode(" "));
+      const source = document.createElement("a");
+      source.href = step.source_url;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = "Source";
+      li.appendChild(source);
+    }
+    list.appendChild(li);
+  }
+  wrap.appendChild(list);
+  return wrap;
+}
+
+function buildProgramCard(program) {
+  const tierClass = program.match_tier === "possible" ? "possible" : "strong";
+  const article = document.createElement("article");
+  article.className = `match-card ${tierClass}`;
+
+  const pathBar = document.createElement("div");
+  pathBar.className = "path-bar";
+  pathBar.setAttribute("aria-hidden", "true");
+
+  const body = document.createElement("div");
+  body.className = "card-body";
+
+  const header = document.createElement("div");
+  header.className = "card-header";
+  const headline = document.createElement("div");
+  headline.className = "card-headline";
+
+  const title = document.createElement("h4");
+  title.className = "card-title";
+  title.textContent = program.name;
+  headline.appendChild(title);
+
+  if (program.host) {
+    const host = document.createElement("p");
+    host.className = "card-sponsor";
+    host.textContent = program.host;
+    headline.appendChild(host);
+  }
+
+  const formatLabel =
+    program.program_format && !String(program.program_format).startsWith("VERIFY")
+      ? program.program_format.charAt(0).toUpperCase() + program.program_format.slice(1)
+      : null;
+  const metaParts = [program.subject, formatLabel, program.location].filter(
+    (part) => part && part !== "VERIFY" && !String(part).startsWith("VERIFY")
+  );
+  if (metaParts.length > 0) {
+    const meta = document.createElement("p");
+    meta.className = "card-program-meta";
+    meta.textContent = metaParts.join(" · ");
+    headline.appendChild(meta);
+  }
+  header.appendChild(headline);
+
+  if (typeof program.score === "number") {
+    header.appendChild(buildFitRing(program.score, tierClass));
+  }
+
+  body.appendChild(header);
+  body.appendChild(buildProgramStatRow(program));
+
+  const provenance = buildVerificationSource(program);
+  if (provenance) {
+    body.appendChild(provenance);
+  }
+
+  if (program.match_reasons && program.match_reasons.length > 0) {
+    body.appendChild(buildReasons(program.match_reasons));
+  }
+
+  const steps = program.application_requirements || [];
+  if (steps.length > 0) {
+    body.appendChild(buildProgramSteps(steps));
+  }
+
+  const footer = document.createElement("div");
+  footer.className = "card-footer";
+  const link = document.createElement("a");
+  link.className = "card-link";
+  link.href = program.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "View program";
+  footer.appendChild(link);
+  body.appendChild(footer);
+
+  article.appendChild(pathBar);
+  article.appendChild(body);
+  return article;
 }
 
 function matchToCard(match) {
