@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css?v=20260627-6">
+  <link rel="stylesheet" href="/static/css/style.css?v=20260627-8">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -173,6 +173,7 @@
         </p>
         <div class="hero-actions">
           <a class="btn-primary hero-cta" href="#profile-form">Build my profile <span aria-hidden="true">↓</span></a>
+          <button type="button" class="btn-secondary hero-secondary" id="browse-catalog-btn">Browse full catalog</button>
           <p class="hero-note">Scholarships, summer programs, and source-linked next steps.</p>
         </div>
       </div>
@@ -351,7 +352,7 @@
       <div class="opportunity-tabs-copy">
         <p class="eyebrow">02 / Explore matches</p>
         <h2>Switch between opportunity lanes.</h2>
-        <p>Scholarships, elite programs, and your saved plan all use the same profile.</p>
+        <p>Search personalized matches, browse the full catalog, or organize saved opportunities.</p>
       </div>
       <div class="opportunity-tab-list" role="tablist" aria-label="Opportunity result views">
         <button type="button" id="tab-scholarships" class="opportunity-tab is-active" data-view="scholarships" role="tab" aria-selected="true" aria-controls="results-section">
@@ -361,6 +362,10 @@
         <button type="button" id="tab-programs" class="opportunity-tab" data-view="programs" role="tab" aria-selected="false" aria-controls="programs-section">
           <span>Summer programs</span>
           <strong id="programs-tab-count">0</strong>
+        </button>
+        <button type="button" id="tab-catalog" class="opportunity-tab" data-view="catalog" role="tab" aria-selected="false" aria-controls="catalog-section">
+          <span>Browse all</span>
+          <strong id="catalog-tab-count">All</strong>
         </button>
         <button type="button" id="tab-saved" class="opportunity-tab" data-view="saved" role="tab" aria-selected="false" aria-controls="saved-section">
           <span>Application plan</span>
@@ -377,6 +382,11 @@
       </div>
 
       <div id="results-filters" class="results-filters" hidden>
+        <div class="filter-group filter-group-search">
+          <label for="scholarship-search">Search matched scholarships</label>
+          <input id="scholarship-search" type="search" placeholder="Name, sponsor, description..." autocomplete="off" />
+        </div>
+
         <div class="filter-group">
           <label for="filter-quality">Match quality</label>
           <select id="filter-quality">
@@ -452,12 +462,45 @@
         <p id="programs-summary" class="results-summary"></p>
       </div>
 
+      <div id="programs-search-panel" class="results-filters lane-search" hidden>
+        <div class="filter-group filter-group-search">
+          <label for="program-search">Search matched summer programs</label>
+          <input id="program-search" type="search" placeholder="Name, host, subject, description..." autocomplete="off" />
+        </div>
+      </div>
+
       <div id="programs-empty" class="results-empty panel" hidden>
         <h3>No summer programs matched this profile</h3>
         <p>This is a small, curated set of highly selective programs. Adding more fields of study to your profile can surface more of them.</p>
       </div>
 
       <div id="programs-container"></div>
+    </section>
+
+    <section id="catalog-section" class="results-section" hidden role="tabpanel" aria-labelledby="tab-catalog">
+      <div class="results-header">
+        <p class="eyebrow">Full catalog</p>
+        <h2>Browse all opportunities</h2>
+        <p id="catalog-summary" class="results-summary"></p>
+      </div>
+
+      <div id="catalog-search-panel" class="results-filters catalog-search">
+        <div class="filter-group filter-group-search">
+          <label for="catalog-search">Search all scholarships and summer programs</label>
+          <input id="catalog-search" type="search" placeholder="Name, sponsor, host, subject, description..." autocomplete="off" />
+        </div>
+      </div>
+
+      <p class="catalog-note">
+        Browsing the full catalog — not personalized to your profile. Save anything interesting, then run a match to see fit scoring.
+      </p>
+
+      <div id="catalog-empty" class="results-empty panel" hidden>
+        <h3>No catalog results found</h3>
+        <p>Try a different search term, sponsor, host, subject, or keyword.</p>
+      </div>
+
+      <div id="catalog-container"></div>
     </section>
 
     <section id="saved-section" class="results-section" hidden role="tabpanel" aria-labelledby="tab-saved">
@@ -513,6 +556,6 @@
     </div>
   </div>
 
-  <script src="/static/js/app.js?v=20260627-7"></script>
+  <script src="/static/js/app.js?v=20260627-8"></script>
 </body>
 </html>

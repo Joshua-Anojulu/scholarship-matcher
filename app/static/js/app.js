@@ -10,7 +10,14 @@ let vocabulary = null;
 let lastSubmittedProfile = null;
 let lastResults = null;
 let lastPrograms = null;
+let catalogScholarships = null;
+let catalogPrograms = null;
+let catalogScholarshipsPromise = null;
+let catalogProgramsPromise = null;
 let activeOpportunityView = "scholarships";
+let scholarshipSearchQuery = "";
+let programSearchQuery = "";
+let catalogSearchQuery = "";
 
 let currentUser = null;
 const savedIds = new Set();
@@ -34,10 +41,12 @@ const programsContainer = document.getElementById("programs-container");
 const programsSummary = document.getElementById("programs-summary");
 const programsEmpty = document.getElementById("programs-empty");
 const submitBtn = document.getElementById("submit-btn");
+const browseCatalogBtn = document.getElementById("browse-catalog-btn");
 const opportunityTabs = document.getElementById("opportunity-tabs");
 const opportunityTabButtons = Array.from(document.querySelectorAll(".opportunity-tab"));
 const scholarshipsTabCount = document.getElementById("scholarships-tab-count");
 const programsTabCount = document.getElementById("programs-tab-count");
+const catalogTabCount = document.getElementById("catalog-tab-count");
 const savedTabCount = document.getElementById("saved-tab-count");
 
 const authLoggedOut = document.getElementById("auth-logged-out");
@@ -96,6 +105,14 @@ const filterDemographicMatch = document.getElementById("filter-demographic-match
 const filterClosingSoon = document.getElementById("filter-closing-soon");
 const filterVerifiedOnly = document.getElementById("filter-verified-only");
 const filterClear = document.getElementById("filter-clear");
+const scholarshipSearch = document.getElementById("scholarship-search");
+const programSearch = document.getElementById("program-search");
+const programsSearchPanel = document.getElementById("programs-search-panel");
+const catalogSection = document.getElementById("catalog-section");
+const catalogSummary = document.getElementById("catalog-summary");
+const catalogSearch = document.getElementById("catalog-search");
+const catalogEmpty = document.getElementById("catalog-empty");
+const catalogContainer = document.getElementById("catalog-container");
 
 const CRITERIA_HELP = {
   gpa:
@@ -148,6 +165,7 @@ async function init() {
   wirePasswordReset();
   wireOpportunityTabs();
   wireFilterControls();
+  wireSearchControls();
   wireResumeImport();
   wireSettings();
   wireAgeGate();
@@ -226,6 +244,9 @@ function wireOpportunityTabs() {
       activateOpportunityView(view, { scroll: true });
     });
   }
+  browseCatalogBtn?.addEventListener("click", () => {
+    activateOpportunityView("catalog", { scroll: true });
+  });
   updateOpportunityTabCounts();
 }
 
@@ -235,6 +256,13 @@ function updateOpportunityTabCounts() {
   }
   if (programsTabCount) {
     programsTabCount.textContent = lastPrograms ? String(lastPrograms.length) : "0";
+  }
+  if (catalogTabCount) {
+    const loadedCount =
+      catalogScholarships && catalogPrograms
+        ? catalogScholarships.length + catalogPrograms.length
+        : null;
+    catalogTabCount.textContent = loadedCount === null ? "All" : String(loadedCount);
   }
   if (savedTabCount) {
     savedTabCount.textContent = String(savedIds.size + savedProgramIds.size);
@@ -260,11 +288,16 @@ async function activateOpportunityView(view, options = {}) {
 
   resultsSection.hidden = view !== "scholarships" || !lastResults;
   programsSection.hidden = view !== "programs" || lastPrograms === null;
+  catalogSection.hidden = view !== "catalog";
   savedSection.hidden = view !== "saved";
 
   if (view === "programs" && lastPrograms !== null) {
     renderPrograms(lastPrograms);
     programsSection.hidden = false;
+  }
+
+  if (view === "catalog") {
+    await showCatalogView();
   }
 
   if (view === "saved") {
@@ -282,7 +315,13 @@ async function activateOpportunityView(view, options = {}) {
 
   if (options.scroll) {
     const target =
-      view === "programs" ? programsSection : view === "saved" ? savedSection : resultsSection;
+      view === "programs"
+        ? programsSection
+        : view === "catalog"
+        ? catalogSection
+        : view === "saved"
+        ? savedSection
+        : resultsSection;
     (target || opportunityTabs).scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
@@ -305,11 +344,56 @@ function wireFilterControls() {
   filterClear.addEventListener("click", resetFilters);
 }
 
+function wireSearchControls() {
+  const rerenderScholarships = debounce(() => {
+    rerenderResults();
+    ensureCatalogData(["scholarships"]).then(rerenderResults).catch(console.error);
+  }, 150);
+  const rerenderPrograms = debounce(() => {
+    if (lastPrograms) {
+      renderPrograms(lastPrograms);
+    }
+    ensureCatalogData(["programs"])
+      .then(() => {
+        if (lastPrograms) {
+          renderPrograms(lastPrograms);
+        }
+      })
+      .catch(console.error);
+  }, 150);
+  const rerenderCatalog = debounce(() => {
+    renderCatalog();
+  }, 150);
+
+  scholarshipSearch?.addEventListener("input", () => {
+    scholarshipSearchQuery = scholarshipSearch.value.trim();
+    rerenderScholarships();
+  });
+  programSearch?.addEventListener("input", () => {
+    programSearchQuery = programSearch.value.trim();
+    rerenderPrograms();
+  });
+  catalogSearch?.addEventListener("input", () => {
+    catalogSearchQuery = catalogSearch.value.trim();
+    rerenderCatalog();
+  });
+}
+
+function debounce(fn, delay = 150) {
+  let timer = null;
+  return (...args) => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => fn(...args), delay);
+  };
+}
+
 function resetFilters() {
   filterQuality.value = "all";
   filterSort.value = "fit";
   filterMinScore.value = "0";
   filterMinScoreValue.textContent = "0";
+  scholarshipSearch.value = "";
+  scholarshipSearchQuery = "";
   filterNoEssay.checked = false;
   filterFieldMatch.checked = false;
   filterSchoolMatch.checked = false;
@@ -325,6 +409,71 @@ function rerenderResults() {
   }
 }
 
+function normalizeSearch(text) {
+  return String(text || "").toLowerCase();
+}
+
+function itemMatchesSearch(values, query) {
+  const normalizedQuery = normalizeSearch(query).trim();
+  if (!normalizedQuery) {
+    return true;
+  }
+  return values.some((value) => normalizeSearch(value).includes(normalizedQuery));
+}
+
+function noResultsMessage(query, noun) {
+  const wrap = document.createElement("div");
+  wrap.className = "results-empty panel";
+  const heading = document.createElement("h3");
+  heading.textContent = `No ${noun} results for "${query}"`;
+  const copy = document.createElement("p");
+  copy.textContent = "Try a broader keyword, sponsor, host, subject, or program name.";
+  wrap.appendChild(heading);
+  wrap.appendChild(copy);
+  return wrap;
+}
+
+function catalogScholarshipById(id) {
+  return (catalogScholarships || []).find((scholarship) => scholarship.id === id) || null;
+}
+
+function catalogProgramById(id) {
+  return (catalogPrograms || []).find((program) => program.id === id) || null;
+}
+
+function scholarshipSearchValues(resultOrScholarship) {
+  const scholarshipId = resultOrScholarship.scholarship_id || resultOrScholarship.id;
+  const catalogItem = catalogScholarshipById(scholarshipId);
+  return [
+    resultOrScholarship.scholarship_name,
+    resultOrScholarship.name,
+    resultOrScholarship.sponsor,
+    resultOrScholarship.description,
+    catalogItem?.description,
+    catalogItem?.sponsor,
+    ...(resultOrScholarship.match_reasons || []),
+  ];
+}
+
+function programSearchValues(program) {
+  const programId = program.program_id || program.id;
+  const catalogItem = catalogProgramById(programId);
+  return [
+    program.name,
+    program.host,
+    program.subject,
+    program.description,
+    catalogItem?.description,
+    catalogItem?.host,
+    catalogItem?.subject,
+    ...(program.match_reasons || []),
+  ];
+}
+
+function applyProgramFilters(programs) {
+  return programs.filter((program) => itemMatchesSearch(programSearchValues(program), programSearchQuery));
+}
+
 // Field score of 40 means a specific field-of-study match (10 = open-to-all).
 const SPECIFIC_FIELD_SCORE = 40;
 
@@ -332,6 +481,9 @@ function applyResultFilters(results) {
   const minScore = Number(filterMinScore.value) || 0;
   const quality = filterQuality.value;
   return results.filter((r) => {
+    if (!itemMatchesSearch(scholarshipSearchValues(r), scholarshipSearchQuery)) {
+      return false;
+    }
     const requiresSpecialCheck = Boolean(r.requires_special_check);
     if (quality === "special" && !requiresSpecialCheck) {
       return false;
@@ -2409,6 +2561,7 @@ function setLoading(isLoading) {
     resultsFilters.hidden = true;
     programsContainer.innerHTML = "";
     programsEmpty.hidden = true;
+    programsSearchPanel.hidden = true;
     lastPrograms = null;
     updateOpportunityTabCounts();
   }
@@ -2483,11 +2636,15 @@ function renderResults(results) {
   if (filtered.length === 0) {
     resultsEmpty.hidden = true;
     resultsSummary.textContent = `0 of ${results.length} matches shown with the current filters.`;
-    const note = document.createElement("div");
-    note.className = "results-empty panel";
-    note.innerHTML =
-      "<h3>No matches with these filters</h3><p>Loosen a filter or use <strong>Clear filters</strong> to see all matches again.</p>";
-    resultsContainer.appendChild(note);
+    if (scholarshipSearchQuery) {
+      resultsContainer.appendChild(noResultsMessage(scholarshipSearchQuery, "scholarship"));
+    } else {
+      const note = document.createElement("div");
+      note.className = "results-empty panel";
+      note.innerHTML =
+        "<h3>No matches with these filters</h3><p>Loosen a filter or use <strong>Clear filters</strong> to see all matches again.</p>";
+      resultsContainer.appendChild(note);
+    }
     return;
   }
 
@@ -2585,19 +2742,30 @@ function renderPrograms(programs) {
 
   if (programs.length === 0) {
     programsSummary.textContent = "";
+    programsSearchPanel.hidden = true;
     programsEmpty.hidden = false;
     return;
   }
 
+  programsSearchPanel.hidden = false;
   programsEmpty.hidden = true;
 
-  const regular = programs.filter((p) => !p.requires_special_check);
-  const special = programs.filter((p) => p.requires_special_check);
+  const filtered = applyProgramFilters(programs);
+  if (filtered.length === 0) {
+    programsSummary.textContent = `0 of ${programs.length} matched programs shown.`;
+    programsEmpty.hidden = true;
+    programsContainer.appendChild(noResultsMessage(programSearchQuery, "summer program"));
+    return;
+  }
+
+  const regular = filtered.filter((p) => !p.requires_special_check);
+  const special = filtered.filter((p) => p.requires_special_check);
   const strong = regular.filter((p) => p.match_tier === "strong");
   const possible = regular.filter((p) => p.match_tier === "possible");
-  programsSummary.textContent = `${programs.length} program${
-    programs.length === 1 ? "" : "s"
-  } matched your profile.`;
+  const shownAll = filtered.length === programs.length;
+  programsSummary.textContent = shownAll
+    ? `${programs.length} program${programs.length === 1 ? "" : "s"} matched your profile.`
+    : `Showing ${filtered.length} of ${programs.length} matched programs.`;
 
   if (strong.length > 0) {
     programsContainer.appendChild(buildProgramTierSection("Strong fits", strong, "strong"));
@@ -2617,6 +2785,131 @@ function renderPrograms(programs) {
       )
     );
   }
+}
+
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`${url} request failed (${response.status})`);
+  }
+  return response.json();
+}
+
+async function ensureCatalogData(kinds = ["scholarships", "programs"]) {
+  const requests = [];
+  if (kinds.includes("scholarships") && catalogScholarships === null) {
+    if (!catalogScholarshipsPromise) {
+      catalogScholarshipsPromise = fetchJson("/scholarships")
+        .then((scholarships) => {
+          catalogScholarships = scholarships;
+          updateOpportunityTabCounts();
+        })
+        .finally(() => {
+          catalogScholarshipsPromise = null;
+        });
+    }
+    requests.push(catalogScholarshipsPromise);
+  }
+  if (kinds.includes("programs") && catalogPrograms === null) {
+    if (!catalogProgramsPromise) {
+      catalogProgramsPromise = fetchJson("/programs")
+        .then((programs) => {
+          catalogPrograms = programs;
+          updateOpportunityTabCounts();
+        })
+        .finally(() => {
+          catalogProgramsPromise = null;
+        });
+    }
+    requests.push(catalogProgramsPromise);
+  }
+  await Promise.all(requests);
+}
+
+async function showCatalogView() {
+  catalogSection.hidden = false;
+  if (catalogScholarships === null || catalogPrograms === null) {
+    catalogSummary.textContent = "Loading the full catalog...";
+    catalogEmpty.hidden = true;
+    catalogContainer.innerHTML = "";
+    try {
+      await ensureCatalogData();
+    } catch (err) {
+      catalogSummary.textContent = "The catalog could not be loaded.";
+      catalogEmpty.hidden = false;
+      catalogContainer.innerHTML = "";
+      console.error(err);
+      return;
+    }
+  }
+  renderCatalog();
+}
+
+function renderCatalog() {
+  catalogContainer.innerHTML = "";
+  if (catalogScholarships === null || catalogPrograms === null) {
+    return;
+  }
+  const scholarships = catalogScholarships.filter((scholarship) =>
+    itemMatchesSearch(scholarshipSearchValues(scholarship), catalogSearchQuery)
+  );
+  const programs = catalogPrograms.filter((program) =>
+    itemMatchesSearch(programSearchValues(program), catalogSearchQuery)
+  );
+  const total = catalogScholarships.length + catalogPrograms.length;
+  const shown = scholarships.length + programs.length;
+
+  catalogSummary.textContent = catalogSearchQuery
+    ? `Showing ${shown} of ${total} catalog opportunities.`
+    : `${total} catalog opportunities available to browse.`;
+
+  if (shown === 0) {
+    catalogEmpty.hidden = true;
+    catalogContainer.appendChild(noResultsMessage(catalogSearchQuery, "catalog"));
+    return;
+  }
+
+  catalogEmpty.hidden = true;
+  if (scholarships.length > 0) {
+    catalogContainer.appendChild(buildCatalogScholarshipSection(scholarships));
+  }
+  if (programs.length > 0) {
+    catalogContainer.appendChild(buildCatalogProgramSection(programs));
+  }
+}
+
+function buildCatalogScholarshipSection(scholarships) {
+  const section = document.createElement("div");
+  section.className = "tier-section";
+  const heading = document.createElement("h3");
+  heading.className = "tier-heading";
+  heading.innerHTML = `All scholarships <span class="tier-count">${scholarships.length}</span>`;
+  section.appendChild(heading);
+  for (const [index, scholarship] of scholarships.entries()) {
+    const card = scholarshipToCard(scholarship);
+    card.catalog_context = true;
+    const element = buildCard(card, "catalog");
+    element.classList.add("match-card-enter");
+    element.style.setProperty("--card-delay", `${Math.min(index * 24, 180)}ms`);
+    section.appendChild(element);
+  }
+  return section;
+}
+
+function buildCatalogProgramSection(programs) {
+  const section = document.createElement("div");
+  section.className = "tier-section";
+  const heading = document.createElement("h3");
+  heading.className = "tier-heading";
+  heading.innerHTML = `All summer programs <span class="tier-count">${programs.length}</span>`;
+  section.appendChild(heading);
+  for (const [index, program] of programs.entries()) {
+    const element = buildProgramCard(program, { catalogContext: true });
+    element.classList.add("match-card-enter");
+    element.style.setProperty("--card-delay", `${Math.min(index * 24, 180)}ms`);
+    section.appendChild(element);
+  }
+  return section;
 }
 
 function buildProgramTierSection(title, programs, tierClass, description = "") {
@@ -2737,7 +3030,9 @@ function buildProgramCard(program, options = {}) {
     program.special_requirements || program.eligibility?.special_requirements || [];
   const requiresSpecialCheck =
     Boolean(program.requires_special_check) || specialRequirements.length > 0;
-  const tierClass = options.savedContext
+  const tierClass = options.catalogContext
+    ? "catalog"
+    : options.savedContext
     ? "saved"
     : requiresSpecialCheck
     ? "special"
@@ -2805,7 +3100,15 @@ function buildProgramCard(program, options = {}) {
   if (requiresSpecialCheck) {
     const badges = document.createElement("div");
     badges.className = "badge-row";
+    if (options.catalogContext) {
+      badges.appendChild(makeBadge("Full catalog — not personalized", "badge-catalog"));
+    }
     badges.appendChild(makeBadge("Special eligibility", "badge-special"));
+    body.appendChild(badges);
+  } else if (options.catalogContext) {
+    const badges = document.createElement("div");
+    badges.className = "badge-row";
+    badges.appendChild(makeBadge("Full catalog — not personalized", "badge-catalog"));
     body.appendChild(badges);
   }
 
@@ -2901,6 +3204,7 @@ function scholarshipToCard(scholarship) {
     scholarship_id: scholarship.id,
     name: scholarship.name,
     sponsor: scholarship.sponsor,
+    description: scholarship.description,
     award_amount: scholarship.award_amount,
     deadline: scholarship.deadline,
     estimated_deadline: scholarship.estimated_deadline,
@@ -3123,6 +3427,9 @@ function buildCard(card, tierClass) {
 
   const badges = document.createElement("div");
   badges.className = "badge-row";
+  if (card.catalog_context) {
+    badges.appendChild(makeBadge("Full catalog — not personalized", "badge-catalog"));
+  }
   if (card.closing_soon) {
     badges.appendChild(makeBadge("Closing soon", "badge-closing"));
   }

@@ -68,3 +68,12 @@ class TestProductionHygiene:
     def test_openapi_available_in_development(self, client):
         response = client.get("/openapi.json")
         assert response.status_code == 200
+
+    def test_index_includes_catalog_browse_and_search_controls(self, client):
+        response = client.get("/")
+        assert response.status_code == 200
+        assert 'id="tab-catalog"' in response.text
+        assert 'id="catalog-section"' in response.text
+        assert 'id="scholarship-search"' in response.text
+        assert 'id="program-search"' in response.text
+        assert 'id="catalog-search"' in response.text

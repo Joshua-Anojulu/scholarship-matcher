@@ -368,6 +368,13 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .hero-cta span { margin-left: 0.45rem; }
 
+.hero-secondary {
+  min-height: 3.05rem;
+  padding: 0.88rem 1.05rem;
+  border-color: rgba(107, 220, 255, 0.28);
+  background: rgba(255, 255, 255, 0.045);
+}
+
 .hero-note {
   max-width: 21ch;
   margin: 0;
@@ -759,6 +766,7 @@ input[type="number"],
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="search"],
 select,
 textarea {
   width: 100%;
@@ -1070,10 +1078,25 @@ textarea:focus {
 }
 
 .results-filters .filter-group { display: flex; min-width: 9.5rem; flex-direction: column; gap: 0.3rem; }
+.results-filters .filter-group-search { flex: 1 1 20rem; min-width: min(100%, 16rem); }
 .results-filters .filter-group-range { min-width: 12rem; flex: 1 1 12rem; }
 .results-filters label { color: var(--muted); font-size: 0.72rem; font-weight: 700; }
-.results-filters select { min-height: 2.35rem; padding: 0.45rem 0.55rem; font-size: 0.82rem; }
+.results-filters select,
+.results-filters input[type="search"] { min-height: 2.35rem; padding: 0.45rem 0.55rem; font-size: 0.82rem; }
 .results-filters input[type="range"] { width: 100%; accent-color: var(--forest); }
+.lane-search,
+.catalog-search { align-items: center; }
+
+.catalog-note {
+  margin: -0.35rem 0 0;
+  padding: 0.78rem 0.9rem;
+  border: 1px solid rgba(107, 220, 255, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  background: rgba(107, 220, 255, 0.075);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
 
 .filter-checks { display: flex; flex: 1 1 100%; align-items: center; flex-wrap: wrap; gap: 0.45rem; }
 .filter-check {
@@ -1115,6 +1138,7 @@ textarea:focus {
 .match-card.strong .path-bar { background: linear-gradient(180deg, var(--cyan), var(--forest-dark)); }
 .match-card.possible .path-bar { background: linear-gradient(180deg, #f0c476, var(--sun)); }
 .match-card.special .path-bar { background: linear-gradient(180deg, var(--violet), #f0c476); }
+.match-card.catalog .path-bar { background: linear-gradient(180deg, rgba(107, 220, 255, 0.44), rgba(139, 108, 255, 0.34)); }
 .match-card.saved .path-bar { background: linear-gradient(180deg, rgba(175, 194, 245, 0.5), rgba(175, 194, 245, 0.18)); }
 .path-bar { min-height: 100%; }
 
@@ -1170,6 +1194,7 @@ html.motion-ready .fit-ring-value { stroke-dashoffset: var(--circ); animation: r
 .badge-school { color: #d8e6ff; background: rgba(139, 108, 255, 0.18); letter-spacing: 0; }
 .badge-school-match { color: #07101c; background: linear-gradient(135deg, var(--cyan), var(--violet)); letter-spacing: 0; }
 .badge-special { color: #f4eaff; background: rgba(139, 108, 255, 0.22); letter-spacing: 0; }
+.badge-catalog { color: #cfefff; background: rgba(107, 220, 255, 0.12); letter-spacing: 0; }
 
 .special-requirements {
   padding: 0.82rem 0.9rem;
