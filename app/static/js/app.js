@@ -18,6 +18,7 @@ let activeOpportunityView = "scholarships";
 let scholarshipSearchQuery = "";
 let programSearchQuery = "";
 let catalogSearchQuery = "";
+let searchInDescriptions = false;
 
 let currentUser = null;
 const savedIds = new Set();
@@ -377,6 +378,23 @@ function wireSearchControls() {
     catalogSearchQuery = catalogSearch.value.trim();
     rerenderCatalog();
   });
+
+  const descriptionToggles = Array.from(
+    document.querySelectorAll(".search-descriptions-toggle")
+  );
+  descriptionToggles.forEach((toggle) => {
+    toggle.addEventListener("change", () => {
+      searchInDescriptions = toggle.checked;
+      descriptionToggles.forEach((other) => {
+        other.checked = searchInDescriptions;
+      });
+      rerenderResults();
+      if (lastPrograms) {
+        renderPrograms(lastPrograms);
+      }
+      renderCatalog();
+    });
+  });
 }
 
 function debounce(fn, delay = 150) {
@@ -394,6 +412,10 @@ function resetFilters() {
   filterMinScoreValue.textContent = "0";
   scholarshipSearch.value = "";
   scholarshipSearchQuery = "";
+  searchInDescriptions = false;
+  for (const toggle of document.querySelectorAll(".search-descriptions-toggle")) {
+    toggle.checked = false;
+  }
   filterNoEssay.checked = false;
   filterFieldMatch.checked = false;
   filterSchoolMatch.checked = false;
@@ -414,11 +436,15 @@ function normalizeSearch(text) {
 }
 
 function itemMatchesSearch(values, query) {
-  const normalizedQuery = normalizeSearch(query).trim();
-  if (!normalizedQuery) {
+  // Require every whitespace-separated word to appear in at least one field
+  // (AND across words, OR across fields), so multi-word queries narrow instead
+  // of looking for one literal substring.
+  const tokens = normalizeSearch(query).split(/\s+/).filter(Boolean);
+  if (!tokens.length) {
     return true;
   }
-  return values.some((value) => normalizeSearch(value).includes(normalizedQuery));
+  const haystacks = values.filter(Boolean).map(normalizeSearch);
+  return tokens.every((token) => haystacks.some((value) => value.includes(token)));
 }
 
 function noResultsMessage(query, noun) {
@@ -427,7 +453,7 @@ function noResultsMessage(query, noun) {
   const heading = document.createElement("h3");
   heading.textContent = `No ${noun} results for "${query}"`;
   const copy = document.createElement("p");
-  copy.textContent = "Try a broader keyword, sponsor, host, subject, or program name.";
+  copy.textContent = "Try fewer or different words, or turn on 'Search descriptions' for a wider search.";
   wrap.appendChild(heading);
   wrap.appendChild(copy);
   return wrap;
@@ -444,30 +470,43 @@ function catalogProgramById(id) {
 function scholarshipSearchValues(resultOrScholarship) {
   const scholarshipId = resultOrScholarship.scholarship_id || resultOrScholarship.id;
   const catalogItem = catalogScholarshipById(scholarshipId);
-  return [
+  // Default scope is identity only (name + sponsor) so common words in the
+  // description don't flood results. The "Search descriptions" toggle widens it.
+  const values = [
     resultOrScholarship.scholarship_name,
     resultOrScholarship.name,
     resultOrScholarship.sponsor,
-    resultOrScholarship.description,
-    catalogItem?.description,
     catalogItem?.sponsor,
-    ...(resultOrScholarship.match_reasons || []),
   ];
+  if (searchInDescriptions) {
+    values.push(
+      resultOrScholarship.description,
+      catalogItem?.description,
+      ...(resultOrScholarship.match_reasons || []),
+    );
+  }
+  return values;
 }
 
 function programSearchValues(program) {
   const programId = program.program_id || program.id;
   const catalogItem = catalogProgramById(programId);
-  return [
+  // Default scope is identity only (name + host + subject).
+  const values = [
     program.name,
     program.host,
     program.subject,
-    program.description,
-    catalogItem?.description,
     catalogItem?.host,
     catalogItem?.subject,
-    ...(program.match_reasons || []),
   ];
+  if (searchInDescriptions) {
+    values.push(
+      program.description,
+      catalogItem?.description,
+      ...(program.match_reasons || []),
+    );
+  }
+  return values;
 }
 
 function applyProgramFilters(programs) {

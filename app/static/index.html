@@ -405,7 +405,7 @@
       <div id="results-filters" class="results-filters" hidden>
         <div class="filter-group filter-group-search">
           <label for="scholarship-search">Search matched scholarships</label>
-          <input id="scholarship-search" type="search" placeholder="Name, sponsor, description..." autocomplete="off" />
+          <input id="scholarship-search" type="search" placeholder="Name or sponsor..." autocomplete="off" />
         </div>
 
         <div class="filter-group">
@@ -458,6 +458,10 @@
             <input id="filter-verified-only" type="checkbox" />
             <span>Verified data only</span>
           </label>
+          <label class="filter-check">
+            <input type="checkbox" class="search-descriptions-toggle" />
+            <span>Search descriptions</span>
+          </label>
         </div>
 
         <button id="filter-clear" type="button" class="btn-ghost filter-clear">Clear filters</button>
@@ -486,8 +490,12 @@
       <div id="programs-search-panel" class="results-filters lane-search" hidden>
         <div class="filter-group filter-group-search">
           <label for="program-search">Search matched summer programs</label>
-          <input id="program-search" type="search" placeholder="Name, host, subject, description..." autocomplete="off" />
+          <input id="program-search" type="search" placeholder="Name, host, or subject..." autocomplete="off" />
         </div>
+        <label class="filter-check">
+          <input type="checkbox" class="search-descriptions-toggle" />
+          <span>Search descriptions</span>
+        </label>
       </div>
 
       <div id="programs-empty" class="results-empty panel" hidden>
@@ -508,8 +516,12 @@
       <div id="catalog-search-panel" class="results-filters catalog-search">
         <div class="filter-group filter-group-search">
           <label for="catalog-search">Search all scholarships and summer programs</label>
-          <input id="catalog-search" type="search" placeholder="Name, sponsor, host, subject, description..." autocomplete="off" />
+          <input id="catalog-search" type="search" placeholder="Name, sponsor, host, or subject..." autocomplete="off" />
         </div>
+        <label class="filter-check">
+          <input type="checkbox" class="search-descriptions-toggle" />
+          <span>Search descriptions</span>
+        </label>
       </div>
 
       <p class="catalog-note">
@@ -577,6 +589,6 @@
     </div>
   </div>
 
-  <script src="/static/js/app.js?v=20260628-1"></script>
+  <script src="/static/js/app.js?v=20260628-3"></script>
 </body>
 </html>
